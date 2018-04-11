@@ -203,7 +203,7 @@ public class Login extends javax.swing.JFrame {
         
         try{
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                conect = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-E9BN4AL;databaseName=BEKW","sa","123");
+                conect = DriverManager.getConnection("jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW","sa","123");
                 System.out.println("Conectado.");
             }
             catch (SQLException ex) 
