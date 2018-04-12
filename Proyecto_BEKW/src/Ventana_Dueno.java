@@ -1,19 +1,15 @@
 
+import java.util.Date;
 import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Toolkit;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.table.DefaultTableModel;
@@ -48,6 +44,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         seticon();
+        lblUsuario.setText("Bievenido, "+nombreUsuario);
     }
     private void colocarImagenesTab(){
         ImageIcon ventas=createImageIcon("/ICON_BAR/coins_48px.png","");
@@ -127,8 +124,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jButton25 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
         tb_principal = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -181,7 +178,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         btnModificar = new javax.swing.JButton();
         jButton46 = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
         jLabel56 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         txtCantidad = new javax.swing.JSpinner();
@@ -203,7 +199,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jButton49 = new javax.swing.JButton();
         jButton50 = new javax.swing.JButton();
         jButton51 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
         jTextField25 = new javax.swing.JTextField();
         jTextField26 = new javax.swing.JTextField();
         jFormattedTextField3 = new javax.swing.JFormattedTextField();
@@ -230,7 +225,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jButton34 = new javax.swing.JButton();
         jButton35 = new javax.swing.JButton();
         jLabel53 = new javax.swing.JLabel();
-        jButton20 = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
@@ -245,7 +239,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jButton29 = new javax.swing.JButton();
         jButton30 = new javax.swing.JButton();
         jLabel52 = new javax.swing.JLabel();
-        jButton19 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
@@ -263,7 +256,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jButton38 = new javax.swing.JButton();
         jButton39 = new javax.swing.JButton();
         jLabel54 = new javax.swing.JLabel();
-        jButton21 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -303,10 +295,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 790, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel4.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton25.setBackground(new java.awt.Color(255, 255, 255));
         jButton25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -317,39 +310,18 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 jButton25ActionPerformed(evt);
             }
         });
+        jPanel4.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1176, 22, 170, 54));
 
-        jLabel3.setFont(new java.awt.Font("Ubuntu Light", 1, 48)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Ubuntu Light", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/EL MERENGUEx100.png"))); // NOI18N
-        jLabel3.setText("    Dueño");
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/EL MERENGUEx75.png"))); // NOI18N
+        jLabel3.setText("               Dueño");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 563, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(388, 388, 388)
-                .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
-        );
+        lblUsuario.setFont(new java.awt.Font("Ubuntu Light", 0, 18)); // NOI18N
+        lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsuario.setText("Bienvenido, Usuario");
+        jPanel4.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 40, -1, -1));
 
         tb_principal.setBackground(new java.awt.Color(102, 255, 102));
         tb_principal.setTabPlacement(javax.swing.JTabbedPane.LEFT);
@@ -399,7 +371,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jButton11.setBackground(new java.awt.Color(255, 255, 255));
         jButton11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-16x30.png"))); // NOI18N
         jButton11.setText("Añadir Carrito");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -516,14 +487,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
         jButton5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-17x30.png"))); // NOI18N
         jButton5.setText("Eliminar");
         jPanel19.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 150, 50));
 
         jButton12.setBackground(new java.awt.Color(255, 255, 255));
         jButton12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton12.setForeground(new java.awt.Color(255, 255, 255));
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/success30x30.png"))); // NOI18N
         jButton12.setText("Generar Pedido");
         jPanel19.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, 170, 50));
@@ -571,6 +540,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel21.setBackground(new java.awt.Color(255, 255, 255));
         jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton10.setBackground(new java.awt.Color(255, 255, 255));
         jButton10.setText("Agregar Proveedor");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -621,10 +591,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
@@ -633,26 +599,26 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTable3);
 
-        jPanel21.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 730, 374));
+        jPanel21.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 730, 310));
 
-        jButton6.setBackground(new java.awt.Color(255, 0, 0));
+        jButton6.setBackground(new java.awt.Color(255, 255, 255));
         jButton6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-17x30.png"))); // NOI18N
         jButton6.setText("Eliminar");
-        jPanel21.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 560, 150, 50));
+        jPanel21.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 150, 50));
 
-        jButton13.setBackground(new java.awt.Color(0, 153, 0));
+        jButton13.setBackground(new java.awt.Color(255, 255, 255));
         jButton13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/success30x30.png"))); // NOI18N
         jButton13.setText("Generar Pedido");
-        jPanel21.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 560, 170, 50));
+        jPanel21.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 510, 170, 50));
 
-        jLabel13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel13.setText("Total:");
-        jPanel21.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 540, -1, -1));
+        jPanel21.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, -1, 30));
 
         jTextField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jPanel21.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 540, 120, -1));
+        jPanel21.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 480, 120, 30));
 
         jLabel77.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel77.setText("Pedido");
@@ -701,7 +667,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tb_Ventas_Pedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         tb_principal.addTab("Ventas / Pedidos", jPanel6);
@@ -728,7 +694,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jPanel8.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 29, 620, 334));
 
-        btnCancelar.setBackground(java.awt.Color.red);
+        btnCancelar.setBackground(new java.awt.Color(255, 255, 255));
         btnCancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
@@ -739,18 +705,19 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
         jPanel8.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 309, 154, 36));
 
-        btnModificar.setBackground(java.awt.Color.blue);
+        btnModificar.setBackground(new java.awt.Color(255, 255, 255));
         btnModificar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/edit30x30.png"))); // NOI18N
         btnModificar.setText("Modificar");
         jPanel8.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 309, 165, 36));
 
+        jButton46.setBackground(new java.awt.Color(255, 255, 255));
         jButton46.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/garbage-1x30.png"))); // NOI18N
         jButton46.setText("Eliminar");
         jPanel8.add(jButton46, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 351, 165, 36));
 
-        btnAgregar.setBackground(java.awt.Color.green);
+        btnAgregar.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
         btnAgregar.setText("Agregar");
@@ -760,11 +727,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             }
         });
         jPanel8.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 351, 154, 36));
-
-        jButton18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/exit30x30.png"))); // NOI18N
-        jButton18.setText("Cerrar Sesion");
-        jPanel8.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 393, -1, -1));
 
         jLabel56.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel56.setText("Materia Prima");
@@ -854,8 +816,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel17.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(576, 31, 634, 369));
 
         jLabel61.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel61.setText("Nuevo Producto");
-        jPanel17.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 25, -1, -1));
+        jLabel61.setText("Producto");
+        jPanel17.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setText("Nombre Producto:");
@@ -865,33 +827,29 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel24.setText("Descripción:");
         jPanel17.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
 
-        jButton48.setBackground(java.awt.Color.red);
+        jButton48.setBackground(new java.awt.Color(255, 255, 255));
         jButton48.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
         jButton48.setText("Cancelar");
         jPanel17.add(jButton48, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 154, 36));
 
-        jButton49.setBackground(java.awt.Color.blue);
+        jButton49.setBackground(new java.awt.Color(255, 255, 255));
         jButton49.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/edit30x30.png"))); // NOI18N
         jButton49.setText("Modificar");
         jPanel17.add(jButton49, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 165, 36));
 
-        jButton50.setBackground(java.awt.Color.green);
+        jButton50.setBackground(new java.awt.Color(255, 255, 255));
         jButton50.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
         jButton50.setText("Agregar");
         jPanel17.add(jButton50, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 154, 36));
 
+        jButton51.setBackground(new java.awt.Color(255, 255, 255));
         jButton51.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/garbage-1x30.png"))); // NOI18N
         jButton51.setText("Eliminar");
         jPanel17.add(jButton51, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 165, 36));
-
-        jButton23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/exit30x30.png"))); // NOI18N
-        jButton23.setText("Cerrar Sesion");
-        jPanel17.add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
 
         jTextField25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField25.addActionListener(new java.awt.event.ActionListener() {
@@ -937,7 +895,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
         jPanel17.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 140, -1));
 
-        tb_Inventario.addTab("Nuevo Producto Final", jPanel17);
+        tb_Inventario.addTab("Producto", jPanel17);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -953,7 +911,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(tb_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
 
         tb_principal.addTab("Inventario", jPanel5);
@@ -1017,31 +975,28 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jTextField19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        jButton32.setBackground(java.awt.Color.green);
+        jButton32.setBackground(new java.awt.Color(255, 255, 255));
         jButton32.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
         jButton32.setText("Agregar");
 
-        jButton33.setBackground(java.awt.Color.red);
+        jButton33.setBackground(new java.awt.Color(255, 255, 255));
         jButton33.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
         jButton33.setText("Cancelar");
 
-        jButton34.setBackground(java.awt.Color.blue);
+        jButton34.setBackground(new java.awt.Color(255, 255, 255));
         jButton34.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/edit30x30.png"))); // NOI18N
         jButton34.setText("Modificar");
 
+        jButton35.setBackground(new java.awt.Color(255, 255, 255));
         jButton35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/garbage-1x30.png"))); // NOI18N
         jButton35.setText("Eliminar");
 
         jLabel53.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel53.setText("Proveedor");
-
-        jButton20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/exit30x30.png"))); // NOI18N
-        jButton20.setText("Cerrar Sesion");
 
         javax.swing.GroupLayout panelProveedorLayout = new javax.swing.GroupLayout(panelProveedor);
         panelProveedor.setLayout(panelProveedorLayout);
@@ -1050,19 +1005,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             .addGroup(panelProveedorLayout.createSequentialGroup()
                 .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelProveedorLayout.createSequentialGroup()
-                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelProveedorLayout.createSequentialGroup()
-                                .addGap(120, 120, 120)
-                                .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(33, 33, 33)
-                                .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton35, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(panelProveedorLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jButton20)))
+                        .addGap(120, 120, 120)
+                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton35, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProveedorLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -1113,9 +1063,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton35, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addComponent(jButton20)
-                .addGap(27, 27, 27))
+                .addGap(108, 108, 108))
             .addGroup(panelProveedorLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1176,31 +1124,28 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jTextField22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        jButton27.setBackground(java.awt.Color.green);
+        jButton27.setBackground(new java.awt.Color(255, 255, 255));
         jButton27.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
         jButton27.setText("Agregar");
 
+        jButton28.setBackground(new java.awt.Color(255, 255, 255));
         jButton28.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/garbage-1x30.png"))); // NOI18N
         jButton28.setText("Eliminar");
 
-        jButton29.setBackground(java.awt.Color.blue);
+        jButton29.setBackground(new java.awt.Color(255, 255, 255));
         jButton29.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/edit30x30.png"))); // NOI18N
         jButton29.setText("Modificar");
 
-        jButton30.setBackground(java.awt.Color.red);
+        jButton30.setBackground(new java.awt.Color(255, 255, 255));
         jButton30.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
         jButton30.setText("Cancelar");
 
         jLabel52.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel52.setText("Nombre");
-
-        jButton19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/exit30x30.png"))); // NOI18N
-        jButton19.setText("Cerrar Sesion");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -1231,10 +1176,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton19)))
+                            .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65))
@@ -1270,8 +1212,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton19))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGap(0, 31, Short.MAX_VALUE)
                         .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1331,21 +1272,22 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         ));
         jScrollPane9.setViewportView(jTable7);
 
+        jButton36.setBackground(new java.awt.Color(255, 255, 255));
         jButton36.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/garbage-1x30.png"))); // NOI18N
         jButton36.setText("Eliminar");
 
-        jButton37.setBackground(java.awt.Color.blue);
+        jButton37.setBackground(new java.awt.Color(255, 255, 255));
         jButton37.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/edit30x30.png"))); // NOI18N
         jButton37.setText("Modificar");
 
-        jButton38.setBackground(java.awt.Color.red);
+        jButton38.setBackground(new java.awt.Color(255, 255, 255));
         jButton38.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
         jButton38.setText("Cancelar");
 
-        jButton39.setBackground(java.awt.Color.green);
+        jButton39.setBackground(new java.awt.Color(255, 255, 255));
         jButton39.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
         jButton39.setText("Agregar");
@@ -1353,43 +1295,34 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel54.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel54.setText("Usuario");
 
-        jButton21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/exit30x30.png"))); // NOI18N
-        jButton21.setText("Cerrar Sesion");
-
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(85, 85, 85)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jButton21))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(541, 541, 541)
+                        .addGap(328, 328, 328)
                         .addComponent(jLabel54))
+                    .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 742, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 742, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(213, 213, 213)
+                        .addGap(197, 197, 197)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton39, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 742, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 742, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addGap(197, 197, 197)
-                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton39, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(33, 33, 33)
-                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton37, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton36, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButton37, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton36, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(446, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap(157, Short.MAX_VALUE)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel54)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1403,9 +1336,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton39, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton36, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
-                .addComponent(jButton21)
-                .addContainerGap())
+                .addContainerGap(191, Short.MAX_VALUE))
         );
 
         tb_principal.addTab("Usuarios", jPanel10);
@@ -1432,9 +1363,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(tb_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tb_principal, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -1442,6 +1374,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         colocarImagenesTab();
+//        setDateTime();
     }//GEN-LAST:event_formWindowOpened
 
     private void jTextField27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField27ActionPerformed
@@ -1582,6 +1515,16 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_jButton25ActionPerformed
+    
+//    private void setDateTime(){
+//        Date date=new Date();
+//        for(;;){
+//        SimpleDateFormat sdf=new SimpleDateFormat("hh:mm:ss dd/mm/yyyy");
+//        lblFecha_Hora.setText(sdf.format(date));    
+//        }
+//        
+//    }
+    
     private void clear(){
         txtNombre.setText(null);
         txtDescripcion.setText(null);
@@ -1635,11 +1578,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
@@ -1667,7 +1605,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
@@ -1759,6 +1696,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JPanel panelProveedor;
     private javax.swing.JTable tablaMateriaPrima;
     private javax.swing.JTabbedPane tb_Inventario;
