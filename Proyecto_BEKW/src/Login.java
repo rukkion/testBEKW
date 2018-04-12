@@ -145,7 +145,7 @@ public class Login extends javax.swing.JFrame {
 //    //LAPTOP WILLY
 ////    String rutaBD="jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW";
 //    //ESCRITORIO WILLY
-//    String rutaBD="jdbc:sqlserver://DESKTOP-E9BN4AL;databaseName=BEKW";
+//    String rutaBD="jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW";
 //    /**************************************************************************/
     
     
@@ -182,9 +182,9 @@ public class Login extends javax.swing.JFrame {
                     if(count==1){
                         JOptionPane.showMessageDialog(this,"Bienvenido "+name+".","Mensaje de bienvenida.",JOptionPane.INFORMATION_MESSAGE);
                         if(tipo.equals("E")){
-//                            Ventana_Empleado ve=new Ventana_Empleado(name,CS);
-//                            ve.setVisible(true);
-//                            this.dispose();
+                            Ventana_Empleado ve=new Ventana_Empleado(name,CS);
+                            ve.setVisible(true);
+                            this.dispose();
                         }else if(tipo.equals("D")){
                             Ventana_Dueno vd=new Ventana_Dueno(name,CS);
                             vd.setVisible(true);

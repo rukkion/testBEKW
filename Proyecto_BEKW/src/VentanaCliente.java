@@ -515,7 +515,7 @@ public class VentanaCliente extends javax.swing.JFrame {
     void tablaClienteM(){
          try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            Connection con = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-E9BN4AL;databaseName=BEKW","sa","123");
+            Connection con = DriverManager.getConnection("jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW","sa","123");
             Statement stmt=con.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tablaCM.getModel();
             tbm.setRowCount(0);

@@ -2124,7 +2124,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                     + "SET NOMBRE='"+ txtNombreMP.getText()+"',"
                     + "DESCRIPCION='" + txtDescripcionMP.getText() + "',CANT_DISP='"
                     + txtCantidadMP.getValue().toString() + "',UNIDAD_MEDIDA='"
-                    + txtUsuariosContraseña.getText()
+                    + cmbUnidadMedidaMP.getSelectedItem().toString()
                     + "' WHERE ID_MATERIA="+ tablaMateriaPrima.getValueAt(tablaMateriaPrima.getSelectedRow(),0);
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
@@ -2276,7 +2276,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     void tablaClienteM(){
          try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            Connection con = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-E9BN4AL;databaseName=BEKW","sa","123");
+            Connection con = DriverManager.getConnection("jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW","sa","123");
             Statement stmt=con.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tablaCM.getModel();
             tbm.setRowCount(0);
