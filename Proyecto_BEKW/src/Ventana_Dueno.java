@@ -1566,7 +1566,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel12.add(txtUsuariosNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, 170, -1));
 
         cmbUsuariosTipo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        cmbUsuariosTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "E", "D" }));
+        cmbUsuariosTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "EMPLEADO", "DUEÑO" }));
+        cmbUsuariosTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbUsuariosTipoActionPerformed(evt);
+            }
+        });
         jPanel12.add(cmbUsuariosTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 170, -1));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -2087,7 +2092,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
              ResultSet res = stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(4),res.getString(5),res.getString(3)});
+                    if(res.getString(4).toString().equals("E"))
+                    tbm.addRow(new Object[]{res.getInt(1),res.getString(2),"EMPLEADO",res.getString(5),res.getString(3)});
+                    else{
+                        tbm.addRow(new Object[]{res.getInt(1),res.getString(2),"DUEÑO",res.getString(5),res.getString(3)});
+                    }
                 }  
             }
             stmt.close();
@@ -2103,9 +2112,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             cad = "UPDATE USUARIOS "
                     + "SET NOMBRE_USUARIO='"+ txtUsuariosUsuario.getText()+"',"
                     + "NOMBRE_PERSONA='" + txtUsuariosNombre.getText()+ "',TIPO='"
-                    + cmbUsuariosTipo.getSelectedItem().toString() + "',CONTRASEÑA='"
+                    + cmbUsuariosTipo.getSelectedItem().toString().substring(0,1) + "',CONTRASEÑA='"
                     + txtUsuariosContraseña.getText()
-                    + "' WHERE ID_USUARIO="+ tblUsuarios.getValueAt(tablaMateriaPrima.getSelectedRow(),0);
+                    + "' WHERE ID_USUARIO="+ tblUsuarios.getValueAt(tblUsuarios.getSelectedRow(),0);
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
             LlenarTablaUsuarios();
@@ -2666,6 +2675,10 @@ private boolean validarVacioP(){
             
         }
     }//GEN-LAST:event_txtBuscarPKeyTyped
+
+    private void cmbUsuariosTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbUsuariosTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbUsuariosTipoActionPerformed
     
     private void ValidarEspacios(KeyEvent evt) {
        char l=evt.getKeyChar();
@@ -2936,7 +2949,7 @@ private boolean validarVacioP(){
     private javax.swing.JTable tablaMateriaPrima;
     private javax.swing.JTabbedPane tb_Inventario;
     private javax.swing.JTabbedPane tb_Personas;
-    private javax.swing.JTabbedPane tb_Ventas_Pedidos;
+    public static javax.swing.JTabbedPane tb_Ventas_Pedidos;
     public static javax.swing.JTabbedPane tb_principal;
     private javax.swing.JTable tblProducto;
     private javax.swing.JTable tblProveedores;
