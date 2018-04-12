@@ -141,6 +141,15 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     
+//    /******************************CONECTAR BD*********************************/
+//    //LAPTOP WILLY
+////    String rutaBD="jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW";
+//    //ESCRITORIO WILLY
+//    String rutaBD="jdbc:sqlserver://DESKTOP-E9BN4AL;databaseName=BEKW";
+//    /**************************************************************************/
+    
+    
+    
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
                        
                 iniciarSesion(txtusername.getText().trim(),String.valueOf(txtPass1.getPassword()).trim());
@@ -173,11 +182,11 @@ public class Login extends javax.swing.JFrame {
                     if(count==1){
                         JOptionPane.showMessageDialog(this,"Bienvenido "+name+".","Mensaje de bienvenida.",JOptionPane.INFORMATION_MESSAGE);
                         if(tipo.equals("E")){
-                            Ventana_Empleado ve=new Ventana_Empleado(name);
-                            ve.setVisible(true);
-                            this.dispose();
+//                            Ventana_Empleado ve=new Ventana_Empleado(name,CS);
+//                            ve.setVisible(true);
+//                            this.dispose();
                         }else if(tipo.equals("D")){
-                            Ventana_Dueno vd=new Ventana_Dueno(name);
+                            Ventana_Dueno vd=new Ventana_Dueno(name,CS);
                             vd.setVisible(true);
                             this.dispose();
                         }
@@ -198,18 +207,11 @@ public class Login extends javax.swing.JFrame {
             System.out.println(ex.getMessage());
         }
     }
-    
+    CONECTAR_SERVER CS;
     private void conectarBD() throws ClassNotFoundException{
-        
-        try{
-                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                conect = DriverManager.getConnection("jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW","sa","123");
-                System.out.println("Conectado.");
-            }
-            catch (SQLException ex) 
-            {
-                System.out.println("Error.");   
-            }
+        CS=new CONECTAR_SERVER();
+        CS.conectarBD();
+        this.conect=CS.getConect();
     }
     
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

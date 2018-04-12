@@ -1,0 +1,43 @@
+//Bucador en la tabla Cliente:
+ private void txtBuscar1KeyTyped(java.awt.event.KeyEvent evt) {                                    
+        txtBuscar1.addKeyListener(new KeyAdapter() {
+            public void keyReleased(final KeyEvent e) {
+                String cadena = (txtBuscar1.getText());
+                txtBuscar1.setText(cadena);
+                repaint();
+                filtro();
+            }
+        });
+        trsFiltro = new TableRowSorter(tablaCliente.getModel());
+        tablaCliente.setRowSorter(trsFiltro);  
+    }
+
+private TableRowSorter trsFiltro;
+    public void filtro() {
+        int columnaABuscar = 1;
+        trsFiltro.setRowFilter(RowFilter.regexFilter(txtBuscar1.getText(), columnaABuscar));
+    }
+
+
+//Llenar Tabla de Clientes:
+void tablaClienteM(){
+         try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
+            Statement stmt=con.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tablaCliente.getModel();
+            tbm.setRowCount(0);
+            stmt.execute("select * from PERSONAS where TIPO = 'C'");
+            ResultSet res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7)});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            showMessageDialog(null," Error en la conexion LLENAR TABLA CLIENTE. "); 
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    } 

@@ -31,12 +31,13 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
      */
     public GESTION_PRODUCTO() {
         initComponents();
+        txtdescP.setLineWrap(true);
     }
     private void conectarBD() throws ClassNotFoundException, SQLException{
             conect = null;
             try{
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                conect = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
+                conect = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-E9BN4AL;databaseName=BEKW","sa","123");
             System.out.println("Conectado.");
             }
             catch (SQLException ex) 
@@ -63,7 +64,7 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
            evt.consume();
     }
   
-     private boolean validarVacio(){
+     private boolean validarVacioP(){
             if((("".equals(txtdescP.getText()) || "".equals(txtnomP.getText())) || "".equals(txtprecioP.getText()))|| "".equals(txtunidadP.getText())){
                 showMessageDialog(null,"Favor de llenar todos los campos. ");
                 return false;
@@ -77,7 +78,7 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
              conectarBD();
              
             stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)jTable10.getModel();
+            DefaultTableModel tbm=(DefaultTableModel)tblProducto.getModel();
            tbm.setRowCount(0);stmt.execute("select * from PRODUCTOS");
             res=stmt.getResultSet();
             if(null!=res){
@@ -103,8 +104,8 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
              conectarBD();
              
             stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)jTable10.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from PRODUCTOS where NOMBRE LIKE '%"+txtBuscar.getText()+"%'");
+            DefaultTableModel tbm=(DefaultTableModel)tblProducto.getModel();
+           tbm.setRowCount(0);stmt.execute("select * from PRODUCTOS where NOMBRE LIKE '%"+txtBuscarP.getText()+"%'");
             res=stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
@@ -133,16 +134,14 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane12 = new javax.swing.JScrollPane();
-        jTable10 = new javax.swing.JTable();
+        tblProducto = new javax.swing.JTable();
         jLabel61 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jButton48 = new javax.swing.JButton();
-        jButton49 = new javax.swing.JButton();
-        jButton50 = new javax.swing.JButton();
-        jButton51 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        txtdescP = new javax.swing.JTextField();
+        btnCancelarP = new javax.swing.JButton();
+        btnModificarP = new javax.swing.JButton();
+        btnAgregarP = new javax.swing.JButton();
+        btnEliminarP = new javax.swing.JButton();
         txtunidadP = new javax.swing.JTextField();
         spincantP = new javax.swing.JSpinner();
         jLabel65 = new javax.swing.JLabel();
@@ -150,8 +149,10 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         txtnomP = new javax.swing.JTextField();
         txtprecioP = new javax.swing.JTextField();
-        txtBuscar = new javax.swing.JTextField();
+        txtBuscarP = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtdescP = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -159,8 +160,9 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable10.setModel(new javax.swing.table.DefaultTableModel(
+        tblProducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -192,71 +194,70 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
                 "Producto", "Descripcion", "Cantidad", "Unidad", "Precio"
             }
         ));
-        jTable10.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblProducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable10MouseClicked(evt);
+                tblProductoMouseClicked(evt);
             }
         });
-        jScrollPane12.setViewportView(jTable10);
+        jScrollPane12.setViewportView(tblProducto);
+
+        getContentPane().add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 98, 478, 458));
 
         jLabel61.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel61.setText("Nuevo Producto");
+        jLabel61.setText("Producto");
+        getContentPane().add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 23, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setText("Nombre Producto:");
+        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel24.setText("Descripción:");
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 119, -1, -1));
 
-        jButton48.setBackground(java.awt.Color.red);
-        jButton48.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
-        jButton48.setText("Cancelar");
-        jButton48.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelarP.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancelarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnCancelarP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
+        btnCancelarP.setText("Cancelar");
+        btnCancelarP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton48ActionPerformed(evt);
+                btnCancelarPActionPerformed(evt);
             }
         });
+        getContentPane().add(btnCancelarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, -1, 36));
 
-        jButton49.setBackground(java.awt.Color.blue);
-        jButton49.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/edit30x30.png"))); // NOI18N
-        jButton49.setText("Modificar");
-        jButton49.addActionListener(new java.awt.event.ActionListener() {
+        btnModificarP.setBackground(new java.awt.Color(255, 255, 255));
+        btnModificarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnModificarP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/edit30x30.png"))); // NOI18N
+        btnModificarP.setText("Modificar");
+        btnModificarP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton49ActionPerformed(evt);
+                btnModificarPActionPerformed(evt);
             }
         });
+        getContentPane().add(btnModificarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, -1, 36));
 
-        jButton50.setBackground(java.awt.Color.green);
-        jButton50.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
-        jButton50.setText("Agregar");
-        jButton50.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarP.setBackground(new java.awt.Color(255, 255, 255));
+        btnAgregarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnAgregarP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
+        btnAgregarP.setText("Agregar");
+        btnAgregarP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton50ActionPerformed(evt);
+                btnAgregarPActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAgregarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 123, 36));
 
-        jButton51.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/garbage-1x30.png"))); // NOI18N
-        jButton51.setText("Eliminar");
-        jButton51.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarP.setBackground(new java.awt.Color(255, 255, 255));
+        btnEliminarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnEliminarP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/garbage-1x30.png"))); // NOI18N
+        btnEliminarP.setText("Eliminar");
+        btnEliminarP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton51ActionPerformed(evt);
+                btnEliminarPActionPerformed(evt);
             }
         });
-
-        jButton23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/exit30x30.png"))); // NOI18N
-        jButton23.setText("Cerrar Sesion");
-
-        txtdescP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtdescP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtdescPActionPerformed(evt);
-            }
-        });
+        getContentPane().add(btnEliminarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, 123, 36));
 
         txtunidadP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtunidadP.addActionListener(new java.awt.event.ActionListener() {
@@ -264,6 +265,7 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
                 txtunidadPActionPerformed(evt);
             }
         });
+        getContentPane().add(txtunidadP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 150, -1));
 
         spincantP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         spincantP.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -276,15 +278,19 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
                 spincantPVetoableChange(evt);
             }
         });
+        getContentPane().add(spincantP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 151, -1));
 
         jLabel65.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel65.setText("Cantidad:");
+        getContentPane().add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
 
         jLabel66.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel66.setText("Precio");
+        getContentPane().add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, -1, -1));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel26.setText("Unidad:");
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, -1));
 
         txtnomP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtnomP.addActionListener(new java.awt.event.ActionListener() {
@@ -300,6 +306,7 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
                 txtnomPKeyTyped(evt);
             }
         });
+        getContentPane().add(txtnomP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 152, -1));
 
         txtprecioP.setText(" ");
         txtprecioP.addActionListener(new java.awt.event.ActionListener() {
@@ -318,130 +325,36 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
                 txtprecioPKeyTyped(evt);
             }
         });
+        getContentPane().add(txtprecioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 150, 23));
 
-        txtBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+        txtBuscarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtBuscarP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarActionPerformed(evt);
+                txtBuscarPActionPerformed(evt);
             }
         });
-        txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtBuscarP.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBuscarKeyPressed(evt);
+                txtBuscarPKeyPressed(evt);
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtBuscarKeyReleased(evt);
+                txtBuscarPKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtBuscarKeyTyped(evt);
+                txtBuscarPKeyTyped(evt);
             }
         });
+        getContentPane().add(txtBuscarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(616, 58, 295, -1));
 
         jLabel25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel25.setText("Buscar:");
+        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 61, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
-                                .addComponent(jLabel61))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel23)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtnomP, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel24)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtdescP, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addComponent(jLabel65)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(spincantP, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(62, 62, 62)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel26)
-                                    .addComponent(jLabel66))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtunidadP, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtprecioP, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton23)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton49, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton51, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jLabel25)
-                        .addGap(29, 29, 29)
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel61)
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel23)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtnomP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel25)
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel24)
-                            .addComponent(txtdescP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(spincantP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel65))
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtunidadP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel26))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtprecioP, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel66))
-                        .addGap(61, 61, 61)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton49, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton48, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton50, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton51, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
-                        .addComponent(jButton23))
-                    .addComponent(jScrollPane12))
-                .addGap(36, 36, 36))
-        );
+        txtdescP.setColumns(20);
+        txtdescP.setRows(5);
+        jScrollPane1.setViewportView(txtdescP);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 270, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -450,7 +363,7 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
         txtdescP.setText(null);
         txtunidadP.setText(null);
         txtprecioP.setText(null);
-        txtBuscar.setText(null);
+        txtBuscarP.setText(null);
         spincantP.setValue(0);
         try {
             LlenarTablaP();
@@ -458,26 +371,26 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
             Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    private void jTable10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable10MouseClicked
-        jTable10.getSelectedRow();
-        int selectedRowIndex=jTable10.getSelectedRow();
-        txtnomP.setText(jTable10.getValueAt(selectedRowIndex, 0).toString());
-        txtdescP.setText(jTable10.getValueAt(selectedRowIndex, 1).toString());
-        spincantP.setValue(Integer.parseInt((jTable10.getValueAt(selectedRowIndex, 2)).toString()));
-        txtunidadP.setText(jTable10.getValueAt(selectedRowIndex, 3).toString());
-        txtprecioP.setText(jTable10.getValueAt(selectedRowIndex, 4).toString());
+    private void tblProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductoMouseClicked
+        tblProducto.getSelectedRow();
+        int selectedRowIndex=tblProducto.getSelectedRow();
+        txtnomP.setText(tblProducto.getValueAt(selectedRowIndex, 0).toString());
+        txtdescP.setText(tblProducto.getValueAt(selectedRowIndex, 1).toString());
+        spincantP.setValue(Integer.parseInt((tblProducto.getValueAt(selectedRowIndex, 2)).toString()));
+        txtunidadP.setText(tblProducto.getValueAt(selectedRowIndex, 3).toString());
+        txtprecioP.setText(tblProducto.getValueAt(selectedRowIndex, 4).toString());
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTable10MouseClicked
+    }//GEN-LAST:event_tblProductoMouseClicked
 
-    private void jButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton48ActionPerformed
+    private void btnCancelarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPActionPerformed
         clear();
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton48ActionPerformed
+    }//GEN-LAST:event_btnCancelarPActionPerformed
 
-    private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton49ActionPerformed
-      if(validarVacio()){  
-        DefaultTableModel prod=(DefaultTableModel) jTable10.getModel();
+    private void btnModificarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPActionPerformed
+      if(validarVacioP()){  
+        DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
         String nombre=txtnomP.getText();
         String descripcion=txtdescP.getText();
         String cantidad_disp=(spincantP.getValue().toString());
@@ -491,19 +404,19 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
             stmt.executeUpdate(cad);
             LlenarTablaP();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
+            
         } catch (SQLException ex) {
-            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
 
         clear();
       }
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton49ActionPerformed
+    }//GEN-LAST:event_btnModificarPActionPerformed
 
-    private void jButton50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton50ActionPerformed
-  if(validarVacio()){  
-        DefaultTableModel prod=(DefaultTableModel) jTable10.getModel();
+    private void btnAgregarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPActionPerformed
+  if(validarVacioP()){  
+        DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
         String nombre=txtnomP.getText();
         String descripcion=txtdescP.getText();
         String cantidad_disp=(spincantP.getValue().toString());
@@ -517,18 +430,18 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
             stmt.executeUpdate(cad);
             LlenarTablaP();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
+            
         } catch (SQLException ex) {
-            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
 
         clear();}
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton50ActionPerformed
+    }//GEN-LAST:event_btnAgregarPActionPerformed
 
-    private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
-  if(validarVacio()){  
-        DefaultTableModel prod=(DefaultTableModel) jTable10.getModel();
+    private void btnEliminarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPActionPerformed
+  if(validarVacioP()){  
+        DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
 
         String nombre=txtnomP.getText();
 
@@ -543,18 +456,14 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
 
             LlenarTablaP();
         } catch (SQLException ex) {
-            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
+           
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
+           
         }
         clear();
   }
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton51ActionPerformed
-
-    private void txtdescPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdescPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtdescPActionPerformed
+    }//GEN-LAST:event_btnEliminarPActionPerformed
 
     private void txtunidadPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtunidadPActionPerformed
         // TODO add your handling code here:
@@ -591,11 +500,11 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_spincantPStateChanged
 
-    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+    private void txtBuscarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarActionPerformed
+    }//GEN-LAST:event_txtBuscarPActionPerformed
 
-    private void txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyPressed
+    private void txtBuscarPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPKeyPressed
 //       try {
 //            LlenarTablaBus();
 //            // TODO add your handling code here:
@@ -603,18 +512,18 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
 //            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 //        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarKeyPressed
+    }//GEN-LAST:event_txtBuscarPKeyPressed
 
-    private void txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyTyped
+    private void txtBuscarPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPKeyTyped
         try {
             LlenarTablaBus();
             // TODO add your handling code here:
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
-    }//GEN-LAST:event_txtBuscarKeyTyped
+    }//GEN-LAST:event_txtBuscarPKeyTyped
 
-    private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased
+    private void txtBuscarPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPKeyReleased
 //           try {
 //            LlenarTablaBus();
 //            // TODO add your handling code here:
@@ -622,7 +531,7 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
 //            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
 //        }
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarKeyReleased
+    }//GEN-LAST:event_txtBuscarPKeyReleased
 
     private void txtnomPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnomPKeyTyped
         
@@ -689,11 +598,10 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton48;
-    private javax.swing.JButton jButton49;
-    private javax.swing.JButton jButton50;
-    private javax.swing.JButton jButton51;
+    private javax.swing.JButton btnAgregarP;
+    private javax.swing.JButton btnCancelarP;
+    private javax.swing.JButton btnEliminarP;
+    private javax.swing.JButton btnModificarP;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
@@ -701,11 +609,12 @@ public class GESTION_PRODUCTO extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JTable jTable10;
     private javax.swing.JSpinner spincantP;
-    private javax.swing.JTextField txtBuscar;
-    private javax.swing.JTextField txtdescP;
+    private javax.swing.JTable tblProducto;
+    private javax.swing.JTextField txtBuscarP;
+    private javax.swing.JTextArea txtdescP;
     private javax.swing.JTextField txtnomP;
     private javax.swing.JTextField txtprecioP;
     private javax.swing.JTextField txtunidadP;

@@ -16,7 +16,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -32,13 +31,13 @@ Connection conect = null;
     /**
      * Creates new form GESTION_PROVEEDORES
      */
-     TableColumnModel provedoresModel;
     public GESTION_PROVEEDORES() {
-        
         initComponents();
-        
     }
-
+    public GESTION_PROVEEDORES(CONECTAR_SERVER CS) {
+        initComponents();
+        this.CS=CS;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,22 +48,22 @@ Connection conect = null;
     private void initComponents() {
 
         txtProveedorNombre = new javax.swing.JTextField();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
+        lblNombreProveedor = new javax.swing.JLabel();
+        lblDomicilioProveedor = new javax.swing.JLabel();
         txtProveedorDomicilio = new javax.swing.JTextField();
         txtProveedorCP = new javax.swing.JTextField();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
+        lblCPProveedor = new javax.swing.JLabel();
+        lblTelefonoProveedor = new javax.swing.JLabel();
         txtProveedorTelefono = new javax.swing.JTextField();
-        jLabel53 = new javax.swing.JLabel();
-        jScrollPane10 = new javax.swing.JScrollPane();
+        lblTituloProveedor = new javax.swing.JLabel();
+        jScrollPaneProveedores = new javax.swing.JScrollPane();
         tblProveedores = new javax.swing.JTable();
         btnModificarProveedor = new javax.swing.JButton();
         btnEliminarProveedor = new javax.swing.JButton();
         btnAgregarProveedor = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        btnCerrarSesión = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        txtBuscarProveedor = new javax.swing.JTextField();
+        lblProveedorBuscar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -72,27 +71,21 @@ Connection conect = null;
                 formWindowOpened(evt);
             }
         });
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtProveedorNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtProveedorNombre.setText("asdasd");
         txtProveedorNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtProveedorNombreKeyTyped(evt);
             }
         });
-        getContentPane().add(txtProveedorNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 220, -1));
 
-        jLabel32.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel32.setText("Nombre:");
-        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+        lblNombreProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblNombreProveedor.setText("Nombre:");
 
-        jLabel33.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel33.setText("Domicilio:");
-        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+        lblDomicilioProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblDomicilioProveedor.setText("Domicilio:");
 
         txtProveedorDomicilio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        getContentPane().add(txtProveedorDomicilio, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 220, -1));
 
         txtProveedorCP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtProveedorCP.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -100,15 +93,12 @@ Connection conect = null;
                 txtProveedorCPKeyTyped(evt);
             }
         });
-        getContentPane().add(txtProveedorCP, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 100, -1));
 
-        jLabel34.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel34.setText("C.P:");
-        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
+        lblCPProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblCPProveedor.setText("C.P:");
 
-        jLabel35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel35.setText("Teléfono:");
-        getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        lblTelefonoProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblTelefonoProveedor.setText("Teléfono:");
 
         txtProveedorTelefono.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtProveedorTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -116,19 +106,40 @@ Connection conect = null;
                 txtProveedorTelefonoKeyTyped(evt);
             }
         });
-        getContentPane().add(txtProveedorTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 180, -1));
 
-        jLabel53.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel53.setText("Proveedor");
-        getContentPane().add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 162, -1));
+        lblTituloProveedor.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lblTituloProveedor.setText("Proveedor");
 
         tblProveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "PASTELERIA PEPE", "AVENIDA 30 COLONIA CENTRO", "63000", "3111234567"},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Proveedor", "Domicilio", "C.P.", "Telefono"
+                "ID", "Proveedor", "Domicilio", "Código_Postal", "Telefono"
             }
         ));
         tblProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -136,9 +147,7 @@ Connection conect = null;
                 tblProveedoresMouseClicked(evt);
             }
         });
-        jScrollPane10.setViewportView(tblProveedores);
-
-        getContentPane().add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 930, 280));
+        jScrollPaneProveedores.setViewportView(tblProveedores);
 
         btnModificarProveedor.setBackground(new java.awt.Color(255, 255, 255));
         btnModificarProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -149,7 +158,6 @@ Connection conect = null;
                 btnModificarProveedorActionPerformed(evt);
             }
         });
-        getContentPane().add(btnModificarProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 80, 165, 36));
 
         btnEliminarProveedor.setBackground(new java.awt.Color(255, 255, 255));
         btnEliminarProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -160,7 +168,6 @@ Connection conect = null;
                 btnEliminarProveedorActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEliminarProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 130, 165, 36));
 
         btnAgregarProveedor.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregarProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -171,7 +178,6 @@ Connection conect = null;
                 btnAgregarProveedorActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAgregarProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 130, 154, 36));
 
         btnCancelar.setBackground(new java.awt.Color(255, 255, 255));
         btnCancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -182,22 +188,103 @@ Connection conect = null;
                 btnCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 80, 154, 36));
 
-        btnCerrarSesión.setBackground(new java.awt.Color(255, 255, 255));
-        btnCerrarSesión.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnCerrarSesión.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/exit30x30.png"))); // NOI18N
-        btnCerrarSesión.setText("Cerrar Sesion");
-        btnCerrarSesión.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarSesiónActionPerformed(evt);
+        txtBuscarProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBuscarProveedorKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBuscarProveedorKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBuscarProveedorKeyTyped(evt);
             }
         });
-        getContentPane().add(btnCerrarSesión, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, 160, 40));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Proveedor borrado con éxito.");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 490, -1, -1));
+        lblProveedorBuscar.setText("Buscar:");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblProveedorBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtBuscarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(178, 178, 178))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAgregarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnModificarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEliminarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblTituloProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblDomicilioProveedor)
+                                    .addComponent(lblNombreProveedor)
+                                    .addComponent(lblCPProveedor)
+                                    .addComponent(lblTelefonoProveedor))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtProveedorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtProveedorDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtProveedorCP, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtProveedorTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(146, 146, 146)))
+                .addComponent(jScrollPaneProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 671, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBuscarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProveedorBuscar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblTituloProveedor)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblNombreProveedor)
+                            .addComponent(txtProveedorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblDomicilioProveedor)
+                            .addComponent(txtProveedorDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtProveedorCP, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCPProveedor))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtProveedorTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTelefonoProveedor))
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnModificarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAgregarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEliminarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(129, 129, 129))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPaneProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -214,8 +301,10 @@ Connection conect = null;
     private void btnModificarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarProveedorActionPerformed
       
     try {
-        ModificarProveedor();
-        limpiar();
+        if(VerificarvaciosProveedor()){
+            ModificarProveedor();
+            limpiarProveedor();
+        }    
     } catch (ClassNotFoundException ex) {
         Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -225,13 +314,13 @@ Connection conect = null;
     private void btnEliminarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProveedorActionPerformed
        
     try {
-        int j = JOptionPane.showConfirmDialog(null, "¿Está seguro?", "Eliminar Proveedor", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if(j == JOptionPane.YES_OPTION){
-            EliminarProveedor();
-            limpiar();
-        }else{
-            
-        }
+          if(VerificarvaciosProveedor()){
+                int j = JOptionPane.showConfirmDialog(null, "¿Está seguro?", "Eliminar Proveedor", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if(j == JOptionPane.YES_OPTION){
+                    EliminarProveedor();
+                    limpiarProveedor();
+                }
+          }
     } catch (ClassNotFoundException ex) {
         Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -240,64 +329,58 @@ Connection conect = null;
 
     private void btnAgregarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProveedorActionPerformed
     try {
-        insertarProveedor();
-        limpiar();
+        if(VerificarvaciosProveedor()){
+            if(ProveedorExistente())
+                insertarProveedor();
+                limpiarProveedor();
+        }
     } catch (ClassNotFoundException ex) {
         Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
     }
+
+    
         
     }//GEN-LAST:event_btnAgregarProveedorActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        limpiar();
+        limpiarProveedor();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-    this.provedoresModel = tblProveedores.getColumnModel();
-        provedoresModel.getColumn(0).setMaxWidth(60);
-        provedoresModel.getColumn(1).setMaxWidth(200);
-        provedoresModel.getColumn(2).setMaxWidth(300);
-        provedoresModel.getColumn(3).setMaxWidth(60);
-        provedoresModel.getColumn(4).setMaxWidth(100);
-        
-        tblProveedores.setColumnModel(provedoresModel);
-        try {
+    try {
         LlenarTablaProveedores();
     } catch (ClassNotFoundException ex) {
         Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
     }
-    
     }//GEN-LAST:event_formWindowOpened
 
     private void txtProveedorCPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorCPKeyTyped
         ValidarNumeros(evt);
-        if(txtProveedorCP.getText().length()>4){
-            evt.consume();
-        }
     }//GEN-LAST:event_txtProveedorCPKeyTyped
 
     private void txtProveedorTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorTelefonoKeyTyped
         ValidarNumeros(evt);
-        if(txtProveedorTelefono.getText().length()>9){
-            evt.consume();
-        }
     }//GEN-LAST:event_txtProveedorTelefonoKeyTyped
 
     private void txtProveedorNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorNombreKeyTyped
         ValidarLetras(evt);
     }//GEN-LAST:event_txtProveedorNombreKeyTyped
 
-    private void btnCerrarSesiónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesiónActionPerformed
-        int j = JOptionPane.showConfirmDialog(null, "¿Desea Salir De La Sesión Actual??", "Cerrar Sesión", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if(j == JOptionPane.YES_OPTION){
-            limpiar();
-            this.dispose();
-            Login l = new Login();
-            l.show(true);
-        }else{
-        
-        }
-    }//GEN-LAST:event_btnCerrarSesiónActionPerformed
+    private void txtBuscarProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyTyped
+    
+    }//GEN-LAST:event_txtBuscarProveedorKeyTyped
+
+    private void txtBuscarProveedorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyPressed
+       
+    }//GEN-LAST:event_txtBuscarProveedorKeyPressed
+
+    private void txtBuscarProveedorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyReleased
+       try {
+        BuscarProveedores();
+    } catch (ClassNotFoundException ex) {
+        Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }//GEN-LAST:event_txtBuscarProveedorKeyReleased
     
     private void insertarProveedor() throws ClassNotFoundException{
         try{
@@ -359,6 +442,45 @@ Connection conect = null;
             }
     }
     
+    private boolean VerificarvaciosProveedor(){
+        
+        if(txtProveedorNombre.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL NOMBRE DEL PROVEEDOR");
+            return false;
+        }
+        if(txtProveedorDomicilio.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL DOMICILIO");
+            return false;
+        }
+        if(txtProveedorTelefono.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL TELEFONO");
+            return false;
+        }
+        if (txtProveedorCP.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL CODIGO POSTAL");
+            return false;
+        }
+        return true;
+    }
+    
+    private boolean ProveedorExistente() throws ClassNotFoundException{
+         try {
+             conectarBD();
+             stmt=conect.createStatement();
+             stmt.execute("select * from USUARIOS WHERE NOMBRE_USUARIO ='"+ txtProveedorNombre.getText()+"'");
+             res=stmt.getResultSet();
+             if(null!=res){
+                while(res.next()){
+                   return false;
+                }
+             }
+             stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+        }
+         return true;
+    }
+    
     private void LlenarTablaProveedores() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -377,19 +499,36 @@ Connection conect = null;
         } 
     }
     
-    private void conectarBD() throws ClassNotFoundException, SQLException{
-            try{
-                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                conect = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
-            System.out.println("Conectado.");
+    private void BuscarProveedores() throws ClassNotFoundException{
+         try {
+             conectarBD();
+             stmt=conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblProveedores.getModel();
+           tbm.setRowCount(0);stmt.execute("select * from PERSONAS "
+                                            + "where TIPO = 'P' "
+                                            + "AND NOMBRE LIKE '%" + txtBuscarProveedor.getText() + "%'");
+           res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(6),res.getString(7)});
+                }  
             }
-            catch (SQLException ex) 
-            {
-            System.out.println("Error.");   
-            }
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+        } 
     }
     
-     private void limpiar(){
+    
+    CONECTAR_SERVER CS;
+    private void conectarBD()throws ClassNotFoundException{
+              CS.conectarBD();
+              this.conect=CS.getConect();
+    }
+    
+    
+    
+     private void limpiarProveedor(){
         txtProveedorNombre.setText(null);
         txtProveedorDomicilio.setText(null);
         txtProveedorCP.setText(null);
@@ -398,10 +537,8 @@ Connection conect = null;
      
      private void ValidarNumeros(KeyEvent evt) {
        char l=evt.getKeyChar();
-        if(!Character.isDigit(l) || l == KeyEvent.VK_SPACE ){
-           evt.consume(); 
-        }
-        
+        if(!Character.isDigit(l) || l == KeyEvent.VK_SPACE )
+           evt.consume();
     }
      
      private void ValidarLetras(KeyEvent evt) {
@@ -448,17 +585,17 @@ Connection conect = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarProveedor;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnCerrarSesión;
     private javax.swing.JButton btnEliminarProveedor;
     private javax.swing.JButton btnModificarProveedor;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPaneProveedores;
+    private javax.swing.JLabel lblCPProveedor;
+    private javax.swing.JLabel lblDomicilioProveedor;
+    private javax.swing.JLabel lblNombreProveedor;
+    private javax.swing.JLabel lblProveedorBuscar;
+    private javax.swing.JLabel lblTelefonoProveedor;
+    private javax.swing.JLabel lblTituloProveedor;
     private javax.swing.JTable tblProveedores;
+    private javax.swing.JTextField txtBuscarProveedor;
     private javax.swing.JTextField txtProveedorCP;
     private javax.swing.JTextField txtProveedorDomicilio;
     private javax.swing.JTextField txtProveedorNombre;
