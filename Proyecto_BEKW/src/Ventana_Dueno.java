@@ -179,12 +179,13 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane21 = new javax.swing.JScrollPane();
-        jTable10 = new javax.swing.JTable();
+        tblMP_COMPRAS = new javax.swing.JTable();
         txtBuscasMateriaPrima_Compras = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         btnNuevaMateriaPrima_Compras = new javax.swing.JButton();
         jLabel86 = new javax.swing.JLabel();
         jButton20 = new javax.swing.JButton();
+        btnNuevaMateriaPrima_Compras1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         tb_Inventario = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
@@ -899,7 +900,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
         jPanel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jTable10.setModel(new javax.swing.table.DefaultTableModel(
+        tblMP_COMPRAS.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -914,7 +915,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 "Producto", "Tamaño", "Cantidad existencia", "Precio unitario"
             }
         ));
-        jScrollPane21.setViewportView(jTable10);
+        jScrollPane21.setViewportView(tblMP_COMPRAS);
 
         txtBuscasMateriaPrima_Compras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtBuscasMateriaPrima_Compras.addActionListener(new java.awt.event.ActionListener() {
@@ -939,7 +940,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         btnNuevaMateriaPrima_Compras.setBackground(new java.awt.Color(255, 255, 255));
         btnNuevaMateriaPrima_Compras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnNuevaMateriaPrima_Compras.setText("Nueva Materia Prima");
+        btnNuevaMateriaPrima_Compras.setText("RFSH");
         btnNuevaMateriaPrima_Compras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevaMateriaPrima_ComprasjButton11ActionPerformed(evt);
@@ -959,19 +960,19 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             }
         });
 
+        btnNuevaMateriaPrima_Compras1.setBackground(new java.awt.Color(255, 255, 255));
+        btnNuevaMateriaPrima_Compras1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnNuevaMateriaPrima_Compras1.setText("Nueva Materia Prima");
+        btnNuevaMateriaPrima_Compras1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevaMateriaPrima_Compras1jButton11ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
-                        .addComponent(btnNuevaMateriaPrima_Compras)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
-                        .addComponent(jButton20)
-                        .addGap(122, 122, 122))))
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel31)
@@ -986,15 +987,28 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                        .addComponent(jButton20)
+                        .addGap(122, 122, 122))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                        .addComponent(btnNuevaMateriaPrima_Compras1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnNuevaMateriaPrima_Compras)
+                        .addContainerGap())))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel86)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNuevaMateriaPrima_Compras, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNuevaMateriaPrima_Compras1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnNuevaMateriaPrima_Compras, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBuscasMateriaPrima_Compras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31))
@@ -1002,7 +1016,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         jPanel23.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 400, 570));
@@ -3048,6 +3062,10 @@ private boolean validarVacioP(){
     private void jButton20jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20jButton11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton20jButton11ActionPerformed
+
+    private void btnNuevaMateriaPrima_Compras1jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaMateriaPrima_Compras1jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNuevaMateriaPrima_Compras1jButton11ActionPerformed
     
     private void ValidarEspacios(KeyEvent evt) {
        char l=evt.getKeyChar();
@@ -3217,6 +3235,7 @@ private boolean validarVacioP(){
     private javax.swing.JButton btnModificarP;
     private javax.swing.JButton btnModificarProveedor;
     private javax.swing.JButton btnNuevaMateriaPrima_Compras;
+    private javax.swing.JButton btnNuevaMateriaPrima_Compras1;
     private javax.swing.JButton btnUsuariosAgregar;
     private javax.swing.JButton btnUsuariosCancelar;
     private javax.swing.JButton btnUsuariosEliminar;
@@ -3325,7 +3344,6 @@ private boolean validarVacioP(){
     private javax.swing.JScrollPane jScrollPaneProveedores;
     private javax.swing.JScrollPane jScrollPaneUsuarios;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable10;
     private javax.swing.JTable jTable12;
     private javax.swing.JTable jTable13;
     private javax.swing.JTable jTable3;
@@ -3359,6 +3377,7 @@ private boolean validarVacioP(){
     public static javax.swing.JTabbedPane tb_Ventas_Pedidos;
     public static javax.swing.JTabbedPane tb_principal;
     private javax.swing.JTable tblCompra;
+    private javax.swing.JTable tblMP_COMPRAS;
     private javax.swing.JTable tblProducto;
     private javax.swing.JTable tblProveedor_Compra;
     private javax.swing.JTable tblProveedores;
