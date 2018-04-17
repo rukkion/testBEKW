@@ -31,8 +31,17 @@ import javax.swing.table.TableRowSorter;
  *
  * @author EDGUR
  */
+
+
 public class Ventana_Dueno extends javax.swing.JFrame {
-        
+        Connection conect = null;
+     Statement stmt = null;
+     String cad = "";
+     ResultSet res = null;
+     public int row = 0;
+     Login log = new Login();
+     int r=0,c=0;
+     float s = 0;
     /**
      * Creates new form Ventana_Empleado
      */
@@ -88,12 +97,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             return null;
     }
 }
-    Connection conect = null;
     private void conectarBD()throws ClassNotFoundException{
               CS= new CONECTAR_SERVER();
               CS.conectarBD();
               this.conect=CS.getConect();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -180,13 +189,21 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane21 = new javax.swing.JScrollPane();
+<<<<<<< HEAD
+        tblCompraslMateriasPrimas = new javax.swing.JTable();
+=======
         tblMP_COMPRAS = new javax.swing.JTable();
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
         txtBuscasMateriaPrima_Compras = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         btnNuevaMateriaPrima_Compras = new javax.swing.JButton();
         jLabel86 = new javax.swing.JLabel();
         jButton20 = new javax.swing.JButton();
+<<<<<<< HEAD
+        spncantidad = new javax.swing.JSpinner();
+=======
         btnNuevaMateriaPrima_Compras1 = new javax.swing.JButton();
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
         jPanel5 = new javax.swing.JPanel();
         tb_Inventario = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
@@ -571,7 +588,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         jPanel21.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(767, 10, 400, 570));
@@ -783,7 +800,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         jPanel22.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 400, 570));
@@ -806,16 +823,23 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblProveedor_Compra.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"GUARDADO", "CENTRO 167", "21971293"},
-                {"PEDRO", "CENTRO 1781", "13714433"}
+                {null, "", "", ""}
             },
             new String [] {
-                "Nombre ", "Domicilio", "Telefono"
+                "Id", "Nombre ", "Domicilio", "Telefono"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane19.setViewportView(tblProveedor_Compra);
 
-        jPanel23.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 540, 65));
+        jPanel23.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 540, 80));
 
         jLabel82.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel82.setText("Nueva Compra");
@@ -827,27 +851,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblCompra.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, "", "", "", ""},
-                {null, "", "", "", ""},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "Código", "Producto", "Precio", "Cantidad", "Total"
+                "Código", "Materia", "Cantidad", "Precio", "Total"
             }
         ));
         jScrollPane6.setViewportView(tblCompra);
@@ -858,6 +865,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         btnEliminarMateriaPrima_Compra.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnEliminarMateriaPrima_Compra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-17x30.png"))); // NOI18N
         btnEliminarMateriaPrima_Compra.setText("Eliminar");
+        btnEliminarMateriaPrima_Compra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarMateriaPrima_CompraActionPerformed(evt);
+            }
+        });
         jPanel23.add(btnEliminarMateriaPrima_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 540, 150, 40));
 
         btnGenerarCompra.setBackground(new java.awt.Color(255, 255, 255));
@@ -903,22 +915,30 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
         jPanel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+<<<<<<< HEAD
+        tblCompraslMateriasPrimas.setModel(new javax.swing.table.DefaultTableModel(
+=======
         tblMP_COMPRAS.setModel(new javax.swing.table.DefaultTableModel(
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Producto", "Tamaño", "Cantidad existencia", "Precio unitario"
+                "Id", "Materia Prima", "Descripción", "Cantidad existencia", "Precio"
             }
         ));
+<<<<<<< HEAD
+        jScrollPane21.setViewportView(tblCompraslMateriasPrimas);
+=======
         jScrollPane21.setViewportView(tblMP_COMPRAS);
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
 
         txtBuscasMateriaPrima_Compras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtBuscasMateriaPrima_Compras.addActionListener(new java.awt.event.ActionListener() {
@@ -963,6 +983,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
+        spncantidad.setValue(1);
+=======
         btnNuevaMateriaPrima_Compras1.setBackground(new java.awt.Color(255, 255, 255));
         btnNuevaMateriaPrima_Compras1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnNuevaMateriaPrima_Compras1.setText("Nueva Materia Prima");
@@ -971,6 +994,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnNuevaMateriaPrima_Compras1jButton11ActionPerformed(evt);
             }
         });
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -992,6 +1016,16 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+<<<<<<< HEAD
+                .addComponent(btnNuevaMateriaPrima_Compras)
+                .addGap(18, 18, 18))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(spncantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton20)
+                .addGap(85, 85, 85))
+=======
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
                         .addComponent(jButton20)
@@ -1001,6 +1035,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnNuevaMateriaPrima_Compras)
                         .addContainerGap())))
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1017,9 +1052,17 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                     .addComponent(jLabel31))
                 .addGap(47, 47, 47)
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spncantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+=======
                 .addGap(18, 18, 18)
                 .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(13, Short.MAX_VALUE))
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
         );
 
         jPanel23.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 400, 570));
@@ -1357,7 +1400,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(tb_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
         tb_principal.addTab("Inventario", jPanel5);
@@ -1551,7 +1594,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelProveedorLayout.createSequentialGroup()
                         .addComponent(lblTituloProveedor)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                         .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNombreProveedor)
                             .addComponent(txtProveedorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1762,11 +1805,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteLayout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(25, Short.MAX_VALUE)))
+                    .addContainerGap(23, Short.MAX_VALUE)))
         );
         panelClienteLayout.setVerticalGroup(
             panelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 552, Short.MAX_VALUE)
+            .addGap(0, 554, Short.MAX_VALUE)
             .addGroup(panelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelClienteLayout.createSequentialGroup()
                     .addContainerGap()
@@ -1980,6 +2023,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             LlenarTablaProveedores();
             LlenarTablaUsuarios();
             tablaClienteM();
+            LlenarTablaCompras_MateriasPrimas();
+            LlenarTablaComprasProveedores();
         } catch (Exception ex) {
             Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2086,6 +2131,52 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     private void txtProveedorNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorNombreKeyTyped
         ValidarLetras(evt);
     }//GEN-LAST:event_txtProveedorNombreKeyTyped
+    
+    private void LlenarTablaProveedores() throws ClassNotFoundException{
+         try {
+             conectarBD();
+             stmt=conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblProveedores.getModel();
+           tbm.setRowCount(0);stmt.execute("select * from PERSONAS where TIPO = 'P'");
+            res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(6),res.getString(7)});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+        } 
+    }
+    
+    private void LlenarTablaP() throws ClassNotFoundException{
+         try {
+             conectarBD();
+
+            stmt = conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblCompraslMateriasPrimas.getModel();
+           tbm.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS");
+            res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   Vector rowProductos=new Vector();
+                   rowProductos.add(res.getString("ID_MATERIA"));
+                  rowProductos.add(res.getString("NOMBRE"));
+                  rowProductos.add(res.getString("DESCRIPCION"));
+                  rowProductos.add(res.getString("CANT_DISP"));
+                  rowProductos.add(res.getString("UNIDAD_MEDIDA"));
+                  rowProductos.add(res.getString("PRECIO"));
+                  tbm.addRow(rowProductos);
+                }
+            }
+
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
+        } 
+    }
+    
     private boolean VerificarvaciosProveedor(){
         
         if(txtProveedorNombre.getText().equals("")){
@@ -2706,24 +2797,24 @@ private void clearP(){
     }//GEN-LAST:event_btnCancelarPActionPerformed
 
 
-private void LlenarTablaP() throws ClassNotFoundException{
+private void LlenarTablaCompras_MateriasPrimas() throws ClassNotFoundException{
          try {
              conectarBD();
              
              Statement stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblProducto.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from PRODUCTOS");
+            DefaultTableModel tbm=(DefaultTableModel)tblCompraslMateriasPrimas.getModel();
+           tbm.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS");
              ResultSet res = stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
                    Vector rowProductos=new Vector();
+                  rowProductos.add(res.getString("ID_MATERIA"));
                   rowProductos.add(res.getString("NOMBRE"));
                   rowProductos.add(res.getString("DESCRIPCION"));
                   rowProductos.add(res.getString("CANT_DISP"));
-                  rowProductos.add(res.getString("UNIDAD"));
                   rowProductos.add(res.getString("PRECIO"));
                   tbm.addRow(rowProductos);
-                }  
+                }
             }
             
             stmt.close();
@@ -3022,6 +3113,7 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton16jButton11ActionPerformed
 
+<<<<<<< HEAD
     private void txtBuscar4txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarKeyTyped
 
     }//GEN-LAST:event_txtBuscar4txtBuscarKeyTyped
@@ -3035,6 +3127,15 @@ private boolean validarVacioP(){
             //        }
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscar4txtBuscarKeyReleased
+=======
+    private void txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased
+            try {
+                LlenarTablaComprasMateriasPrimas();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased
+>>>>>>> 7f8b9559f0f198ae11095d0e79f52a185d403d01
 
     private void txtBuscar4txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarKeyPressed
         //       try {
@@ -3054,6 +3155,7 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscar2KeyTyped
 
+<<<<<<< HEAD
     private void txtBuscar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar2KeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscar2KeyReleased
@@ -3070,6 +3172,77 @@ private boolean validarVacioP(){
         VentanaCliente mdC=new VentanaCliente();
         mdC.setVisible(true);
     }//GEN-LAST:event_btnClienteActionPerformed
+=======
+    private void jButton20jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20jButton11ActionPerformed
+        Agregarcarrito();
+        sumartotal();
+    }//GEN-LAST:event_jButton20jButton11ActionPerformed
+
+<<<<<<< HEAD
+    private void btnEliminarMateriaPrima_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMateriaPrima_CompraActionPerformed
+        restartotalyeliminarrow();
+    }//GEN-LAST:event_btnEliminarMateriaPrima_CompraActionPerformed
+    
+    void Agregarcarrito(){
+        
+        r = tblCompraslMateriasPrimas.getSelectedRow();
+        String compra[] = new String[5];
+        compra[0] = tblCompraslMateriasPrimas.getValueAt(r,0).toString();
+        compra[1] = tblCompraslMateriasPrimas.getValueAt(r,1).toString();
+        compra[2]=spncantidad.getValue().toString();
+        compra[3] = tblCompraslMateriasPrimas.getValueAt(r,4).toString();
+        compra[4] = ""+Float.parseFloat(compra[2]) * Float.parseFloat(compra[3]);
+        DefaultTableModel tbm = (DefaultTableModel) tblCompra.getModel();
+        tbm.addRow(compra);
+    }
+    
+    void sumartotal(){
+    
+        r =tblCompra.getRowCount()-1;
+        s+= Float.parseFloat(tblCompra.getValueAt(r,4).toString());
+        txtTotalCompra.setText(""+s);
+    }
+    
+    void restartotalyeliminarrow(){
+        r = tblCompraslMateriasPrimas.getSelectedRow();
+        DefaultTableModel tbm = (DefaultTableModel) tblCompra.getModel();
+        s -= Float.parseFloat(tblCompra.getValueAt(r,4).toString());
+        tbm.removeRow(r);
+        tblCompra.setModel(tbm);
+        txtTotalCompra.setText("" +s);
+    }
+    private void LlenarTablaComprasMateriasPrimas() throws ClassNotFoundException{
+         try {
+             conectarBD();
+
+            stmt = conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblCompraslMateriasPrimas.getModel();
+           tbm.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS where NOMBRE LIKE '%"+txtBuscasMateriaPrima_Compras.getText()+"%'");
+            res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   Vector rowProductos=new Vector();
+                   rowProductos.add(res.getString("ID_MATERIA"));
+                  rowProductos.add(res.getString("NOMBRE"));
+                  rowProductos.add(res.getString("DESCRIPCION"));
+                  rowProductos.add(res.getString("CANT_DISP"));
+                  rowProductos.add(res.getString("PRECIO"));
+                  tbm.addRow(rowProductos);
+                }
+            }
+
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
+        } 
+    }
+    
+=======
+    private void btnNuevaMateriaPrima_Compras1jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaMateriaPrima_Compras1jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNuevaMateriaPrima_Compras1jButton11ActionPerformed
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
+>>>>>>> 7f8b9559f0f198ae11095d0e79f52a185d403d01
     
     private void ValidarEspacios(KeyEvent evt) {
        char l=evt.getKeyChar();
@@ -3130,16 +3303,16 @@ private boolean validarVacioP(){
         if(Character.isDigit(l))
            evt.consume();
     }
-     private void LlenarTablaProveedores() throws ClassNotFoundException{
+     private void LlenarTablaComprasProveedores() throws ClassNotFoundException{
          try {
              conectarBD();
              Statement stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblProveedores.getModel();
+            DefaultTableModel tbm=(DefaultTableModel)tblProveedor_Compra.getModel();
            tbm.setRowCount(0);stmt.execute("select * from PERSONAS where TIPO = 'P'");
              ResultSet res = stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(6),res.getString(7)});
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(7)});
                 }  
             }
             stmt.close();
@@ -3362,6 +3535,7 @@ private boolean validarVacioP(){
     private javax.swing.JPanel panelCliente;
     private javax.swing.JPanel panelProveedor;
     private javax.swing.JSpinner spincantP;
+    private javax.swing.JSpinner spncantidad;
     private javax.swing.JTable tablaCM;
     private javax.swing.JTable tablaMateriaPrima;
     private javax.swing.JTabbedPane tb_Inventario;
@@ -3369,7 +3543,11 @@ private boolean validarVacioP(){
     private javax.swing.JTabbedPane tb_Ventas_Pedidos;
     public static javax.swing.JTabbedPane tb_principal;
     private javax.swing.JTable tblCompra;
+<<<<<<< HEAD
+    private javax.swing.JTable tblCompraslMateriasPrimas;
+=======
     private javax.swing.JTable tblMP_COMPRAS;
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
     private javax.swing.JTable tblProducto;
     private javax.swing.JTable tblProveedor_Compra;
     private javax.swing.JTable tblProveedores;
