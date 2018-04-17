@@ -3018,7 +3018,8 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_jButton16jButton11ActionPerformed
 
     private void btnAgregarProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProvedorActionPerformed
-        // TODO add your handling code here:
+        ventanaProveedor vp=new ventanaProveedor();
+        vp.setVisible(true);
     }//GEN-LAST:event_btnAgregarProvedorActionPerformed
 
     private void txtBuscarComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarComprasActionPerformed

@@ -17,11 +17,13 @@ public class CONECTAR_SERVER {
     Connection conect = null;
     /******************************CONECTAR BD*********************************/
     //LAPTOP WILLY
-        String rutaBD="jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW";
+    //String rutaBD="jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW";
     //ESCRITORIO WILLY
-          //String rutaBD="jdbc:sqlserver://DESKTOP-E9BN4AL;databaseName=BEKW";
-
+    //String rutaBD="jdbc:sqlserver://DESKTOP-E9BN4AL;databaseName=BEKW";
+    //LAPTOP GUARDADO
+     String rutaBD="jdbc:sqlserver://localhost;databaseName=BEKW";
     public CONECTAR_SERVER() {
+        
     }
 
     
