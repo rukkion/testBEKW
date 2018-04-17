@@ -92,39 +92,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     private void conectarBD()throws ClassNotFoundException{
               CS.conectarBD();
               this.conect=CS.getConect();
-//            Connection cn = null;
-//            try{
-//                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//                cn = DriverManager.getConnection("jdbc:sqlserver://192.168.40.53;databaseName=BEKW","sa","123");
-//            System.out.println("Conectado.");
-//            
-//            
-//            DefaultTableModel materiaPrima=(DefaultTableModel) tablaMateriaPrima.getModel();
-//            
-//            String cad = "SELECT NOMBRE, DESCRIPCION, CANT_DISP, UNIDAD_MEDIDA FROM PRODUCTOS";
-//            java.sql.Statement s=cn.createStatement();
-//            s.execute(cad);
-//            ResultSet rs = s.getResultSet();
-//            if (rs != null) {
-//                while(rs.next()){
-//                  Vector rowMateriaPrima=new Vector();
-//                  rowMateriaPrima.add(rs.getString("NOMBRE"));
-//                  rowMateriaPrima.add(rs.getString("DESCRIPCION"));
-//                  rowMateriaPrima.add(rs.getString("CANT_DISP"));
-//                  rowMateriaPrima.add(rs.getString("UNIDAD_MEDIDA"));
-//                  materiaPrima.addRow(rowMateriaPrima);
-//                }
-//                
-//                tablaMateriaPrima.setModel(materiaPrima);
-//           } else {System.out.println("No hay");}
-//            s.close();
-//            
-//
-//            }
-//            catch (SQLException ex) 
-//            {
-//            showMessageDialog(this,ex.getMessage());
-//            }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -2385,8 +2352,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             {
             System.out.println("Error insertar");   
             } catch (ClassNotFoundException ex) {
-        Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
-    }
+                Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }
     private void LlenarTablaUsuarios() throws ClassNotFoundException{
          try {
@@ -3074,7 +3041,8 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyTyped
 
     private void btnNuevaMateriaPrima_ComprasjButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaMateriaPrima_ComprasjButton11ActionPerformed
-        // TODO add your handling code here:
+        VentanaMateriaPrima VMP=new VentanaMateriaPrima();
+        VMP.setVisible(true);
     }//GEN-LAST:event_btnNuevaMateriaPrima_ComprasjButton11ActionPerformed
 
     private void jButton20jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20jButton11ActionPerformed
