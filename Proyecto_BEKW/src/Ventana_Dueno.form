@@ -1586,12 +1586,13 @@
                                   <Component id="jLabel86" min="-2" pref="198" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane21" min="-2" pref="378" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
+<<<<<<< HEAD
                                   <EmptySpace min="106" max="32767" attributes="0"/>
                                   <Component id="btnNuevaMateriaPrima_Compras" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -1602,6 +1603,21 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jButton20" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+=======
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jButton20" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="btnNuevaMateriaPrima_Compras1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btnNuevaMateriaPrima_Compras" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1610,21 +1626,30 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                   <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="btnNuevaMateriaPrima_Compras" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Component id="btnNuevaMateriaPrima_Compras1" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnNuevaMateriaPrima_Compras" min="-2" pref="56" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="txtBuscasMateriaPrima_Compras" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                                   <Component id="jScrollPane21" min="-2" pref="300" max="-2" attributes="0"/>
+<<<<<<< HEAD
                                   <EmptySpace pref="15" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jButton20" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
                                       <Component id="spncantidad" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
+=======
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButton20" min="-2" pref="56" max="-2" attributes="0"/>
+                                  <EmptySpace pref="13" max="32767" attributes="0"/>
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1637,7 +1662,11 @@
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
+<<<<<<< HEAD
                             <Component class="javax.swing.JTable" name="tblCompraslMateriasPrimas">
+=======
+                            <Component class="javax.swing.JTable" name="tblMP_COMPRAS">
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="5" rowCount="8">
@@ -1713,7 +1742,7 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="14" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Nueva Materia Prima"/>
+                            <Property name="text" type="java.lang.String" value="RFSH"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNuevaMateriaPrima_ComprasjButton11ActionPerformed"/>
@@ -1744,12 +1773,28 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton20jButton11ActionPerformed"/>
                           </Events>
                         </Component>
+<<<<<<< HEAD
                         <Component class="javax.swing.JSpinner" name="spncantidad">
                           <Properties>
                             <Property name="value" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                               <Connection code="1" type="code"/>
                             </Property>
                           </Properties>
+=======
+                        <Component class="javax.swing.JButton" name="btnNuevaMateriaPrima_Compras1">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Arial" size="14" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Nueva Materia Prima"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNuevaMateriaPrima_Compras1jButton11ActionPerformed"/>
+                          </Events>
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
                         </Component>
                       </SubComponents>
                     </Container>

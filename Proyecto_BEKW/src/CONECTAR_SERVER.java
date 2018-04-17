@@ -16,10 +16,15 @@ import java.sql.SQLException;
 public class CONECTAR_SERVER {
     Connection conect = null;
     /******************************CONECTAR BD*********************************/
+<<<<<<< HEAD
     //LAPTOP WILLY
         String rutaBD="jdbc:sqlserver://localhost;databaseName=BEKW";
+=======
+//    //LAPTOP WILLY
+//        String rutaBD="jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW";
+>>>>>>> 8edc07dcef44d492524ecba1ac6739757e222acc
     //ESCRITORIO WILLY
-          //String rutaBD="jdbc:sqlserver://DESKTOP-E9BN4AL;databaseName=BEKW";
+          String rutaBD="jdbc:sqlserver://localhost;databaseName=BEKW";
 
     public CONECTAR_SERVER() {
     }
