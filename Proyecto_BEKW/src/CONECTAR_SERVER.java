@@ -19,7 +19,7 @@ public class CONECTAR_SERVER {
 //    //LAPTOP WILLY
 //        String rutaBD="jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW";
     //ESCRITORIO WILLY
-          String rutaBD="jdbc:sqlserver://localhost;databaseName=BEKW";
+          public String rutaBD="jdbc:sqlserver://localhost;databaseName=BEKW";
 
     public CONECTAR_SERVER() {
     }

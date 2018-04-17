@@ -374,13 +374,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         btnCliente.setBackground(new java.awt.Color(255, 255, 255));
         btnCliente.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnCliente.setText("Agregar Cliente");
+        btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8_Add_User_Male_48px_2.png"))); // NOI18N
+        btnCliente.setText("<html>Agregar<br />Cliente</html>");
         btnCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteActionPerformed(evt);
             }
         });
-        jPanel21.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, 150, 60));
+        jPanel21.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, 170, 60));
         jPanel21.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 0, 205, -1));
 
         jTable12.setModel(new javax.swing.table.DefaultTableModel(
@@ -398,7 +399,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel21.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 540, 65));
 
         jLabel74.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel74.setText("Ventas");
+        jLabel74.setText("Nueva Venta");
         jPanel21.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, -1));
 
         jLabel76.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -576,22 +577,23 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel21.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(767, 10, 400, 570));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel21.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 20, 560));
+        jPanel21.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 10, 10, 560));
 
-        tb_Ventas_Pedidos.addTab("Ventas", jPanel21);
+        tb_Ventas_Pedidos.addTab("Venta", jPanel21);
 
         jPanel22.setBackground(new java.awt.Color(255, 255, 255));
         jPanel22.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton14.setBackground(new java.awt.Color(255, 255, 255));
         jButton14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton14.setText("Agregar Proveedor");
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8_Add_User_Male_48px_2.png"))); // NOI18N
+        jButton14.setText("<html>Agregar<br />Proveedor</html>");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
             }
         });
-        jPanel22.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, 150, 60));
+        jPanel22.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 80, 140, 60));
         jPanel22.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 0, 205, -1));
 
         jTable13.setModel(new javax.swing.table.DefaultTableModel(
@@ -609,8 +611,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel22.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 540, 65));
 
         jLabel78.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel78.setText("Pedidos");
-        jPanel22.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, -1));
+        jLabel78.setText("Nuevo Pedido");
+        jPanel22.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, -1));
 
         jLabel79.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel79.setText("Provedor");
@@ -786,7 +788,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jPanel22.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 400, 570));
 
-        tb_Ventas_Pedidos.addTab("Pedidos", jPanel22);
+        tb_Ventas_Pedidos.addTab("Pedido", jPanel22);
 
         jPanel23.setBackground(new java.awt.Color(255, 255, 255));
         jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -816,8 +818,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel23.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 540, 65));
 
         jLabel82.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel82.setText("Compras");
-        jPanel23.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, -1));
+        jLabel82.setText("Nueva Compra");
+        jPanel23.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, -1, -1));
 
         jLabel83.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel83.setText("Provedor");
@@ -1022,11 +1024,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jPanel23.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 400, 570));
 
-        tb_Ventas_Pedidos.addTab("Compras", jPanel23);
+        tb_Ventas_Pedidos.addTab("Compra", jPanel23);
 
         jPanel6.add(tb_Ventas_Pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1180, 615));
 
-        tb_principal.addTab("Ventas / Pedidos", jPanel6);
+        tb_principal.addTab("Punto de Venta", jPanel6);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1348,7 +1350,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(tb_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 1146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1916,7 +1918,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(436, 436, 436)
                         .addComponent(lblUsuarioTitulo)))
-                .addContainerGap(274, Short.MAX_VALUE))
+                .addContainerGap(275, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2051,47 +2053,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_jButton25ActionPerformed
-
-    private void txtBuscar3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar3KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar3KeyTyped
-
-    private void txtBuscar3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar3KeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar3KeyReleased
-
-    private void txtBuscar3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar3KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar3KeyPressed
-
-    private void txtBuscar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar3ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void txtBuscar2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar2KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar2KeyTyped
-
-    private void txtBuscar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar2KeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar2KeyReleased
-
-    private void txtBuscar2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar2KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar2KeyPressed
-
-    private void txtBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar2ActionPerformed
-
-    private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
-        VentanaCliente mdC=new VentanaCliente();
-        mdC.setVisible(true);
-    }//GEN-LAST:event_btnClienteActionPerformed
 
     private void txtBuscarProveedorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyPressed
 
@@ -2572,7 +2533,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     void tablaClienteM(){
          try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            Connection con = DriverManager.getConnection("jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW","sa","123");
+            Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
             Statement stmt=con.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tablaCM.getModel();
             tbm.setRowCount(0);
@@ -2967,19 +2928,103 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbUsuariosTipoActionPerformed
 
-    private void txtBuscar4txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarActionPerformed
+    private void btnNuevaMateriaPrima_Compras1jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaMateriaPrima_Compras1jButton11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar4txtBuscarActionPerformed
+    }//GEN-LAST:event_btnNuevaMateriaPrima_Compras1jButton11ActionPerformed
 
-    private void txtBuscar4txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarKeyPressed
-        //       try {
-            //            LlenarTablaBus();
-            //            // TODO add your handling code here:
-            //        } catch (ClassNotFoundException ex) {
-            //            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
-            //        }
-        //        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar4txtBuscarKeyPressed
+    private void jButton20jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton20jButton11ActionPerformed
+
+    private void btnNuevaMateriaPrima_ComprasjButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaMateriaPrima_ComprasjButton11ActionPerformed
+        VentanaMateriaPrima VMP=new VentanaMateriaPrima();
+        VMP.setVisible(true);
+    }//GEN-LAST:event_btnNuevaMateriaPrima_ComprasjButton11ActionPerformed
+
+    private void txtBuscasMateriaPrima_ComprastxtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyTyped
+
+    private void txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased
+
+    private void txtBuscasMateriaPrima_ComprastxtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyPressed
+
+    private void txtBuscasMateriaPrima_ComprastxtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarActionPerformed
+
+    private void txtBuscarComprasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarComprasKeyTyped
+
+    private void txtBuscarComprasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarComprasKeyReleased
+
+    private void txtBuscarComprasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarComprasKeyPressed
+
+    private void txtBuscarComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarComprasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarComprasActionPerformed
+
+    private void btnAgregarProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProvedorActionPerformed
+        ventanaProveedor vp=new ventanaProveedor();
+        vp.setVisible(true);
+    }//GEN-LAST:event_btnAgregarProvedorActionPerformed
+
+    private void jButton18jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton18jButton11ActionPerformed
+
+    private void txtBuscar6txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar6txtBuscarKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscar6txtBuscarKeyTyped
+
+    private void txtBuscar6txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar6txtBuscarKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscar6txtBuscarKeyReleased
+
+    private void txtBuscar6txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar6txtBuscarKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscar6txtBuscarKeyPressed
+
+    private void txtBuscar6txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar6txtBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscar6txtBuscarActionPerformed
+
+    private void txtBuscar3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar3KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscar3KeyTyped
+
+    private void txtBuscar3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar3KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscar3KeyReleased
+
+    private void txtBuscar3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar3KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscar3KeyPressed
+
+    private void txtBuscar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscar3ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton16jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16jButton11ActionPerformed
+
+    private void txtBuscar4txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarKeyTyped
+
+    }//GEN-LAST:event_txtBuscar4txtBuscarKeyTyped
 
     private void txtBuscar4txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarKeyReleased
         //           try {
@@ -2991,83 +3036,40 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscar4txtBuscarKeyReleased
 
-    private void txtBuscar4txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarKeyTyped
+    private void txtBuscar4txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarKeyPressed
+        //       try {
+            //            LlenarTablaBus();
+            //            // TODO add your handling code here:
+            //        } catch (ClassNotFoundException ex) {
+            //            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
+            //        }
+        //        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscar4txtBuscarKeyPressed
 
-    }//GEN-LAST:event_txtBuscar4txtBuscarKeyTyped
-
-    private void jButton16jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16jButton11ActionPerformed
+    private void txtBuscar4txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16jButton11ActionPerformed
+    }//GEN-LAST:event_txtBuscar4txtBuscarActionPerformed
 
-    private void btnAgregarProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProvedorActionPerformed
-        ventanaProveedor vp=new ventanaProveedor();
-        vp.setVisible(true);
-    }//GEN-LAST:event_btnAgregarProvedorActionPerformed
-
-    private void txtBuscarComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarComprasActionPerformed
+    private void txtBuscar2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar2KeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarComprasActionPerformed
+    }//GEN-LAST:event_txtBuscar2KeyTyped
 
-    private void txtBuscarComprasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyPressed
+    private void txtBuscar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar2KeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarComprasKeyPressed
+    }//GEN-LAST:event_txtBuscar2KeyReleased
 
-    private void txtBuscarComprasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyReleased
+    private void txtBuscar2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar2KeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarComprasKeyReleased
+    }//GEN-LAST:event_txtBuscar2KeyPressed
 
-    private void txtBuscarComprasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyTyped
+    private void txtBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarComprasKeyTyped
+    }//GEN-LAST:event_txtBuscar2ActionPerformed
 
-    private void txtBuscar6txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar6txtBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar6txtBuscarActionPerformed
-
-    private void txtBuscar6txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar6txtBuscarKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar6txtBuscarKeyPressed
-
-    private void txtBuscar6txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar6txtBuscarKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar6txtBuscarKeyReleased
-
-    private void txtBuscar6txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar6txtBuscarKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar6txtBuscarKeyTyped
-
-    private void jButton18jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18jButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18jButton11ActionPerformed
-
-    private void txtBuscasMateriaPrima_ComprastxtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarActionPerformed
-
-    private void txtBuscasMateriaPrima_ComprastxtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyPressed
-
-    private void txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased
-
-    private void txtBuscasMateriaPrima_ComprastxtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyTyped
-
-    private void btnNuevaMateriaPrima_ComprasjButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaMateriaPrima_ComprasjButton11ActionPerformed
-        VentanaMateriaPrima VMP=new VentanaMateriaPrima();
-        VMP.setVisible(true);
-    }//GEN-LAST:event_btnNuevaMateriaPrima_ComprasjButton11ActionPerformed
-
-    private void jButton20jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20jButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20jButton11ActionPerformed
-
-    private void btnNuevaMateriaPrima_Compras1jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaMateriaPrima_Compras1jButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNuevaMateriaPrima_Compras1jButton11ActionPerformed
+    private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
+        VentanaCliente mdC=new VentanaCliente();
+        mdC.setVisible(true);
+    }//GEN-LAST:event_btnClienteActionPerformed
     
     private void ValidarEspacios(KeyEvent evt) {
        char l=evt.getKeyChar();
@@ -3245,8 +3247,6 @@ private boolean validarVacioP(){
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cmbUnidadMedidaMP;
     private javax.swing.JComboBox<String> cmbUsuariosTipo;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
@@ -3266,10 +3266,8 @@ private boolean validarVacioP(){
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -3287,8 +3285,6 @@ private boolean validarVacioP(){
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
@@ -3306,11 +3302,9 @@ private boolean validarVacioP(){
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     public static javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
@@ -3329,8 +3323,6 @@ private boolean validarVacioP(){
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
-    private javax.swing.JScrollPane jScrollPane14;
-    private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane18;
@@ -3350,8 +3342,6 @@ private boolean validarVacioP(){
     private javax.swing.JTable jTable13;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable6;
-    private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
     private javax.swing.JTable jTable9;
     private javax.swing.JTextArea jTextArea1;
@@ -3376,7 +3366,7 @@ private boolean validarVacioP(){
     private javax.swing.JTable tablaMateriaPrima;
     private javax.swing.JTabbedPane tb_Inventario;
     private javax.swing.JTabbedPane tb_Personas;
-    public static javax.swing.JTabbedPane tb_Ventas_Pedidos;
+    private javax.swing.JTabbedPane tb_Ventas_Pedidos;
     public static javax.swing.JTabbedPane tb_principal;
     private javax.swing.JTable tblCompra;
     private javax.swing.JTable tblMP_COMPRAS;
@@ -3387,8 +3377,6 @@ private boolean validarVacioP(){
     private javax.swing.JTextField txtAPMC;
     private javax.swing.JTextField txtAPPC;
     private javax.swing.JTextField txtBuscadorC;
-    private javax.swing.JTextField txtBuscar;
-    private javax.swing.JTextField txtBuscar1;
     private javax.swing.JTextField txtBuscar2;
     private javax.swing.JTextField txtBuscar3;
     private javax.swing.JTextField txtBuscar4;

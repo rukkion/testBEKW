@@ -195,8 +195,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Ventas / Pedidos">
-                <Property name="tabTitle" type="java.lang.String" value="Ventas / Pedidos"/>
+              <JTabbedPaneConstraints tabName="Punto de Venta">
+                <Property name="tabTitle" type="java.lang.String" value="Punto de Venta"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -230,8 +230,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Ventas">
-                        <Property name="tabTitle" type="java.lang.String" value="Ventas"/>
+                      <JTabbedPaneConstraints tabName="Venta">
+                        <Property name="tabTitle" type="java.lang.String" value="Venta"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -248,14 +248,17 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Agregar Cliente"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Icons/icons8_Add_User_Male_48px_2.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="&lt;html&gt;Agregar&lt;br /&gt;Cliente&lt;/html&gt;"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClienteActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="580" y="80" width="150" height="60"/>
+                          <AbsoluteConstraints x="570" y="80" width="170" height="60"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -330,7 +333,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="24" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Ventas"/>
+                        <Property name="text" type="java.lang.String" value="Nueva Venta"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -738,7 +741,7 @@
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="740" y="10" width="20" height="560"/>
+                          <AbsoluteConstraints x="750" y="10" width="10" height="560"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -752,8 +755,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Pedidos">
-                        <Property name="tabTitle" type="java.lang.String" value="Pedidos"/>
+                      <JTabbedPaneConstraints tabName="Pedido">
+                        <Property name="tabTitle" type="java.lang.String" value="Pedido"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -770,14 +773,17 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Agregar Proveedor"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Icons/icons8_Add_User_Male_48px_2.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="&lt;html&gt;Agregar&lt;br /&gt;Proveedor&lt;/html&gt;"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton14ActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="580" y="80" width="150" height="60"/>
+                          <AbsoluteConstraints x="590" y="80" width="140" height="60"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -852,11 +858,11 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="24" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Pedidos"/>
+                        <Property name="text" type="java.lang.String" value="Nuevo Pedido"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="380" y="0" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="350" y="10" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -1264,8 +1270,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Compras">
-                        <Property name="tabTitle" type="java.lang.String" value="Compras"/>
+                      <JTabbedPaneConstraints tabName="Compra">
+                        <Property name="tabTitle" type="java.lang.String" value="Compra"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1361,11 +1367,11 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="24" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Compras"/>
+                        <Property name="text" type="java.lang.String" value="Nueva Compra"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="380" y="0" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="320" y="0" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -1829,7 +1835,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="tb_Inventario" min="-2" pref="1146" max="-2" attributes="0"/>
-                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                      <EmptySpace pref="22" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -3277,7 +3283,7 @@
                               <Component id="lblUsuarioTitulo" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="274" max="32767" attributes="0"/>
+                      <EmptySpace pref="275" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
