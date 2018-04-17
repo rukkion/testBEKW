@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Vector;
 import java.util.logging.Level;
@@ -855,6 +856,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         btnGenerarCompra.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnGenerarCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/success30x30.png"))); // NOI18N
         btnGenerarCompra.setText("Generar Compra");
+        btnGenerarCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarCompraActionPerformed(evt);
+            }
+        });
         jPanel23.add(btnGenerarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 540, 190, 40));
 
         jLabel16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -3165,7 +3171,42 @@ private boolean validarVacioP(){
     private void btnEliminarMateriaPrima_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMateriaPrima_CompraActionPerformed
        restartotalyeliminarrow();
     }//GEN-LAST:event_btnEliminarMateriaPrima_CompraActionPerformed
+
+    private void btnGenerarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarCompraActionPerformed
+
+        try {
+            insertarCompra();
+            // TODO add your handling code here:
+        } catch (SQLException ex) {
+            Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnGenerarCompraActionPerformed
     
+    private void insertarCompra () throws SQLException {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd ");
+    Date date = new Date();
+        String cad = "INSERT INTO COMPRAS "
+                    + "VALUES('"+ date +"',"
+                    + "'"+tblCompra.getValueAt(tblCompra.getSelectedRow(),0)+"',"+ txtTotalCompra.getText()+")";
+            Statement stmt = conect.createStatement();
+            stmt.executeUpdate(cad);
+            //showMessageDialog(null,"Proveedor Registrado");
+            stmt.close();
+
+    }
+        private void insertarDetaleCompra () throws SQLException {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd ");
+    Date date = new Date();
+        String cad = "INSERT INTO COMPRAS "
+                    + "VALUES('"+ date +"',"
+                    + "'"+jTable13.getValueAt(jTable13.getSelectedRow(),0)+"',"+ txtTotalCompra.getText()+")";
+            Statement stmt = conect.createStatement();
+            stmt.executeUpdate(cad);
+            //showMessageDialog(null,"Proveedor Registrado");
+            stmt.close();
+
+    }
+        
     private void ValidarEspacios(KeyEvent evt) {
        char l=evt.getKeyChar();
         if( l == KeyEvent.VK_SPACE )
