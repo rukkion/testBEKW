@@ -2968,6 +2968,9 @@ private boolean validarVacioP(){
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
         } 
     }
+    
+    
+    
     private void txtBuscarPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPKeyTyped
         try {
             LlenarTablaBus();
@@ -3045,7 +3048,12 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_txtBuscarComprasKeyTyped
 
     private void txtBuscarComprasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyReleased
-        // TODO add your handling code here:
+        try {
+            BuscarProveedores();
+            // TODO add your handling code here:
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_txtBuscarComprasKeyReleased
 
     private void txtBuscarComprasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyPressed
@@ -3168,14 +3176,20 @@ private boolean validarVacioP(){
          try {
              conectarBD();
              Statement stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblProveedores.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from PERSONAS "
+            DefaultTableModel tbm=(DefaultTableModel)tblProveedor_Compra.getModel();
+           tbm.setRowCount(0);
+           stmt.execute("select * from PERSONAS "
                                             + "where TIPO = 'P' "
-                                            + "AND NOMBRE LIKE '%" + txtBuscarProveedor.getText() + "%'");
+                                            + "AND NOMBRE LIKE '%" + txtBuscarCompras.getText() + "%'");
              ResultSet res = stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(6),res.getString(7)});
+                   Vector rowProductos=new Vector();
+                  rowProductos.add(res.getString("ID_PERSONA"));
+                  rowProductos.add(res.getString("NOMBRE"));
+                  rowProductos.add(res.getString("DOMICILIO"));
+                  rowProductos.add(res.getString("TELEFONO"));
+                  tbm.addRow(rowProductos);   
                 }  
             }
             stmt.close();
@@ -3183,6 +3197,7 @@ private boolean validarVacioP(){
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
         } 
     }
+    
     private void EliminarProveedor() throws ClassNotFoundException{
         try{
             conectarBD();
