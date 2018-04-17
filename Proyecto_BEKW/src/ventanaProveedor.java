@@ -27,11 +27,7 @@ public class ventanaProveedor extends javax.swing.JFrame {
     public ventanaProveedor() {
         initComponents();
     }
-    public ventanaProveedor(CONECTAR_SERVER CS) {
-        initComponents();
-        this.CS=CS;
-        setLocationRelativeTo(null);
-    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -477,41 +473,9 @@ public class ventanaProveedor extends javax.swing.JFrame {
     
     CONECTAR_SERVER CS;
      private void conectarBD()throws ClassNotFoundException{
+              CS= new CONECTAR_SERVER();
               CS.conectarBD();
               this.conect=CS.getConect();
-//            Connection cn = null;
-//            try{
-//                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//                cn = DriverManager.getConnection("jdbc:sqlserver://192.168.40.53;databaseName=BEKW","sa","123");
-//            System.out.println("Conectado.");
-//            
-//            
-//            DefaultTableModel materiaPrima=(DefaultTableModel) tablaMateriaPrima.getModel();
-//            
-//            String cad = "SELECT NOMBRE, DESCRIPCION, CANT_DISP, UNIDAD_MEDIDA FROM PRODUCTOS";
-//            java.sql.Statement s=cn.createStatement();
-//            s.execute(cad);
-//            ResultSet rs = s.getResultSet();
-//            if (rs != null) {
-//                while(rs.next()){
-//                  Vector rowMateriaPrima=new Vector();
-//                  rowMateriaPrima.add(rs.getString("NOMBRE"));
-//                  rowMateriaPrima.add(rs.getString("DESCRIPCION"));
-//                  rowMateriaPrima.add(rs.getString("CANT_DISP"));
-//                  rowMateriaPrima.add(rs.getString("UNIDAD_MEDIDA"));
-//                  materiaPrima.addRow(rowMateriaPrima);
-//                }
-//                
-//                tablaMateriaPrima.setModel(materiaPrima);
-//           } else {System.out.println("No hay");}
-//            s.close();
-//            
-//
-//            }
-//            catch (SQLException ex) 
-//            {
-//            showMessageDialog(this,ex.getMessage());
-//            }
     }
      
     public int rowProveedor = 0;
