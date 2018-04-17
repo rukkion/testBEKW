@@ -90,6 +90,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 }
     Connection conect = null;
     private void conectarBD()throws ClassNotFoundException{
+              CS= new CONECTAR_SERVER();
               CS.conectarBD();
               this.conect=CS.getConect();
     }
@@ -2999,7 +3000,8 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_jButton16jButton11ActionPerformed
 
     private void btnAgregarProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProvedorActionPerformed
-        // TODO add your handling code here:
+        ventanaProveedor vp=new ventanaProveedor();
+        vp.setVisible(true);
     }//GEN-LAST:event_btnAgregarProvedorActionPerformed
 
     private void txtBuscarComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarComprasActionPerformed

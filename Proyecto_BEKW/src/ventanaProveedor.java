@@ -343,6 +343,7 @@ public class ventanaProveedor extends javax.swing.JFrame {
                 if(ProveedorExistente())
                 insertarProveedor();
                 limpiarProveedor();
+                this.dispose();
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
@@ -350,7 +351,7 @@ public class ventanaProveedor extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarProveedorActionPerformed
 
     private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
-        limpiarProveedor();
+        this.dispose();
     }//GEN-LAST:event_btnCancelar1ActionPerformed
 
     private void txtProveedorCPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorCPKeyTyped
