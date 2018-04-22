@@ -3149,9 +3149,8 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_btnEliminarMateriaPrima_CompraActionPerformed
 
     private boolean existeEnTabla(JTable tbl1, JTable tbl2, JSpinner spin){
-        DefaultTableModel tbmA=(DefaultTableModel)tbl1.getModel();
-        DefaultTableModel tbmB=(DefaultTableModel)tbl2.getModel();
-        
+        DefaultTableModel tbmA=(DefaultTableModel)tbl1.getModel(); 
+       
         for(int i = 0;i<tbl2.getRowCount();i++){
             if (tbmA.getValueAt(tbl1.getSelectedRow(),0)== tbl2.getValueAt(i,0)){
             tbl2.setValueAt((Integer.parseInt(tbl2.getValueAt(i,2)+"")+Integer.parseInt(spin.getValue()+"")),i, 2);
@@ -3160,6 +3159,7 @@ private boolean validarVacioP(){
         }
         return false;
             }
+    
     private void BuscarProveedores() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -3211,14 +3211,14 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_btnGenerarCompraActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        
-            try {
-                LlenarTablaCompras_MateriasPrimas();
-                LlenarTablaComprasProveedores();
-        LlenarTablaComprasMateriasPrimas();
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            }
+//        
+//            try {
+//                LlenarTablaCompras_MateriasPrimas();
+//                LlenarTablaComprasProveedores();
+//        LlenarTablaComprasMateriasPrimas();
+//            } catch (ClassNotFoundException ex) {
+//                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+//            }
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
