@@ -19,6 +19,8 @@ import javafx.scene.paint.Material;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
+import javax.swing.JSpinner;
+import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
@@ -316,7 +318,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -457,6 +459,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jButton13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/success30x30.png"))); // NOI18N
         jButton13.setText("Generar Pedido");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
         jPanel21.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 540, 170, 40));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -883,6 +890,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         txtTotalCompra.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtTotalCompra.setText("0");
+        txtTotalCompra.setEnabled(false);
+        txtTotalCompra.setFocusable(false);
         jPanel23.add(txtTotalCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 490, 120, 30));
 
         jLabel84.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -3055,7 +3064,8 @@ private boolean validarVacioP(){
 
     private void btnAgregarProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProvedorActionPerformed
         ventanaProveedor VP=new ventanaProveedor();
-                VP.setVisible(true);
+        VP.setLocationRelativeTo(null);
+        VP.setVisible(true);
     }//GEN-LAST:event_btnAgregarProvedorActionPerformed
 
     private void txtBuscarComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarComprasActionPerformed
@@ -3120,18 +3130,36 @@ private boolean validarVacioP(){
 
     private void btnNuevaMateriaPrima_ComprasjButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaMateriaPrima_ComprasjButton11ActionPerformed
         VentanaMateriaPrima VMP=new VentanaMateriaPrima();
+        VMP.setLocationRelativeTo(null);
         VMP.setVisible(true);
     }//GEN-LAST:event_btnNuevaMateriaPrima_ComprasjButton11ActionPerformed
 
     private void jButton20jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20jButton11ActionPerformed
-        Agregarcarrito();
+        if(tblCompraslMateriasPrimas.getSelectedRow()>-1){
+        if(!existeEnTabla(tblCompraslMateriasPrimas, tblCompra, spncantidad))    
+            Agregarcarrito();
         sumartotal();
+        }
+        else
+            showMessageDialog(this,"Debe de seleccionar un articulo.");
     }//GEN-LAST:event_jButton20jButton11ActionPerformed
 
     private void btnEliminarMateriaPrima_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMateriaPrima_CompraActionPerformed
         restartotalyeliminarrow();
     }//GEN-LAST:event_btnEliminarMateriaPrima_CompraActionPerformed
 
+    private boolean existeEnTabla(JTable tbl1, JTable tbl2, JSpinner spin){
+        DefaultTableModel tbmA=(DefaultTableModel)tbl1.getModel();
+        DefaultTableModel tbmB=(DefaultTableModel)tbl2.getModel();
+        
+        for(int i = 0;i<tbl2.getRowCount();i++){
+            if (tbmA.getValueAt(tbl1.getSelectedRow(),0)== tbl2.getValueAt(i,0)){
+            tbl2.setValueAt((Integer.parseInt(tbl2.getValueAt(i,2)+"")+Integer.parseInt(spin.getValue()+"")),i, 2);
+                return true;
+            }
+        }
+        return false;
+            }
     private void BuscarProveedores() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -3159,7 +3187,8 @@ private boolean validarVacioP(){
     }
     
     private void btnGenerarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarCompraActionPerformed
-            try {
+    if(tblCompra.getRowCount()!=0 && tblProveedor_Compra.getSelectedRow()>-1){
+        try { System.out.println("insertaddo");
                 insertarCompra();
                 detalle_compra();
                 DefaultTableModel tbm=(DefaultTableModel)tblCompra.getModel();
@@ -3172,6 +3201,13 @@ private boolean validarVacioP(){
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
+    }
+    else if(tblProveedor_Compra.getSelectedRow()>-1){
+            showMessageDialog(this,"Debe de ingresar articulos a la compra.");
+    }
+    else
+        showMessageDialog(this,"Debe de seleccionar un proveedor.");
+        
     }//GEN-LAST:event_btnGenerarCompraActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -3184,6 +3220,10 @@ private boolean validarVacioP(){
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_formWindowActivated
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
     
     void Agregarcarrito(){
         
