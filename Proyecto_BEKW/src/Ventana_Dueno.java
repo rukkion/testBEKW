@@ -2627,7 +2627,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     void tablaClienteM(){
          try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost\\ABD;databaseName=BEKW","sa","123");
+            Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
             Statement stmt=con.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tablaCM.getModel();
             tbm.setRowCount(0);
@@ -3161,6 +3161,7 @@ private boolean validarVacioP(){
     private void btnGenerarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarCompraActionPerformed
             try {
                 insertarCompra();
+                detalle_compra();
                 DefaultTableModel tbm=(DefaultTableModel)tblCompra.getModel();
                 tbm.setRowCount(0);
                 txtTotalCompra.setText("0");
@@ -3202,7 +3203,7 @@ private boolean validarVacioP(){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
         String date = simpleDateFormat.format(new Date());
-    r = tblCompra.getSelectedRow();
+        r = tblProveedor_Compra.getSelectedRow();
     
         String cad = "INSERT INTO COMPRAS "
                     + "VALUES('"+ date +"',"
@@ -3214,6 +3215,34 @@ private boolean validarVacioP(){
             stmt.close();
 
     }
+    
+        private void detalle_compra(){
+            try {
+                cad ="";
+                int idp = tblProveedor_Compra.getSelectedRow();
+                Statement stmt = conect.createStatement();
+                stmt.execute("SELECT MAX (ID_COMPRA)  FROM COMPRAS");
+                ResultSet re = stmt.getResultSet();
+                int id = 0;
+                while (re.next()){
+                    id = re.getInt(1);
+                }
+                for (int i = 0;i< tblCompra.getRowCount();i++){
+                    cad = "INSERT INTO DETALLE_COMPRA" +
+                            " VALUES( " + id +
+                            "," + tblCompra.getValueAt(i,0).toString() +
+                            "," + tblCompra.getValueAt(i,4).toString() +
+                            "," + tblProveedor_Compra.getValueAt(idp,0) +
+                            ")";
+                            stmt.executeUpdate(cad);
+                            }
+               stmt.close(); 
+            } catch (SQLException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+               
+    }
+
 
     private void actCant() throws SQLException{
       for(int i  = 0; i < tblCompra.getRowCount();i++){

@@ -17,7 +17,7 @@ public class CONECTAR_SERVER {
     Connection conect = null;
     /******************************CONECTAR BD*********************************/
     //LAPTOP WILLY
-        String rutaBD="jdbc:sqlserver://localhost\\ABD;databaseName=BEKW";
+        String rutaBD="jdbc:sqlserver://localhost;databaseName=BEKW";
     //ESCRITORIO WILLY
           //String rutaBD="jdbc:sqlserver://DESKTOP-E9BN4AL;databaseName=BEKW";
 

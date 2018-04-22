@@ -50,7 +50,7 @@ public class BaseDatosCliente {
     if(verificar()){
     try{
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        con = DriverManager.getConnection("jdbc:sqlserver://localhost\\ABD;databaseName=BEKW","sa","123");
+        con = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
         String cad = "INSERT INTO PERSONAS "+"VALUES('"+this.nom+"','"+this.app+"','"+this.apm+"','"+this.dom+"','"+this.codp+"','"+this.tel+"','C')";
         dec = con.createStatement();
         dec.executeUpdate(cad);
@@ -67,7 +67,7 @@ public class BaseDatosCliente {
     this.id = id;
     try{
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        con = DriverManager.getConnection("jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW","sa","123");
+        con = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
         String cad = "DELETE FROM PERSONAS WHERE ID_PERSONA='"+this.id+"'";
         dec = con.createStatement();
         dec.executeUpdate(cad);
@@ -85,7 +85,7 @@ public class BaseDatosCliente {
     if(verificar()){
     try{
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        con = DriverManager.getConnection("jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW","sa","123");
+        con = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
         String cad = "UPDATE PERSONAS SET NOMBRE = '"+this.nom+"',APE_PAT='"+this.app+"',APE_MAT='"+this.apm+"',DOMICILIO='"+this.dom+"',COD_POSTAL='"+this.codp+"',TELEFONO='"+this.tel+"'  WHERE ID_PERSONA ="+this.id;
         dec = con.createStatement();
         dec.executeUpdate(cad);
@@ -102,7 +102,7 @@ public class BaseDatosCliente {
         con = null;
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            con = DriverManager.getConnection("jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW","sa","123");
+            con = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
         }catch (SQLException ex) {
             System.out.println("Error Conexion.");
         }
