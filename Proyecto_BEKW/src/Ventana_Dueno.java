@@ -407,7 +407,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel21.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 540, 65));
 
         jLabel74.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel74.setText("Ventas");
+        jLabel74.setText("Venta");
         jPanel21.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, -1));
 
         jLabel76.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -592,7 +592,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel21.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 20, 560));
 
-        tb_Ventas_Pedidos.addTab("Ventas", jPanel21);
+        tb_Ventas_Pedidos.addTab("Venta", jPanel21);
 
         jPanel22.setBackground(new java.awt.Color(255, 255, 255));
         jPanel22.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -623,7 +623,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel22.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 540, 65));
 
         jLabel78.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel78.setText("Pedidos");
+        jLabel78.setText("Pedido");
         jPanel22.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, -1));
 
         jLabel79.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -800,7 +800,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jPanel22.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 400, 570));
 
-        tb_Ventas_Pedidos.addTab("Pedidos", jPanel22);
+        tb_Ventas_Pedidos.addTab("Pedido", jPanel22);
 
         jPanel23.setBackground(new java.awt.Color(255, 255, 255));
         jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -837,7 +837,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel23.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 540, 80));
 
         jLabel82.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel82.setText("Compras");
+        jLabel82.setText("Compra");
         jPanel23.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, -1));
 
         jLabel83.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -1029,11 +1029,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jPanel23.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 400, 570));
 
-        tb_Ventas_Pedidos.addTab("Compras", jPanel23);
+        tb_Ventas_Pedidos.addTab("Compra", jPanel23);
 
         jPanel6.add(tb_Ventas_Pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1180, 615));
 
-        tb_principal.addTab("Ventas / Pedidos", jPanel6);
+        tb_principal.addTab("Punto de venta", jPanel6);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1355,7 +1355,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(tb_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 1146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1923,7 +1923,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(436, 436, 436)
                         .addComponent(lblUsuarioTitulo)))
-                .addContainerGap(274, Short.MAX_VALUE))
+                .addContainerGap(271, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1955,7 +1955,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel1.setText("PRONTO");
         jPanel11.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 790, 200));
 
-        tb_principal.addTab("Balance General", jPanel11);
+        tb_principal.addTab("Estado financiero", jPanel11);
 
         getContentPane().add(tb_principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 95, 1330, -1));
 

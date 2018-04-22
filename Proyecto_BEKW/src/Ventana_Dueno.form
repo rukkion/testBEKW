@@ -195,8 +195,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Ventas / Pedidos">
-                <Property name="tabTitle" type="java.lang.String" value="Ventas / Pedidos"/>
+              <JTabbedPaneConstraints tabName="Punto de venta">
+                <Property name="tabTitle" type="java.lang.String" value="Punto de venta"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -230,8 +230,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Ventas">
-                        <Property name="tabTitle" type="java.lang.String" value="Ventas"/>
+                      <JTabbedPaneConstraints tabName="Venta">
+                        <Property name="tabTitle" type="java.lang.String" value="Venta"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -330,7 +330,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="24" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Ventas"/>
+                        <Property name="text" type="java.lang.String" value="Venta"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -755,8 +755,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Pedidos">
-                        <Property name="tabTitle" type="java.lang.String" value="Pedidos"/>
+                      <JTabbedPaneConstraints tabName="Pedido">
+                        <Property name="tabTitle" type="java.lang.String" value="Pedido"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -855,7 +855,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="24" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Pedidos"/>
+                        <Property name="text" type="java.lang.String" value="Pedido"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1267,8 +1267,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Compras">
-                        <Property name="tabTitle" type="java.lang.String" value="Compras"/>
+                      <JTabbedPaneConstraints tabName="Compra">
+                        <Property name="tabTitle" type="java.lang.String" value="Compra"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1367,7 +1367,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="24" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Compras"/>
+                        <Property name="text" type="java.lang.String" value="Compra"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1780,7 +1780,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="tb_Inventario" min="-2" pref="1146" max="-2" attributes="0"/>
-                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -3228,7 +3228,7 @@
                               <Component id="lblUsuarioTitulo" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="274" max="32767" attributes="0"/>
+                      <EmptySpace pref="271" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -3509,8 +3509,8 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Balance General">
-                <Property name="tabTitle" type="java.lang.String" value="Balance General"/>
+              <JTabbedPaneConstraints tabName="Estado financiero">
+                <Property name="tabTitle" type="java.lang.String" value="Estado financiero"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
