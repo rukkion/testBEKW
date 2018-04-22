@@ -442,6 +442,8 @@ Connection conect = null;
             }
     }
     
+    
+    
     private boolean VerificarvaciosProveedor(){
         
         if(txtProveedorNombre.getText().equals("")){
