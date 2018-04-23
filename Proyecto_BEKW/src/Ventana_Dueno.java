@@ -199,6 +199,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel86 = new javax.swing.JLabel();
         jButton20 = new javax.swing.JButton();
         spncantidad = new javax.swing.JSpinner();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tblHistorialCompras = new javax.swing.JTable();
+        btnDetalleCompra_Compras = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         tb_Inventario = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
@@ -544,7 +550,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jButton16.setBackground(new java.awt.Color(255, 255, 255));
         jButton16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-16x30.png"))); // NOI18N
-        jButton16.setText("Añadir Carrito");
+        jButton16.setText("Añadir a Carrito");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16jButton11ActionPerformed(evt);
@@ -552,7 +558,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
 
         jLabel72.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel72.setText("Productos");
+        jLabel72.setText("Pedidos");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -598,14 +604,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel21.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 20, 560));
 
-        tb_Ventas_Pedidos.addTab("Ventas", jPanel21);
+        tb_Ventas_Pedidos.addTab("Nueva Venta", jPanel21);
 
         jPanel22.setBackground(new java.awt.Color(255, 255, 255));
         jPanel22.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton14.setBackground(new java.awt.Color(255, 255, 255));
         jButton14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton14.setText("Agregar Proveedor");
+        jButton14.setText("Agregar cliente");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
@@ -629,11 +635,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel22.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 540, 65));
 
         jLabel78.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel78.setText("Pedidos");
+        jLabel78.setText("Pedido");
         jPanel22.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, -1));
 
         jLabel79.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel79.setText("Provedor");
+        jLabel79.setText("Cliente");
         jPanel22.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
@@ -755,7 +761,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jButton18.setBackground(new java.awt.Color(255, 255, 255));
         jButton18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-16x30.png"))); // NOI18N
-        jButton18.setText("Añadir Carrito");
+        jButton18.setText("Añadir a Carrito");
         jButton18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton18jButton11ActionPerformed(evt);
@@ -806,7 +812,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jPanel22.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 400, 570));
 
-        tb_Ventas_Pedidos.addTab("Pedidos", jPanel22);
+        tb_Ventas_Pedidos.addTab("Nuevo Pedido", jPanel22);
 
         jPanel23.setBackground(new java.awt.Color(255, 255, 255));
         jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -843,8 +849,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel23.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 540, 80));
 
         jLabel82.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel82.setText("Compras");
-        jPanel23.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, -1));
+        jLabel82.setText("Compra");
+        jPanel23.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, -1));
 
         jLabel83.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel83.setText("Provedor");
@@ -977,7 +983,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jButton20.setBackground(new java.awt.Color(255, 255, 255));
         jButton20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-16x30.png"))); // NOI18N
-        jButton20.setText("Añadir Carrito");
+        jButton20.setText("Añadir a Carrito");
         jButton20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton20jButton11ActionPerformed(evt);
@@ -1037,11 +1043,75 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jPanel23.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 400, 570));
 
-        tb_Ventas_Pedidos.addTab("Compras", jPanel23);
+        tb_Ventas_Pedidos.addTab("Nueva Compra", jPanel23);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1175, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 587, Short.MAX_VALUE)
+        );
+
+        tb_Ventas_Pedidos.addTab("Ventas", jPanel1);
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1175, Short.MAX_VALUE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 587, Short.MAX_VALUE)
+        );
+
+        tb_Ventas_Pedidos.addTab("Pedidos", jPanel13);
+
+        tblHistorialCompras.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Código", "Cliente", "Empleado", "Fecha", "Total"
+            }
+        ));
+        jScrollPane7.setViewportView(tblHistorialCompras);
+
+        btnDetalleCompra_Compras.setText("Ver detalle compra");
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(235, 235, 235)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(btnDetalleCompra_Compras, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(176, Short.MAX_VALUE))
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                .addContainerGap(103, Short.MAX_VALUE)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnDetalleCompra_Compras, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65))
+        );
+
+        tb_Ventas_Pedidos.addTab("Compras", jPanel18);
 
         jPanel6.add(tb_Ventas_Pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1180, 615));
 
-        tb_principal.addTab("Ventas / Pedidos", jPanel6);
+        tb_principal.addTab("Punto de venta", jPanel6);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1363,7 +1433,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(tb_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 1146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1931,7 +2001,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(436, 436, 436)
                         .addComponent(lblUsuarioTitulo)))
-                .addContainerGap(274, Short.MAX_VALUE))
+                .addContainerGap(275, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3507,6 +3577,7 @@ private boolean validarVacioP(){
     private javax.swing.JButton btnCancelarMP;
     private javax.swing.JButton btnCancelarP;
     private javax.swing.JButton btnCliente;
+    private javax.swing.JButton btnDetalleCompra_Compras;
     private javax.swing.JButton btnEliminarC;
     private javax.swing.JButton btnEliminarMateriaPrima_Compra;
     private javax.swing.JButton btnEliminarP;
@@ -3580,13 +3651,16 @@ private boolean validarVacioP(){
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     public static javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
@@ -3612,6 +3686,7 @@ private boolean validarVacioP(){
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPaneProveedores;
     private javax.swing.JScrollPane jScrollPaneUsuarios;
@@ -3649,6 +3724,7 @@ private boolean validarVacioP(){
     public static javax.swing.JTabbedPane tb_principal;
     private javax.swing.JTable tblCompra;
     private javax.swing.JTable tblCompraslMateriasPrimas;
+    private javax.swing.JTable tblHistorialCompras;
     private javax.swing.JTable tblProducto;
     private javax.swing.JTable tblProveedor_Compra;
     private javax.swing.JTable tblProveedores;
