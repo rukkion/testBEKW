@@ -46,6 +46,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      Login log = new Login();
      int r=0,c=0;
      float s = 0;
+     DefaultTableModel tbmCompra;
+     DefaultTableModel tbmMateriaPrima_Compra;
     /**
      * Creates new form Ventana_Empleado
      */
@@ -3259,11 +3261,11 @@ private boolean validarVacioP(){
         restartotalyeliminarrow();
     }//GEN-LAST:event_btnEliminarMateriaPrima_CompraActionPerformed
 
-    private boolean existeEnTabla(JTable tbl1, JTable tCompra, JSpinner spin){
-        DefaultTableModel tbmA=(DefaultTableModel)tbl1.getModel(); 
+    private boolean existeEnTabla(JTable tMateriasPrimas, JTable tCompra, JSpinner spin){
+       
        
         for(int i = 0;i<tCompra.getRowCount();i++){
-            if (tbmA.getValueAt(tbl1.getSelectedRow(),0)== tCompra.getValueAt(i,0)){
+            if (tbmMateriaPrima_Compra.getValueAt(tMateriasPrimas.getSelectedRow(),0)== tCompra.getValueAt(i,0)){
                 tCompra.setValueAt((Integer.parseInt(tCompra.getValueAt(i,2)+"")+Integer.parseInt(spin.getValue()+"")),i, 2);
                 return true;
             }
@@ -3402,7 +3404,7 @@ private boolean validarVacioP(){
     private void btnCancelar_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar_CompraActionPerformed
         cancelarCompra();
     }//GEN-LAST:event_btnCancelar_CompraActionPerformed
-    DefaultTableModel tbmCompra;
+    
     
     void Agregarcarrito(){
         
@@ -3506,7 +3508,7 @@ private boolean validarVacioP(){
         }
         
     }
-    DefaultTableModel tbmMateriaPrima_Compra;
+    
     
     private void LlenarTablaComprasMateriasPrimas() throws ClassNotFoundException{
          try {
