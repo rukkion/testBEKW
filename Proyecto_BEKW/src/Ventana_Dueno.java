@@ -2134,6 +2134,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA Materia Prima");
         } 
     }
+    private void llenarTablaCompra(){
+        tbmCompra=(DefaultTableModel)tblCompra.getModel();
+    }
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
             conectarBD();
@@ -2143,6 +2146,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             tablaClienteM();
             LlenarTablaCompras_MateriasPrimas();
             LlenarTablaComprasProveedores();
+            llenarTablaCompra();
             
         } catch (Exception ex) {
             Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
@@ -2959,11 +2963,9 @@ private void clearP(){
 
 private void LlenarTablaCompras_MateriasPrimas() throws ClassNotFoundException{
          try {
-             
-             
              Statement stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblCompraslMateriasPrimas.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS");
+            tbmMateriaPrima_Compra=(DefaultTableModel)tblCompraslMateriasPrimas.getModel();
+           tbmMateriaPrima_Compra.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS");
              ResultSet res = stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
@@ -2972,7 +2974,7 @@ private void LlenarTablaCompras_MateriasPrimas() throws ClassNotFoundException{
                   rowProductos.add(res.getString("NOMBRE"));
                   rowProductos.add(res.getString("CANT_DISP"));
                   rowProductos.add(res.getString("PRECIO"));
-                  tbm.addRow(rowProductos);
+                  tbmMateriaPrima_Compra.addRow(rowProductos);
                 }
             }
             
@@ -3260,17 +3262,18 @@ private boolean validarVacioP(){
         restartotalyeliminarrow();
     }//GEN-LAST:event_btnEliminarMateriaPrima_CompraActionPerformed
 
-    private boolean existeEnTabla(JTable tbl1, JTable tbl2, JSpinner spin){
+    private boolean existeEnTabla(JTable tbl1, JTable tCompra, JSpinner spin){
         DefaultTableModel tbmA=(DefaultTableModel)tbl1.getModel(); 
        
-        for(int i = 0;i<tbl2.getRowCount();i++){
-            if (tbmA.getValueAt(tbl1.getSelectedRow(),0)== tbl2.getValueAt(i,0)){
-            tbl2.setValueAt((Integer.parseInt(tbl2.getValueAt(i,2)+"")+Integer.parseInt(spin.getValue()+"")),i, 2);
+        for(int i = 0;i<tCompra.getRowCount();i++){
+            if (tbmA.getValueAt(tbl1.getSelectedRow(),0)== tCompra.getValueAt(i,0)){
+                tCompra.setValueAt((Integer.parseInt(tCompra.getValueAt(i,2)+"")+Integer.parseInt(spin.getValue()+"")),i, 2);
                 return true;
             }
         }
+        
         return false;
-            }
+    }
     
     private void BuscarProveedores() throws ClassNotFoundException{
          try {
@@ -3308,6 +3311,7 @@ private boolean validarVacioP(){
                 txtTotalCompra.setText("0");
                 tblCompra.setModel(tbm);
                 LlenarTablaCompras_MateriasPrimas();
+                showMessageDialog(this, "¡Compra realizada exitosamente!");
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {
@@ -3339,9 +3343,9 @@ private boolean validarVacioP(){
 
     private void jButton20jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20jButton11ActionPerformed
         if(tblCompraslMateriasPrimas.getSelectedRow()>-1){
-            if(!existeEnTabla(tblCompraslMateriasPrimas, tblCompra, spncantidad))
+            
             Agregarcarrito();
-            sumartotal();
+             sumartotal();
         }
         else
         showMessageDialog(this,"Debe de seleccionar un articulo.");
@@ -3375,8 +3379,6 @@ private boolean validarVacioP(){
 
     private void btnRefreshMateriaPrima_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshMateriaPrima_CompraActionPerformed
          try {
-                
-                
                 //Busqueda
                 LlenarTablaComprasMateriasPrimas();
             } catch (ClassNotFoundException ex) {
@@ -3402,18 +3404,21 @@ private boolean validarVacioP(){
     private void btnCancelar_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar_CompraActionPerformed
         cancelarCompra();
     }//GEN-LAST:event_btnCancelar_CompraActionPerformed
-    
+    DefaultTableModel tbmCompra;
     void Agregarcarrito(){
+        if(existeEnTabla(tblCompraslMateriasPrimas, tblCompra, spncantidad)){
+        }else{
+            r = tblCompraslMateriasPrimas.getSelectedRow();
+            String compra[] = new String[5];
+            compra[0] = tblCompraslMateriasPrimas.getValueAt(r,0).toString();
+            compra[1] = tblCompraslMateriasPrimas.getValueAt(r,1).toString();
+            compra[2] = spncantidad.getValue().toString();
+            compra[3] = tblCompraslMateriasPrimas.getValueAt(r,3).toString();
+            compra[4] = ""+Float.parseFloat(compra[2]) * Float.parseFloat(compra[3]);
+       
+            tbmCompra.addRow(compra);
+        }
         
-        r = tblCompraslMateriasPrimas.getSelectedRow();
-        String compra[] = new String[5];
-        compra[0] = tblCompraslMateriasPrimas.getValueAt(r,0).toString();
-        compra[1] = tblCompraslMateriasPrimas.getValueAt(r,1).toString();
-        compra[2]=spncantidad.getValue().toString();
-        compra[3] = tblCompraslMateriasPrimas.getValueAt(r,3).toString();
-        compra[4] = ""+Float.parseFloat(compra[2]) * Float.parseFloat(compra[3]);
-        DefaultTableModel tbm = (DefaultTableModel) tblCompra.getModel();
-        tbm.addRow(compra);
     }
     
     private void insertarCompra () throws SQLException {
@@ -3501,23 +3506,25 @@ private boolean validarVacioP(){
         }
         
     }
+    DefaultTableModel tbmMateriaPrima_Compra;
+    
     private void LlenarTablaComprasMateriasPrimas() throws ClassNotFoundException{
          try {
             
-
             stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblCompraslMateriasPrimas.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS where NOMBRE LIKE '%"+txtBuscasMateriaPrima_Compras.getText()+"%'");
+            
+           tbmMateriaPrima_Compra.setRowCount(0);
+           stmt.execute("select * from MATERIAS_PRIMAS where NOMBRE LIKE '%"+txtBuscasMateriaPrima_Compras.getText()+"%'");
             res=stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
                    Vector rowProductos=new Vector();
                    rowProductos.add(res.getString("ID_MATERIA"));
-                  rowProductos.add(res.getString("NOMBRE"));
-                  rowProductos.add(res.getString("DESCRIPCION"));
-                  rowProductos.add(res.getString("CANT_DISP"));
-                  rowProductos.add(res.getString("PRECIO"));
-                  tbm.addRow(rowProductos);
+                   rowProductos.add(res.getString("NOMBRE"));
+//                  rowProductos.add(res.getString("DESCRIPCION"));
+                   rowProductos.add(res.getString("CANT_DISP"));
+                   rowProductos.add(res.getString("PRECIO"));
+                   tbmMateriaPrima_Compra.addRow(rowProductos);
                 }
             }
 
