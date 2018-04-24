@@ -3343,7 +3343,7 @@ private boolean validarVacioP(){
         if(tblCompraslMateriasPrimas.getSelectedRow()>-1){
             
             Agregarcarrito();
-             //sumartotal();
+             sumartotal();
         }
         else
         showMessageDialog(this,"Debe de seleccionar un articulo.");
