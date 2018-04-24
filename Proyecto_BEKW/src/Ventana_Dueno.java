@@ -785,7 +785,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                     .addComponent(btnRefreshProducto_Compra))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -907,6 +907,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtBuscasMateriaPrima_Compras.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBuscasMateriaPrima_ComprasKeyTyped(evt);
             }
         });
         jPanel16.add(txtBuscasMateriaPrima_Compras, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 260, -1));
@@ -2675,7 +2678,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
     public void filtro() {
         int columnaABuscar = 1;
-        trsFiltro.setRowFilter(RowFilter.regexFilter(txtBuscadorC.getText(), columnaABuscar));
+        trsFiltro.setRowFilter(RowFilter.regexFilter(txtBuscasMateriaPrima_Compras.getText(), columnaABuscar));
     }
     
     private TableRowSorter trsFiltro;
@@ -3093,11 +3096,7 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_btnNuevaMateriaPrima_ComprasjButton11ActionPerformed
 
     private void txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased
-        try {
-            LlenarTablaComprasMateriasPrimas();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased
 
     private void btnRefreshMateriaPrima_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshMateriaPrima_CompraActionPerformed
@@ -3128,6 +3127,18 @@ private boolean validarVacioP(){
     private void btnCancelar_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar_CompraActionPerformed
         cancelarCompra();
     }//GEN-LAST:event_btnCancelar_CompraActionPerformed
+
+    private void txtBuscasMateriaPrima_ComprasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprasKeyTyped
+        txtBuscasMateriaPrima_Compras.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(final KeyEvent e) {
+                repaint();
+                filtro();
+            }
+        });
+        trsFiltro = new TableRowSorter(tblCompraslMateriasPrimas.getModel());
+        tblCompraslMateriasPrimas.setRowSorter(trsFiltro);  
+    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprasKeyTyped
     
     
     void Agregarcarrito(){
