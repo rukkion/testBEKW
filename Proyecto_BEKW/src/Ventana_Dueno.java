@@ -35,8 +35,6 @@ import javax.swing.table.TableRowSorter;
  *
  * @author EDGUR
  */
-
-
 public class Ventana_Dueno extends javax.swing.JFrame {
         Connection conect = null;
      Statement stmt = null;
@@ -493,14 +491,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             }
         });
         txtBuscar2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBuscar2KeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtBuscar2KeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtBuscar2KeyTyped(evt);
             }
         });
         jPanel21.add(txtBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 250, -1));
@@ -530,20 +522,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jScrollPane16.setViewportView(jTable8);
 
         txtBuscar4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtBuscar4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscar4txtBuscarActionPerformed(evt);
-            }
-        });
         txtBuscar4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBuscar4txtBuscarKeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtBuscar4txtBuscarKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtBuscar4txtBuscarKeyTyped(evt);
             }
         });
 
@@ -698,20 +679,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel22.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, -1, -1));
 
         txtBuscar3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtBuscar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscar3ActionPerformed(evt);
-            }
-        });
         txtBuscar3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBuscar3KeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtBuscar3KeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtBuscar3KeyTyped(evt);
             }
         });
         jPanel22.add(txtBuscar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 250, -1));
@@ -741,20 +711,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jScrollPane20.setViewportView(jTable9);
 
         txtBuscar6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtBuscar6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscar6txtBuscarActionPerformed(evt);
-            }
-        });
         txtBuscar6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBuscar6txtBuscarKeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtBuscar6txtBuscarKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtBuscar6txtBuscarKeyTyped(evt);
             }
         });
 
@@ -912,20 +871,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel84.setText("Compra");
 
         txtBuscarCompras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtBuscarCompras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarComprasActionPerformed(evt);
-            }
-        });
         txtBuscarCompras.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBuscarComprasKeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtBuscarComprasKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtBuscarComprasKeyTyped(evt);
             }
         });
 
@@ -956,20 +904,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel16.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 360, 360));
 
         txtBuscasMateriaPrima_Compras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtBuscasMateriaPrima_Compras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscasMateriaPrima_ComprastxtBuscarActionPerformed(evt);
-            }
-        });
         txtBuscasMateriaPrima_Compras.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBuscasMateriaPrima_ComprastxtBuscarKeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtBuscasMateriaPrima_ComprastxtBuscarKeyTyped(evt);
             }
         });
         jPanel16.add(txtBuscasMateriaPrima_Compras, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 260, -1));
@@ -1390,22 +1327,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel17.add(btnEliminarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, 150, 40));
 
         txtunidadP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtunidadP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtunidadPActionPerformed(evt);
-            }
-        });
         jPanel17.add(txtunidadP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 150, -1));
 
         spincantP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         spincantP.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 spincantPStateChanged(evt);
-            }
-        });
-        spincantP.addVetoableChangeListener(new java.beans.VetoableChangeListener() {
-            public void vetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {
-                spincantPVetoableChange(evt);
             }
         });
         jPanel17.add(spincantP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 151, -1));
@@ -1423,34 +1350,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel17.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
 
         txtnomP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtnomP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnomPActionPerformed(evt);
-            }
-        });
-        txtnomP.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtnomPKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtnomPKeyTyped(evt);
-            }
-        });
         jPanel17.add(txtnomP, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 152, -1));
 
         txtprecioP.setText(" ");
-        txtprecioP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtprecioPActionPerformed(evt);
-            }
-        });
         txtprecioP.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtprecioPKeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtprecioPKeyReleased(evt);
-            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtprecioPKeyTyped(evt);
             }
@@ -1458,22 +1361,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel17.add(txtprecioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 150, 23));
 
         txtBuscarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtBuscarP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarPActionPerformed(evt);
-            }
-        });
-        txtBuscarP.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBuscarPKeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtBuscarPKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtBuscarPKeyTyped(evt);
-            }
-        });
         jPanel17.add(txtBuscarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, 295, -1));
 
         jLabel27.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1513,14 +1400,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         panelProveedor.setBackground(new java.awt.Color(255, 255, 255));
 
         txtBuscarProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBuscarProveedorKeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtBuscarProveedorKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtBuscarProveedorKeyTyped(evt);
             }
         });
 
@@ -2119,6 +2000,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    //
+    //LLENAR TABLAS
+    //
     private void llenarMateriaPrima() throws ClassNotFoundException{
         try {
              conectarBD();
@@ -2138,7 +2022,132 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     }
     private void llenarTablaCompra(){
         tbmCompra=(DefaultTableModel)tblCompra.getModel();
+    }  
+    private void LlenarTablaProveedores() throws ClassNotFoundException{
+         try {
+             conectarBD();
+             stmt=conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblProveedores.getModel();
+           tbm.setRowCount(0);stmt.execute("select * from PERSONAS where TIPO = 'P'");
+            res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(6),res.getString(7)});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+        } 
     }
+    private void LlenarTablaP() throws ClassNotFoundException{
+         try {
+             conectarBD();
+
+            stmt = conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblCompraslMateriasPrimas.getModel();
+           tbm.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS");
+            res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   Vector rowProductos=new Vector();
+                   rowProductos.add(res.getString("ID_MATERIA"));
+                  rowProductos.add(res.getString("NOMBRE"));
+                  rowProductos.add(res.getString("DESCRIPCION"));
+                  rowProductos.add(res.getString("CANT_DISP"));
+                  rowProductos.add(res.getString("UNIDAD_MEDIDA"));
+                  rowProductos.add(res.getString("PRECIO"));
+                  tbm.addRow(rowProductos);
+                }
+            }
+
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
+        } 
+    }
+    private void LlenarTablaUsuarios() throws ClassNotFoundException{
+         try {
+             conectarBD();
+             Statement stmt = conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblUsuarios.getModel();
+           tbm.setRowCount(0);stmt.execute("select * from USUARIOS");
+             ResultSet res = stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                    if(res.getString(4).toString().equals("E"))
+                    tbm.addRow(new Object[]{res.getInt(1),res.getString(2),"EMPLEADO",res.getString(5),res.getString(3)});
+                    else{
+                        tbm.addRow(new Object[]{res.getInt(1),res.getString(2),"DUEÑO",res.getString(5),res.getString(3)});
+                    }
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+        } 
+    }
+    private void llenarTablaCliente(){
+         try {
+            
+            Statement stmt=conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tablaCliente.getModel();
+            tbm.setRowCount(0);
+            stmt.execute("select * from PERSONAS where TIPO = 'C'");
+            ResultSet res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7)});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            showMessageDialog(null," Error en la conexion LLENAR TABLA CLIENTE. "); 
+        }
+    }
+    private void LlenarTablaCompras_MateriasPrimas() throws ClassNotFoundException{
+         try {
+             Statement stmt = conect.createStatement();
+            tbmMateriaPrima_Compra=(DefaultTableModel)tblCompraslMateriasPrimas.getModel();
+           tbmMateriaPrima_Compra.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS");
+             ResultSet res = stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   Vector rowProductos=new Vector();
+                  rowProductos.add(res.getString("ID_MATERIA"));
+                  rowProductos.add(res.getString("NOMBRE"));
+                  rowProductos.add(res.getString("CANT_DISP"));
+                  rowProductos.add(res.getString("PRECIO"));
+                  tbmMateriaPrima_Compra.addRow(rowProductos);
+                }
+            }
+            
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
+        } 
+    }
+    private void LlenarTablaComprasProveedores() throws ClassNotFoundException{
+         try {
+             conectarBD();
+             Statement stmt = conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblProveedor_Compra.getModel();
+           tbm.setRowCount(0);stmt.execute("select * from PERSONAS where TIPO = 'P'");
+             ResultSet res = stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(7)});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+        } 
+    }
+   //
+   //
+   //
+    
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
             conectarBD();
@@ -2224,37 +2233,17 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton25ActionPerformed
 
-    private void txtBuscar3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar3KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar3KeyTyped
-
     private void txtBuscar3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar3KeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscar3KeyReleased
-
-    private void txtBuscar3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar3KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar3KeyPressed
-
-    private void txtBuscar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar3ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
 
-    private void txtBuscar2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar2KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar2KeyTyped
-
     private void txtBuscar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar2KeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscar2KeyReleased
-
-    private void txtBuscar2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar2KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar2KeyPressed
 
     private void txtBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar2ActionPerformed
         // TODO add your handling code here:
@@ -2265,10 +2254,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         mdC.setVisible(true);
     }//GEN-LAST:event_btnClienteActionPerformed
 
-    private void txtBuscarProveedorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyPressed
-
-    }//GEN-LAST:event_txtBuscarProveedorKeyPressed
-
     private void txtBuscarProveedorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyReleased
         try {
             BuscarProveedores();
@@ -2276,10 +2261,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_txtBuscarProveedorKeyReleased
-
-    private void txtBuscarProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyTyped
-
-    }//GEN-LAST:event_txtBuscarProveedorKeyTyped
 
     private void txtProveedorTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorTelefonoKeyTyped
         ValidarNumeros(evt);
@@ -2297,51 +2278,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     private void txtProveedorNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorNombreKeyTyped
         ValidarLetras(evt);
     }//GEN-LAST:event_txtProveedorNombreKeyTyped
-    
-    private void LlenarTablaProveedores() throws ClassNotFoundException{
-         try {
-             conectarBD();
-             stmt=conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblProveedores.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from PERSONAS where TIPO = 'P'");
-            res=stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(6),res.getString(7)});
-                }  
-            }
-            stmt.close();
-        }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
-        } 
-    }
-    
-    private void LlenarTablaP() throws ClassNotFoundException{
-         try {
-             conectarBD();
-
-            stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblCompraslMateriasPrimas.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS");
-            res=stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                   Vector rowProductos=new Vector();
-                   rowProductos.add(res.getString("ID_MATERIA"));
-                  rowProductos.add(res.getString("NOMBRE"));
-                  rowProductos.add(res.getString("DESCRIPCION"));
-                  rowProductos.add(res.getString("CANT_DISP"));
-                  rowProductos.add(res.getString("UNIDAD_MEDIDA"));
-                  rowProductos.add(res.getString("PRECIO"));
-                  tbm.addRow(rowProductos);
-                }
-            }
-
-            stmt.close();
-        }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
-        } 
-    }
+ 
     
     private boolean VerificarvaciosProveedor(){
         
@@ -2376,6 +2313,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnModificarProveedorActionPerformed
    public int rowProveedor = 0;
+   
     private void ModificarProveedor() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -2588,27 +2526,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
-    private void LlenarTablaUsuarios() throws ClassNotFoundException{
-         try {
-             conectarBD();
-             Statement stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblUsuarios.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from USUARIOS");
-             ResultSet res = stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                    if(res.getString(4).toString().equals("E"))
-                    tbm.addRow(new Object[]{res.getInt(1),res.getString(2),"EMPLEADO",res.getString(5),res.getString(3)});
-                    else{
-                        tbm.addRow(new Object[]{res.getInt(1),res.getString(2),"DUEÑO",res.getString(5),res.getString(3)});
-                    }
-                }  
-            }
-            stmt.close();
-        }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
-        } 
-    }
+
     
     private void ModificarUsuario() throws ClassNotFoundException{
         try{
@@ -2787,24 +2705,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtCPC.setText("");
         txtTelC.setText("");
     }
-    void llenarTablaCliente(){
-         try {
-            
-            Statement stmt=conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tablaCliente.getModel();
-            tbm.setRowCount(0);
-            stmt.execute("select * from PERSONAS where TIPO = 'C'");
-            ResultSet res=stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                   tbm.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7)});
-                }  
-            }
-            stmt.close();
-        }catch (SQLException ex) {
-            showMessageDialog(null," Error en la conexion LLENAR TABLA CLIENTE. "); 
-        }
-    }
+    
+
     public void seleccionar(){
         int filaseleccionada;
             //Guardamos en un entero la fila seleccionada.
@@ -2960,28 +2862,7 @@ private void clearP(){
     }//GEN-LAST:event_btnCancelarPActionPerformed
 
 
-private void LlenarTablaCompras_MateriasPrimas() throws ClassNotFoundException{
-         try {
-             Statement stmt = conect.createStatement();
-            tbmMateriaPrima_Compra=(DefaultTableModel)tblCompraslMateriasPrimas.getModel();
-           tbmMateriaPrima_Compra.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS");
-             ResultSet res = stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                   Vector rowProductos=new Vector();
-                  rowProductos.add(res.getString("ID_MATERIA"));
-                  rowProductos.add(res.getString("NOMBRE"));
-                  rowProductos.add(res.getString("CANT_DISP"));
-                  rowProductos.add(res.getString("PRECIO"));
-                  tbmMateriaPrima_Compra.addRow(rowProductos);
-                }
-            }
-            
-            stmt.close();
-        }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
-        } 
-    }
+
 
 private boolean validarVacioP(){
             if((("".equals(txtdescP.getText()) || "".equals(txtnomP.getText())) || "".equals(txtprecioP.getText()))|| "".equals(txtunidadP.getText())){
@@ -3068,79 +2949,17 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarPActionPerformed
 
-    private void txtunidadPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtunidadPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtunidadPActionPerformed
-
     private void spincantPStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spincantPStateChanged
         if (Integer.parseInt(spincantP.getValue().toString())<0)
         spincantP.setValue(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_spincantPStateChanged
 
-    private void spincantPVetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {//GEN-FIRST:event_spincantPVetoableChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_spincantPVetoableChange
-
-    private void txtnomPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnomPActionPerformed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnomPActionPerformed
-
-    private void txtnomPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnomPKeyPressed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnomPKeyPressed
-
-    private void txtnomPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnomPKeyTyped
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnomPKeyTyped
-
-    private void txtprecioPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtprecioPActionPerformed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtprecioPActionPerformed
-
-    private void txtprecioPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioPKeyPressed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtprecioPKeyPressed
-
-    private void txtprecioPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioPKeyReleased
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtprecioPKeyReleased
-
     private void txtprecioPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioPKeyTyped
 
         ValidarNumeros(evt);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtprecioPKeyTyped
-
-    private void txtBuscarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarPActionPerformed
-
-    private void txtBuscarPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPKeyPressed
-        //       try {
-            //            LlenarTablaBus();
-            //            // TODO add your handling code here:
-            //        } catch (ClassNotFoundException ex) {
-            //            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
-            //        }
-        //        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarPKeyPressed
-
-    private void txtBuscarPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPKeyReleased
-        //           try {
-            //            LlenarTablaBus();
-            //            // TODO add your handling code here:
-            //        } catch (ClassNotFoundException ex) {
-            //            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
-            //        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarPKeyReleased
     private void LlenarTablaBus() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -3166,46 +2985,13 @@ private boolean validarVacioP(){
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
         } 
     }
-    private void txtBuscarPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPKeyTyped
-        try {
-            LlenarTablaBus();
-            // TODO add your handling code here:
-        } catch (Exception ex) {
-            
-        }
-    }//GEN-LAST:event_txtBuscarPKeyTyped
-
     private void cmbUsuariosTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbUsuariosTipoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbUsuariosTipoActionPerformed
 
-    private void txtBuscar4txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar4txtBuscarActionPerformed
-
-    private void txtBuscar4txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarKeyPressed
-        //       try {
-            //            LlenarTablaBus();
-            //            // TODO add your handling code here:
-            //        } catch (ClassNotFoundException ex) {
-            //            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
-            //        }
-        //        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar4txtBuscarKeyPressed
-
     private void txtBuscar4txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarKeyReleased
-        //           try {
-            //            LlenarTablaBus();
-            //            // TODO add your handling code here:
-            //        } catch (ClassNotFoundException ex) {
-            //            Logger.getLogger(GESTION_PRODUCTO.class.getName()).log(Level.SEVERE, null, ex);
-            //        }
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtBuscar4txtBuscarKeyReleased
-
-    private void txtBuscar4txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarKeyTyped
-
-    }//GEN-LAST:event_txtBuscar4txtBuscarKeyTyped
 
     private void jButton16jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16jButton11ActionPerformed
         // TODO add your handling code here:
@@ -3217,14 +3003,6 @@ private boolean validarVacioP(){
         VP.setVisible(true);
     }//GEN-LAST:event_btnAgregarProvedorActionPerformed
 
-    private void txtBuscarComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarComprasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarComprasActionPerformed
-
-    private void txtBuscarComprasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarComprasKeyPressed
-
     private void txtBuscarComprasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyReleased
             try {
                 BuscarProveedores();
@@ -3233,25 +3011,9 @@ private boolean validarVacioP(){
             }
     }//GEN-LAST:event_txtBuscarComprasKeyReleased
 
-    private void txtBuscarComprasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarComprasKeyTyped
-
-    private void txtBuscar6txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar6txtBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar6txtBuscarActionPerformed
-
-    private void txtBuscar6txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar6txtBuscarKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar6txtBuscarKeyPressed
-
     private void txtBuscar6txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar6txtBuscarKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscar6txtBuscarKeyReleased
-
-    private void txtBuscar6txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar6txtBuscarKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar6txtBuscarKeyTyped
 
     private void jButton18jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18jButton11ActionPerformed
         // TODO add your handling code here:
@@ -3325,14 +3087,7 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_btnGenerarCompraActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-//        
-//            try {
-//                LlenarTablaCompras_MateriasPrimas();
-//                LlenarTablaComprasProveedores();
-//        LlenarTablaComprasMateriasPrimas();
-//            } catch (ClassNotFoundException ex) {
-//                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-//            }
+
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -3355,10 +3110,6 @@ private boolean validarVacioP(){
         VMP.setVisible(true);
     }//GEN-LAST:event_btnNuevaMateriaPrima_ComprasjButton11ActionPerformed
 
-    private void txtBuscasMateriaPrima_ComprastxtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyTyped
-
     private void txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased
         try {
             LlenarTablaComprasMateriasPrimas();
@@ -3366,14 +3117,6 @@ private boolean validarVacioP(){
             Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyReleased
-
-    private void txtBuscasMateriaPrima_ComprastxtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarKeyPressed
-
-    private void txtBuscasMateriaPrima_ComprastxtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprastxtBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprastxtBuscarActionPerformed
 
     private void btnRefreshMateriaPrima_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshMateriaPrima_CompraActionPerformed
          try {
@@ -3596,23 +3339,7 @@ private boolean validarVacioP(){
         if(Character.isDigit(l))
            evt.consume();
     }
-     private void LlenarTablaComprasProveedores() throws ClassNotFoundException{
-         try {
-             conectarBD();
-             Statement stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblProveedor_Compra.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from PERSONAS where TIPO = 'P'");
-             ResultSet res = stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(7)});
-                }  
-            }
-            stmt.close();
-        }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
-        } 
-    }
+
      private boolean ProveedorExistente() throws ClassNotFoundException{
          try {
              conectarBD();
