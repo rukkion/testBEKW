@@ -76,8 +76,10 @@ public class VentanaCliente extends javax.swing.JFrame {
         btnInsertarC = new javax.swing.JButton();
         txtBuscadorC = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Clientes");
@@ -95,6 +97,7 @@ public class VentanaCliente extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtNomC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtNomC.addActionListener(new java.awt.event.ActionListener() {
@@ -107,14 +110,20 @@ public class VentanaCliente extends javax.swing.JFrame {
                 txtNomCKeyTyped(evt);
             }
         });
+        jPanel1.add(txtNomC, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 91, 182, -1));
 
         txtAPPC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel1.add(txtAPPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 118, 182, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Nombre:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 94, 60, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Apellido Materno: ");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 121, -1, -1));
 
         txtAPMC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtAPMC.addActionListener(new java.awt.event.ActionListener() {
@@ -122,15 +131,22 @@ public class VentanaCliente extends javax.swing.JFrame {
                 txtAPMCActionPerformed(evt);
             }
         });
+        jPanel1.add(txtAPMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(431, 118, 166, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Domicilio:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 70, 20));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("C.P:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 154, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Telefono:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, 20));
 
         btnCancelarC.setBackground(new java.awt.Color(255, 255, 255));
         btnCancelarC.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -141,6 +157,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 btnCancelarCActionPerformed(evt);
             }
         });
+        jPanel1.add(btnCancelarC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, 40));
 
         btnModificarC.setBackground(new java.awt.Color(255, 255, 255));
         btnModificarC.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -151,6 +168,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 btnModificarCActionPerformed(evt);
             }
         });
+        jPanel1.add(btnModificarC, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 440, 135, 40));
 
         txtDomC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtDomC.addActionListener(new java.awt.event.ActionListener() {
@@ -158,6 +176,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 txtDomCActionPerformed(evt);
             }
         });
+        jPanel1.add(txtDomC, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 160, 260, -1));
 
         txtCPC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtCPC.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +184,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 txtCPCActionPerformed(evt);
             }
         });
+        jPanel1.add(txtCPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(431, 151, 140, -1));
 
         txtTelC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtTelC.addActionListener(new java.awt.event.ActionListener() {
@@ -172,6 +192,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 txtTelCActionPerformed(evt);
             }
         });
+        jPanel1.add(txtTelC, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 190, 136, 30));
 
         tablaCM.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -199,6 +220,8 @@ public class VentanaCliente extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablaCM);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 641, 140));
+
         btnInsertarC.setBackground(new java.awt.Color(255, 255, 255));
         btnInsertarC.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnInsertarC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
@@ -208,6 +231,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 btnInsertarCActionPerformed(evt);
             }
         });
+        jPanel1.add(btnInsertarC, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, -1, 40));
 
         txtBuscadorC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtBuscadorC.addActionListener(new java.awt.event.ActionListener() {
@@ -220,109 +244,42 @@ public class VentanaCliente extends javax.swing.JFrame {
                 txtBuscadorCKeyTyped(evt);
             }
         });
+        jPanel1.add(txtBuscadorC, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 320, 30));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setText("Buscar:");
-
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel7.setText("Clientes");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 250, 50, 30));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Apellido Paterno: ");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 118, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel1)
-                                .addGap(12, 12, 12)
-                                .addComponent(txtNomC, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel8)
-                                .addGap(4, 4, 4)
-                                .addComponent(txtAPPC, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel2)
-                                .addGap(3, 3, 3)
-                                .addComponent(txtAPMC, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel4)
-                                .addGap(5, 5, 5)
-                                .addComponent(txtDomC, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
-                                .addComponent(jLabel5)
-                                .addGap(7, 7, 7)
-                                .addComponent(txtCPC, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel6)
-                                .addGap(9, 9, 9)
-                                .addComponent(txtTelC, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel3)
-                                .addGap(8, 8, 8)
-                                .addComponent(txtBuscadorC, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(btnCancelarC)
-                                .addGap(27, 27, 27)
-                                .addComponent(btnInsertarC)
-                                .addGap(211, 211, 211)
-                                .addComponent(btnModificarC, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel7)))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+
+        jLabel9.setFont(new java.awt.Font("Ubuntu Light", 0, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/EL MERENGUEx75.png"))); // NOI18N
+        jLabel9.setText("                   Clientes");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7)
-                .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(txtNomC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(txtAPPC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtAPMC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(txtDomC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtCPC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTelC, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtBuscadorC, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCancelarC, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInsertarC, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnModificarC, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, -1));
+
+        jSeparator1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 650, 10));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 490));
 
@@ -467,10 +424,12 @@ public class VentanaCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tablaCM;
     private javax.swing.JTextField txtAPMC;
     private javax.swing.JTextField txtAPPC;
