@@ -289,7 +289,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtCPC = new javax.swing.JTextField();
         txtTelC = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tablaCM = new javax.swing.JTable();
+        tablaCliente = new javax.swing.JTable();
         btnInsertarC = new javax.swing.JButton();
         txtBuscadorC = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -1832,7 +1832,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
         jPanel7.add(txtTelC, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 136, 30));
 
-        tablaCM.setModel(new javax.swing.table.DefaultTableModel(
+        tablaCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -1851,12 +1851,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tablaCM.addMouseListener(new java.awt.event.MouseAdapter() {
+        tablaCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tablaCMMouseClicked(evt);
+                tablaClienteMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(tablaCM);
+        jScrollPane2.setViewportView(tablaCliente);
 
         jPanel7.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 700, 360));
 
@@ -2143,7 +2143,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             llenarMateriaPrima();
             LlenarTablaProveedores();
             LlenarTablaUsuarios();
-            tablaClienteM();
+            llenarTablaCliente();
             LlenarTablaCompras_MateriasPrimas();
             LlenarTablaComprasProveedores();
             llenarTablaCompra();
@@ -2766,7 +2766,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             } catch(ArrayIndexOutOfBoundsException ex){
                 showMessageDialog(null, "No ha seleccionado ninguna fila.");
             }
-            tablaClienteM();
+            llenarTablaCliente();
         }
 
     }//GEN-LAST:event_btnEliminarCActionPerformed
@@ -2785,12 +2785,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtCPC.setText("");
         txtTelC.setText("");
     }
-    void tablaClienteM(){
+    void llenarTablaCliente(){
          try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
-            Statement stmt=con.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tablaCM.getModel();
+            
+            Statement stmt=conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tablaCliente.getModel();
             tbm.setRowCount(0);
             stmt.execute("select * from PERSONAS where TIPO = 'C'");
             ResultSet res=stmt.getResultSet();
@@ -2802,24 +2801,22 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             stmt.close();
         }catch (SQLException ex) {
             showMessageDialog(null," Error en la conexion LLENAR TABLA CLIENTE. "); 
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     public void seleccionar(){
         int filaseleccionada;
             //Guardamos en un entero la fila seleccionada.
-            filaseleccionada = tablaCM.getSelectedRow();
+            filaseleccionada = tablaCliente.getSelectedRow();
             if (filaseleccionada == -1){
                showMessageDialog(null, "No ha seleccionado ninguna fila.");
             }
-            IDCliente = (String) tablaCM.getValueAt(filaseleccionada,0);
-            String NOMBRE=(String)tablaCM.getValueAt(filaseleccionada,1);
-            String APE_PAT=(String)tablaCM.getValueAt(filaseleccionada,2);
-            String APE_MAT=(String)tablaCM.getValueAt(filaseleccionada,3);
-            String DOMICILIO=(String)tablaCM.getValueAt(filaseleccionada,4);
-            String COD_POSTAL=(String)tablaCM.getValueAt(filaseleccionada,5);
-            String TELEFONO=(String)tablaCM.getValueAt(filaseleccionada,6);
+            IDCliente = (String) tablaCliente.getValueAt(filaseleccionada,0);
+            String NOMBRE=(String)tablaCliente.getValueAt(filaseleccionada,1);
+            String APE_PAT=(String)tablaCliente.getValueAt(filaseleccionada,2);
+            String APE_MAT=(String)tablaCliente.getValueAt(filaseleccionada,3);
+            String DOMICILIO=(String)tablaCliente.getValueAt(filaseleccionada,4);
+            String COD_POSTAL=(String)tablaCliente.getValueAt(filaseleccionada,5);
+            String TELEFONO=(String)tablaCliente.getValueAt(filaseleccionada,6);
             
             Object [] v=new Object [6];
             v[0]=NOMBRE;
@@ -2848,7 +2845,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         } catch(ArrayIndexOutOfBoundsException ex){
             showMessageDialog(null, "No ha seleccionado ninguna fila.");
         }
-        tablaClienteM();
+        llenarTablaCliente();
 
     }//GEN-LAST:event_btnModificarCActionPerformed
 
@@ -2865,9 +2862,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelCActionPerformed
 
-    private void tablaCMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaCMMouseClicked
+    private void tablaClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaClienteMouseClicked
         seleccionar();
-    }//GEN-LAST:event_tablaCMMouseClicked
+    }//GEN-LAST:event_tablaClienteMouseClicked
 
     private void btnInsertarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarCActionPerformed
         BaseDatosCliente c=new BaseDatosCliente();
@@ -2879,7 +2876,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-        tablaClienteM();
+        llenarTablaCliente();
     }//GEN-LAST:event_btnInsertarCActionPerformed
 
     private void txtBuscadorCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorCActionPerformed
@@ -2895,8 +2892,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 filtro();
             }
         });
-        trsFiltro = new TableRowSorter(tablaCM.getModel());
-        tablaCM.setRowSorter(trsFiltro);
+        trsFiltro = new TableRowSorter(tablaCliente.getModel());
+        tablaCliente.setRowSorter(trsFiltro);
     }//GEN-LAST:event_txtBuscadorCKeyTyped
 
     private void btnModificarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarMPActionPerformed
@@ -3379,6 +3376,7 @@ private boolean validarVacioP(){
 
     private void btnRefreshMateriaPrima_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshMateriaPrima_CompraActionPerformed
          try {
+                tbmCompra.setRowCount(0);
                 //Busqueda
                 LlenarTablaComprasMateriasPrimas();
             } catch (ClassNotFoundException ex) {
@@ -3405,7 +3403,9 @@ private boolean validarVacioP(){
         cancelarCompra();
     }//GEN-LAST:event_btnCancelar_CompraActionPerformed
     DefaultTableModel tbmCompra;
+    
     void Agregarcarrito(){
+        
         if(existeEnTabla(tblCompraslMateriasPrimas, tblCompra, spncantidad)){
         }else{
             r = tblCompraslMateriasPrimas.getSelectedRow();
@@ -3510,7 +3510,7 @@ private boolean validarVacioP(){
     
     private void LlenarTablaComprasMateriasPrimas() throws ClassNotFoundException{
          try {
-            
+            res=null;
             stmt = conect.createStatement();
             
            tbmMateriaPrima_Compra.setRowCount(0);
@@ -3527,7 +3527,8 @@ private boolean validarVacioP(){
                    tbmMateriaPrima_Compra.addRow(rowProductos);
                 }
             }
-
+            
+            
             stmt.close();
         }catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
@@ -3837,7 +3838,7 @@ private boolean validarVacioP(){
     private javax.swing.JPanel panelProveedor;
     private javax.swing.JSpinner spincantP;
     private javax.swing.JSpinner spncantidad;
-    private javax.swing.JTable tablaCM;
+    private javax.swing.JTable tablaCliente;
     private javax.swing.JTable tablaMateriaPrima;
     private javax.swing.JTabbedPane tb_Inventario;
     private javax.swing.JTabbedPane tb_Personas;
