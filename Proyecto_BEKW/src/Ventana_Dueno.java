@@ -1615,16 +1615,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtNomC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtNomC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomCActionPerformed(evt);
-            }
-        });
-        txtNomC.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtNomCKeyTyped(evt);
-            }
-        });
         jPanel7.add(txtNomC, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 234, -1));
 
         txtAPPC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -2654,14 +2644,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     private void txtUsuariosNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuariosNombreKeyTyped
         ValidarLetras(evt);
     }//GEN-LAST:event_txtUsuariosNombreKeyTyped
-
-    private void txtNomCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomCActionPerformed
-
-    }//GEN-LAST:event_txtNomCActionPerformed
-
-    private void txtNomCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomCKeyTyped
-
-    }//GEN-LAST:event_txtNomCKeyTyped
 
     private void txtAPMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAPMCActionPerformed
 
