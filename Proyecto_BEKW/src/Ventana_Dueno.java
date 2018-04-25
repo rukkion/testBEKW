@@ -2172,7 +2172,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             LlenarTablaComprasProveedores();
             llenarTablaCompra();
             llenarTablaCliente_Pedido();
-            
+            llenarTablaProductos();     
         } catch (Exception ex) {
             Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2582,6 +2582,26 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             System.out.println("Error modificar MATERIA PRIMA");   
             }
     }
+    
+    private void llenarTablaProductos(){
+         try {
+            
+            Statement stmt=conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblProductos_Pedido.getModel();
+            tbm.setRowCount(0);
+            stmt.execute("select * from PRODUCTOS");
+            ResultSet res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getString("ID_PRODUCTO"),res.getString("NOMBRE"),res.getString("CANT_DISP"),res.getString("UNIDAD"),res.getString("PRECIO")});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            showMessageDialog(null," Error en la conexion LLENAR TABLA PRODUCTOS. "); 
+        }
+    }
+    
     private boolean MPExistente() throws ClassNotFoundException{
          try {
              conectarBD();
