@@ -609,12 +609,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblClientes_Pedido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"GUARDADO", "CENTRO 167", "21971293"},
-                {"PEDRO", "CENTRO 1781", "13714433"},
-                {"JUAN", "AZUCENAS", null}
+
             },
             new String [] {
-                "Nombre ", "Domicilio", "Telefono"
+                "Código", "Nombre ", "Domicilio", "Telefono"
             }
         ));
         jScrollPane18.setViewportView(tblClientes_Pedido);
@@ -2114,7 +2112,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     }
     private void LlenarTablaComprasProveedores() throws ClassNotFoundException{
          try {
-             conectarBD();
+             
              Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblProveedor_Compra.getModel();
            tbm.setRowCount(0);stmt.execute("select * from PERSONAS where TIPO = 'P'");
@@ -2143,6 +2141,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             LlenarTablaCompras_MateriasPrimas();
             LlenarTablaComprasProveedores();
             llenarTablaCompra();
+            llenarTablaCliente_Pedido();
             
         } catch (Exception ex) {
             Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
@@ -3369,6 +3368,24 @@ private boolean validarVacioP(){
         txtDescripcionMP.setText(null);
         txtCantidadMP.setValue(0);
         cmbUnidadMedidaMP.setSelectedIndex(0);
+    }
+    private void llenarTablaCliente_Pedido(){
+         try {
+             
+            Statement stmt = conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblClientes_Pedido.getModel();
+            tbm.setRowCount(0);
+            stmt.execute("select ID_PERSONA, APE_PAT, APE_MAT, NOMBRE, DOMICILIO,TELEFONO from PERSONAS where TIPO = 'C'");
+            ResultSet res = stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2)+" "+res.getString(3)+" "+res.getString(4),res.getString(5),res.getString(6)});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en llenar tabla Clientes en Pedido");
+        } 
     }
     /**
      * @param args the command line arguments
