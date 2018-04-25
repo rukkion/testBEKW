@@ -176,7 +176,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel85 = new javax.swing.JLabel();
         btnRefreshProducto_Pedido = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
-        spncantidad1 = new javax.swing.JSpinner();
+        spncantidadProducto_Pedido = new javax.swing.JSpinner();
         jSeparator5 = new javax.swing.JSeparator();
         btnCancelar_Pedido = new javax.swing.JButton();
         jPanel23 = new javax.swing.JPanel();
@@ -203,7 +203,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         btnNuevaMateriaPrima_Compras = new javax.swing.JButton();
         jLabel86 = new javax.swing.JLabel();
         jButton20 = new javax.swing.JButton();
-        spncantidad = new javax.swing.JSpinner();
+        spncantidadMP_Compra = new javax.swing.JSpinner();
         btnRefreshMateriaPrima_Compra = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
@@ -753,14 +753,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel15.add(btnRefreshProducto_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 64, 40, -1));
         jPanel15.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 48, 371, 10));
 
-        spncantidad1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        spncantidad1.setValue(1);
-        spncantidad1.addChangeListener(new javax.swing.event.ChangeListener() {
+        spncantidadProducto_Pedido.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        spncantidadProducto_Pedido.setValue(1);
+        spncantidadProducto_Pedido.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                spncantidad1StateChanged(evt);
+                spncantidadProducto_PedidoStateChanged(evt);
             }
         });
-        jPanel15.add(spncantidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 50, 30));
+        jPanel15.add(spncantidadProducto_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 50, 30));
 
         jPanel22.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 400, 550));
 
@@ -929,14 +929,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
         jPanel16.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, -1, 56));
 
-        spncantidad.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        spncantidad.setValue(1);
-        spncantidad.addChangeListener(new javax.swing.event.ChangeListener() {
+        spncantidadMP_Compra.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        spncantidadMP_Compra.setValue(1);
+        spncantidadMP_Compra.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                spncantidadStateChanged(evt);
+                spncantidadMP_CompraStateChanged(evt);
             }
         });
-        jPanel16.add(spncantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 44, 31));
+        jPanel16.add(spncantidadMP_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 44, 31));
 
         btnRefreshMateriaPrima_Compra.setBackground(new java.awt.Color(255, 255, 255));
         btnRefreshMateriaPrima_Compra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update_30px.png"))); // NOI18N
@@ -3136,24 +3136,24 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelar_PedidoActionPerformed
 
-    private void spncantidadStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spncantidadStateChanged
-        spinnerNeg(spncantidad);
-    }//GEN-LAST:event_spncantidadStateChanged
+    private void spncantidadMP_CompraStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spncantidadMP_CompraStateChanged
+        spinnerNeg(spncantidadMP_Compra);
+    }//GEN-LAST:event_spncantidadMP_CompraStateChanged
 
-    private void spncantidad1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spncantidad1StateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_spncantidad1StateChanged
+    private void spncantidadProducto_PedidoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spncantidadProducto_PedidoStateChanged
+        spinnerNeg(spncantidadMP_Compra);
+    }//GEN-LAST:event_spncantidadProducto_PedidoStateChanged
     
     
     void Agregarcarrito(){
         
-        if(existeEnTabla(tblCompraslMateriasPrimas, tblCompra, spncantidad)){
+        if(existeEnTabla(tblCompraslMateriasPrimas, tblCompra, spncantidadMP_Compra)){
         }else{
             r = tblCompraslMateriasPrimas.getSelectedRow();
             String compra[] = new String[5];
             compra[0] = tblCompraslMateriasPrimas.getValueAt(r,0).toString();
             compra[1] = tblCompraslMateriasPrimas.getValueAt(r,1).toString();
-            compra[2] = spncantidad.getValue().toString();
+            compra[2] = spncantidadMP_Compra.getValue().toString();
             compra[3] = tblCompraslMateriasPrimas.getValueAt(r,3).toString();
             compra[4] = ""+Float.parseFloat(compra[2]) * Float.parseFloat(compra[3]);
        
@@ -3565,8 +3565,8 @@ private boolean validarVacioP(){
     private javax.swing.JPanel panelCliente;
     private javax.swing.JPanel panelProveedor;
     private javax.swing.JSpinner spincantP;
-    private javax.swing.JSpinner spncantidad;
-    private javax.swing.JSpinner spncantidad1;
+    private javax.swing.JSpinner spncantidadMP_Compra;
+    private javax.swing.JSpinner spncantidadProducto_Pedido;
     private javax.swing.JTable tablaCliente;
     private javax.swing.JTable tablaMateriaPrima;
     private javax.swing.JTabbedPane tb_Inventario;
