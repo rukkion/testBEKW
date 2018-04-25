@@ -677,6 +677,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel22.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, -1, 30));
 
         txtTotalPedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtTotalPedido.setText("0");
         jPanel22.add(txtTotalPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 470, 120, 30));
 
         jLabel80.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -3249,9 +3250,9 @@ private boolean validarVacioP(){
     
     void sumartotalPedido(){
         s = Float.parseFloat(txtTotalPedido.getText());
-        r =tblCompra.getRowCount()-1;
-        s+= Float.parseFloat(tblCompra.getValueAt(r,4).toString());
-        txtTotalCompra.setText(""+s);
+        r =tblPedido.getRowCount()-1;
+        s+= Float.parseFloat(tblPedido.getValueAt(r,4).toString());
+        txtTotalPedido.setText(""+s);
     }
     
     private void AgregarcarritoPedido(){
@@ -3321,10 +3322,10 @@ void restartotalyeliminarrowPedido(){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
         String date = simpleDateFormat.format(new Date());
-        r = tblPedido.getSelectedRow();
+        r = tblClientes_Pedido.getSelectedRow();
         String cad = "INSERT INTO COMPRAS "
                     + "VALUES('"+ date +"','"+txtFechaEntregaPedido.getText()+"'"
-                    + tblPedido.getValueAt(r,0).toString()+id_usuario+",'N','N',"+txtAdelantoPedido.getText()+",'N',"+txtTotalPedido.getText()+")";
+                    + tblClientes_Pedido.getValueAt(r,0).toString()+id_usuario+",'N','N',"+txtAdelantoPedido.getText()+",'N',"+txtTotalPedido.getText()+")";
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
             actCant();
