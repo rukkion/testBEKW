@@ -782,14 +782,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel22.add(btnCancelar_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, -1, -1));
 
         txtAdelantoPedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtAdelantoPedido.setText("0");
         jPanel22.add(txtAdelantoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, 120, 30));
 
         jLabel12.setText("Anticipo:");
         jPanel22.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 480, -1, -1));
 
-        txtFechaEntregaPedido.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/MM/yyyy"))));
+        txtFechaEntregaPedido.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd-MM-yyyy"))));
         txtFechaEntregaPedido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtFechaEntregaPedido.setText("01/01/2018");
         txtFechaEntregaPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel22.add(txtFechaEntregaPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 90, 30));
 
@@ -3236,7 +3236,7 @@ private boolean validarVacioP(){
                     cad = "INSERT INTO DETALLE_PEDIDO" +
                             " VALUES( " + id +
                             "," + tblProductos_Pedido.getValueAt(i,0).toString() +
-                            "," + tblCompra.getValueAt(i,3).toString() +
+                            "," + tblPedido.getValueAt(i,3).toString() +
                             "," + tblClientes_Pedido.getValueAt(idp,0) +
                             ")";
                             stmt.executeUpdate(cad);
@@ -3320,12 +3320,13 @@ void restartotalyeliminarrowPedido(){
             private void insertarPedido() throws SQLException {
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
+        
         String date = simpleDateFormat.format(new Date());
+        System.out.println(date);
         r = tblClientes_Pedido.getSelectedRow();
-        String cad = "INSERT INTO COMPRAS "
-                    + "VALUES('"+ date +"','"+txtFechaEntregaPedido.getText()+"'"
-                    + tblClientes_Pedido.getValueAt(r,0).toString()+id_usuario+",'N','N',"+txtAdelantoPedido.getText()+",'N',"+txtTotalPedido.getText()+")";
+        String cad = "INSERT INTO PEDIDOS "
+                    + "VALUES(2000,'"+ date +"','"+txtFechaEntregaPedido.getText()+"',"
+                    + tblClientes_Pedido.getValueAt(r,0).toString()+","+id_usuario+",'N','N',"+txtAdelantoPedido.getText()+",'N',"+txtTotalPedido.getText()+")";
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
             actCant();
@@ -3342,7 +3343,7 @@ void restartotalyeliminarrowPedido(){
     
         String cad = "INSERT INTO COMPRAS "
                     + "VALUES('"+ date +"',"
-                    + tblProveedor_Compra.getValueAt(1,0).toString()+","+ txtTotalCompra.getText()+")";
+                    + tblProveedor_Compra.getValueAt(r,0).toString()+","+ txtTotalCompra.getText()+")";
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
             actCant();
