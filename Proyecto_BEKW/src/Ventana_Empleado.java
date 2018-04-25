@@ -36,6 +36,9 @@ public class Ventana_Empleado extends javax.swing.JFrame {
     /**
      * Creates new form Ventana_Empleado
      */
+    
+    int id_usuario=0;
+    
     public Ventana_Empleado() {
         
         initComponents();
@@ -55,6 +58,15 @@ public class Ventana_Empleado extends javax.swing.JFrame {
     }
     CONECTAR_SERVER CS;
     public Ventana_Empleado(String nombreUsuario,CONECTAR_SERVER CS) {
+        this.nombreUsuario=nombreUsuario;
+        initComponents();
+        setLocationRelativeTo(null);
+        seticon();
+        lblUsuario.setText("Bienvenido, "+nombreUsuario);
+        this.CS=CS;
+    }
+    public Ventana_Empleado(int id_usuario,String nombreUsuario,CONECTAR_SERVER CS) {
+        this.id_usuario=id_usuario;
         this.nombreUsuario=nombreUsuario;
         initComponents();
         setLocationRelativeTo(null);

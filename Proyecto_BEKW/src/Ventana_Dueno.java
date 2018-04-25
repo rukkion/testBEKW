@@ -46,6 +46,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      float s = 0;
      DefaultTableModel tbmCompra;
      DefaultTableModel tbmMateriaPrima_Compra;
+     int id_usuario=0;
     /**
      * Creates new form Ventana_Empleado
      */
@@ -66,8 +67,18 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         seticon();
         lblUsuario.setText("Bienvenido, "+nombreUsuario);
     }
+    
     CONECTAR_SERVER CS;
     public Ventana_Dueno(String nombreUsuario,CONECTAR_SERVER CS) {
+        this.nombreUsuario=nombreUsuario;
+        initComponents();
+        setLocationRelativeTo(null);
+        seticon();
+        lblUsuario.setText("Bienvenido, "+nombreUsuario);
+        this.CS=CS;
+    }
+    public Ventana_Dueno(int id_usuario,String nombreUsuario,CONECTAR_SERVER CS) {
+        this.id_usuario=id_usuario;
         this.nombreUsuario=nombreUsuario;
         initComponents();
         setLocationRelativeTo(null);
@@ -179,6 +190,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         spncantidadProducto_Pedido = new javax.swing.JSpinner();
         jSeparator5 = new javax.swing.JSeparator();
         btnCancelar_Pedido = new javax.swing.JButton();
+        txtAdelantoPedido = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        txtFechaEntregaPedido = new javax.swing.JFormattedTextField();
+        jLabel17 = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         btnAgregarProvedor = new javax.swing.JButton();
         jLabel81 = new javax.swing.JLabel();
@@ -660,20 +675,20 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         btnEliminarArticuloPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnEliminarArticuloPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-17x30.png"))); // NOI18N
         btnEliminarArticuloPedido.setText("Eliminar artículo");
-        jPanel22.add(btnEliminarArticuloPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, 160, 40));
+        jPanel22.add(btnEliminarArticuloPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 160, 40));
 
         btnGenerarPedido.setBackground(new java.awt.Color(255, 255, 255));
         btnGenerarPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnGenerarPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/success30x30.png"))); // NOI18N
         btnGenerarPedido.setText("Generar Pedido");
-        jPanel22.add(btnGenerarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 490, 160, 40));
+        jPanel22.add(btnGenerarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, 160, 40));
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel14.setText("Total:");
-        jPanel22.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, -1, 30));
+        jPanel22.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, -1, 30));
 
         txtTotalPedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jPanel22.add(txtTotalPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 490, 120, 30));
+        jPanel22.add(txtTotalPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 470, 120, 30));
 
         jLabel80.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel80.setText("Pedido");
@@ -763,7 +778,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel22.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 400, 550));
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel22.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, 10, 50));
+        jPanel22.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, 10, 40));
 
         btnCancelar_Pedido.setBackground(new java.awt.Color(255, 255, 255));
         btnCancelar_Pedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -774,7 +789,22 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnCancelar_PedidoActionPerformed(evt);
             }
         });
-        jPanel22.add(btnCancelar_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, -1, -1));
+        jPanel22.add(btnCancelar_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, -1, -1));
+
+        txtAdelantoPedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jPanel22.add(txtAdelantoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, 120, 30));
+
+        jLabel12.setText("Adelanto:");
+        jPanel22.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 480, -1, -1));
+
+        txtFechaEntregaPedido.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/MM/yyyy"))));
+        txtFechaEntregaPedido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtFechaEntregaPedido.setText("01/01/2018");
+        txtFechaEntregaPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel22.add(txtFechaEntregaPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 90, 30));
+
+        jLabel17.setText("Fecha pedido:");
+        jPanel22.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, -1, -1));
 
         tb_Ventas_Pedidos.addTab("Nuevo Pedido", jPanel22);
 
@@ -3475,10 +3505,12 @@ private boolean validarVacioP(){
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -3602,6 +3634,7 @@ private boolean validarVacioP(){
     private javax.swing.JTable tblUsuarios;
     private javax.swing.JTextField txtAPMC;
     private javax.swing.JTextField txtAPPC;
+    private javax.swing.JTextField txtAdelantoPedido;
     private javax.swing.JTextField txtBuscadorC;
     private javax.swing.JTextField txtBuscar2;
     private javax.swing.JTextField txtBuscar4;
@@ -3616,6 +3649,7 @@ private boolean validarVacioP(){
     private javax.swing.JTextArea txtDescripcionMP;
     private javax.swing.JTextField txtDomC;
     private javax.swing.JLabel txtEstado;
+    private javax.swing.JFormattedTextField txtFechaEntregaPedido;
     private javax.swing.JTextField txtNomC;
     private javax.swing.JTextField txtNombreMP;
     private javax.swing.JTextField txtProveedorCP;

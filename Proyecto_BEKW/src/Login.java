@@ -162,47 +162,40 @@ public class Login extends javax.swing.JFrame {
     }
     private void iniciarSesion(String user, String pass){
         try{
-            
                 System.out.println("iniciando sesion... "+txtusername.getText()+" "+pass);
-                String cad = "SELECT NOMBRE_PERSONA, TIPO FROM USUARIOS"
+                String cad = "SELECT ID_USUARIO, NOMBRE_PERSONA, TIPO FROM USUARIOS"
                         + " WHERE NOMBRE_USUARIO='"+user+"' AND CONTRASEÑA='"+pass+"'";
-//String cad = "SELECT NOMBRE_PERSONA FROM USUARIOS";
                 Statement stmt = conect.createStatement();
                 stmt.executeQuery(cad);
                 ResultSet rs = stmt.getResultSet();
+                int id_usuario=0;
                 String name = null;
                 String tipo=null;
                 int count=0;
                     while(rs.next()){
                     name=rs.getString("NOMBRE_PERSONA");
                     tipo=rs.getString("TIPO");
+                    id_usuario=rs.getInt("ID_USUARIO");
                     count++;
-
                     }
                     if(count==1){
                         JOptionPane.showMessageDialog(this,"Bienvenido "+name+".","Mensaje de bienvenida.",JOptionPane.INFORMATION_MESSAGE);
                         if(tipo.equals("E")){
-                            Ventana_Empleado ve=new Ventana_Empleado(name,CS);
+                            Ventana_Empleado ve=new Ventana_Empleado(id_usuario,name,CS);
                             ve.setVisible(true);
                             this.dispose();
                         }else if(tipo.equals("D")){
-                            Ventana_Dueno vd=new Ventana_Dueno(name,CS);
+                            Ventana_Dueno vd=new Ventana_Dueno(id_usuario,name,CS);
                             vd.setVisible(true);
                             this.dispose();
                         }
-                        
                     }else if(count>1){
                         JOptionPane.showMessageDialog(this,"Usuario duplicado, acceso denegado.", "ERROR", JOptionPane.ERROR_MESSAGE,eIcon); 
                         limpiarCampos();
                     }else{
                         JOptionPane.showMessageDialog(this,"Usuario o contraseña incorrectos.", "ERROR", JOptionPane.ERROR_MESSAGE,eIcon); 
                         limpiarCampos();
-                    }
-                    
-                
-                    
-                       
-                
+                    }  
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }
