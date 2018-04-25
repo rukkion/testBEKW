@@ -681,6 +681,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         btnGenerarPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnGenerarPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/success30x30.png"))); // NOI18N
         btnGenerarPedido.setText("Generar Pedido");
+        btnGenerarPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarPedidoActionPerformed(evt);
+            }
+        });
         jPanel22.add(btnGenerarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, 160, 40));
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -3192,6 +3197,31 @@ private boolean validarVacioP(){
     private void spncantidadProducto_PedidoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spncantidadProducto_PedidoStateChanged
         spinnerNeg(spncantidadMP_Compra);
     }//GEN-LAST:event_spncantidadProducto_PedidoStateChanged
+
+    private void btnGenerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPedidoActionPerformed
+        if(tblPedido.getRowCount()!=0 && tblClientes_Pedido.getSelectedRow()>-1){
+        try { System.out.println("insertaddo");
+                insertarPedido();
+               
+                DefaultTableModel tbm=(DefaultTableModel)tblPedido.getModel();
+                tbm.setRowCount(0);
+                txtTotalPedido.setText("0");
+                tblPedido.setModel(tbm);
+               
+                showMessageDialog(this, "¡Pedido realizada exitosamente!");
+            } catch (SQLException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+    else if(tblProveedor_Compra.getSelectedRow()>-1){
+            showMessageDialog(this,"Debe de ingresar articulos al pedido.");
+    }
+    else
+        showMessageDialog(this,"Debe de seleccionar un cliente.");
+        
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarPedidoActionPerformed
     
     
     void Agregarcarrito(){
@@ -3210,7 +3240,22 @@ private boolean validarVacioP(){
         }
         
     }
-    
+            private void insertarPedido() throws SQLException {
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+        String date = simpleDateFormat.format(new Date());
+        r = tblPedido.getSelectedRow();
+        String cad = "INSERT INTO COMPRAS "
+                    + "VALUES('"+ date +"','"+txtFechaEntregaPedido.getText()+"'"
+                    + tblPedido.getValueAt(r,0).toString()+id_usuario+",'N','N',"+txtAdelantoPedido.getText()+",'N',"+txtTotalPedido.getText()+")";
+            Statement stmt = conect.createStatement();
+            stmt.executeUpdate(cad);
+            actCant();
+            //showMessageDialog(null,"Proveedor Registrado");
+            stmt.close();
+
+    }
     private void insertarCompra () throws SQLException {
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
