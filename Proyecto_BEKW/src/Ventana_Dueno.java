@@ -699,17 +699,17 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblProductos_Pedido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Código", "Nombre", "Existencia", "Precio unitario"
+                "Código", "Nombre", "Existencia", "Medida", "Precio"
             }
         ));
         jScrollPane20.setViewportView(tblProductos_Pedido);
