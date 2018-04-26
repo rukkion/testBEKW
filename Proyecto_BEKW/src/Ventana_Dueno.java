@@ -157,11 +157,13 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel14 = new javax.swing.JPanel();
         jScrollPane16 = new javax.swing.JScrollPane();
         tblPedidosVentas = new javax.swing.JTable();
-        txtBuscarPedidosVenta = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         btnAddCarritoVentas = new javax.swing.JButton();
         jLabel72 = new javax.swing.JLabel();
         btnRefreshPedidosVenta = new javax.swing.JButton();
+        dateGeneracion = new com.toedter.calendar.JDateChooser();
+        jLabel32 = new javax.swing.JLabel();
+        dateEntrega = new com.toedter.calendar.JDateChooser();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel18 = new javax.swing.JLabel();
         lblAnticipo = new javax.swing.JLabel();
@@ -426,7 +428,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnAddClienteVentasActionPerformed(evt);
             }
         });
-        jPanel21.add(btnAddClienteVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 150, 60));
+        jPanel21.add(btnAddClienteVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 130, 60));
         jPanel21.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 0, 205, -1));
 
         tblClientesVenta.setModel(new javax.swing.table.DefaultTableModel(
@@ -459,7 +461,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tblVenta);
 
-        jPanel21.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 710, 260));
+        jPanel21.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 690, 260));
 
         btnEliminarArticuloVenta.setBackground(new java.awt.Color(255, 255, 255));
         btnEliminarArticuloVenta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -509,57 +511,59 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblPedidosVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Cliente", "No. Pedido", "Fecha", "Total"
+                "Cliente", "No. Pedido", "Fecha generación", "Fecha entrega", "Total"
             }
         ));
         jScrollPane16.setViewportView(tblPedidosVentas);
 
-        jPanel14.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 373, 332));
-
-        txtBuscarPedidosVenta.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtBuscarPedidosVenta.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtBuscarPedidosVentatxtBuscarKeyReleased(evt);
-            }
-        });
-        jPanel14.add(txtBuscarPedidosVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 62, 230, -1));
+        jPanel14.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 440, 310));
 
         jLabel29.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel29.setText("Buscar:");
-        jPanel14.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 65, -1, -1));
+        jLabel29.setText("Fecha generación:");
+        jPanel14.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         btnAddCarritoVentas.setBackground(new java.awt.Color(255, 255, 255));
         btnAddCarritoVentas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnAddCarritoVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-16x30.png"))); // NOI18N
-        btnAddCarritoVentas.setText("Añadir a Carrito");
+        btnAddCarritoVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
+        btnAddCarritoVentas.setText("Seleccionar Pedido");
         btnAddCarritoVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddCarritoVentasjButton11ActionPerformed(evt);
             }
         });
-        jPanel14.add(btnAddCarritoVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 453, -1, 56));
+        jPanel14.add(btnAddCarritoVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, -1, 56));
 
         jLabel72.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel72.setText("Pedidos");
-        jPanel14.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 27, -1, -1));
+        jPanel14.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         btnRefreshPedidosVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update_30px.png"))); // NOI18N
-        jPanel14.add(btnRefreshPedidosVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 51, 40, -1));
+        jPanel14.add(btnRefreshPedidosVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 40, -1));
 
-        jPanel21.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(767, 10, 400, 530));
+        dateGeneracion.setMinSelectableDate(new java.util.Date(-62135740700000L));
+        jPanel14.add(dateGeneracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 190, -1));
+
+        jLabel32.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel32.setText("Fecha entrega:");
+        jPanel14.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        dateEntrega.setMinSelectableDate(new java.util.Date(-62135740700000L));
+        jPanel14.add(dateEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 190, -1));
+
+        jPanel21.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(727, 10, 480, 530));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel21.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 20, 560));
+        jPanel21.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 20, 560));
 
         jLabel18.setText("Anticipo:");
         jPanel21.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, -1, -1));
@@ -2989,22 +2993,21 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbUsuariosTipoActionPerformed
 
-    private void txtBuscarPedidosVentatxtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPedidosVentatxtBuscarKeyReleased
-
-    }//GEN-LAST:event_txtBuscarPedidosVentatxtBuscarKeyReleased
-
     
     private void llenarTablaPedidos_Venta(){
          try {
              
             Statement stmt = conect.createStatement();
-            DefaultTableModel tbmPedidosVenta=(DefaultTableModel)tblpedi.getModel();
-            tbm.setRowCount(0);
+            DefaultTableModel tbmPedidosVenta=(DefaultTableModel)tblPedidosVentas.getModel();
+            tbmPedidosVenta.setRowCount(0);
+            
+            //[0] ID CLIENTE - [1] NOMBRE CLIENTE
+            String nombreCliente[]=new String[2];
+            
             //BUSCAR NOMBRE DE CLIENTE
             stmt.execute("SELECT ID_PERSONA, NOMBRE from PERSONAS where TIPO = 'C'");
             ResultSet res = stmt.getResultSet();
-            //[0] ID CLIENTE - [1] NOMBRE CLIENTE
-            String nombreCliente[]=new String[2];
+            
             if(null!=res){
                 while(res.next()){
                    nombreCliente[0]=res.getInt("ID_PERSONA")+"";
@@ -3013,7 +3016,17 @@ private boolean validarVacioP(){
             }
             stmt.close();
             //BUSCA TODO DE PEDIDO
+            //stmt.execute("SELECT ID_PERSONA NOPEDIDO,FECHA,TOTAL, NOMBRE from PERSONAS where TIPO = 'C'");
+            res = stmt.getResultSet();
+            //[0] ID CLIENTE - [1] NOMBRE CLIENTE
             
+            if(null!=res){
+                while(res.next()){
+                   nombreCliente[0]=res.getInt("ID_PERSONA")+"";
+                   nombreCliente[1]=res.getString("NOMBRE");
+                }  
+            }
+            stmt.close();
         }catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en llenar tabla Clientes en Pedido");
         } 
@@ -3651,6 +3664,8 @@ void restartotalyeliminarrowPedido(){
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cmbUnidadMedidaMP;
     private javax.swing.JComboBox<String> cmbUsuariosTipo;
+    private com.toedter.calendar.JDateChooser dateEntrega;
+    private com.toedter.calendar.JDateChooser dateGeneracion;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton25;
@@ -3673,6 +3688,7 @@ void restartotalyeliminarrowPedido(){
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -3795,7 +3811,6 @@ void restartotalyeliminarrowPedido(){
     private javax.swing.JTextField txtBuscarCliente_Pedido;
     private javax.swing.JTextField txtBuscarCompras;
     private javax.swing.JTextField txtBuscarP;
-    private javax.swing.JTextField txtBuscarPedidosVenta;
     private javax.swing.JTextField txtBuscarProducto_Pedido;
     private javax.swing.JTextField txtBuscarProveedor;
     private javax.swing.JTextField txtBuscasMateriaPrima_Compras;
