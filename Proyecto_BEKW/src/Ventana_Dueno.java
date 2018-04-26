@@ -3092,7 +3092,7 @@ private boolean validarVacioP(){
             //BUSCA TODO DE PEDIDO
             if(idCliente>0){
                 stmt=conect.createStatement();
-                stmt.execute("SELECT ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA,TOTAL from PEDIDOS where ID_CLIENTE ="+idCliente);
+                stmt.execute("SELECT ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA,TOTAL from PEDIDOS where ID_CLIENTE ="+idCliente+" AND ESTADO='N'");
                 res = stmt.getResultSet();
             
             
