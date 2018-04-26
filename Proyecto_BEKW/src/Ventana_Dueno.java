@@ -640,6 +640,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         btnEliminarArticuloPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnEliminarArticuloPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-17x30.png"))); // NOI18N
         btnEliminarArticuloPedido.setText("Eliminar artículo");
+        btnEliminarArticuloPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarArticuloPedidoActionPerformed(evt);
+            }
+        });
         jPanel22.add(btnEliminarArticuloPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, 160, 40));
 
         btnGenerarPedido.setBackground(new java.awt.Color(255, 255, 255));
@@ -2226,7 +2231,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void txtBuscarCliente_PedidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarCliente_PedidoKeyReleased
-        // TODO add your handling code here:
+        try {
+                BuscarClientes();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }//GEN-LAST:event_txtBuscarCliente_PedidoKeyReleased
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -3201,7 +3210,7 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_txtBuscasMateriaPrima_ComprasKeyTyped
 
     private void btnCancelar_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar_PedidoActionPerformed
-        // TODO add your handling code here:
+        cancelarPedido();
     }//GEN-LAST:event_btnCancelar_PedidoActionPerformed
 
     private void spncantidadMP_CompraStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spncantidadMP_CompraStateChanged
@@ -3240,6 +3249,22 @@ private boolean validarVacioP(){
     private void btnCancelarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarVentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarVentaActionPerformed
+
+    private void btnEliminarArticuloPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarArticuloPedidoActionPerformed
+        restartotalyeliminarrowPedido();
+    }//GEN-LAST:event_btnEliminarArticuloPedidoActionPerformed
+    
+    void cancelarPedido(){
+         DefaultTableModel tbm = (DefaultTableModel) tblPedido.getModel();
+            for (int i = 0; i < tblPedido.getRowCount(); i++) {
+            tbm.removeRow(i);
+            i-=1;
+            }
+            tblPedido.setModel(tbm);
+            txtTotalPedido.setText("0");
+            s = 0;
+    }
+
     
     private void detalle_pedido(){
             try {
@@ -3252,10 +3277,10 @@ private boolean validarVacioP(){
                 while (re.next()){
                     id = re.getInt(1);
                 }
-                for (int i = 0;i< tblProductos_Pedido.getRowCount();i++){
+                for (int i = 0;i< tblPedido.getRowCount();i++){
                     cad = "INSERT INTO DETALLE_PEDIDO" +
                             " VALUES( " + id +
-                            "," + tblProductos_Pedido.getValueAt(i,0).toString() +
+                            "," + tblPedido.getValueAt(i,0).toString() +
                             "," + tblPedido.getValueAt(i,3).toString() +
                             "," + tblClientes_Pedido.getValueAt(idp,0) +
                             ")";
@@ -3266,6 +3291,28 @@ private boolean validarVacioP(){
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
                
+    }
+    
+
+    void restartotalyeliminarrowPedido(){
+        r = tblPedido.getSelectedRow();
+        if( r != -1){
+            DefaultTableModel tbm = (DefaultTableModel) tblPedido.getModel();
+            s -= Float.parseFloat(tblPedido.getValueAt(r,4).toString());
+            tbm.removeRow(r);
+            tblPedido.setModel(tbm);
+            txtTotalPedido.setText("" +s);
+            System.out.print("IF" +   "    " +r);
+        }else{
+            r = tblPedido.getRowCount()-1;
+            DefaultTableModel tbm = (DefaultTableModel) tblPedido.getModel();
+            s -= Float.parseFloat(tblPedido.getValueAt(r,4).toString());
+            tbm.removeRow(r);
+            tblPedido.setModel(tbm);
+            txtTotalPedido.setText("" +s);
+            System.out.print("ELSE");
+        }
+        
     }
     
     void sumartotalPedido(){
@@ -3288,38 +3335,10 @@ private boolean validarVacioP(){
             tbmpedido.addRow(pedido);
     }
 
-    void cancelarPedido(){
-         DefaultTableModel tbm = (DefaultTableModel) tblProductos_Pedido.getModel();
-            for (int i = 0; i < tblProductos_Pedido.getRowCount(); i++) {
-            tbm.removeRow(i);
-            i-=1;
-            }
-            tblProductos_Pedido.setModel(tbm);
-            txtTotalPedido.setText("0");
-            s = 0;
-    }
+    
 
 
-void restartotalyeliminarrowPedido(){
-        r = tblProductos_Pedido.getSelectedRow();
-        if( r != -1){
-            DefaultTableModel tbm = (DefaultTableModel) tblProductos_Pedido.getModel();
-            s -= Float.parseFloat(tblProductos_Pedido.getValueAt(r,4).toString());
-            tbm.removeRow(r);
-            tblProductos_Pedido.setModel(tbm);
-            txtTotalPedido.setText("" +s);
-            System.out.print("IF" +   "    " +r);
-        }else{
-            r = tblProductos_Pedido.getRowCount()-1;
-            DefaultTableModel tbm = (DefaultTableModel) tblProductos_Pedido.getModel();
-            s -= Float.parseFloat(tblProductos_Pedido.getValueAt(r,4).toString());
-            tbm.removeRow(r);
-            tblProductos_Pedido.setModel(tbm);
-            txtTotalPedido.setText("" +s);
-            System.out.print("ELSE");
-        }
-        
-    }
+
     
     void Agregarcarrito(){
         
@@ -3337,6 +3356,33 @@ void restartotalyeliminarrowPedido(){
         }
         
     }
+    
+    private void BuscarClientes() throws ClassNotFoundException{
+         try {
+             conectarBD();
+             Statement stmt = conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblClientes_Pedido.getModel();
+           tbm.setRowCount(0);
+           stmt.execute("select * from PERSONAS "
+                                            + "where TIPO = 'C' "
+                                            + "AND NOMBRE LIKE '%" + txtBuscarCliente_Pedido.getText() + "%'");
+             ResultSet res = stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   Vector rowProductos=new Vector();
+                  rowProductos.add(res.getString("ID_PERSONA"));
+                  rowProductos.add(res.getString("NOMBRE"));
+                  rowProductos.add(res.getString("DOMICILIO"));
+                  rowProductos.add(res.getString("TELEFONO"));
+                  tbm.addRow(rowProductos);
+                }
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+        } 
+    }
+    
             private void insertarPedido() throws SQLException {
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -3345,8 +3391,8 @@ void restartotalyeliminarrowPedido(){
         System.out.println(date);
         r = tblClientes_Pedido.getSelectedRow();
         String cad = "INSERT INTO PEDIDOS "
-                    + "VALUES(2000,'"+ date +"','"+txtFechaEntregaPedido.getText()+"',"
-                    + tblClientes_Pedido.getValueAt(r,0).toString()+","+id_usuario+",'N','N',"+txtAdelantoPedido.getText()+",'N',"+txtTotalPedido.getText()+")";
+                    + "VALUES('"+ date +"','"+txtFechaEntregaPedido.getText()+"',"
+                    + tblClientes_Pedido.getValueAt(r,0).toString()+","+id_usuario+",'N',"+txtAdelantoPedido.getText()+","+txtTotalPedido.getText()+")";
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
             actCant();
@@ -3354,6 +3400,7 @@ void restartotalyeliminarrowPedido(){
             stmt.close();
 
     }
+
     private void insertarCompra () throws SQLException {
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
