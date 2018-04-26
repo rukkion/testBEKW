@@ -49,6 +49,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      DefaultTableModel tbmCompra;
      DefaultTableModel tbmMateriaPrima_Compra;
      DefaultTableModel tbmpedido;
+     DefaultTableModel tbmVenta;
      int id_usuario=0;
      Date dateAct;
      
@@ -444,6 +445,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 "Nombre ", "Domicilio", "Telefono"
             }
         ));
+        tblClientesVenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblClientesVentaMouseClicked(evt);
+            }
+        });
         jScrollPane17.setViewportView(tblClientesVenta);
 
         jPanel21.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 540, 65));
@@ -477,7 +483,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnGenerarVentaActionPerformed(evt);
             }
         });
-        jPanel21.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, 170, 40));
+        jPanel21.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 170, 40));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel13.setText("Total:");
@@ -488,6 +494,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel21.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         txtBuscarClienteVenta.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtBuscarClienteVenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtBuscarClienteVentaMouseClicked(evt);
+            }
+        });
         txtBuscarClienteVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscarClienteVentaActionPerformed(evt);
@@ -523,9 +534,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 "Cliente", "No. Pedido", "Fecha generación", "Fecha entrega", "Total"
             }
         ));
+        tblPedidosVentas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblPedidosVentasMouseClicked(evt);
+            }
+        });
         jScrollPane16.setViewportView(tblPedidosVentas);
 
-        jPanel14.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 440, 310));
+        jPanel14.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 440, 310));
 
         jLabel72.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel72.setText("Pedidos");
@@ -542,7 +558,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel14.add(rdbEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, -1, -1));
 
         jLabel21.setText("Seleccionar pedido a pagar.");
-        jPanel14.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+        jPanel14.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
         jPanel21.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(727, 10, 480, 530));
 
@@ -2015,6 +2031,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         tbmpedido=(DefaultTableModel)tblPedido.getModel();
     } 
     
+    private void LlenarTablaVenta(){
+        tbmVenta = (DefaultTableModel)tblVenta.getModel();
+    }
+    
     private void LlenarTablaProveedores() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -2164,6 +2184,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             LlenarTablaComprasProveedores();
             llenarTablaCompra();
             llenarTablaPedidos();
+            LlenarTablaVenta();
             llenarTablaCliente_Pedido();
             llenarTablaProductos();
             llenarTablaCliente2();
@@ -3194,7 +3215,18 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_formWindowActivated
 
     private void btnGenerarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarVentaActionPerformed
-        // TODO add your handling code here:
+            try {
+                insertarVenta();
+                detalle_venta();
+                actualizarEstadoPedido();
+                llenarTablaPedidos_Venta();
+                tbmVenta.setRowCount(0);
+                lblAnticipo.setText("0");
+                lblTotalVenta1.setText("0");
+                lblPagoRestante.setText("0");
+            } catch (SQLException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }//GEN-LAST:event_btnGenerarVentaActionPerformed
 
     private void jButton20jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20jButton11ActionPerformed
@@ -3230,6 +3262,21 @@ private boolean validarVacioP(){
     private void btnRefreshProducto_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProducto_PedidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRefreshProducto_PedidoActionPerformed
+    
+    private void actualizarEstadoPedido(){
+        
+            try {
+                String cad = "UPDATE PEDIDOS " +
+                        "SET ESTADO = 'P' " +
+                        "WHERE ID_PEDIDO =" + tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1) ;
+                Statement stmt = conect.createStatement();
+                stmt.executeUpdate(cad);
+            } catch (SQLException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        
+    }
     
     void cancelarCompra(){
          DefaultTableModel tbm = (DefaultTableModel) tblCompra.getModel();
@@ -3296,13 +3343,38 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_btnGenerarPedidoActionPerformed
 
     private void btnCancelarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarVentaActionPerformed
-        // TODO add your handling code here:
+        cancelarVenta();
     }//GEN-LAST:event_btnCancelarVentaActionPerformed
 
     private void btnEliminarArticuloPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarArticuloPedidoActionPerformed
         restartotalyeliminarrowPedido();
     }//GEN-LAST:event_btnEliminarArticuloPedidoActionPerformed
+
+    private void txtBuscarClienteVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscarClienteVentaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarClienteVentaMouseClicked
+
+    private void tblClientesVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesVentaMouseClicked
+        llenarTablaPedidos_Venta();
+    }//GEN-LAST:event_tblClientesVentaMouseClicked
+
+    private void tblPedidosVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPedidosVentasMouseClicked
+        cargarPedido();
+    }//GEN-LAST:event_tblPedidosVentasMouseClicked
        
+    
+    void cancelarVenta(){
+         DefaultTableModel tbm = (DefaultTableModel) tblVenta.getModel();
+            for (int i = 0; i < tblVenta.getRowCount(); i++) {
+            tbm.removeRow(i);
+            i-=1;
+            }
+            tblVenta.setModel(tbm);
+            lblAnticipo.setText("0");
+            lblTotalVenta1.setText("0");
+            lblPagoRestante.setText("0");
+    }
+    
     void cancelarPedido(){
          DefaultTableModel tbm = (DefaultTableModel) tblPedido.getModel();
             for (int i = 0; i < tblPedido.getRowCount(); i++) {
@@ -3343,6 +3415,49 @@ private boolean validarVacioP(){
     }
     
 
+    
+    private void insertarVenta() throws SQLException {
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        
+        String date = simpleDateFormat.format(new Date());
+        String cad = "INSERT INTO VENTAS "
+                    + "VALUES('"+ date +"',"
+                    + idCliente +","+id_usuario+","+lblTotalVenta1.getText()+")";
+            Statement stmt = conect.createStatement();
+            stmt.executeUpdate(cad);
+            actCant();
+            //showMessageDialog(null,"Proveedor Registrado");
+            stmt.close();
+
+    }
+    
+    private void detalle_venta(){
+            try {
+                cad ="";
+                Statement stmt = conect.createStatement();
+                stmt.execute("SELECT MAX (ID_VENTA)  FROM VENTAS");
+                ResultSet re = stmt.getResultSet();
+                int id = 0;
+                while (re.next()){
+                    id = re.getInt(1);
+                }
+                for (int i = 0;i< tblVenta.getRowCount();i++){
+                    cad = "INSERT INTO DETALLE_VENTAS" +
+                            " VALUES( " + id +
+                            "," + tblVenta.getValueAt(i,0).toString() +
+                            "," + tblVenta.getValueAt(i,3).toString() +
+                            "," + idCliente +
+                            ")";
+                            stmt.executeUpdate(cad);
+                            }
+               stmt.close(); 
+            } catch (SQLException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+               
+    }
+    
     void restartotalyeliminarrowPedido(){
         r = tblPedido.getSelectedRow();
         if( r != -1){
@@ -3370,6 +3485,59 @@ private boolean validarVacioP(){
         s+= Float.parseFloat(tblPedido.getValueAt(r,4).toString());
         txtTotalPedido.setText(""+s);
     }
+    
+    
+    private void cargarPedido(){
+            try {
+                conectarBD();
+                stmt = conect.createStatement();
+                tbmVenta=(DefaultTableModel)tblVenta.getModel();
+                tbmVenta.setRowCount(0);
+                System.out.print(tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1));
+                stmt.execute("SELECT PRODUCTOS.ID_PRODUCTO,PRODUCTOS.NOMBRE,PRODUCTOS.PRECIO, DETALLE_PEDIDO.CANTIDAD, (DETALLE_PEDIDO.CANTIDAD * PRODUCTOS.PRECIO) AS TOTAL " +
+                                "FROM PRODUCTOS INNER JOIN DETALLE_PEDIDO ON PRODUCTOS.ID_PRODUCTO = DETALLE_PEDIDO.ID_PRODUCTO " +
+                                "AND DETALLE_PEDIDO.ID_PEDIDO =" + tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1));
+                res = stmt.getResultSet();
+                if(null!=res){
+                    while(res.next()){
+                        Vector rowProductos=new Vector();
+                        rowProductos.add(res.getString(1));
+                        rowProductos.add(res.getString(2));
+                        rowProductos.add(res.getString(3));
+                        rowProductos.add(res.getString(4));
+                        rowProductos.add(res.getString(5));
+                        tbmVenta.addRow(rowProductos);
+                    }
+                    
+                    stmt.execute("SELECT ADELANTO FROM PEDIDOS WHERE ID_PEDIDO =" + tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1));
+                    res = stmt.getResultSet();
+                    if(null!=res){
+                        while(res.next()){
+                            lblAnticipo.setText(""+res.getFloat(1));
+                        }
+                    }
+                    
+                    stmt.execute("SELECT TOTAL FROM PEDIDOS WHERE ID_PEDIDO =" + tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1));
+                    res = stmt.getResultSet();
+                    if(null!=res){
+                        while(res.next()){
+                            lblTotalVenta1.setText(""+ res.getFloat(1));
+                        }
+                    }
+                    Float T,A;
+                    
+                    T = Float.parseFloat(lblTotalVenta1.getText());
+                    A = Float.parseFloat(lblAnticipo.getText());
+                    lblPagoRestante.setText("" + (T-A));
+                    
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+    
     
     private void AgregarcarritoPedido(){
     
