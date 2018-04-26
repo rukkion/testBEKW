@@ -404,25 +404,6 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JButton" name="btnEliminarArticuloVenta">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                        </Property>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Icons/cart-17x30.png"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Eliminar art&#xed;culo"/>
-                      </Properties>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="180" y="460" width="160" height="40"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
                     <Component class="javax.swing.JButton" name="btnGenerarVenta">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -527,7 +508,7 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="20" y="100" width="440" height="310"/>
+                              <AbsoluteConstraints x="20" y="120" width="440" height="310"/>
                             </Constraint>
                           </Constraints>
 
@@ -580,41 +561,6 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JLabel" name="jLabel29">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Arial" size="14" style="0"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Fecha generaci&#xf3;n:"/>
-                          </Properties>
-                          <Constraints>
-                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="20" y="40" width="-1" height="-1"/>
-                            </Constraint>
-                          </Constraints>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="btnAddCarritoVentas">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Arial" size="14" style="0"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/Icons/plus30x30.png"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Seleccionar Pedido"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddCarritoVentasjButton11ActionPerformed"/>
-                          </Events>
-                          <Constraints>
-                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="180" y="430" width="-1" height="56"/>
-                            </Constraint>
-                          </Constraints>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="jLabel72">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -628,55 +574,46 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btnRefreshPedidosVenta">
-                          <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/Icons/update_30px.png"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRefreshPedidosVentaActionPerformed"/>
-                          </Events>
-                          <Constraints>
-                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="410" y="50" width="40" height="-1"/>
-                            </Constraint>
-                          </Constraints>
-                        </Component>
                         <Component class="com.toedter.calendar.JDateChooser" name="dateGeneracion">
                           <Properties>
+                            <Property name="dateFormatString" type="java.lang.String" value="dd-MM-yyyy"/>
                             <Property name="minSelectableDate" type="java.util.Date" editor="org.netbeans.beaninfo.editors.DateEditor">
                               <SerializedValue value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,117,116,105,108,46,68,97,116,101,104,106,-127,1,75,89,116,25,3,0,0,120,112,119,8,-1,-1,-57,124,-27,63,106,-96,120"/>
                             </Property>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="160" y="40" width="190" height="-1"/>
+                              <AbsoluteConstraints x="110" y="60" width="190" height="-1"/>
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel32">
+                        <Component class="javax.swing.JRadioButton" name="rdbGeneracion">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Arial" size="14" style="0"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Fecha entrega:"/>
+                            <Property name="text" type="java.lang.String" value="Fecha Generaci&#xf3;n"/>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="20" y="70" width="-1" height="-1"/>
+                              <AbsoluteConstraints x="50" y="30" width="-1" height="-1"/>
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="com.toedter.calendar.JDateChooser" name="dateEntrega">
+                        <Component class="javax.swing.JRadioButton" name="rdbEntrega">
                           <Properties>
-                            <Property name="minSelectableDate" type="java.util.Date" editor="org.netbeans.beaninfo.editors.DateEditor">
-                              <SerializedValue value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,117,116,105,108,46,68,97,116,101,104,106,-127,1,75,89,116,25,3,0,0,120,112,119,8,-1,-1,-57,124,-27,63,106,-96,120"/>
-                            </Property>
+                            <Property name="text" type="java.lang.String" value="Fecha Entrega"/>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="160" y="70" width="190" height="-1"/>
+                              <AbsoluteConstraints x="210" y="30" width="-1" height="-1"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel21">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Seleccionar pedido a pagar."/>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="20" y="100" width="-1" height="-1"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -712,13 +649,13 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblTotalVenta">
+                    <Component class="javax.swing.JLabel" name="lblPagoRestante">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="0.00"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="680" y="470" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="680" y="510" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -751,6 +688,26 @@
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="160" y="460" width="20" height="40"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel20">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Pago restante:"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="510" y="510" width="-1" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblTotalVenta1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0.00"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="680" y="470" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2034,8 +1991,8 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="tb_Inventario" min="-2" pref="457" max="-2" attributes="0"/>
-                      <EmptySpace pref="125" max="32767" attributes="0"/>
+                      <Component id="tb_Inventario" min="-2" pref="562" max="-2" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2069,7 +2026,7 @@
                       </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="450" y="100" width="620" height="300"/>
+                          <AbsoluteConstraints x="450" y="100" width="620" height="370"/>
                         </Constraint>
                       </Constraints>
 
@@ -2078,16 +2035,22 @@
                         <Component class="javax.swing.JTable" name="tablaMateriaPrima">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="5" rowCount="0">
+                              <Table columnCount="6" rowCount="0">
                                 <Column editable="true" title="C&#xf3;digo" type="java.lang.Object"/>
                                 <Column editable="true" title="Nombre" type="java.lang.Object"/>
                                 <Column editable="true" title="Descripci&#xf3;n" type="java.lang.Object"/>
                                 <Column editable="true" title="Cantidad disponible" type="java.lang.Object"/>
                                 <Column editable="true" title="Unidad de medida" type="java.lang.Object"/>
+                                <Column editable="true" title="Precio unitario" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
                                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
@@ -2143,7 +2106,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="60" y="320" width="154" height="36"/>
+                          <AbsoluteConstraints x="60" y="400" width="154" height="36"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2165,7 +2128,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="220" y="320" width="165" height="36"/>
+                          <AbsoluteConstraints x="220" y="400" width="165" height="36"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2187,7 +2150,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="220" y="360" width="165" height="36"/>
+                          <AbsoluteConstraints x="220" y="440" width="165" height="36"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2209,7 +2172,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="60" y="360" width="154" height="36"/>
+                          <AbsoluteConstraints x="60" y="440" width="154" height="36"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2235,7 +2198,7 @@
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="20" y="190" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="20" y="230" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2273,7 +2236,7 @@
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="60" y="230" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="60" y="270" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2283,7 +2246,7 @@
                       </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="160" y="230" width="240" height="70"/>
+                          <AbsoluteConstraints x="160" y="270" width="240" height="90"/>
                         </Constraint>
                       </Constraints>
 
@@ -2295,6 +2258,7 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="14" style="0"/>
                             </Property>
+                            <Property name="lineWrap" type="boolean" value="true"/>
                             <Property name="rows" type="int" value="5"/>
                           </Properties>
                         </Component>
@@ -2334,23 +2298,24 @@
                           <Font name="Arial" size="14" style="0"/>
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="16">
-                            <StringItem index="0" value="Pieza"/>
-                            <StringItem index="1" value="Caja"/>
-                            <StringItem index="2" value="Carton "/>
-                            <StringItem index="3" value="Cubeta"/>
-                            <StringItem index="4" value="Bolsa"/>
-                            <StringItem index="5" value="Barra"/>
-                            <StringItem index="6" value="Costal"/>
-                            <StringItem index="7" value="Galon (4 LT.)"/>
-                            <StringItem index="8" value="Lata 1/4 KG."/>
-                            <StringItem index="9" value="Lata 1/4 ML."/>
-                            <StringItem index="10" value="Lata 1/2 KG."/>
-                            <StringItem index="11" value="Lata 1/2 ML."/>
-                            <StringItem index="12" value="Lata 1 KG."/>
-                            <StringItem index="13" value="Lata 1 L."/>
-                            <StringItem index="14" value="Botella (1 LT.)"/>
-                            <StringItem index="15" value="Botella (2 LT.)"/>
+                          <StringArray count="17">
+                            <StringItem index="0" value="Seleccionar"/>
+                            <StringItem index="1" value="Pieza"/>
+                            <StringItem index="2" value="Caja"/>
+                            <StringItem index="3" value="Carton "/>
+                            <StringItem index="4" value="Cubeta"/>
+                            <StringItem index="5" value="Bolsa"/>
+                            <StringItem index="6" value="Barra"/>
+                            <StringItem index="7" value="Costal"/>
+                            <StringItem index="8" value="Galon (4 LT.)"/>
+                            <StringItem index="9" value="Lata 1/4 KG."/>
+                            <StringItem index="10" value="Lata 1/4 ML."/>
+                            <StringItem index="11" value="Lata 1/2 KG."/>
+                            <StringItem index="12" value="Lata 1/2 ML."/>
+                            <StringItem index="13" value="Lata 1 KG."/>
+                            <StringItem index="14" value="Lata 1 L."/>
+                            <StringItem index="15" value="Botella (1 LT.)"/>
+                            <StringItem index="16" value="Botella (2 LT.)"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -2359,7 +2324,7 @@
                       </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="220" y="190" width="180" height="-1"/>
+                          <AbsoluteConstraints x="220" y="230" width="180" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2373,6 +2338,27 @@
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="450" y="420" width="620" height="20"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel19">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Precio:"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="100" y="190" width="-1" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtPrecioMateriaPrima">
+                      <Properties>
+                        <Property name="horizontalAlignment" type="int" value="4"/>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="220" y="190" width="180" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2680,24 +2666,25 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JComboBox" name="cmbUnidadMedidaMP1">
+                    <Component class="javax.swing.JComboBox" name="cmbUnidadMedidaProducto">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="14" style="0"/>
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="11">
-                            <StringItem index="0" value="Pieza"/>
-                            <StringItem index="1" value="Caja 20 PZ."/>
-                            <StringItem index="2" value="Caja 25 Pz."/>
-                            <StringItem index="3" value="Caja 40 PZ."/>
-                            <StringItem index="4" value="Caja 50 PZ."/>
-                            <StringItem index="5" value="Caja 60 PZ."/>
-                            <StringItem index="6" value="Bolsa 8 PZ."/>
-                            <StringItem index="7" value="Bolsa 12 PZ."/>
-                            <StringItem index="8" value="1/4 KG."/>
-                            <StringItem index="9" value="1/2 KG."/>
-                            <StringItem index="10" value="1 KG."/>
+                          <StringArray count="12">
+                            <StringItem index="0" value="Seleccionar"/>
+                            <StringItem index="1" value="Pieza"/>
+                            <StringItem index="2" value="Caja 20 PZ."/>
+                            <StringItem index="3" value="Caja 25 Pz."/>
+                            <StringItem index="4" value="Caja 40 PZ."/>
+                            <StringItem index="5" value="Caja 50 PZ."/>
+                            <StringItem index="6" value="Caja 60 PZ."/>
+                            <StringItem index="7" value="Bolsa 8 PZ."/>
+                            <StringItem index="8" value="Bolsa 12 PZ."/>
+                            <StringItem index="9" value="1/4 KG."/>
+                            <StringItem index="10" value="1/2 KG."/>
+                            <StringItem index="11" value="1 KG."/>
                           </StringArray>
                         </Property>
                       </Properties>

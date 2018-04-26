@@ -45,6 +45,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      Login log = new Login();
      int r=0,c=0;
      float s = 0;
+     int idCliente=0;
      DefaultTableModel tbmCompra;
      DefaultTableModel tbmMateriaPrima_Compra;
      DefaultTableModel tbmpedido;
@@ -151,7 +152,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel76 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblVenta = new javax.swing.JTable();
-        btnEliminarArticuloVenta = new javax.swing.JButton();
         btnGenerarVenta = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel77 = new javax.swing.JLabel();
@@ -160,19 +160,19 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel14 = new javax.swing.JPanel();
         jScrollPane16 = new javax.swing.JScrollPane();
         tblPedidosVentas = new javax.swing.JTable();
-        jLabel29 = new javax.swing.JLabel();
-        btnAddCarritoVentas = new javax.swing.JButton();
         jLabel72 = new javax.swing.JLabel();
-        btnRefreshPedidosVenta = new javax.swing.JButton();
         dateGeneracion = new com.toedter.calendar.JDateChooser();
-        jLabel32 = new javax.swing.JLabel();
-        dateEntrega = new com.toedter.calendar.JDateChooser();
+        rdbGeneracion = new javax.swing.JRadioButton();
+        rdbEntrega = new javax.swing.JRadioButton();
+        jLabel21 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel18 = new javax.swing.JLabel();
         lblAnticipo = new javax.swing.JLabel();
-        lblTotalVenta = new javax.swing.JLabel();
+        lblPagoRestante = new javax.swing.JLabel();
         btnCancelarVenta = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JSeparator();
+        jLabel20 = new javax.swing.JLabel();
+        lblTotalVenta1 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         jButton14 = new javax.swing.JButton();
         jLabel75 = new javax.swing.JLabel();
@@ -260,6 +260,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtNombreMP = new javax.swing.JTextField();
         cmbUnidadMedidaMP = new javax.swing.JComboBox<>();
         txtEstado = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        txtPrecioMateriaPrima = new javax.swing.JTextField();
         jPanel17 = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
         tblProducto = new javax.swing.JTable();
@@ -280,7 +282,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtdescP = new javax.swing.JTextArea();
-        cmbUnidadMedidaMP1 = new javax.swing.JComboBox<>();
+        cmbUnidadMedidaProducto = new javax.swing.JComboBox<>();
         jPanel9 = new javax.swing.JPanel();
         tb_Personas = new javax.swing.JTabbedPane();
         panelProveedor = new javax.swing.JPanel();
@@ -466,12 +468,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jPanel21.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 690, 260));
 
-        btnEliminarArticuloVenta.setBackground(new java.awt.Color(255, 255, 255));
-        btnEliminarArticuloVenta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnEliminarArticuloVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-17x30.png"))); // NOI18N
-        btnEliminarArticuloVenta.setText("Eliminar artículo");
-        jPanel21.add(btnEliminarArticuloVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 160, 40));
-
         btnGenerarVenta.setBackground(new java.awt.Color(255, 255, 255));
         btnGenerarVenta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnGenerarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/success30x30.png"))); // NOI18N
@@ -529,44 +525,24 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         ));
         jScrollPane16.setViewportView(tblPedidosVentas);
 
-        jPanel14.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 440, 310));
-
-        jLabel29.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel29.setText("Fecha generación:");
-        jPanel14.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
-
-        btnAddCarritoVentas.setBackground(new java.awt.Color(255, 255, 255));
-        btnAddCarritoVentas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnAddCarritoVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
-        btnAddCarritoVentas.setText("Seleccionar Pedido");
-        btnAddCarritoVentas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddCarritoVentasjButton11ActionPerformed(evt);
-            }
-        });
-        jPanel14.add(btnAddCarritoVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, -1, 56));
+        jPanel14.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 440, 310));
 
         jLabel72.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel72.setText("Pedidos");
         jPanel14.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        btnRefreshPedidosVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update_30px.png"))); // NOI18N
-        btnRefreshPedidosVenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRefreshPedidosVentaActionPerformed(evt);
-            }
-        });
-        jPanel14.add(btnRefreshPedidosVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 40, -1));
-
+        dateGeneracion.setDateFormatString("dd-MM-yyyy");
         dateGeneracion.setMinSelectableDate(new java.util.Date(-62135740700000L));
-        jPanel14.add(dateGeneracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 190, -1));
+        jPanel14.add(dateGeneracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 190, -1));
 
-        jLabel32.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel32.setText("Fecha entrega:");
-        jPanel14.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+        rdbGeneracion.setText("Fecha Generación");
+        jPanel14.add(rdbGeneracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
-        dateEntrega.setMinSelectableDate(new java.util.Date(-62135740700000L));
-        jPanel14.add(dateEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 190, -1));
+        rdbEntrega.setText("Fecha Entrega");
+        jPanel14.add(rdbEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, -1, -1));
+
+        jLabel21.setText("Seleccionar pedido a pagar.");
+        jPanel14.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         jPanel21.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(727, 10, 480, 530));
 
@@ -579,8 +555,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         lblAnticipo.setText("0.00");
         jPanel21.add(lblAnticipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 430, 30, 20));
 
-        lblTotalVenta.setText("0.00");
-        jPanel21.add(lblTotalVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, -1, -1));
+        lblPagoRestante.setText("0.00");
+        jPanel21.add(lblPagoRestante, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 510, -1, -1));
 
         btnCancelarVenta.setBackground(new java.awt.Color(255, 255, 255));
         btnCancelarVenta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -595,6 +571,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel21.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 20, 40));
+
+        jLabel20.setText("Pago restante:");
+        jPanel21.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 510, -1, -1));
+
+        lblTotalVenta1.setText("0.00");
+        jPanel21.add(lblTotalVenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, -1, -1));
 
         tb_Ventas_Pedidos.addTab("Nueva Venta", jPanel21);
 
@@ -1128,7 +1110,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código", "Nombre", "Descripción", "Cantidad disponible", "Unidad de medida"
+                "Código", "Nombre", "Descripción", "Cantidad disponible", "Unidad de medida", "Precio unitario"
             }
         ));
         tablaMateriaPrima.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1138,7 +1120,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(tablaMateriaPrima);
 
-        jPanel8.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 620, 300));
+        jPanel8.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 620, 370));
 
         btnCancelarMP.setBackground(new java.awt.Color(255, 255, 255));
         btnCancelarMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1149,7 +1131,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnCancelarMPActionPerformed(evt);
             }
         });
-        jPanel8.add(btnCancelarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 154, 36));
+        jPanel8.add(btnCancelarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 154, 36));
 
         btnModificarMP.setBackground(new java.awt.Color(255, 255, 255));
         btnModificarMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1160,7 +1142,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnModificarMPActionPerformed(evt);
             }
         });
-        jPanel8.add(btnModificarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 165, 36));
+        jPanel8.add(btnModificarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 165, 36));
 
         MP.setBackground(new java.awt.Color(255, 255, 255));
         MP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1171,7 +1153,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 MPActionPerformed(evt);
             }
         });
-        jPanel8.add(MP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 165, 36));
+        jPanel8.add(MP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 165, 36));
 
         btnAgregarMP.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregarMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1182,7 +1164,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnAgregarMPActionPerformed(evt);
             }
         });
-        jPanel8.add(btnAgregarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 154, 36));
+        jPanel8.add(btnAgregarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 154, 36));
 
         jLabel56.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel56.setText("Materia Prima");
@@ -1190,7 +1172,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jLabel64.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel64.setText("Unidad de medida:");
-        jPanel8.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        jPanel8.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
         txtCantidadMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel8.add(txtCantidadMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 150, -1));
@@ -1201,14 +1183,15 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel15.setText("Descripción:");
-        jPanel8.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
+        jPanel8.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
 
         txtDescripcionMP.setColumns(20);
         txtDescripcionMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtDescripcionMP.setLineWrap(true);
         txtDescripcionMP.setRows(5);
         jScrollPane13.setViewportView(txtDescripcionMP);
 
-        jPanel8.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 240, 70));
+        jPanel8.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 240, 90));
 
         jLabel68.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel68.setText("Cantidad disponible:");
@@ -1223,12 +1206,19 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel8.add(txtNombreMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 230, -1));
 
         cmbUnidadMedidaMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        cmbUnidadMedidaMP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pieza", "Caja", "Carton ", "Cubeta", "Bolsa", "Barra", "Costal", "Galon (4 LT.)", "Lata 1/4 KG.", "Lata 1/4 ML.", "Lata 1/2 KG.", "Lata 1/2 ML.", "Lata 1 KG.", "Lata 1 L.", "Botella (1 LT.)", "Botella (2 LT.)" }));
-        jPanel8.add(cmbUnidadMedidaMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 180, -1));
+        cmbUnidadMedidaMP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Pieza", "Caja", "Carton ", "Cubeta", "Bolsa", "Barra", "Costal", "Galon (4 LT.)", "Lata 1/4 KG.", "Lata 1/4 ML.", "Lata 1/2 KG.", "Lata 1/2 ML.", "Lata 1 KG.", "Lata 1 L.", "Botella (1 LT.)", "Botella (2 LT.)" }));
+        jPanel8.add(cmbUnidadMedidaMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 180, -1));
 
         txtEstado.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtEstado.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jPanel8.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 620, 20));
+
+        jLabel19.setText("Precio:");
+        jPanel8.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
+
+        txtPrecioMateriaPrima.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtPrecioMateriaPrima.setText("0");
+        jPanel8.add(txtPrecioMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 180, -1));
 
         tb_Inventario.addTab("Materia Prima", jPanel8);
 
@@ -1376,9 +1366,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jPanel17.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 270, -1));
 
-        cmbUnidadMedidaMP1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        cmbUnidadMedidaMP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pieza", "Caja 20 PZ.", "Caja 25 Pz.", "Caja 40 PZ.", "Caja 50 PZ.", "Caja 60 PZ.", "Bolsa 8 PZ.", "Bolsa 12 PZ.", "1/4 KG.", "1/2 KG.", "1 KG." }));
-        jPanel17.add(cmbUnidadMedidaMP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 180, -1));
+        cmbUnidadMedidaProducto.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        cmbUnidadMedidaProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Pieza", "Caja 20 PZ.", "Caja 25 Pz.", "Caja 40 PZ.", "Caja 50 PZ.", "Caja 60 PZ.", "Bolsa 8 PZ.", "Bolsa 12 PZ.", "1/4 KG.", "1/2 KG.", "1 KG." }));
+        jPanel17.add(cmbUnidadMedidaProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 180, -1));
 
         tb_Inventario.addTab("Producto", jPanel17);
 
@@ -1395,8 +1385,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(tb_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addComponent(tb_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         tb_principal.addTab("Inventario", jPanel5);
@@ -2002,14 +1992,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     //
     private void llenarMateriaPrima() throws ClassNotFoundException{
         try {
-             conectarBD();
-             Statement stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tablaMateriaPrima.getModel();
+             
+           Statement stmt = conect.createStatement();
+           DefaultTableModel tbm=(DefaultTableModel)tablaMateriaPrima.getModel();
            tbm.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS");
              ResultSet res = stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5)});
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getInt("PRECIO")});
                 }  
             }
             stmt.close();
@@ -2044,20 +2034,20 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     }
     private void LlenarTablaP() throws ClassNotFoundException{
          try {
-             conectarBD();
+             
 
             stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblCompraslMateriasPrimas.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS");
+           DefaultTableModel tbm=(DefaultTableModel)tblProducto.getModel();
+           tbm.setRowCount(0);stmt.execute("select * from PRODUCTOS");
             res=stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
                    Vector rowProductos=new Vector();
-                   rowProductos.add(res.getString("ID_MATERIA"));
+                   rowProductos.add(res.getString("ID_PRODUCTO"));
                   rowProductos.add(res.getString("NOMBRE"));
                   rowProductos.add(res.getString("DESCRIPCION"));
                   rowProductos.add(res.getString("CANT_DISP"));
-                  rowProductos.add(res.getString("UNIDAD_MEDIDA"));
+                  rowProductos.add(res.getString("UNIDAD"));
                   rowProductos.add(res.getString("PRECIO"));
                   tbm.addRow(rowProductos);
                 }
@@ -2163,12 +2153,13 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         try {
             conectarBD();
             datePedido.setDate(dateAct);
-            dateEntrega.setDate(dateAct);
+            //dateEntrega.setDate(dateAct);
             dateGeneracion.setDate(dateAct);
             llenarMateriaPrima();
             LlenarTablaProveedores();
             LlenarTablaUsuarios();
             llenarTablaCliente();
+            LlenarTablaP();
             LlenarTablaCompras_MateriasPrimas();
             LlenarTablaComprasProveedores();
             llenarTablaCompra();
@@ -2185,7 +2176,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
     
     private void txtNombreMPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreMPKeyTyped
-        txtEstado.setText(null);
+        
     }//GEN-LAST:event_txtNombreMPKeyTyped
 
     private void btnAgregarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMPActionPerformed
@@ -2219,6 +2210,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             txtDescripcionMP.setText(tablaMateriaPrima.getValueAt(selectedRowIndex, 2).toString());
             txtCantidadMP.setValue((Integer.parseInt(tablaMateriaPrima.getValueAt(selectedRowIndex, 3).toString())));
             cmbUnidadMedidaMP.setSelectedItem(tablaMateriaPrima.getValueAt(selectedRowIndex, 4).toString());
+            if(tablaMateriaPrima.getValueAt(selectedRowIndex, 5).toString().equals("")){
+                txtPrecioMateriaPrima.setText("0");
+            }else{
+                txtPrecioMateriaPrima.setText(tablaMateriaPrima.getValueAt(selectedRowIndex, 5).toString());
+            }
+            
         }catch(Exception e){
             
 
@@ -2529,12 +2526,13 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     }
     private void InsertarMP(){
         try{
-            conectarBD();
+            
             String cad = "INSERT INTO MATERIAS_PRIMAS "
                     + "VALUES('"+ txtNombreMP.getText()+"','"
                     + txtDescripcionMP.getText() + "','"
                     + txtCantidadMP.getValue().toString()+ "','"
-                    + cmbUnidadMedidaMP.getSelectedItem().toString() + "')";
+                    + cmbUnidadMedidaMP.getSelectedItem().toString() + "',"
+                    + txtPrecioMateriaPrima.getText()+")";
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
             llenarMateriaPrima();
@@ -2542,7 +2540,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         }
             catch (SQLException ex) 
             {
-            System.out.println("Error insertar");   
+            System.out.println("Error al insertar Materia Prima");   
             } catch (ClassNotFoundException ex) {
         Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -2575,10 +2573,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             String cad;
             cad = "UPDATE MATERIAS_PRIMAS "
                     + "SET NOMBRE='"+ txtNombreMP.getText()+"',"
-                    + "DESCRIPCION='" + txtDescripcionMP.getText() + "',CANT_DISP='"
-                    + txtCantidadMP.getValue().toString() + "',UNIDAD_MEDIDA='"
-                    + cmbUnidadMedidaMP.getSelectedItem().toString()
-                    + "' WHERE ID_MATERIA="+ tablaMateriaPrima.getValueAt(tablaMateriaPrima.getSelectedRow(),0);
+                    + "DESCRIPCION='" + txtDescripcionMP.getText() + "',"
+                    + "CANT_DISP='"+ txtCantidadMP.getValue().toString() + "',"
+                    + "UNIDAD_MEDIDA='"+ cmbUnidadMedidaMP.getSelectedItem().toString()+ "',"
+                    + "PRECIO="+txtPrecioMateriaPrima.getText()
+                    + " WHERE ID_MATERIA="+ tablaMateriaPrima.getValueAt(tablaMateriaPrima.getSelectedRow(),0);
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
             llenarMateriaPrima();
@@ -2890,14 +2889,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtnomP.setText(tblProducto.getValueAt(selectedRowIndex, 0).toString());
         txtdescP.setText(tblProducto.getValueAt(selectedRowIndex, 1).toString());
         spincantP.setValue(Integer.parseInt((tblProducto.getValueAt(selectedRowIndex, 2)).toString()));
-        cmbUnidadMedidaMP1.setSelectedItem(tblProducto.getValueAt(selectedRowIndex, 3).toString());
+        cmbUnidadMedidaProducto.setSelectedItem(tblProducto.getValueAt(selectedRowIndex, 3).toString());
         txtprecioP.setText(tblProducto.getValueAt(selectedRowIndex, 4).toString());
         // TODO add your handling code here:
     }//GEN-LAST:event_tblProductoMouseClicked
 private void clearP(){
         txtnomP.setText(null);
         txtdescP.setText(null);
-        cmbUnidadMedidaMP1.setSelectedItem("Pieza");
+        cmbUnidadMedidaProducto.setSelectedItem("Pieza");
         txtprecioP.setText(null);
         txtBuscarP.setText(null);
         spincantP.setValue(0);
@@ -2917,10 +2916,13 @@ private void clearP(){
 
 
 private boolean validarVacioP(){
-            if((("".equals(txtdescP.getText()) || "".equals(txtnomP.getText())) || "".equals(txtprecioP.getText()))|| "".equals(cmbUnidadMedidaMP1.getSelectedItem().toString())){
+            if((("".equals(txtdescP.getText()) || "".equals(txtnomP.getText())) || "".equals(txtprecioP.getText()))|| "".equals(cmbUnidadMedidaProducto.getSelectedItem().toString())){
                 showMessageDialog(null,"Favor de llenar todos los campos. ");
                 return false;
-            } else {
+            } 
+            if (cmbUnidadMedidaProducto.getSelectedIndex() == 0){
+            showMessageDialog(null, "SELECCIONE UNA UNIDAD DE MEDIDA");
+            return false;
             }
             return true;
      }
@@ -2930,7 +2932,7 @@ private boolean validarVacioP(){
             String nombre=txtnomP.getText();
             String descripcion=txtdescP.getText();
             String cantidad_disp=(spincantP.getValue().toString());
-            String u_medida=cmbUnidadMedidaMP1.getSelectedItem().toString();
+            String u_medida=cmbUnidadMedidaProducto.getSelectedItem().toString();
             String precio=txtprecioP.getText();
 
             String cad = "update productos set NOMBRE='"+nombre+"', DESCRIPCION ='"+descripcion+"',CANT_DISP="+cantidad_disp+",UNIDAD='"+u_medida+"',PRECIO = "+precio+" WHERE NOMBRE='"+nombre+"'";
@@ -2956,7 +2958,7 @@ private boolean validarVacioP(){
             String nombre=txtnomP.getText();
             String descripcion=txtdescP.getText();
             String cantidad_disp=(spincantP.getValue().toString());
-            String u_medida=cmbUnidadMedidaMP1.getSelectedItem().toString();
+            String u_medida=cmbUnidadMedidaProducto.getSelectedItem().toString();
             Float precio=Float.parseFloat((txtprecioP.getText()));
 
             String cad = "INSERT INTO PRODUCTOS VALUES('"+nombre+"','"+descripcion+"',"+cantidad_disp+",'"+u_medida+"',"+precio+")";
@@ -3053,7 +3055,7 @@ private boolean validarVacioP(){
             String nombreCliente=tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0)+"";
             //[0] NOMBRE [1] APT PAT [2] APT MAT
             String []nombresCliente=nombreCliente.split("\\s+");
-            int idCliente=0;
+            
             //BUSCAR NOMBRE DE CLIENTE
             stmt.execute("SELECT ID_PERSONA from PERSONAS"
                     + " where TIPO = 'C' AND NOMBRE='"+nombresCliente[0]+"' AND APE_PAT='"+nombresCliente[1]+"' AND APE_MAT='"+nombresCliente[2]+"'");
@@ -3091,10 +3093,6 @@ private boolean validarVacioP(){
              System.out.println("ERROR AL LLENAR PEDIDOS EN VENTA");
         } 
     }
-    private void btnAddCarritoVentasjButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCarritoVentasjButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAddCarritoVentasjButton11ActionPerformed
-
     private void btnAgregarProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProvedorActionPerformed
         ventanaProveedor VP=new ventanaProveedor();
         VP.setLocationRelativeTo(null);
@@ -3304,11 +3302,7 @@ private boolean validarVacioP(){
     private void btnEliminarArticuloPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarArticuloPedidoActionPerformed
         restartotalyeliminarrowPedido();
     }//GEN-LAST:event_btnEliminarArticuloPedidoActionPerformed
-   
-    private void btnRefreshPedidosVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshPedidosVentaActionPerformed
-        llenarTablaPedidos_Venta();
-    }//GEN-LAST:event_btnRefreshPedidosVentaActionPerformed
-    
+       
     void cancelarPedido(){
          DefaultTableModel tbm = (DefaultTableModel) tblPedido.getModel();
             for (int i = 0; i < tblPedido.getRowCount(); i++) {
@@ -3664,6 +3658,7 @@ private boolean validarVacioP(){
         txtDescripcionMP.setText(null);
         txtCantidadMP.setValue(0);
         cmbUnidadMedidaMP.setSelectedIndex(0);
+        txtPrecioMateriaPrima.setText("0");
     }
     private void llenarTablaCliente_Pedido(){
          try {
@@ -3727,7 +3722,6 @@ private boolean validarVacioP(){
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton MP;
-    private javax.swing.JButton btnAddCarritoVentas;
     private javax.swing.JButton btnAddClienteVentas;
     private javax.swing.JButton btnAgregarMP;
     private javax.swing.JButton btnAgregarP;
@@ -3742,7 +3736,6 @@ private boolean validarVacioP(){
     private javax.swing.JButton btnCancelar_Pedido;
     private javax.swing.JButton btnDetalleCompra_Compras;
     private javax.swing.JButton btnEliminarArticuloPedido;
-    private javax.swing.JButton btnEliminarArticuloVenta;
     private javax.swing.JButton btnEliminarC;
     private javax.swing.JButton btnEliminarMateriaPrima_Compra;
     private javax.swing.JButton btnEliminarP;
@@ -3758,7 +3751,6 @@ private boolean validarVacioP(){
     private javax.swing.JButton btnNuevaMateriaPrima_Compras;
     private javax.swing.JButton btnProductoAPedido;
     private javax.swing.JButton btnRefreshMateriaPrima_Compra;
-    private javax.swing.JButton btnRefreshPedidosVenta;
     private javax.swing.JButton btnRefreshProducto_Pedido;
     private javax.swing.JButton btnUsuariosAgregar;
     private javax.swing.JButton btnUsuariosCancelar;
@@ -3766,9 +3758,8 @@ private boolean validarVacioP(){
     private javax.swing.JButton btnUsuariosModificar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cmbUnidadMedidaMP;
-    private javax.swing.JComboBox<String> cmbUnidadMedidaMP1;
+    private javax.swing.JComboBox<String> cmbUnidadMedidaProducto;
     private javax.swing.JComboBox<String> cmbUsuariosTipo;
-    private com.toedter.calendar.JDateChooser dateEntrega;
     private com.toedter.calendar.JDateChooser dateGeneracion;
     private com.toedter.calendar.JDateChooser datePedido;
     private javax.swing.JButton jButton14;
@@ -3784,16 +3775,17 @@ private boolean validarVacioP(){
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -3876,16 +3868,19 @@ private boolean validarVacioP(){
     private javax.swing.JLabel lblDomicilioProveedor;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblNombreProveedor;
+    private javax.swing.JLabel lblPagoRestante;
     private javax.swing.JLabel lblProveedorBuscar;
     private javax.swing.JLabel lblTelefonoProveedor;
     private javax.swing.JLabel lblTipoU;
     private javax.swing.JLabel lblTituloProveedor;
-    private javax.swing.JLabel lblTotalVenta;
+    private javax.swing.JLabel lblTotalVenta1;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JLabel lblUsuario1;
     private javax.swing.JLabel lblUsuarioTitulo;
     private javax.swing.JPanel panelCliente;
     private javax.swing.JPanel panelProveedor;
+    private javax.swing.JRadioButton rdbEntrega;
+    private javax.swing.JRadioButton rdbGeneracion;
     private javax.swing.JSpinner spincantP;
     private javax.swing.JSpinner spncantidadMP_Compra;
     private javax.swing.JSpinner spncantidadProducto_Pedido;
@@ -3926,6 +3921,7 @@ private boolean validarVacioP(){
     private javax.swing.JLabel txtEstado;
     private javax.swing.JTextField txtNomC;
     private javax.swing.JTextField txtNombreMP;
+    private javax.swing.JTextField txtPrecioMateriaPrima;
     private javax.swing.JTextField txtProveedorCP;
     private javax.swing.JTextField txtProveedorDomicilio;
     private javax.swing.JTextField txtProveedorNombre;
