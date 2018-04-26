@@ -140,29 +140,34 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         tb_Ventas_Pedidos = new javax.swing.JTabbedPane();
         jPanel21 = new javax.swing.JPanel();
-        btnCliente = new javax.swing.JButton();
+        btnAddClienteVentas = new javax.swing.JButton();
         jLabel73 = new javax.swing.JLabel();
         jScrollPane17 = new javax.swing.JScrollPane();
-        jTable12 = new javax.swing.JTable();
+        tblClientesVenta = new javax.swing.JTable();
         jLabel74 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jButton6 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
+        tblVenta = new javax.swing.JTable();
+        btnEliminarArticuloVenta = new javax.swing.JButton();
+        btnGenerarVenta = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
         jLabel77 = new javax.swing.JLabel();
-        txtBuscar2 = new javax.swing.JTextField();
+        txtBuscarClienteVenta = new javax.swing.JTextField();
         jLabel44 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jScrollPane16 = new javax.swing.JScrollPane();
-        jTable8 = new javax.swing.JTable();
-        txtBuscar4 = new javax.swing.JTextField();
+        tblPedidosVentas = new javax.swing.JTable();
+        txtBuscarPedidosVenta = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        jButton16 = new javax.swing.JButton();
+        btnAddCarritoVentas = new javax.swing.JButton();
         jLabel72 = new javax.swing.JLabel();
+        btnRefreshPedidosVenta = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel18 = new javax.swing.JLabel();
+        lblAnticipo = new javax.swing.JLabel();
+        lblTotalVenta = new javax.swing.JLabel();
+        btnCancelarVenta = new javax.swing.JButton();
+        jSeparator6 = new javax.swing.JSeparator();
         jPanel22 = new javax.swing.JPanel();
         jButton14 = new javax.swing.JButton();
         jLabel75 = new javax.swing.JLabel();
@@ -175,7 +180,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         btnEliminarArticuloPedido = new javax.swing.JButton();
         btnGenerarPedido = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        txtTotalPedido = new javax.swing.JTextField();
         jLabel80 = new javax.swing.JLabel();
         txtBuscarCliente_Pedido = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
@@ -195,6 +199,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         txtFechaEntregaPedido = new javax.swing.JFormattedTextField();
         jLabel17 = new javax.swing.JLabel();
+        txtTotalPedido = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         btnAgregarProvedor = new javax.swing.JButton();
         jLabel81 = new javax.swing.JLabel();
@@ -413,117 +418,96 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel21.setBackground(new java.awt.Color(255, 255, 255));
         jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnCliente.setBackground(new java.awt.Color(255, 255, 255));
-        btnCliente.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnCliente.setText("Agregar Cliente");
-        btnCliente.addActionListener(new java.awt.event.ActionListener() {
+        btnAddClienteVentas.setBackground(new java.awt.Color(255, 255, 255));
+        btnAddClienteVentas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnAddClienteVentas.setText("Agregar Cliente");
+        btnAddClienteVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClienteActionPerformed(evt);
+                btnAddClienteVentasActionPerformed(evt);
             }
         });
-        jPanel21.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, 150, 60));
+        jPanel21.add(btnAddClienteVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 150, 60));
         jPanel21.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 0, 205, -1));
 
-        jTable12.setModel(new javax.swing.table.DefaultTableModel(
+        tblClientesVenta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"GUARDADO", "CENTRO 167", "21971293"},
-                {"PEDRO", "CENTRO 1781", "13714433"},
-                {"JUAN", "AZUCENAS", null}
+
             },
             new String [] {
                 "Nombre ", "Domicilio", "Telefono"
             }
         ));
-        jScrollPane17.setViewportView(jTable12);
+        jScrollPane17.setViewportView(tblClientesVenta);
 
-        jPanel21.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 540, 65));
+        jPanel21.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 540, 65));
 
         jLabel74.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel74.setText("Ventas");
-        jPanel21.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, -1));
+        jLabel74.setText("Nueva Venta");
+        jPanel21.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 160, -1));
 
         jLabel76.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel76.setText("Clientes");
-        jPanel21.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        jPanel21.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tblVenta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, "", "", "", ""},
-                {null, "", "", "", ""},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Código", "Producto", "Precio", "Cantidad", "Total"
             }
         ));
-        jScrollPane4.setViewportView(jTable3);
+        jScrollPane4.setViewportView(tblVenta);
 
-        jPanel21.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 710, 300));
+        jPanel21.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 710, 260));
 
-        jButton6.setBackground(new java.awt.Color(255, 255, 255));
-        jButton6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-17x30.png"))); // NOI18N
-        jButton6.setText("Eliminar");
-        jPanel21.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 540, 150, 40));
+        btnEliminarArticuloVenta.setBackground(new java.awt.Color(255, 255, 255));
+        btnEliminarArticuloVenta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnEliminarArticuloVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-17x30.png"))); // NOI18N
+        btnEliminarArticuloVenta.setText("Eliminar artículo");
+        jPanel21.add(btnEliminarArticuloVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 160, 40));
 
-        jButton13.setBackground(new java.awt.Color(255, 255, 255));
-        jButton13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/success30x30.png"))); // NOI18N
-        jButton13.setText("Generar Pedido");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        btnGenerarVenta.setBackground(new java.awt.Color(255, 255, 255));
+        btnGenerarVenta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnGenerarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/success30x30.png"))); // NOI18N
+        btnGenerarVenta.setText("Generar Venta");
+        btnGenerarVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                btnGenerarVentaActionPerformed(evt);
             }
         });
-        jPanel21.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 540, 170, 40));
+        jPanel21.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, 170, 40));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel13.setText("Total:");
-        jPanel21.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, -1, 30));
-
-        jTextField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jPanel21.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 490, 120, 30));
+        jPanel21.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, -1, 30));
 
         jLabel77.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel77.setText("Pedido");
-        jPanel21.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, -1, -1));
+        jLabel77.setText("Venta");
+        jPanel21.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
-        txtBuscar2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtBuscar2.addActionListener(new java.awt.event.ActionListener() {
+        txtBuscarClienteVenta.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtBuscarClienteVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscar2ActionPerformed(evt);
+                txtBuscarClienteVentaActionPerformed(evt);
             }
         });
-        txtBuscar2.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtBuscarClienteVenta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtBuscar2KeyReleased(evt);
+                txtBuscarClienteVentaKeyReleased(evt);
             }
         });
-        jPanel21.add(txtBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 250, -1));
+        jPanel21.add(txtBuscarClienteVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 250, -1));
 
         jLabel44.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel44.setText("Buscar:");
-        jPanel21.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jPanel21.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
         jPanel14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable8.setModel(new javax.swing.table.DefaultTableModel(
+        tblPedidosVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -538,74 +522,67 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 "Cliente", "No. Pedido", "Fecha", "Total"
             }
         ));
-        jScrollPane16.setViewportView(jTable8);
+        jScrollPane16.setViewportView(tblPedidosVentas);
 
-        txtBuscar4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtBuscar4.addKeyListener(new java.awt.event.KeyAdapter() {
+        jPanel14.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 373, 332));
+
+        txtBuscarPedidosVenta.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtBuscarPedidosVenta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtBuscar4txtBuscarKeyReleased(evt);
+                txtBuscarPedidosVentatxtBuscarKeyReleased(evt);
             }
         });
+        jPanel14.add(txtBuscarPedidosVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 62, 230, -1));
 
         jLabel29.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel29.setText("Buscar:");
+        jPanel14.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 65, -1, -1));
 
-        jButton16.setBackground(new java.awt.Color(255, 255, 255));
-        jButton16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-16x30.png"))); // NOI18N
-        jButton16.setText("Añadir a Carrito");
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        btnAddCarritoVentas.setBackground(new java.awt.Color(255, 255, 255));
+        btnAddCarritoVentas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnAddCarritoVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-16x30.png"))); // NOI18N
+        btnAddCarritoVentas.setText("Añadir a Carrito");
+        btnAddCarritoVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16jButton11ActionPerformed(evt);
+                btnAddCarritoVentasjButton11ActionPerformed(evt);
             }
         });
+        jPanel14.add(btnAddCarritoVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 453, -1, 56));
 
         jLabel72.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel72.setText("Pedidos");
+        jPanel14.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 27, -1, -1));
 
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel14Layout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel72))
-                        .addGroup(jPanel14Layout.createSequentialGroup()
-                            .addGap(26, 26, 26)
-                            .addComponent(jLabel29)
-                            .addGap(29, 29, 29)
-                            .addComponent(txtBuscar4, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel14Layout.createSequentialGroup()
-                            .addGap(134, 134, 134)
-                            .addComponent(jButton16))))
-                .addGap(15, 15, 15))
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel72)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel29))
-                    .addComponent(txtBuscar4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
+        btnRefreshPedidosVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update_30px.png"))); // NOI18N
+        jPanel14.add(btnRefreshPedidosVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 51, 40, -1));
 
-        jPanel21.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(767, 10, 400, 570));
+        jPanel21.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(767, 10, 400, 530));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel21.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 20, 560));
+
+        jLabel18.setText("Anticipo:");
+        jPanel21.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, -1, -1));
+
+        lblAnticipo.setText("0.00");
+        jPanel21.add(lblAnticipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 430, 30, 20));
+
+        lblTotalVenta.setText("0.00");
+        jPanel21.add(lblTotalVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, -1, -1));
+
+        btnCancelarVenta.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancelarVenta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnCancelarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
+        btnCancelarVenta.setText("Cancelar");
+        btnCancelarVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarVentaActionPerformed(evt);
+            }
+        });
+        jPanel21.add(btnCancelarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
+
+        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel21.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 20, 40));
 
         tb_Ventas_Pedidos.addTab("Nueva Venta", jPanel21);
 
@@ -636,8 +613,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel22.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 540, 65));
 
         jLabel78.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel78.setText("Pedido");
-        jPanel22.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, -1));
+        jLabel78.setText("Nuevo Pedido");
+        jPanel22.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
 
         jLabel79.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel79.setText("Cliente");
@@ -653,13 +630,13 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(tblPedido);
 
-        jPanel22.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 710, 290));
+        jPanel22.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 710, 260));
 
         btnEliminarArticuloPedido.setBackground(new java.awt.Color(255, 255, 255));
         btnEliminarArticuloPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnEliminarArticuloPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-17x30.png"))); // NOI18N
         btnEliminarArticuloPedido.setText("Eliminar artículo");
-        jPanel22.add(btnEliminarArticuloPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 160, 40));
+        jPanel22.add(btnEliminarArticuloPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, 160, 40));
 
         btnGenerarPedido.setBackground(new java.awt.Color(255, 255, 255));
         btnGenerarPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -670,15 +647,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnGenerarPedidoActionPerformed(evt);
             }
         });
-        jPanel22.add(btnGenerarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, 160, 40));
+        jPanel22.add(btnGenerarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 490, 160, 40));
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel14.setText("Total:");
         jPanel22.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, -1, 30));
-
-        txtTotalPedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtTotalPedido.setText("0");
-        jPanel22.add(txtTotalPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 470, 120, 30));
 
         jLabel80.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel80.setText("Pedido");
@@ -768,7 +741,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel22.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 400, 550));
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel22.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, 10, 40));
+        jPanel22.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 490, 10, 40));
 
         btnCancelar_Pedido.setBackground(new java.awt.Color(255, 255, 255));
         btnCancelar_Pedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -779,22 +752,27 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnCancelar_PedidoActionPerformed(evt);
             }
         });
-        jPanel22.add(btnCancelar_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, -1, -1));
+        jPanel22.add(btnCancelar_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
 
         txtAdelantoPedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtAdelantoPedido.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtAdelantoPedido.setText("0");
-        jPanel22.add(txtAdelantoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, 120, 30));
+        jPanel22.add(txtAdelantoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 430, 120, 30));
 
         jLabel12.setText("Anticipo:");
-        jPanel22.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 480, -1, -1));
+        jPanel22.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, -1, -1));
 
         txtFechaEntregaPedido.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd-MM-yyyy"))));
         txtFechaEntregaPedido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtFechaEntregaPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel22.add(txtFechaEntregaPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 90, 30));
+        jPanel22.add(txtFechaEntregaPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 440, 90, 30));
 
         jLabel17.setText("Fecha pedido:");
-        jPanel22.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, -1, -1));
+        jPanel22.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, -1, -1));
+
+        txtTotalPedido.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtTotalPedido.setText("0");
+        jPanel22.add(txtTotalPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 120, -1));
 
         tb_Ventas_Pedidos.addTab("Nuevo Pedido", jPanel22);
 
@@ -828,7 +806,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jScrollPane19.setViewportView(tblProveedor_Compra);
 
         jLabel82.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel82.setText("Compra");
+        jLabel82.setText("Nueva Compra");
 
         jLabel83.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel83.setText("Provedor");
@@ -2251,18 +2229,18 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
 
-    private void txtBuscar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar2KeyReleased
+    private void txtBuscarClienteVentaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarClienteVentaKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar2KeyReleased
+    }//GEN-LAST:event_txtBuscarClienteVentaKeyReleased
 
-    private void txtBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar2ActionPerformed
+    private void txtBuscarClienteVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarClienteVentaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscar2ActionPerformed
+    }//GEN-LAST:event_txtBuscarClienteVentaActionPerformed
 
-    private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
+    private void btnAddClienteVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddClienteVentasActionPerformed
         VentanaCliente mdC=new VentanaCliente();
         mdC.setVisible(true);
-    }//GEN-LAST:event_btnClienteActionPerformed
+    }//GEN-LAST:event_btnAddClienteVentasActionPerformed
 
     private void txtBuscarProveedorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyReleased
         try {
@@ -3011,13 +2989,38 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbUsuariosTipoActionPerformed
 
-    private void txtBuscar4txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar4txtBuscarKeyReleased
+    private void txtBuscarPedidosVentatxtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPedidosVentatxtBuscarKeyReleased
 
-    }//GEN-LAST:event_txtBuscar4txtBuscarKeyReleased
+    }//GEN-LAST:event_txtBuscarPedidosVentatxtBuscarKeyReleased
 
-    private void jButton16jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16jButton11ActionPerformed
+    
+    private void llenarTablaPedidos_Venta(){
+         try {
+             
+            Statement stmt = conect.createStatement();
+            DefaultTableModel tbmPedidosVenta=(DefaultTableModel)tblpedi.getModel();
+            tbm.setRowCount(0);
+            //BUSCAR NOMBRE DE CLIENTE
+            stmt.execute("SELECT ID_PERSONA, NOMBRE from PERSONAS where TIPO = 'C'");
+            ResultSet res = stmt.getResultSet();
+            //[0] ID CLIENTE - [1] NOMBRE CLIENTE
+            String nombreCliente[]=new String[2];
+            if(null!=res){
+                while(res.next()){
+                   nombreCliente[0]=res.getInt("ID_PERSONA")+"";
+                   nombreCliente[1]=res.getString("NOMBRE");
+                }  
+            }
+            stmt.close();
+            //BUSCA TODO DE PEDIDO
+            
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en llenar tabla Clientes en Pedido");
+        } 
+    }
+    private void btnAddCarritoVentasjButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCarritoVentasjButton11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16jButton11ActionPerformed
+    }//GEN-LAST:event_btnAddCarritoVentasjButton11ActionPerformed
 
     private void btnAgregarProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProvedorActionPerformed
         ventanaProveedor VP=new ventanaProveedor();
@@ -3119,9 +3122,9 @@ private boolean validarVacioP(){
 
     }//GEN-LAST:event_formWindowActivated
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void btnGenerarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarVentaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_btnGenerarVentaActionPerformed
 
     private void jButton20jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20jButton11ActionPerformed
         if(tblCompraslMateriasPrimas.getSelectedRow()>-1){
@@ -3220,6 +3223,10 @@ private boolean validarVacioP(){
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGenerarPedidoActionPerformed
+
+    private void btnCancelarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarVentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarVentaActionPerformed
     
     private void detalle_pedido(){
             try {
@@ -3604,6 +3611,8 @@ void restartotalyeliminarrowPedido(){
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton MP;
+    private javax.swing.JButton btnAddCarritoVentas;
+    private javax.swing.JButton btnAddClienteVentas;
     private javax.swing.JButton btnAgregarMP;
     private javax.swing.JButton btnAgregarP;
     private javax.swing.JButton btnAgregarProvedor;
@@ -3612,17 +3621,19 @@ void restartotalyeliminarrowPedido(){
     private javax.swing.JButton btnCancelarC;
     private javax.swing.JButton btnCancelarMP;
     private javax.swing.JButton btnCancelarP;
+    private javax.swing.JButton btnCancelarVenta;
     private javax.swing.JButton btnCancelar_Compra;
     private javax.swing.JButton btnCancelar_Pedido;
-    private javax.swing.JButton btnCliente;
     private javax.swing.JButton btnDetalleCompra_Compras;
     private javax.swing.JButton btnEliminarArticuloPedido;
+    private javax.swing.JButton btnEliminarArticuloVenta;
     private javax.swing.JButton btnEliminarC;
     private javax.swing.JButton btnEliminarMateriaPrima_Compra;
     private javax.swing.JButton btnEliminarP;
     private javax.swing.JButton btnEliminarProveedor;
     private javax.swing.JButton btnGenerarCompra;
     private javax.swing.JButton btnGenerarPedido;
+    private javax.swing.JButton btnGenerarVenta;
     private javax.swing.JButton btnInsertarC;
     private javax.swing.JButton btnModificarC;
     private javax.swing.JButton btnModificarMP;
@@ -3631,6 +3642,7 @@ void restartotalyeliminarrowPedido(){
     private javax.swing.JButton btnNuevaMateriaPrima_Compras;
     private javax.swing.JButton btnProductoAPedido;
     private javax.swing.JButton btnRefreshMateriaPrima_Compra;
+    private javax.swing.JButton btnRefreshPedidosVenta;
     private javax.swing.JButton btnRefreshProducto_Pedido;
     private javax.swing.JButton btnUsuariosAgregar;
     private javax.swing.JButton btnUsuariosCancelar;
@@ -3639,12 +3651,9 @@ void restartotalyeliminarrowPedido(){
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cmbUnidadMedidaMP;
     private javax.swing.JComboBox<String> cmbUsuariosTipo;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3654,6 +3663,7 @@ void restartotalyeliminarrowPedido(){
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -3737,11 +3747,9 @@ void restartotalyeliminarrowPedido(){
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JTable jTable12;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable8;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lblAnticipo;
     private javax.swing.JLabel lblCPProveedor;
     private javax.swing.JLabel lblContra;
     private javax.swing.JLabel lblDomicilioProveedor;
@@ -3751,6 +3759,7 @@ void restartotalyeliminarrowPedido(){
     private javax.swing.JLabel lblTelefonoProveedor;
     private javax.swing.JLabel lblTipoU;
     private javax.swing.JLabel lblTituloProveedor;
+    private javax.swing.JLabel lblTotalVenta;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JLabel lblUsuario1;
     private javax.swing.JLabel lblUsuarioTitulo;
@@ -3765,25 +3774,28 @@ void restartotalyeliminarrowPedido(){
     private javax.swing.JTabbedPane tb_Personas;
     public static javax.swing.JTabbedPane tb_Ventas_Pedidos;
     public static javax.swing.JTabbedPane tb_principal;
+    private javax.swing.JTable tblClientesVenta;
     private javax.swing.JTable tblClientes_Pedido;
     private javax.swing.JTable tblCompra;
     private javax.swing.JTable tblCompraslMateriasPrimas;
     private javax.swing.JTable tblHistorialCompras;
     private javax.swing.JTable tblPedido;
+    private javax.swing.JTable tblPedidosVentas;
     private javax.swing.JTable tblProducto;
     private javax.swing.JTable tblProductos_Pedido;
     private javax.swing.JTable tblProveedor_Compra;
     private javax.swing.JTable tblProveedores;
     private javax.swing.JTable tblUsuarios;
+    private javax.swing.JTable tblVenta;
     private javax.swing.JTextField txtAPMC;
     private javax.swing.JTextField txtAPPC;
     private javax.swing.JTextField txtAdelantoPedido;
     private javax.swing.JTextField txtBuscadorC;
-    private javax.swing.JTextField txtBuscar2;
-    private javax.swing.JTextField txtBuscar4;
+    private javax.swing.JTextField txtBuscarClienteVenta;
     private javax.swing.JTextField txtBuscarCliente_Pedido;
     private javax.swing.JTextField txtBuscarCompras;
     private javax.swing.JTextField txtBuscarP;
+    private javax.swing.JTextField txtBuscarPedidosVenta;
     private javax.swing.JTextField txtBuscarProducto_Pedido;
     private javax.swing.JTextField txtBuscarProveedor;
     private javax.swing.JTextField txtBuscasMateriaPrima_Compras;
@@ -3801,7 +3813,7 @@ void restartotalyeliminarrowPedido(){
     private javax.swing.JTextField txtProveedorTelefono;
     private javax.swing.JTextField txtTelC;
     private javax.swing.JTextField txtTotalCompra;
-    private javax.swing.JTextField txtTotalPedido;
+    private javax.swing.JLabel txtTotalPedido;
     private javax.swing.JTextField txtUsuariosContraseña;
     private javax.swing.JTextField txtUsuariosNombre;
     private javax.swing.JTextField txtUsuariosUsuario;
