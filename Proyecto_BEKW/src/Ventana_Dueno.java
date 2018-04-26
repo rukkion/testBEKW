@@ -136,6 +136,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jButton25 = new javax.swing.JButton();
@@ -166,6 +167,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         rdbGeneracion = new javax.swing.JRadioButton();
         rdbEntrega = new javax.swing.JRadioButton();
         jLabel21 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        btnRefreshProducto_Pedido1 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel18 = new javax.swing.JLabel();
         lblAnticipo = new javax.swing.JLabel();
@@ -549,16 +552,36 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         dateGeneracion.setDateFormatString("dd-MM-yyyy");
         dateGeneracion.setMinSelectableDate(new java.util.Date(-62135740700000L));
-        jPanel14.add(dateGeneracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 190, -1));
+        jPanel14.add(dateGeneracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 210, -1));
 
+        buttonGroup2.add(rdbGeneracion);
+        rdbGeneracion.setSelected(true);
         rdbGeneracion.setText("Fecha Generación");
         jPanel14.add(rdbGeneracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
+        buttonGroup2.add(rdbEntrega);
         rdbEntrega.setText("Fecha Entrega");
-        jPanel14.add(rdbEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, -1, -1));
+        jPanel14.add(rdbEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
 
         jLabel21.setText("Seleccionar pedido a pagar.");
         jPanel14.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        jButton1.setText("Buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 190, -1));
+
+        btnRefreshProducto_Pedido1.setBackground(new java.awt.Color(255, 255, 255));
+        btnRefreshProducto_Pedido1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update_30px.png"))); // NOI18N
+        btnRefreshProducto_Pedido1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshProducto_Pedido1ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(btnRefreshProducto_Pedido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 40, -1));
 
         jPanel21.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(727, 10, 480, 530));
 
@@ -3064,6 +3087,68 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbUsuariosTipoActionPerformed
 
+    private void BuscarPedidos(){
+         try {
+             
+            Statement stmt = conect.createStatement();
+            DefaultTableModel tbmPedidosVenta=(DefaultTableModel)tblPedidosVentas.getModel();
+            tbmPedidosVenta.setRowCount(0);
+            
+            //[0] ID CLIENTE - [1] NOMBRE CLIENTE
+            String nombreCliente=tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0)+"";
+            //[0] NOMBRE [1] APT PAT [2] APT MAT
+            String []nombresCliente=nombreCliente.split("\\s+");
+            
+            //BUSCAR NOMBRE DE CLIENTE
+            stmt.execute("SELECT ID_PERSONA from PERSONAS"
+                    + " where TIPO = 'C' AND NOMBRE='"+nombresCliente[0]+"' AND APE_PAT='"+nombresCliente[1]+"' AND APE_MAT='"+nombresCliente[2]+"'");
+            ResultSet res = stmt.getResultSet();
+            
+            if(null!=res){
+                while(res.next()){
+                   idCliente=res.getInt("ID_PERSONA");
+                    System.out.println(res.getInt("ID_PERSONA"));
+                }  
+            }
+            stmt.close();
+            //BUSCA TODO DE PEDIDO
+            
+            if(idCliente>0){
+                stmt = conect.createStatement();
+            String Bus;
+           if(rdbGeneracion.isSelected())
+               Bus = "PEDIDO";
+           else
+               Bus = "ENTREGA";
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+        String date2 = simpleDateFormat.format(dateGeneracion.getDate());
+
+           stmt.execute("select ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA,TOTAL from PEDIDOS "
+                                            + "where FECHA_"+Bus+" = '"+date2+"'  and ESTADO = 'N' and ID_CLIENTE = "+ idCliente+"");
+              
+                res = stmt.getResultSet();
+            
+            
+            if(null!=res){
+                while(res.next()){
+                   tbmPedidosVenta.addRow(new Object[]{nombreCliente,res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA"),res.getInt("TOTAL")});
+                }  
+            }
+            stmt.close();
+            }else{
+                showMessageDialog(this, "Selecciona un cliente para buscar pedidos en Venta.");
+            }
+            
+            
+         
+            
+            
+        }catch (SQLException ex) {
+             System.out.println("ERROR AL LLENAR PEDIDOS EN VENTA");
+        } 
+    }
     
     private void llenarTablaPedidos_Venta(){
          try {
@@ -3361,7 +3446,56 @@ private boolean validarVacioP(){
     private void tblPedidosVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPedidosVentasMouseClicked
         cargarPedido();
     }//GEN-LAST:event_tblPedidosVentasMouseClicked
-       
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        BuscarPedidos();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnRefreshProducto_Pedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProducto_Pedido1ActionPerformed
+    if(tblClientesVenta.getSelectedRow()>=0)
+        llenarTablaPedidos_Venta();
+    else
+        showMessageDialog(null," Favor de seleccionar un cliente.");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRefreshProducto_Pedido1ActionPerformed
+//     private void BuscarPedidos() throws ClassNotFoundException{
+//         try {
+//             String Bus;
+//             conectarBD();
+//             Statement stmt = conect.createStatement();
+//            DefaultTableModel tbmVenta=(DefaultTableModel)tblPedidosVentas.getModel();
+//           tbmVenta.setRowCount(0);
+//           if(rdbGeneracion.isSelected())
+//               Bus = "PEDIDO";
+//           else
+//               Bus = "ENTREGA";
+//        String pattern = "yyyy-MM-dd";
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+//
+//        String date2 = simpleDateFormat.format(dateGeneracion.getDate());
+//
+//           stmt.execute("select * from Pedidos "
+//                                            + "where FECHA_"+Bus+" = '"+date2+"'  and ESTADO = 'N' and ID_CLIENTE = "+ idCliente+"");
+//             ResultSet res = stmt.getResultSet();
+//             
+//            if(null!=res){
+//                    while(res.next()){
+//                        Vector rowProductos=new Vector();
+//                        rowProductos.add(res.getString(1));
+//                        rowProductos.add(res.getString(2));
+//                        rowProductos.add(res.getString(3));
+//                        rowProductos.add(res.getString(4));
+//                        rowProductos.add(res.getString(5));
+//                        tbmVenta.addRow(rowProductos);
+//                    }
+//            }
+//            stmt.close();
+//        }catch (SQLException ex) {
+//            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+//        } 
+//    }  
     
     void cancelarVenta(){
          DefaultTableModel tbm = (DefaultTableModel) tblVenta.getModel();
@@ -3920,16 +4054,19 @@ private boolean validarVacioP(){
     private javax.swing.JButton btnProductoAPedido;
     private javax.swing.JButton btnRefreshMateriaPrima_Compra;
     private javax.swing.JButton btnRefreshProducto_Pedido;
+    private javax.swing.JButton btnRefreshProducto_Pedido1;
     private javax.swing.JButton btnUsuariosAgregar;
     private javax.swing.JButton btnUsuariosCancelar;
     private javax.swing.JButton btnUsuariosEliminar;
     private javax.swing.JButton btnUsuariosModificar;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cmbUnidadMedidaMP;
     private javax.swing.JComboBox<String> cmbUnidadMedidaProducto;
     private javax.swing.JComboBox<String> cmbUsuariosTipo;
     private com.toedter.calendar.JDateChooser dateGeneracion;
     private com.toedter.calendar.JDateChooser datePedido;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton25;
