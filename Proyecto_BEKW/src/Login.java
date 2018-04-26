@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.awt.font.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -78,6 +79,11 @@ public class Login extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
+        btnLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnLoginKeyPressed(evt);
+            }
+        });
         jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 300, 40));
 
         txtusername.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
@@ -93,6 +99,11 @@ public class Login extends javax.swing.JFrame {
                 txtusernameActionPerformed(evt);
             }
         });
+        txtusername.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtusernameKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 300, -1));
 
         txtPass1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
@@ -104,6 +115,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
         txtPass1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPass1KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPass1KeyTyped(evt);
             }
@@ -148,17 +162,17 @@ public class Login extends javax.swing.JFrame {
 //    String rutaBD="jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW";
 //    /**************************************************************************/
     
-    
+  
     
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-                       
-                iniciarSesion(txtusername.getText().trim(),String.valueOf(txtPass1.getPassword()).trim());
+        iniciarSesion(txtusername.getText().trim(),String.valueOf(txtPass1.getPassword()).trim());
     }//GEN-LAST:event_btnLoginActionPerformed
 
 
     private void limpiarCampos(){
         txtusername.setText(null);
         txtPass1.setText(null);
+        holders();
     }
     private void iniciarSesion(String user, String pass){
         try{
@@ -192,9 +206,11 @@ public class Login extends javax.swing.JFrame {
                     }else if(count>1){
                         JOptionPane.showMessageDialog(this,"Usuario duplicado, acceso denegado.", "ERROR", JOptionPane.ERROR_MESSAGE,eIcon); 
                         limpiarCampos();
+                        txtusername.requestFocus();
                     }else{
                         JOptionPane.showMessageDialog(this,"Usuario o contraseña incorrectos.", "ERROR", JOptionPane.ERROR_MESSAGE,eIcon); 
                         limpiarCampos();
+                        txtusername.requestFocus();
                     }  
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -237,6 +253,24 @@ public class Login extends javax.swing.JFrame {
         txtPass1.setEchoChar('*');
         
     }//GEN-LAST:event_txtPass1FocusGained
+
+    private void txtusernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtusernameKeyPressed
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
+        iniciarSesion(txtusername.getText().trim(),String.valueOf(txtPass1.getPassword()).trim());
+    }
+    }//GEN-LAST:event_txtusernameKeyPressed
+
+    private void txtPass1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPass1KeyPressed
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
+        iniciarSesion(txtusername.getText().trim(),String.valueOf(txtPass1.getPassword()).trim());
+    }
+    }//GEN-LAST:event_txtPass1KeyPressed
+
+    private void btnLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLoginKeyPressed
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
+        iniciarSesion(txtusername.getText().trim(),String.valueOf(txtPass1.getPassword()).trim());
+    }
+    }//GEN-LAST:event_btnLoginKeyPressed
 
     /**
      * @param args the command line arguments

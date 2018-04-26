@@ -177,6 +177,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jLabel20 = new javax.swing.JLabel();
         lblTotalVenta1 = new javax.swing.JLabel();
+        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
         jPanel22 = new javax.swing.JPanel();
         jButton14 = new javax.swing.JButton();
         jLabel75 = new javax.swing.JLabel();
@@ -486,11 +488,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnGenerarVentaActionPerformed(evt);
             }
         });
-        jPanel21.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 170, 40));
+        jPanel21.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 170, 40));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel13.setText("Total:");
-        jPanel21.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, -1, 30));
+        jPanel21.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 430, -1, 30));
 
         jLabel77.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel77.setText("Venta");
@@ -524,17 +526,17 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblPedidosVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Cliente", "No. Pedido", "Fecha generación", "Fecha entrega", "Total"
+                "Cliente", "No. Pedido", "Fecha generación", "Fecha entrega"
             }
         ));
         tblPedidosVentas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -544,7 +546,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
         jScrollPane16.setViewportView(tblPedidosVentas);
 
-        jPanel14.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 440, 310));
+        jPanel14.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 430, 310));
 
         jLabel72.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel72.setText("Pedidos");
@@ -583,19 +585,19 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
         jPanel14.add(btnRefreshProducto_Pedido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 40, -1));
 
-        jPanel21.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(727, 10, 480, 530));
+        jPanel21.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(727, 10, 470, 530));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel21.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 20, 560));
 
         jLabel18.setText("Anticipo:");
-        jPanel21.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, -1, -1));
+        jPanel21.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, -1, -1));
 
         lblAnticipo.setText("0.00");
-        jPanel21.add(lblAnticipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 430, 30, 20));
+        jPanel21.add(lblAnticipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 30, 20));
 
         lblPagoRestante.setText("0.00");
-        jPanel21.add(lblPagoRestante, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 510, -1, -1));
+        jPanel21.add(lblPagoRestante, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 500, -1, -1));
 
         btnCancelarVenta.setBackground(new java.awt.Color(255, 255, 255));
         btnCancelarVenta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -611,11 +613,13 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel21.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 20, 40));
 
-        jLabel20.setText("Pago restante:");
-        jPanel21.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 510, -1, -1));
+        jLabel20.setText("Saldo restante:");
+        jPanel21.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, -1, -1));
 
         lblTotalVenta1.setText("0.00");
-        jPanel21.add(lblTotalVenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, -1, -1));
+        jPanel21.add(lblTotalVenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, -1, -1));
+        jPanel21.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 180, 10));
+        jPanel21.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, 190, 20));
 
         tb_Ventas_Pedidos.addTab("Nueva Venta", jPanel21);
 
@@ -630,7 +634,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 jButton14ActionPerformed(evt);
             }
         });
-        jPanel22.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, 150, 60));
+        jPanel22.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, 130, 60));
         jPanel22.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 0, 205, -1));
 
         tblClientes_Pedido.setModel(new javax.swing.table.DefaultTableModel(
@@ -663,7 +667,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(tblPedido);
 
-        jPanel22.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 710, 260));
+        jPanel22.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 680, 260));
 
         btnEliminarArticuloPedido.setBackground(new java.awt.Color(255, 255, 255));
         btnEliminarArticuloPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -689,7 +693,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel14.setText("Total:");
-        jPanel22.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, -1, 30));
+        jPanel22.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 480, -1, 30));
 
         jLabel80.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel80.setText("Pedido");
@@ -728,7 +732,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         ));
         jScrollPane20.setViewportView(tblProductos_Pedido);
 
-        jPanel15.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 114, 379, 340));
+        jPanel15.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 114, 440, 340));
 
         txtBuscarProducto_Pedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtBuscarProducto_Pedido.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -736,11 +740,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 txtBuscarProducto_PedidotxtBuscarKeyReleased(evt);
             }
         });
-        jPanel15.add(txtBuscarProducto_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 64, 251, -1));
+        jPanel15.add(txtBuscarProducto_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 251, -1));
 
         jLabel30.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel30.setText("Buscar:");
-        jPanel15.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 67, 56, -1));
+        jPanel15.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 56, -1));
 
         btnProductoAPedido.setBackground(new java.awt.Color(255, 255, 255));
         btnProductoAPedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -764,7 +768,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnRefreshProducto_PedidoActionPerformed(evt);
             }
         });
-        jPanel15.add(btnRefreshProducto_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 64, 40, -1));
+        jPanel15.add(btnRefreshProducto_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 40, -1));
         jPanel15.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 48, 371, 10));
 
         spncantidadProducto_Pedido.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -776,7 +780,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
         jPanel15.add(spncantidadProducto_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 50, 30));
 
-        jPanel22.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 400, 550));
+        jPanel22.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 460, 550));
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel22.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 490, 10, 40));
@@ -795,17 +799,17 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtAdelantoPedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtAdelantoPedido.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtAdelantoPedido.setText("0");
-        jPanel22.add(txtAdelantoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 430, 120, 30));
+        jPanel22.add(txtAdelantoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 440, 120, 30));
 
         jLabel12.setText("Anticipo:");
-        jPanel22.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, -1, -1));
+        jPanel22.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, -1, -1));
 
         jLabel17.setText("Fecha pedido:");
         jPanel22.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, -1, -1));
 
         txtTotalPedido.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtTotalPedido.setText("0");
-        jPanel22.add(txtTotalPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 120, -1));
+        jPanel22.add(txtTotalPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 490, 120, -1));
 
         datePedido.setDateFormatString("dd-MM-yyyy");
         jPanel22.add(datePedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, 130, -1));
@@ -2162,7 +2166,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
         } 
     }
-    private void LlenarTablaComprasProveedores() throws ClassNotFoundException{
+    public void LlenarTablaComprasProveedores() throws ClassNotFoundException{
          try {
              
              Statement stmt = conect.createStatement();
@@ -2632,7 +2636,24 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             System.out.println("Error modificar MATERIA PRIMA");   
             }
     }
-    
+    private void buscarTablaProductos_Pedido(){
+        try {
+            
+            Statement stmt=conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblProductos_Pedido.getModel();
+            tbm.setRowCount(0);
+            stmt.execute("select * from PRODUCTOS WHERE NOMBRE LIKE '%"+txtBuscarProducto_Pedido.getText()+"%'");
+            ResultSet res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getString("ID_PRODUCTO"),res.getString("NOMBRE"),res.getString("CANT_DISP"),res.getString("UNIDAD"),res.getString("PRECIO")});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            showMessageDialog(null," Error en la conexion LLENAR TABLA PRODUCTOS. "); 
+        }
+    }
     private void llenarTablaProductos(){
          try {
             
@@ -2648,7 +2669,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             }
             stmt.close();
         }catch (SQLException ex) {
-            showMessageDialog(null," Error en la conexion LLENAR TABLA PRODUCTOS. "); 
+            showMessageDialog(null," Error en AL LLENAR TABLA PRODUCTOS POR BUSQUEDA. "); 
         }
     }
     
@@ -2772,7 +2793,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         int j = JOptionPane.showConfirmDialog(null, "¿Estás seguro?", "Eliminar Cliente", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if(j == JOptionPane.YES_OPTION){
             try {
-                if(c.eliminar(IDCliente))
+                if(c.eliminar(IDCliente_Cliente))
                 borrarC();
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
@@ -2809,7 +2830,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             if (filaseleccionada == -1){
                showMessageDialog(null, "No ha seleccionado ninguna fila.");
             }
-            IDCliente = (String) tablaCliente.getValueAt(filaseleccionada,0);
+            IDCliente_Cliente = (String) tablaCliente.getValueAt(filaseleccionada,0);
             String NOMBRE=(String)tablaCliente.getValueAt(filaseleccionada,1);
             String APE_PAT=(String)tablaCliente.getValueAt(filaseleccionada,2);
             String APE_MAT=(String)tablaCliente.getValueAt(filaseleccionada,3);
@@ -2835,7 +2856,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     private void btnModificarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarCActionPerformed
         BaseDatosCliente c=new BaseDatosCliente();
         try {
-            if(c.modificar(IDCliente,txtNomC.getText(),txtAPPC.getText(),txtAPMC.getText(),txtDomC.getText(),txtCPC.getText(),txtTelC.getText()))
+            if(c.modificar(IDCliente_Cliente,txtNomC.getText(),txtAPPC.getText(),txtAPMC.getText(),txtDomC.getText(),txtCPC.getText(),txtTelC.getText()))
             borrarC();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
@@ -2848,7 +2869,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnModificarCActionPerformed
 
-    String IDCliente=null;
+    String IDCliente_Cliente=null;
     private void txtDomCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDomCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDomCActionPerformed
@@ -3125,15 +3146,12 @@ private boolean validarVacioP(){
 
         String date2 = simpleDateFormat.format(dateGeneracion.getDate());
 
-           stmt.execute("select ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA,TOTAL from PEDIDOS "
-                                            + "where FECHA_"+Bus+" = '"+date2+"'  and ESTADO = 'N' and ID_CLIENTE = "+ idCliente+"");
-              
-                res = stmt.getResultSet();
-            
-            
+           stmt.execute("select ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA from PEDIDOS "
+                + "where FECHA_"+Bus+" = '"+date2+"'  and ESTADO = 'N' and ID_CLIENTE = "+ idCliente+"");  
+            res = stmt.getResultSet();            
             if(null!=res){
                 while(res.next()){
-                   tbmPedidosVenta.addRow(new Object[]{nombreCliente,res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA"),res.getInt("TOTAL")});
+                   tbmPedidosVenta.addRow(new Object[]{nombreCliente,res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA")});
                 }  
             }
             stmt.close();
@@ -3177,13 +3195,13 @@ private boolean validarVacioP(){
             //BUSCA TODO DE PEDIDO
             if(idCliente>0){
                 stmt=conect.createStatement();
-                stmt.execute("SELECT ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA,TOTAL from PEDIDOS where ID_CLIENTE ="+idCliente+" AND ESTADO='N'");
+                stmt.execute("SELECT ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA from PEDIDOS where ID_CLIENTE ="+idCliente+" AND ESTADO='N'");
                 res = stmt.getResultSet();
             
             
             if(null!=res){
                 while(res.next()){
-                   tbmPedidosVenta.addRow(new Object[]{nombreCliente,res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA"),res.getInt("TOTAL")});
+                   tbmPedidosVenta.addRow(new Object[]{nombreCliente,res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA")});
                 }  
             }
             stmt.close();
@@ -3202,6 +3220,7 @@ private boolean validarVacioP(){
     private void btnAgregarProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProvedorActionPerformed
         ventanaProveedor VP=new ventanaProveedor();
         VP.setLocationRelativeTo(null);
+        VP.setVDue(this);
         VP.setVisible(true);
     }//GEN-LAST:event_btnAgregarProvedorActionPerformed
 
@@ -3214,7 +3233,7 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_txtBuscarComprasKeyReleased
 
     private void txtBuscarProducto_PedidotxtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProducto_PedidotxtBuscarKeyReleased
-        // TODO add your handling code here:
+        buscarTablaProductos_Pedido();
     }//GEN-LAST:event_txtBuscarProducto_PedidotxtBuscarKeyReleased
 
     private void btnProductoAPedidojButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductoAPedidojButton11ActionPerformed
@@ -3346,7 +3365,7 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_btnRefreshMateriaPrima_CompraActionPerformed
 
     private void btnRefreshProducto_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProducto_PedidoActionPerformed
-        // TODO add your handling code here:
+        llenarTablaProductos();
     }//GEN-LAST:event_btnRefreshProducto_PedidoActionPerformed
     
     private void actualizarEstadoPedido(){
@@ -3405,7 +3424,7 @@ private boolean validarVacioP(){
 
     private void btnGenerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPedidoActionPerformed
         if(tblPedido.getRowCount()!=0 && tblClientes_Pedido.getSelectedRow()>-1){
-        try { System.out.println("insertaddo");
+        try { System.out.println("insertado");
                 insertarPedido();
                 detalle_pedido();
                 DefaultTableModel tbm=(DefaultTableModel)tblPedido.getModel();
@@ -3413,7 +3432,7 @@ private boolean validarVacioP(){
                 txtTotalPedido.setText("0");
                 tblPedido.setModel(tbm);
                 txtAdelantoPedido.setText("0");
-                showMessageDialog(this, "¡Pedido realizada exitosamente!");
+                showMessageDialog(this, "¡Pedido realizado exitosamente!");
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -3449,9 +3468,7 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_tblPedidosVentasMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
         BuscarPedidos();
-        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnRefreshProducto_Pedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProducto_Pedido1ActionPerformed
@@ -3459,45 +3476,8 @@ private boolean validarVacioP(){
         llenarTablaPedidos_Venta();
     else
         showMessageDialog(null," Favor de seleccionar un cliente.");
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnRefreshProducto_Pedido1ActionPerformed
-//     private void BuscarPedidos() throws ClassNotFoundException{
-//         try {
-//             String Bus;
-//             conectarBD();
-//             Statement stmt = conect.createStatement();
-//            DefaultTableModel tbmVenta=(DefaultTableModel)tblPedidosVentas.getModel();
-//           tbmVenta.setRowCount(0);
-//           if(rdbGeneracion.isSelected())
-//               Bus = "PEDIDO";
-//           else
-//               Bus = "ENTREGA";
-//        String pattern = "yyyy-MM-dd";
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-//
-//        String date2 = simpleDateFormat.format(dateGeneracion.getDate());
-//
-//           stmt.execute("select * from Pedidos "
-//                                            + "where FECHA_"+Bus+" = '"+date2+"'  and ESTADO = 'N' and ID_CLIENTE = "+ idCliente+"");
-//             ResultSet res = stmt.getResultSet();
-//             
-//            if(null!=res){
-//                    while(res.next()){
-//                        Vector rowProductos=new Vector();
-//                        rowProductos.add(res.getString(1));
-//                        rowProductos.add(res.getString(2));
-//                        rowProductos.add(res.getString(3));
-//                        rowProductos.add(res.getString(4));
-//                        rowProductos.add(res.getString(5));
-//                        tbmVenta.addRow(rowProductos);
-//                    }
-//            }
-//            stmt.close();
-//        }catch (SQLException ex) {
-//            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
-//        } 
-//    }  
-    
+
     void cancelarVenta(){
          DefaultTableModel tbm = (DefaultTableModel) tblVenta.getModel();
             for (int i = 0; i < tblVenta.getRowCount(); i++) {
@@ -3624,7 +3604,7 @@ private boolean validarVacioP(){
     
     private void cargarPedido(){
             try {
-                conectarBD();
+     
                 stmt = conect.createStatement();
                 tbmVenta=(DefaultTableModel)tblVenta.getModel();
                 tbmVenta.setRowCount(0);
@@ -3668,9 +3648,7 @@ private boolean validarVacioP(){
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            } 
     }
     
     
@@ -4015,6 +3993,7 @@ private boolean validarVacioP(){
             }
         });
     }
+    public Ventana_Dueno VD;
     private void spinnerNeg( JSpinner spin){
         if(Integer.parseInt(spin.getValue().toString())<1)
             spin.setValue(1);
@@ -4167,6 +4146,8 @@ private boolean validarVacioP(){
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblAnticipo;
     private javax.swing.JLabel lblCPProveedor;

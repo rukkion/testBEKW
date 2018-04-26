@@ -59,6 +59,12 @@ public class ventanaProveedor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
@@ -291,11 +297,11 @@ public class ventanaProveedor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 625, Short.MAX_VALUE)
+            .addGap(0, 635, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(panelProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 10, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,13 +366,16 @@ public class ventanaProveedor extends javax.swing.JFrame {
                 if(ProveedorExistente())
                 insertarProveedor();
                 limpiarProveedor();
+                
                 this.dispose();
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAgregarProveedorActionPerformed
-
+    public void setVDue(Ventana_Dueno vd){
+        venD = vd;
+    }
     private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelar1ActionPerformed
@@ -382,6 +391,19 @@ public class ventanaProveedor extends javax.swing.JFrame {
             Logger.getLogger(ventanaProveedor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        try {
+            // TODO add your handling code here:
+            venD.LlenarTablaComprasProveedores();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ventanaProveedor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -596,7 +618,7 @@ public class ventanaProveedor extends javax.swing.JFrame {
             }
         });
     }
-
+    Ventana_Dueno venD;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarProveedor;
     private javax.swing.JButton btnCancelar1;
