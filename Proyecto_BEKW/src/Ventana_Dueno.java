@@ -2160,7 +2160,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             llenarTablaCompra();
             llenarTablaPedidos();
             llenarTablaCliente_Pedido();
-            llenarTablaProductos();     
+            llenarTablaProductos();
+            llenarTablaCliente2();
         } catch (Exception ex) {
             Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2591,6 +2592,25 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             stmt.close();
         }catch (SQLException ex) {
             showMessageDialog(null," Error en la conexion LLENAR TABLA PRODUCTOS. "); 
+        }
+    }
+    
+    private void llenarTablaCliente2(){
+         try {
+            
+            Statement stmt=conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblClientesVenta.getModel();
+            tbm.setRowCount(0);
+            stmt.execute("SELECT * FROM PERSONAS WHERE TIPO = 'C'");
+            ResultSet res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getString("NOMBRE")+" "+res.getString("APE_PAT")+" "+res.getString("APE_MAT"),res.getString("DOMICILIO"),res.getString("TELEFONO")});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            showMessageDialog(null," Error en la conexion LLENAR TABLA CLIENTES EN VENTAS. "); 
         }
     }
     
