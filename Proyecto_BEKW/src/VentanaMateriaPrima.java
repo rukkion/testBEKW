@@ -119,7 +119,7 @@ public class VentanaMateriaPrima extends javax.swing.JFrame {
         jLabel64.setText("Unidad de medida:");
 
         cmbUnidadMedidaMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        cmbUnidadMedidaMP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "pza", "Kg", "L", "caja" }));
+        cmbUnidadMedidaMP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pieza", "Caja", "Carton ", "Cubeta", "Bolsa", "Barra", "Costal", "Galon (4 LT.)", "Lata 1/4 KG.", "Lata 1/4 ML.", "Lata 1/2 KG.", "Lata 1/2 ML.", "Lata 1 KG.", "Lata 1 L.", "Botella (1 LT.)", "Botella (2 LT.)" }));
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel15.setText("Precio:");

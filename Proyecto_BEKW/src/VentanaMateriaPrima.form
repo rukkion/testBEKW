@@ -256,12 +256,23 @@
               <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="Seleccionar"/>
-                <StringItem index="1" value="pza"/>
-                <StringItem index="2" value="Kg"/>
-                <StringItem index="3" value="L"/>
-                <StringItem index="4" value="caja"/>
+              <StringArray count="16">
+                <StringItem index="0" value="Pieza"/>
+                <StringItem index="1" value="Caja"/>
+                <StringItem index="2" value="Carton "/>
+                <StringItem index="3" value="Cubeta"/>
+                <StringItem index="4" value="Bolsa"/>
+                <StringItem index="5" value="Barra"/>
+                <StringItem index="6" value="Costal"/>
+                <StringItem index="7" value="Galon (4 LT.)"/>
+                <StringItem index="8" value="Lata 1/4 KG."/>
+                <StringItem index="9" value="Lata 1/4 ML."/>
+                <StringItem index="10" value="Lata 1/2 KG."/>
+                <StringItem index="11" value="Lata 1/2 ML."/>
+                <StringItem index="12" value="Lata 1 KG."/>
+                <StringItem index="13" value="Lata 1 L."/>
+                <StringItem index="14" value="Botella (1 LT.)"/>
+                <StringItem index="15" value="Botella (2 LT.)"/>
               </StringArray>
             </Property>
           </Properties>

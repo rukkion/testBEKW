@@ -2334,12 +2334,23 @@
                           <Font name="Arial" size="14" style="0"/>
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="5">
-                            <StringItem index="0" value="Seleccionar"/>
-                            <StringItem index="1" value="pza"/>
-                            <StringItem index="2" value="Kg"/>
-                            <StringItem index="3" value="mL"/>
-                            <StringItem index="4" value="gr"/>
+                          <StringArray count="16">
+                            <StringItem index="0" value="Pieza"/>
+                            <StringItem index="1" value="Caja"/>
+                            <StringItem index="2" value="Carton "/>
+                            <StringItem index="3" value="Cubeta"/>
+                            <StringItem index="4" value="Bolsa"/>
+                            <StringItem index="5" value="Barra"/>
+                            <StringItem index="6" value="Costal"/>
+                            <StringItem index="7" value="Galon (4 LT.)"/>
+                            <StringItem index="8" value="Lata 1/4 KG."/>
+                            <StringItem index="9" value="Lata 1/4 ML."/>
+                            <StringItem index="10" value="Lata 1/2 KG."/>
+                            <StringItem index="11" value="Lata 1/2 ML."/>
+                            <StringItem index="12" value="Lata 1 KG."/>
+                            <StringItem index="13" value="Lata 1 L."/>
+                            <StringItem index="14" value="Botella (1 LT.)"/>
+                            <StringItem index="15" value="Botella (2 LT.)"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -2545,18 +2556,6 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtunidadP">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="14" style="0"/>
-                        </Property>
-                      </Properties>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="160" y="250" width="150" height="-1"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
                     <Component class="javax.swing.JSpinner" name="spincantP">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -2603,11 +2602,11 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="14" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Unidad:"/>
+                        <Property name="text" type="java.lang.String" value="Unidad Medida:"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="100" y="250" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="50" y="250" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2681,6 +2680,36 @@
                         </Component>
                       </SubComponents>
                     </Container>
+                    <Component class="javax.swing.JComboBox" name="cmbUnidadMedidaMP1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="14" style="0"/>
+                        </Property>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="11">
+                            <StringItem index="0" value="Pieza"/>
+                            <StringItem index="1" value="Caja 20 PZ."/>
+                            <StringItem index="2" value="Caja 25 Pz."/>
+                            <StringItem index="3" value="Caja 40 PZ."/>
+                            <StringItem index="4" value="Caja 50 PZ."/>
+                            <StringItem index="5" value="Caja 60 PZ."/>
+                            <StringItem index="6" value="Bolsa 8 PZ."/>
+                            <StringItem index="7" value="Bolsa 12 PZ."/>
+                            <StringItem index="8" value="1/4 KG."/>
+                            <StringItem index="9" value="1/2 KG."/>
+                            <StringItem index="10" value="1 KG."/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="160" y="250" width="180" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>

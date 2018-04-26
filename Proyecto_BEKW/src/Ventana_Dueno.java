@@ -270,7 +270,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         btnModificarP = new javax.swing.JButton();
         btnAgregarP = new javax.swing.JButton();
         btnEliminarP = new javax.swing.JButton();
-        txtunidadP = new javax.swing.JTextField();
         spincantP = new javax.swing.JSpinner();
         jLabel65 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
@@ -281,6 +280,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtdescP = new javax.swing.JTextArea();
+        cmbUnidadMedidaMP1 = new javax.swing.JComboBox<>();
         jPanel9 = new javax.swing.JPanel();
         tb_Personas = new javax.swing.JTabbedPane();
         panelProveedor = new javax.swing.JPanel();
@@ -1223,7 +1223,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel8.add(txtNombreMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 230, -1));
 
         cmbUnidadMedidaMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        cmbUnidadMedidaMP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "pza", "Kg", "mL", "gr" }));
+        cmbUnidadMedidaMP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pieza", "Caja", "Carton ", "Cubeta", "Bolsa", "Barra", "Costal", "Galon (4 LT.)", "Lata 1/4 KG.", "Lata 1/4 ML.", "Lata 1/2 KG.", "Lata 1/2 ML.", "Lata 1 KG.", "Lata 1 L.", "Botella (1 LT.)", "Botella (2 LT.)" }));
         jPanel8.add(cmbUnidadMedidaMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 180, -1));
 
         txtEstado.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1332,9 +1332,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
         jPanel17.add(btnEliminarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, 150, 40));
 
-        txtunidadP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jPanel17.add(txtunidadP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 150, -1));
-
         spincantP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         spincantP.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -1352,8 +1349,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel17.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel26.setText("Unidad:");
-        jPanel17.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
+        jLabel26.setText("Unidad Medida:");
+        jPanel17.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
 
         txtnomP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel17.add(txtnomP, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 152, -1));
@@ -1378,6 +1375,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jScrollPane3.setViewportView(txtdescP);
 
         jPanel17.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 270, -1));
+
+        cmbUnidadMedidaMP1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        cmbUnidadMedidaMP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pieza", "Caja 20 PZ.", "Caja 25 Pz.", "Caja 40 PZ.", "Caja 50 PZ.", "Caja 60 PZ.", "Bolsa 8 PZ.", "Bolsa 12 PZ.", "1/4 KG.", "1/2 KG.", "1 KG." }));
+        jPanel17.add(cmbUnidadMedidaMP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 180, -1));
 
         tb_Inventario.addTab("Producto", jPanel17);
 
@@ -2889,14 +2890,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtnomP.setText(tblProducto.getValueAt(selectedRowIndex, 0).toString());
         txtdescP.setText(tblProducto.getValueAt(selectedRowIndex, 1).toString());
         spincantP.setValue(Integer.parseInt((tblProducto.getValueAt(selectedRowIndex, 2)).toString()));
-        txtunidadP.setText(tblProducto.getValueAt(selectedRowIndex, 3).toString());
+        cmbUnidadMedidaMP1.setSelectedItem(tblProducto.getValueAt(selectedRowIndex, 3).toString());
         txtprecioP.setText(tblProducto.getValueAt(selectedRowIndex, 4).toString());
         // TODO add your handling code here:
     }//GEN-LAST:event_tblProductoMouseClicked
 private void clearP(){
         txtnomP.setText(null);
         txtdescP.setText(null);
-        txtunidadP.setText(null);
+        cmbUnidadMedidaMP1.setSelectedItem("Pieza");
         txtprecioP.setText(null);
         txtBuscarP.setText(null);
         spincantP.setValue(0);
@@ -2916,7 +2917,7 @@ private void clearP(){
 
 
 private boolean validarVacioP(){
-            if((("".equals(txtdescP.getText()) || "".equals(txtnomP.getText())) || "".equals(txtprecioP.getText()))|| "".equals(txtunidadP.getText())){
+            if((("".equals(txtdescP.getText()) || "".equals(txtnomP.getText())) || "".equals(txtprecioP.getText()))|| "".equals(cmbUnidadMedidaMP1.getSelectedItem().toString())){
                 showMessageDialog(null,"Favor de llenar todos los campos. ");
                 return false;
             } else {
@@ -2929,7 +2930,7 @@ private boolean validarVacioP(){
             String nombre=txtnomP.getText();
             String descripcion=txtdescP.getText();
             String cantidad_disp=(spincantP.getValue().toString());
-            String u_medida=txtunidadP.getText();
+            String u_medida=cmbUnidadMedidaMP1.getSelectedItem().toString();
             String precio=txtprecioP.getText();
 
             String cad = "update productos set NOMBRE='"+nombre+"', DESCRIPCION ='"+descripcion+"',CANT_DISP="+cantidad_disp+",UNIDAD='"+u_medida+"',PRECIO = "+precio+" WHERE NOMBRE='"+nombre+"'";
@@ -2955,7 +2956,7 @@ private boolean validarVacioP(){
             String nombre=txtnomP.getText();
             String descripcion=txtdescP.getText();
             String cantidad_disp=(spincantP.getValue().toString());
-            String u_medida=txtunidadP.getText();
+            String u_medida=cmbUnidadMedidaMP1.getSelectedItem().toString();
             Float precio=Float.parseFloat((txtprecioP.getText()));
 
             String cad = "INSERT INTO PRODUCTOS VALUES('"+nombre+"','"+descripcion+"',"+cantidad_disp+",'"+u_medida+"',"+precio+")";
@@ -3765,6 +3766,7 @@ private boolean validarVacioP(){
     private javax.swing.JButton btnUsuariosModificar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cmbUnidadMedidaMP;
+    private javax.swing.JComboBox<String> cmbUnidadMedidaMP1;
     private javax.swing.JComboBox<String> cmbUsuariosTipo;
     private com.toedter.calendar.JDateChooser dateEntrega;
     private com.toedter.calendar.JDateChooser dateGeneracion;
@@ -3937,6 +3939,5 @@ private boolean validarVacioP(){
     private javax.swing.JTextArea txtdescP;
     private javax.swing.JTextField txtnomP;
     private javax.swing.JTextField txtprecioP;
-    private javax.swing.JTextField txtunidadP;
     // End of variables declaration//GEN-END:variables
 }
