@@ -3442,10 +3442,11 @@ private boolean validarVacioP(){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         
         String date = simpleDateFormat.format(new Date());
-        System.out.println(date);
+        String date2 = simpleDateFormat.format(datePedido.getDate());
+        System.out.println(date2);
         r = tblClientes_Pedido.getSelectedRow();
         String cad = "INSERT INTO PEDIDOS "
-                    + "VALUES('"+ date +"','"+datePedido.getDate()+"',"
+                    + "VALUES('"+ date +"','"+date2+"',"
                     + tblClientes_Pedido.getValueAt(r,0).toString()+","+id_usuario+",'N',"+txtAdelantoPedido.getText()+","+txtTotalPedido.getText()+")";
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
