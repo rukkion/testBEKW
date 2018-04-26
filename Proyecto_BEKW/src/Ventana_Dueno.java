@@ -3309,6 +3309,7 @@ private boolean validarVacioP(){
                 lblAnticipo.setText("0");
                 lblTotalVenta1.setText("0");
                 lblPagoRestante.setText("0");
+                showMessageDialog(this,"¡Venta realizada exitosamente!");
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -3411,7 +3412,7 @@ private boolean validarVacioP(){
                 tbm.setRowCount(0);
                 txtTotalPedido.setText("0");
                 tblPedido.setModel(tbm);
-               
+                txtAdelantoPedido.setText("0");
                 showMessageDialog(this, "¡Pedido realizada exitosamente!");
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
