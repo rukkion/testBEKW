@@ -3036,22 +3036,27 @@ private boolean validarVacioP(){
             tbmPedidosVenta.setRowCount(0);
             
             //[0] ID CLIENTE - [1] NOMBRE CLIENTE
-            String nombreCliente=null;
-            int idCliente=Integer.parseInt((String) tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0));
+            String nombreCliente=tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0)+"";
+            //[0] NOMBRE [1] APT PAT [2] APT MAT
+            String []nombresCliente=nombreCliente.split("\\s+");
+            int idCliente=0;
             //BUSCAR NOMBRE DE CLIENTE
-            stmt.execute("SELECT NOMBRE from PERSONAS where TIPO = 'C' AND ID_PERSONA="+idCliente);
+            stmt.execute("SELECT ID_PERSONA from PERSONAS"
+                    + " where TIPO = 'C' AND NOMBRE='"+nombresCliente[0]+"' AND APE_PAT='"+nombresCliente[1]+"' AND APE_MAT='"+nombresCliente[2]+"'");
             ResultSet res = stmt.getResultSet();
             
             if(null!=res){
                 while(res.next()){
-                   nombreCliente=res.getString("NOMBRE");
+                   idCliente=res.getInt("ID_PERSONA");
+                    System.out.println(res.getInt("ID_PERSONA"));
                 }  
             }
             stmt.close();
             //BUSCA TODO DE PEDIDO
-            if(idCliente>-1){
-                stmt.execute("SELECT ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA,TOTAL from PEDIDOS   where ID_CLIENTE ="+idCliente);
-            res = stmt.getResultSet();
+            if(idCliente>0){
+                stmt=conect.createStatement();
+                stmt.execute("SELECT ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA,TOTAL from PEDIDOS where ID_CLIENTE ="+idCliente);
+                res = stmt.getResultSet();
             
             
             if(null!=res){
@@ -3064,8 +3069,12 @@ private boolean validarVacioP(){
                 showMessageDialog(this, "Selecciona un cliente para buscar pedidos en Venta.");
             }
             
+            
+         
+            
+            
         }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en llenar tabla Clientes en Pedido");
+             System.out.println("ERROR AL LLENAR PEDIDOS EN VENTA");
         } 
     }
     private void btnAddCarritoVentasjButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCarritoVentasjButton11ActionPerformed
