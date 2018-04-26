@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Vector;
 import java.util.logging.Level;
@@ -48,6 +49,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      DefaultTableModel tbmMateriaPrima_Compra;
      DefaultTableModel tbmpedido;
      int id_usuario=0;
+     Date dateAct;
+     
     /**
      * Creates new form Ventana_Empleado
      */
@@ -199,9 +202,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         btnCancelar_Pedido = new javax.swing.JButton();
         txtAdelantoPedido = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        txtFechaEntregaPedido = new javax.swing.JFormattedTextField();
         jLabel17 = new javax.swing.JLabel();
         txtTotalPedido = new javax.swing.JLabel();
+        datePedido = new com.toedter.calendar.JDateChooser();
         jPanel23 = new javax.swing.JPanel();
         btnAgregarProvedor = new javax.swing.JButton();
         jLabel81 = new javax.swing.JLabel();
@@ -776,17 +779,15 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel12.setText("Anticipo:");
         jPanel22.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, -1, -1));
 
-        txtFechaEntregaPedido.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd-MM-yyyy"))));
-        txtFechaEntregaPedido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtFechaEntregaPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel22.add(txtFechaEntregaPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 440, 90, 30));
-
         jLabel17.setText("Fecha pedido:");
-        jPanel22.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, -1, -1));
+        jPanel22.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, -1, -1));
 
         txtTotalPedido.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtTotalPedido.setText("0");
         jPanel22.add(txtTotalPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 120, -1));
+
+        datePedido.setDateFormatString("dd-MM-yyyy");
+        jPanel22.add(datePedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, 130, -1));
 
         tb_Ventas_Pedidos.addTab("Nuevo Pedido", jPanel22);
 
@@ -2149,8 +2150,20 @@ public class Ventana_Dueno extends javax.swing.JFrame {
    //
     
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+     String pattern = "yyyy-MM-dd";
+     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern); 
+     String dates = simpleDateFormat.format(new Date());
+      
+            try {
+                dateAct = simpleDateFormat.parse(dates);
+            } catch (ParseException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
         try {
             conectarBD();
+            datePedido.setDate(dateAct);
+            dateEntrega.setDate(dateAct);
+            dateGeneracion.setDate(dateAct);
             llenarMateriaPrima();
             LlenarTablaProveedores();
             LlenarTablaUsuarios();
@@ -3432,7 +3445,7 @@ private boolean validarVacioP(){
         System.out.println(date);
         r = tblClientes_Pedido.getSelectedRow();
         String cad = "INSERT INTO PEDIDOS "
-                    + "VALUES('"+ date +"','"+txtFechaEntregaPedido.getText()+"',"
+                    + "VALUES('"+ date +"','"+datePedido.getDate()+"',"
                     + tblClientes_Pedido.getValueAt(r,0).toString()+","+id_usuario+",'N',"+txtAdelantoPedido.getText()+","+txtTotalPedido.getText()+")";
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
@@ -3754,6 +3767,7 @@ private boolean validarVacioP(){
     private javax.swing.JComboBox<String> cmbUsuariosTipo;
     private com.toedter.calendar.JDateChooser dateEntrega;
     private com.toedter.calendar.JDateChooser dateGeneracion;
+    private com.toedter.calendar.JDateChooser datePedido;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton25;
@@ -3907,7 +3921,6 @@ private boolean validarVacioP(){
     private javax.swing.JTextArea txtDescripcionMP;
     private javax.swing.JTextField txtDomC;
     private javax.swing.JLabel txtEstado;
-    private javax.swing.JFormattedTextField txtFechaEntregaPedido;
     private javax.swing.JTextField txtNomC;
     private javax.swing.JTextField txtNombreMP;
     private javax.swing.JTextField txtProveedorCP;
