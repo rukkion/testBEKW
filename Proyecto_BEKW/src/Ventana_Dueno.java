@@ -548,6 +548,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel14.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         btnRefreshPedidosVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update_30px.png"))); // NOI18N
+        btnRefreshPedidosVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshPedidosVentaActionPerformed(evt);
+            }
+        });
         jPanel14.add(btnRefreshPedidosVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 40, -1));
 
         dateGeneracion.setMinSelectableDate(new java.util.Date(-62135740700000L));
@@ -3011,31 +3016,34 @@ private boolean validarVacioP(){
             tbmPedidosVenta.setRowCount(0);
             
             //[0] ID CLIENTE - [1] NOMBRE CLIENTE
-            String nombreCliente[]=new String[2];
-            
+            String nombreCliente=null;
+            int idCliente=Integer.parseInt((String) tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0));
             //BUSCAR NOMBRE DE CLIENTE
-            stmt.execute("SELECT ID_PERSONA, NOMBRE from PERSONAS where TIPO = 'C'");
+            stmt.execute("SELECT NOMBRE from PERSONAS where TIPO = 'C' AND ID_PERSONA="+idCliente);
             ResultSet res = stmt.getResultSet();
             
             if(null!=res){
                 while(res.next()){
-                   nombreCliente[0]=res.getInt("ID_PERSONA")+"";
-                   nombreCliente[1]=res.getString("NOMBRE");
+                   nombreCliente=res.getString("NOMBRE");
                 }  
             }
             stmt.close();
             //BUSCA TODO DE PEDIDO
-            //stmt.execute("SELECT ID_PERSONA NOPEDIDO,FECHA,TOTAL, NOMBRE from PERSONAS where TIPO = 'C'");
+            if(idCliente>-1){
+                stmt.execute("SELECT ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA,TOTAL from PEDIDOS   where ID_CLIENTE ="+idCliente);
             res = stmt.getResultSet();
-            //[0] ID CLIENTE - [1] NOMBRE CLIENTE
+            
             
             if(null!=res){
                 while(res.next()){
-                   nombreCliente[0]=res.getInt("ID_PERSONA")+"";
-                   nombreCliente[1]=res.getString("NOMBRE");
+                   tbmPedidosVenta.addRow(new Object[]{nombreCliente,res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA"),res.getInt("TOTAL")});
                 }  
             }
             stmt.close();
+            }else{
+                showMessageDialog(this, "Selecciona un cliente para buscar pedidos en Venta.");
+            }
+            
         }catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en llenar tabla Clientes en Pedido");
         } 
@@ -3253,6 +3261,10 @@ private boolean validarVacioP(){
     private void btnEliminarArticuloPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarArticuloPedidoActionPerformed
         restartotalyeliminarrowPedido();
     }//GEN-LAST:event_btnEliminarArticuloPedidoActionPerformed
+   
+    private void btnRefreshPedidosVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshPedidosVentaActionPerformed
+        llenarTablaPedidos_Venta();
+    }//GEN-LAST:event_btnRefreshPedidosVentaActionPerformed
     
     void cancelarPedido(){
          DefaultTableModel tbm = (DefaultTableModel) tblPedido.getModel();
