@@ -162,7 +162,7 @@ public class Login extends javax.swing.JFrame {
 //    String rutaBD="jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW";
 //    /**************************************************************************/
     
-  
+
     
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         iniciarSesion(txtusername.getText().trim(),String.valueOf(txtPass1.getPassword()).trim());
