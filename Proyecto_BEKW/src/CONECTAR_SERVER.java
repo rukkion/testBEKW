@@ -17,7 +17,7 @@ public class CONECTAR_SERVER {
     Connection conect = null;
     /******************************CONECTAR BD*********************************/
     //LAPTOP WILLY
-        String rutaBD="jdbc:sqlserver://localhost;databaseName=BEKW";
+        String rutaBD="jdbc:sqlserver://localhost";
     //ESCRITORIO WILLY
           //String rutaBD="jdbc:sqlserver://DESKTOP-E9BN4AL;databaseName=BEKW";
 
@@ -45,13 +45,13 @@ public class CONECTAR_SERVER {
 
     public void conectarBD() throws ClassNotFoundException {
         try{
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
             conect = DriverManager.getConnection(rutaBD,"sa","123");
             System.out.println("Conectado.");
         }
         catch (SQLException ex)
         {
-            System.out.println("Error.");
+            System.out.println(ex.getMessage());
         }
     }
 }
