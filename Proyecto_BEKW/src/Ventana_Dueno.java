@@ -258,10 +258,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtBuscarEmpleadoPedidos = new javax.swing.JTextField();
         dateGeneracionPedido = new com.toedter.calendar.JDateChooser();
         dateEntegaPedidos = new com.toedter.calendar.JDateChooser();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        tblpruebapedidos = new javax.swing.JTable();
         jPanel18 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         tblHistorialCompras = new javax.swing.JTable();
-        btnDetalleCompra_Compras = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         txtBuscarCodigoCompras = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
@@ -451,6 +452,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tb_Ventas_Pedidos.setBackground(new java.awt.Color(255, 204, 204));
+        tb_Ventas_Pedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tb_Ventas_PedidosMouseClicked(evt);
+            }
+        });
 
         jPanel21.setBackground(new java.awt.Color(255, 255, 255));
         jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1124,6 +1130,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 "Codigo", "Fecha_Pedio", "Fecha Entrega", "Cliente", "Empleado", "Estado", "Adelanto", "Total", "Saldo Restante"
             }
         ));
+        tblHistorialPedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblHistorialPedidosMouseClicked(evt);
+            }
+        });
         jScrollPane9.setViewportView(tblHistorialPedidos);
 
         jLabel29.setText("Código");
@@ -1144,47 +1155,64 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         buttonGroup3.add(rdbNoPagado);
         rdbNoPagado.setText("No Pagado");
 
+        tblpruebapedidos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane11.setViewportView(tblpruebapedidos);
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 1099, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel29)
-                    .addComponent(txtBuscarCodigoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel32)
-                        .addGap(84, 84, 84)
-                        .addComponent(jLabel33)
-                        .addGap(93, 93, 93)
-                        .addComponent(jLabel34))
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel29)
+                            .addComponent(txtBuscarCodigoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(jLabel32)
+                                .addGap(84, 84, 84)
+                                .addComponent(jLabel33)
+                                .addGap(93, 93, 93)
+                                .addComponent(jLabel34))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(dateGeneracionPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(dateEntegaPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                                .addComponent(txtBuscarClientePedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(105, 105, 105)))
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addComponent(txtBuscarEmpleadoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(88, 88, 88)
+                                .addComponent(rdbPagado))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addComponent(jLabel35)
+                                .addGap(142, 142, 142)
+                                .addComponent(jLabel36)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rdbNoPagado)
+                        .addGap(197, 197, 197))
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(dateGeneracionPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(dateEntegaPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                        .addComponent(txtBuscarClientePedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(105, 105, 105)))
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(txtBuscarEmpleadoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(88, 88, 88)
-                        .addComponent(rdbPagado))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(jLabel35)
-                        .addGap(142, 142, 142)
-                        .addComponent(jLabel36)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rdbNoPagado)
-                .addGap(197, 197, 197))
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40))))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1207,9 +1235,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                         .addComponent(txtBuscarEmpleadoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(dateGeneracionPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dateEntegaPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65))
         );
 
         tb_Ventas_Pedidos.addTab("Pedidos", jPanel13);
@@ -1225,9 +1255,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 "Código", "Proveedor", "Fecha", "Total"
             }
         ));
+        tblHistorialCompras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblHistorialComprasMouseClicked(evt);
+            }
+        });
         jScrollPane7.setViewportView(tblHistorialCompras);
-
-        btnDetalleCompra_Compras.setText("Ver detalle compra");
 
         jLabel22.setText("Código");
 
@@ -1237,13 +1270,13 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblDetalleCompra.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Materia Prima", "Cantidad"
+                "Materia Prima", "Cantidad", "Total"
             }
         ));
         jScrollPane10.setViewportView(tblDetalleCompra);
@@ -1272,32 +1305,28 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel28)
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                        .addComponent(btnDetalleCompra_Compras, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 208, Short.MAX_VALUE)))
                 .addGap(104, 104, 104))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel18Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel25)
-                                    .addComponent(jLabel22))
-                                .addGap(18, 18, 18))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel28)
-                                .addGap(4, 4, 4)))
-                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtBuscarCodigoCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtBuscarProveedorCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(btnDetalleCompra_Compras, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel22))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel28)
+                        .addGap(4, 4, 4)))
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtBuscarCodigoCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtBuscarProveedorCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
@@ -3665,6 +3694,120 @@ private boolean validarVacioP(){
         llenarTablaProductos();
     }//GEN-LAST:event_btnRefreshProducto_PedidoActionPerformed
 
+    private void tblHistorialComprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHistorialComprasMouseClicked
+        llenarTablaDetalleCompra();
+    }//GEN-LAST:event_tblHistorialComprasMouseClicked
+
+    private void tblHistorialPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHistorialPedidosMouseClicked
+        llenarTablaDetallePedido();
+    }//GEN-LAST:event_tblHistorialPedidosMouseClicked
+
+    private void tb_Ventas_PedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_Ventas_PedidosMouseClicked
+                llenarTablaHistorialPedidos();
+                llenarTablaHistorialCompras();
+    }//GEN-LAST:event_tb_Ventas_PedidosMouseClicked
+
+    
+    private void llenarTablaHistorialPedidos(){
+         try {
+            
+             DefaultTableModel tbm=(DefaultTableModel)tblHistorialPedidos.getModel();
+            tbm.setRowCount(0);
+            Statement stmt = conect.createStatement();
+                stmt.execute("SELECT NOMBRE_USUARIO FROM USUARIOS WHERE ID_USUARIO = " + id_usuario );
+                ResultSet re = stmt.getResultSet();
+                String  empleado = "";
+                while (re.next()){
+                    empleado = re.getString(1);
+                }
+            
+            stmt.execute("SELECT ID_PEDIDO, FECHA_PEDIDO, FECHA_ENTREGA, PERSONAS.NOMBRE + ' ' + PERSONAS.APE_PAT + ' ' + PERSONAS.APE_MAT AS NOMBRE, ESTADO, ADELANTO, TOTAL, (TOTAL-ADELANTO) as RESTO " +
+                         "FROM PEDIDOS INNER JOIN PERSONAS ON PEDIDOS.ID_CLIENTE = PERSONAS.ID_PERSONA " +
+                         "AND PEDIDOS.ID_USUARIO = (SELECT ID_USUARIO FROM USUARIOS WHERE USUARIOS.ID_USUARIO = PEDIDOS.ID_USUARIO)"
+                        );
+            ResultSet res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getString("ID_PEDIDO"),res.getString("FECHA_PEDIDO"),res.getString("FECHA_ENTREGA"),res.getString("NOMBRE"),empleado,res.getString("ESTADO"),res.getString("ADELANTO"),res.getString("TOTAL"),res.getString("RESTO")});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            showMessageDialog(null,ex); 
+        }
+    }
+    
+    
+    
+    
+    private void llenarTablaDetallePedido(){
+         try {
+            
+            Statement stmt=conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblpruebapedidos.getModel();
+            tbm.setRowCount(0);
+            stmt.execute("SELECT PRODUCTOS.NOMBRE,DETALLE_PEDIDO.CANTIDAD,DETALLE_PEDIDO.TOTAL " +
+                         "FROM PRODUCTOS INNER JOIN DETALLE_PEDIDO ON PRODUCTOS.ID_PRODUCTO = DETALLE_PEDIDO.ID_PRODUCTO " +
+                         "AND DETALLE_PEDIDO.ID_PEDIDO = " + tblHistorialPedidos.getValueAt(tblHistorialPedidos.getSelectedRow(),0)
+                        );
+            ResultSet res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getString("NOMBRE"),res.getString("CANTIDAD"),res.getString("TOTAL")});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            showMessageDialog(null," Error en AL LLENAR TABLA PRODUCTOS POR BUSQUEDA. "); 
+        }
+    }
+    
+    private void llenarTablaHistorialCompras(){
+         try {
+            
+            Statement stmt=conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblHistorialCompras.getModel();
+            tbm.setRowCount(0);
+            stmt.execute("SELECT ID_COMPRA, FECHA, PERSONAS.NOMBRE, TOTAL " +
+                         "FROM COMPRAS INNER JOIN PERSONAS ON COMPRAS.ID_PROVEEDOR = PERSONAS.ID_PERSONA " +
+                         "AND COMPRAS.ID_COMPRA = 52"
+                        );
+            ResultSet res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getString("ID_COMPRA"),res.getString("FECHA"),res.getString("NOMBRE"),res.getString("TOTAL")});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            showMessageDialog(null," Error en AL LLENAR TABLA PRODUCTOS POR BUSQUEDA. "); 
+        }
+    }
+
+
+ private void llenarTablaDetalleCompra(){
+         try {
+            
+            Statement stmt=conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblDetalleCompra.getModel();
+            tbm.setRowCount(0);
+            stmt.execute("SELECT MATERIAS_PRIMAS.NOMBRE,DETALLE_COMPRA.CANTIDAD,DETALLE_COMPRA.TOTAL " +
+                         "FROM MATERIAS_PRIMAS INNER JOIN DETALLE_COMPRA ON MATERIAS_PRIMAS.ID_MATERIA = DETALLE_COMPRA.ID_MATERIA_PRIMA " +
+                         "AND DETALLE_COMPRA.ID_COMPRA = " + tblHistorialCompras.getValueAt(tblHistorialCompras.getSelectedRow(),0)
+                        );
+            ResultSet res=stmt.getResultSet();
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getString("NOMBRE"),res.getString("CANTIDAD"),res.getString("TOTAL")});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            showMessageDialog(null," Error en AL LLENAR TABLA PRODUCTOS POR BUSQUEDA. "); 
+        }
+    }
+    
+    
     void cancelarVenta(){
          DefaultTableModel tbm = (DefaultTableModel) tblVenta.getModel();
             for (int i = 0; i < tblVenta.getRowCount(); i++) {
@@ -3706,6 +3849,7 @@ private boolean validarVacioP(){
                             "," + tblPedido.getValueAt(i,0).toString() +
                             "," + tblPedido.getValueAt(i,3).toString() +
                             "," + tblClientes_Pedido.getValueAt(idp,0) +
+                            "," + tblPedido.getValueAt(i,4).toString() +
                             ")";
                             stmt.executeUpdate(cad);
                             }
@@ -3750,6 +3894,7 @@ private boolean validarVacioP(){
                             "," + tblVenta.getValueAt(i,0).toString() +
                             "," + tblVenta.getValueAt(i,3).toString() +
                             "," + idCliente +
+                            "," + tblVenta.getValueAt(i,4).toString() +
                             ")";
                             stmt.executeUpdate(cad);
                             }
@@ -3977,8 +4122,9 @@ private boolean validarVacioP(){
                     cad = "INSERT INTO DETALLE_COMPRA" +
                             " VALUES( " + id +
                             "," + tblCompra.getValueAt(i,0).toString() +
-                            "," + tblCompra.getValueAt(i,4).toString() +
+                            "," + tblCompra.getValueAt(i,2).toString() +
                             "," + tblProveedor_Compra.getValueAt(idp,0) +
+                            "," + tblCompra.getValueAt(i,4) +
                             ")";
                             stmt.executeUpdate(cad);
                             }
@@ -4228,7 +4374,6 @@ private boolean validarVacioP(){
     private javax.swing.JButton btnCancelarVenta;
     private javax.swing.JButton btnCancelar_Compra;
     private javax.swing.JButton btnCancelar_Pedido;
-    private javax.swing.JButton btnDetalleCompra_Compras;
     private javax.swing.JButton btnEliminarArticuloPedido;
     private javax.swing.JButton btnEliminarC;
     private javax.swing.JButton btnEliminarMateriaPrima_Compra;
@@ -4349,6 +4494,7 @@ private boolean validarVacioP(){
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane16;
@@ -4421,6 +4567,7 @@ private boolean validarVacioP(){
     private javax.swing.JTable tblProveedores;
     private javax.swing.JTable tblUsuarios;
     private javax.swing.JTable tblVenta;
+    private javax.swing.JTable tblpruebapedidos;
     private javax.swing.JTextField txtAPMC;
     private javax.swing.JTextField txtAPPC;
     private javax.swing.JTextField txtAdelantoPedido;
