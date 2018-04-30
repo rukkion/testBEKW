@@ -1801,6 +1801,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel17.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, -1, -1));
 
         txtdescP.setColumns(20);
+        txtdescP.setLineWrap(true);
         txtdescP.setRows(5);
         jScrollPane3.setViewportView(txtdescP);
 
