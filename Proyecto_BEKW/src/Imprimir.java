@@ -109,9 +109,9 @@ public class Imprimir {
             PdfPCell titulo4 = new PdfPCell(new Phrase("CANTIDAD"));
             PdfPCell titulo5 = new PdfPCell(new Phrase("TOTAL"));
             
-            titulo3.setVerticalAlignment(Element.ALIGN_RIGHT);
-            titulo4.setVerticalAlignment(Element.ALIGN_RIGHT);
-            titulo5.setVerticalAlignment(Element.ALIGN_RIGHT);
+            titulo3.setHorizontalAlignment(Element.ALIGN_RIGHT);
+            titulo4.setHorizontalAlignment(Element.ALIGN_RIGHT);
+            titulo5.setHorizontalAlignment(Element.ALIGN_RIGHT);
             
             titulo1.setBorder(Rectangle.NO_BORDER);
             titulo2.setBorder(Rectangle.NO_BORDER);
@@ -161,9 +161,9 @@ public class Imprimir {
                         cellcantidadProducto.setBorder(Rectangle.NO_BORDER);
                         celltotalProducto.setBorder(Rectangle.NO_BORDER);
                         //alineando al centro las celdas
-                        cellPUProducto.setVerticalAlignment(Element.ALIGN_RIGHT);
-                        cellcantidadProducto.setVerticalAlignment(Element.ALIGN_RIGHT);
-                        celltotalProducto.setVerticalAlignment(Element.ALIGN_RIGHT);
+                        cellPUProducto.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                        cellcantidadProducto.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                        celltotalProducto.setHorizontalAlignment(Element.ALIGN_RIGHT);
                         //probando que si saque lo que deberia
                         System.out.println("prodcuto:"+rs.getString("NOMBRE_PRODUCTO")+"cantidad: "+cantidad+"|pu:"+precioUnitario+"|totalP:"+totalProducto);
                         //agregando celdas al pdf
