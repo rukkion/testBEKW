@@ -1,22 +1,24 @@
 
+import com.itextpdf.text.pdf.PdfWriter;
 import java.util.Date;
 import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.DateFormat;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.scene.paint.Material;
+
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -25,6 +27,7 @@ import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import javax.swing.text.Document;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -65,13 +68,13 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         
     }
     
-    String nombreUsuario;
+    String nombreUsuario="";
     public Ventana_Dueno(String nombreUsuario) {
         this.nombreUsuario=nombreUsuario;
         initComponents();
         setLocationRelativeTo(null);
         seticon();
-        lblUsuario.setText("Bienvenido, "+nombreUsuario);
+        lblUsuario.setText("Bienvenido, "+this.nombreUsuario);
     }
     
     CONECTAR_SERVER CS;
@@ -80,7 +83,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         seticon();
-        lblUsuario.setText("Bienvenido, "+nombreUsuario);
+        lblUsuario.setText("Bienvenido, "+this.nombreUsuario);
         this.CS=CS;
     }
     public Ventana_Dueno(int id_usuario,String nombreUsuario,CONECTAR_SERVER CS) {
@@ -180,6 +183,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         lblTotalVenta1 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
+        btnImprimirVenta = new javax.swing.JButton();
         jPanel22 = new javax.swing.JPanel();
         jButton14 = new javax.swing.JButton();
         jLabel75 = new javax.swing.JLabel();
@@ -667,6 +671,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel21.add(lblTotalVenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, -1, -1));
         jPanel21.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 180, 10));
         jPanel21.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, 190, 20));
+
+        btnImprimirVenta.setText("Imprimir prros");
+        btnImprimirVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimirVentaActionPerformed(evt);
+            }
+        });
+        jPanel21.add(btnImprimirVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, -1, -1));
 
         tb_Ventas_Pedidos.addTab("Nueva Venta", jPanel21);
 
@@ -3727,15 +3739,19 @@ private boolean validarVacioP(){
 
     private void btnGenerarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarVentaActionPerformed
         if(tblVenta.getRowCount() !=0 && tblClientesVenta.getSelectedRow()>-1){
-        try {
+        try {   
+                
                 insertarVenta();
-                detalle_venta();
+                int idVentaImprimir=detalle_venta();
                 actualizarEstadoPedido();
                 llenarTablaPedidos_Venta();
+                Imprimir printVenta=new Imprimir();
+                printVenta.imprimirVenta(nombreUsuario, idVentaImprimir);
                 tbmVenta.setRowCount(0);
                 lblAnticipo.setText("0");
                 lblTotalVenta1.setText("0");
                 lblPagoRestante.setText("0");
+                
                 showMessageDialog(this,"¡Venta realizada exitosamente!");
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
@@ -3969,6 +3985,10 @@ private boolean validarVacioP(){
          dateGeneracionPedido1.setDate(null);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void btnImprimirVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirVentaActionPerformed
+        
+    }//GEN-LAST:event_btnImprimirVentaActionPerformed
 
     
     private void buscarHistorialCompra() throws SQLException{
@@ -4268,7 +4288,7 @@ private void llenarTablaDetalleCompra(){
 
     }
     
-    private void detalle_venta(){
+    private int detalle_venta(){
             try {
                 cad ="";
                 Statement stmt = conect.createStatement();
@@ -4289,10 +4309,11 @@ private void llenarTablaDetalleCompra(){
                             stmt.executeUpdate(cad);
                             }
                stmt.close(); 
+               return id;
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
-               
+               return 0;
     }
     
     void restartotalyeliminarrowPedido(){
@@ -4772,6 +4793,7 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JButton btnGenerarCompra;
     private javax.swing.JButton btnGenerarPedido;
     private javax.swing.JButton btnGenerarVenta;
+    private javax.swing.JButton btnImprimirVenta;
     private javax.swing.JButton btnInsertarC;
     private javax.swing.JButton btnModificarC;
     private javax.swing.JButton btnModificarMP;
