@@ -125,7 +125,7 @@ public class Imprimir {
                 String consultaVenta="SELECT DV.ID_VENTA, DV.ID_PRODUCTO, P.NOMBRE as NOMBRE_PRODUCTO, P.PRECIO, DV.CANTIDAD, C.NOMBRE as NOMBRE_CLIENTE " +
                 "FROM DETALLE_VENTAS as DV, PRODUCTOS as P, PERSONAS as C " +
                 "WHERE DV.ID_PRODUCTO=P.ID_PRODUCTO AND DV.ID_CLIENTE=C.ID_PERSONA " +
-                "AND DV.ID_VENTA="+1+"";
+                "AND DV.ID_VENTA="+idVenta+"";
                 ResultSet rs = st.executeQuery(consultaVenta);
                 int totalVenta=0;
                 if (rs.next()) {

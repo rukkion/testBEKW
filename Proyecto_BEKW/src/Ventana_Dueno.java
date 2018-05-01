@@ -509,7 +509,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
         jScrollPane17.setViewportView(tblClientesVenta);
 
-        jPanel21.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 540, 65));
+        jPanel21.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 540, 80));
 
         jLabel74.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel74.setText("Nueva Venta");
@@ -529,7 +529,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tblVenta);
 
-        jPanel21.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 690, 260));
+        jPanel21.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 690, 260));
 
         btnGenerarVenta.setBackground(new java.awt.Color(255, 255, 255));
         btnGenerarVenta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -548,7 +548,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jLabel77.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel77.setText("Venta");
-        jPanel21.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+        jPanel21.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         txtBuscarClienteVenta.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtBuscarClienteVenta.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -566,7 +566,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 txtBuscarClienteVentaKeyReleased(evt);
             }
         });
-        jPanel21.add(txtBuscarClienteVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 250, -1));
+        jPanel21.add(txtBuscarClienteVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 250, -1));
 
         jLabel44.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel44.setText("Buscar:");
@@ -706,15 +706,15 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         ));
         jScrollPane18.setViewportView(tblClientes_Pedido);
 
-        jPanel22.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 540, 65));
+        jPanel22.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 75, 540, 70));
 
         jLabel78.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel78.setText("Nuevo Pedido");
-        jPanel22.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+        jPanel22.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
         jLabel79.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel79.setText("Cliente");
-        jPanel22.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        jPanel22.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         tblPedido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -726,7 +726,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(tblPedido);
 
-        jPanel22.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 680, 260));
+        jPanel22.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 690, 260));
 
         btnEliminarArticuloPedido.setBackground(new java.awt.Color(255, 255, 255));
         btnEliminarArticuloPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -756,7 +756,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jLabel80.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel80.setText("Pedido");
-        jPanel22.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, -1, -1));
+        jPanel22.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         txtBuscarCliente_Pedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtBuscarCliente_Pedido.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -764,11 +764,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 txtBuscarCliente_PedidoKeyReleased(evt);
             }
         });
-        jPanel22.add(txtBuscarCliente_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 250, -1));
+        jPanel22.add(txtBuscarCliente_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 250, -1));
 
         jLabel45.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel45.setText("Buscar:");
-        jPanel22.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jPanel22.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
         jPanel15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
