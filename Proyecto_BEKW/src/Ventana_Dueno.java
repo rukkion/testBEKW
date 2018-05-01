@@ -183,7 +183,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         lblTotalVenta1 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
-        btnImprimirVenta = new javax.swing.JButton();
         jPanel22 = new javax.swing.JPanel();
         jButton14 = new javax.swing.JButton();
         jLabel75 = new javax.swing.JLabel();
@@ -417,6 +416,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Pastelería El Merengue");
         setBackground(new java.awt.Color(255, 255, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -673,14 +673,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel21.add(lblTotalVenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, -1, -1));
         jPanel21.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 180, 10));
         jPanel21.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, 190, 20));
-
-        btnImprimirVenta.setText("Imprimir prros");
-        btnImprimirVenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImprimirVentaActionPerformed(evt);
-            }
-        });
-        jPanel21.add(btnImprimirVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, -1, -1));
 
         tb_Ventas_Pedidos.addTab("Nueva Venta", jPanel21);
 
@@ -3771,7 +3763,7 @@ private boolean validarVacioP(){
                 lblTotalVenta1.setText("0");
                 lblPagoRestante.setText("0");
                 
-                showMessageDialog(this,"¡Venta realizada exitosamente!");
+                System.out.println("¡Venta realizada exitosamente!");
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -4004,10 +3996,6 @@ private boolean validarVacioP(){
          dateGeneracionPedido1.setDate(null);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void btnImprimirVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirVentaActionPerformed
-        
-    }//GEN-LAST:event_btnImprimirVentaActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
             try {
@@ -4873,7 +4861,6 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JButton btnGenerarCompra;
     private javax.swing.JButton btnGenerarPedido;
     private javax.swing.JButton btnGenerarVenta;
-    private javax.swing.JButton btnImprimirVenta;
     private javax.swing.JButton btnInsertarC;
     private javax.swing.JButton btnModificarC;
     private javax.swing.JButton btnModificarMP;
