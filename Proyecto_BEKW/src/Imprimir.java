@@ -62,7 +62,7 @@ public class Imprimir {
         }
         return fecha;
     }
-    void imprimirVenta(String empleado,int idVenta){
+    void imprimirVenta(String empleado,int idVenta,float efectivo,float cambio){
       Document documento = new Document();
         
         try {
@@ -182,9 +182,9 @@ public class Imprimir {
             textoTotalVenta.setAlignment(Paragraph.ALIGN_RIGHT);
             textoTotalVenta.setFont(FontFactory.getFont("Tahoma", 12, Font.BOLD, BaseColor.DARK_GRAY));
             textoTotalVenta.add("TOTAL:         "+totalVenta+".0\n");
-            textoTotalVenta.add("CAMBIO:         0.0\n");
+            textoTotalVenta.add("CAMBIO:         "+cambio+"\n");
             textoTotalVenta.add("-----------------------\n");
-            textoTotalVenta.add("EFECTIVO:         0.0\n\n");
+            textoTotalVenta.add("EFECTIVO:         "+efectivo+"\n\n");
             //----
             descripcion.add("BIENVENIDO: "+nombreCliente+"\n\n");
             //AGRADECIMIENTO

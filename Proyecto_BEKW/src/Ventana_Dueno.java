@@ -546,7 +546,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnGenerarVentaActionPerformed(evt);
             }
         });
-        jPanel21.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 140, 40));
+        btnGenerarVenta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                btnGenerarVentaKeyTyped(evt);
+            }
+        });
+        jPanel21.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, 150, 40));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel13.setText("Total:");
@@ -650,11 +655,13 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel18.setText("Anticipo:");
         jPanel21.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, -1, -1));
 
+        lblAnticipo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblAnticipo.setText("0.00");
-        jPanel21.add(lblAnticipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 30, 20));
+        jPanel21.add(lblAnticipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 470, 60, 20));
 
+        lblPagoRestante.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPagoRestante.setText("0.00");
-        jPanel21.add(lblPagoRestante, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 500, -1, -1));
+        jPanel21.add(lblPagoRestante, new org.netbeans.lib.awtextra.AbsoluteConstraints(642, 500, 60, -1));
 
         btnCancelarVenta.setBackground(new java.awt.Color(255, 255, 255));
         btnCancelarVenta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -673,13 +680,19 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel20.setText("Saldo restante:");
         jPanel21.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, -1, -1));
 
+        lblTotalVenta1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblTotalVenta1.setText("0.00");
-        jPanel21.add(lblTotalVenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, -1, -1));
+        jPanel21.add(lblTotalVenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 440, 50, -1));
         jPanel21.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 180, 10));
         jPanel21.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, 190, 20));
 
         txtEfectivo.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtEfectivo.setText("0.00");
+        txtEfectivo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEfectivoKeyTyped(evt);
+            }
+        });
         jPanel21.add(txtEfectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 160, -1));
 
         jLabel41.setText("Efectivo:");
@@ -3775,9 +3788,9 @@ private boolean validarVacioP(){
                 actualizarEstadoPedido();
                 llenarTablaPedidos_Venta();
                 llenarTablaHistorialVentas();
-                generarCambio();
+                //generarCambio();
                 Imprimir printVenta=new Imprimir();
-                printVenta.imprimirVenta(nombreUsuario, idVentaImprimir);
+                printVenta.imprimirVenta(nombreUsuario, idVentaImprimir,efectivo,cambio);
                 txtEfectivo.setText("0.00");
                 lblCambio.setText("0.00");
                 tbmVenta.setRowCount(0);
@@ -3802,8 +3815,14 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_btnGenerarVentaActionPerformed
     private void generarCambio(){
         efectivo=Float.parseFloat(txtEfectivo.getText());
-        cambio =efectivo-Float.parseFloat(lblPagoRestante.getText());
-        lblCambio.setText(cambio+"");
+        if(cambio<=Float.parseFloat(lblPagoRestante.getText())){
+            cambio=0;
+            lblCambio.setText(0.0+"");
+        } else {
+            cambio =efectivo-Float.parseFloat(lblPagoRestante.getText());
+            lblCambio.setText(cambio+"");
+        }
+        
     }
     
     private void actualizarEstadoPedido(){
@@ -3903,6 +3922,7 @@ private boolean validarVacioP(){
 
     private void tblPedidosVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPedidosVentasMouseClicked
         cargarPedido();
+        generarCambio();
     }//GEN-LAST:event_tblPedidosVentasMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -4043,6 +4063,14 @@ private boolean validarVacioP(){
     private void spnrMPStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnrMPStateChanged
         spinnerNeg(spnrMP);
     }//GEN-LAST:event_spnrMPStateChanged
+
+    private void btnGenerarVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGenerarVentaKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarVentaKeyTyped
+
+    private void txtEfectivoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyTyped
+        generarCambio();
+    }//GEN-LAST:event_txtEfectivoKeyTyped
 
     private void retirarMateriaPrima(){
          try {
