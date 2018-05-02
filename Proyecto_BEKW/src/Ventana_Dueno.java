@@ -1,5 +1,6 @@
 
 import com.itextpdf.text.pdf.PdfWriter;
+import com.placeholder.PlaceHolder;
 import java.util.Date;
 import java.awt.Color;
 import java.awt.Frame;
@@ -687,7 +688,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel21.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, 190, 20));
 
         txtEfectivo.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtEfectivo.setText("0.00");
         txtEfectivo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEfectivoKeyReleased(evt);
@@ -2647,7 +2647,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      String pattern = "yyyy-MM-dd";
      SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern); 
      String dates = simpleDateFormat.format(new Date());
-      
+      holders();
             try {
                 dateAct = simpleDateFormat.parse(dates);
             } catch (ParseException ex) {
@@ -3817,17 +3817,28 @@ private boolean validarVacioP(){
         }
     }//GEN-LAST:event_btnGenerarVentaActionPerformed
     private void generarCambio(){
-        efectivo = Float.parseFloat(txtEfectivo.getText());
+        try{
+            efectivo = Float.parseFloat(txtEfectivo.getText());
         SaldoRestante = Float.parseFloat(lblPagoRestante.getText());
          
         if(efectivo >= SaldoRestante){
             cambio =Math.abs(efectivo - SaldoRestante);
             lblCambio.setText(""+cambio);
             
+        }else{
+            lblCambio.setText(0.0+"");
+        }
+        }catch(Exception e){
+            
         }
         
+        
     }
-    
+    PlaceHolder holder;
+    private void holders(){
+        holder= new PlaceHolder(txtEfectivo,"0.0");
+
+    }
     private void actualizarEstadoPedido(){
         
             try {
