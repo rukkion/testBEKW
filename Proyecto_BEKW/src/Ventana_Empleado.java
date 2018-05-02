@@ -225,35 +225,6 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         txtEfectivoPedido = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
         lblCambioPedido = new javax.swing.JLabel();
-        jPanel23 = new javax.swing.JPanel();
-        btnAgregarProvedor = new javax.swing.JButton();
-        jLabel81 = new javax.swing.JLabel();
-        jScrollPane19 = new javax.swing.JScrollPane();
-        tblProveedor_Compra = new javax.swing.JTable();
-        jLabel82 = new javax.swing.JLabel();
-        jLabel83 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        tblCompra = new javax.swing.JTable();
-        btnEliminarMateriaPrima_Compra = new javax.swing.JButton();
-        btnGenerarCompra = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
-        txtTotalCompra = new javax.swing.JTextField();
-        jLabel84 = new javax.swing.JLabel();
-        txtBuscarCompras = new javax.swing.JTextField();
-        jLabel46 = new javax.swing.JLabel();
-        jPanel16 = new javax.swing.JPanel();
-        jScrollPane21 = new javax.swing.JScrollPane();
-        tblCompraslMateriasPrimas = new javax.swing.JTable();
-        txtBuscasMateriaPrima_Compras = new javax.swing.JTextField();
-        jLabel31 = new javax.swing.JLabel();
-        btnNuevaMateriaPrima_Compras = new javax.swing.JButton();
-        jLabel86 = new javax.swing.JLabel();
-        jButton20 = new javax.swing.JButton();
-        spncantidadMP_Compra = new javax.swing.JSpinner();
-        btnRefreshMateriaPrima_Compra = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
-        jSeparator4 = new javax.swing.JSeparator();
-        btnCancelar_Compra = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane15 = new javax.swing.JScrollPane();
         tblHistorialVentas = new javax.swing.JTable();
@@ -269,19 +240,6 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jScrollPane22 = new javax.swing.JScrollPane();
         tblDetalleVentas = new javax.swing.JTable();
-        jPanel18 = new javax.swing.JPanel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        tblHistorialCompras = new javax.swing.JTable();
-        jLabel22 = new javax.swing.JLabel();
-        txtBuscarCodigoCompras = new javax.swing.JTextField();
-        jLabel25 = new javax.swing.JLabel();
-        txtBuscarProveedorCompras = new javax.swing.JTextField();
-        jLabel28 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        tblDetalleCompra = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         tblHistorialPedidos = new javax.swing.JTable();
@@ -356,24 +314,6 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         tb_Personas = new javax.swing.JTabbedPane();
-        panelProveedor = new javax.swing.JPanel();
-        txtBuscarProveedor = new javax.swing.JTextField();
-        lblTelefonoProveedor = new javax.swing.JLabel();
-        lblProveedorBuscar = new javax.swing.JLabel();
-        txtProveedorTelefono = new javax.swing.JTextField();
-        lblTituloProveedor = new javax.swing.JLabel();
-        jScrollPaneProveedores = new javax.swing.JScrollPane();
-        tblProveedores = new javax.swing.JTable();
-        txtProveedorNombre = new javax.swing.JTextField();
-        btnModificarProveedor = new javax.swing.JButton();
-        lblNombreProveedor = new javax.swing.JLabel();
-        btnEliminarProveedor = new javax.swing.JButton();
-        lblDomicilioProveedor = new javax.swing.JLabel();
-        btnAgregarProveedor = new javax.swing.JButton();
-        txtProveedorDomicilio = new javax.swing.JTextField();
-        btnCancelar1 = new javax.swing.JButton();
-        txtProveedorCP = new javax.swing.JTextField();
-        lblCPProveedor = new javax.swing.JLabel();
         panelCliente = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         txtNomC = new javax.swing.JTextField();
@@ -397,25 +337,6 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        lblUsuarioTitulo = new javax.swing.JLabel();
-        btnUsuariosAgregar = new javax.swing.JButton();
-        btnUsuariosCancelar = new javax.swing.JButton();
-        btnUsuariosModificar = new javax.swing.JButton();
-        btnUsuariosEliminar = new javax.swing.JButton();
-        jScrollPaneUsuarios = new javax.swing.JScrollPane();
-        tblUsuarios = new javax.swing.JTable();
-        jPanel12 = new javax.swing.JPanel();
-        lblUsuario1 = new javax.swing.JLabel();
-        lblTipoU = new javax.swing.JLabel();
-        lblContra = new javax.swing.JLabel();
-        lblNombre = new javax.swing.JLabel();
-        txtUsuariosUsuario = new javax.swing.JTextField();
-        txtUsuariosContraseña = new javax.swing.JTextField();
-        txtUsuariosNombre = new javax.swing.JTextField();
-        cmbUsuariosTipo = new javax.swing.JComboBox<>();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -923,260 +844,6 @@ public class Ventana_Empleado extends javax.swing.JFrame {
 
         tb_Ventas_Pedidos.addTab("Nuevo Pedido", jPanel22);
 
-        jPanel23.setBackground(new java.awt.Color(255, 255, 255));
-
-        btnAgregarProvedor.setBackground(new java.awt.Color(255, 255, 255));
-        btnAgregarProvedor.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnAgregarProvedor.setText("Agregar Proveedor");
-        btnAgregarProvedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarProvedorActionPerformed(evt);
-            }
-        });
-
-        tblProveedor_Compra.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, "", "", ""}
-            },
-            new String [] {
-                "Código", "Nombre ", "Domicilio", "Telefono"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane19.setViewportView(tblProveedor_Compra);
-
-        jLabel82.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel82.setText("Nueva Compra");
-
-        jLabel83.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel83.setText("Provedor");
-
-        tblCompra.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Código", "Materia", "Cantidad", "Precio", "Total"
-            }
-        ));
-        jScrollPane6.setViewportView(tblCompra);
-
-        btnEliminarMateriaPrima_Compra.setBackground(new java.awt.Color(255, 255, 255));
-        btnEliminarMateriaPrima_Compra.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnEliminarMateriaPrima_Compra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-17x30.png"))); // NOI18N
-        btnEliminarMateriaPrima_Compra.setText("Eliminar artículo");
-        btnEliminarMateriaPrima_Compra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarMateriaPrima_CompraActionPerformed(evt);
-            }
-        });
-
-        btnGenerarCompra.setBackground(new java.awt.Color(255, 255, 255));
-        btnGenerarCompra.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnGenerarCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/success30x30.png"))); // NOI18N
-        btnGenerarCompra.setText("Generar Compra");
-        btnGenerarCompra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarCompraActionPerformed(evt);
-            }
-        });
-
-        jLabel16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel16.setText("Total:");
-
-        txtTotalCompra.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtTotalCompra.setText("0");
-        txtTotalCompra.setEnabled(false);
-        txtTotalCompra.setFocusable(false);
-
-        jLabel84.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel84.setText("Compra");
-
-        txtBuscarCompras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtBuscarCompras.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtBuscarComprasKeyReleased(evt);
-            }
-        });
-
-        jLabel46.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel46.setText("Buscar:");
-
-        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        tblCompraslMateriasPrimas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Código", "Materia Prima", "Existencia", "Precio"
-            }
-        ));
-        jScrollPane21.setViewportView(tblCompraslMateriasPrimas);
-
-        jPanel16.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 360, 360));
-
-        txtBuscasMateriaPrima_Compras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtBuscasMateriaPrima_Compras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscasMateriaPrima_ComprasActionPerformed(evt);
-            }
-        });
-        txtBuscasMateriaPrima_Compras.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtBuscasMateriaPrima_ComprasKeyTyped(evt);
-            }
-        });
-        jPanel16.add(txtBuscasMateriaPrima_Compras, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 260, -1));
-
-        jLabel31.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel31.setText("Buscar:");
-        jPanel16.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
-
-        btnNuevaMateriaPrima_Compras.setBackground(new java.awt.Color(255, 255, 255));
-        btnNuevaMateriaPrima_Compras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnNuevaMateriaPrima_Compras.setText("Nueva Materia Prima");
-        btnNuevaMateriaPrima_Compras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevaMateriaPrima_ComprasActionPerformed(evt);
-            }
-        });
-        jPanel16.add(btnNuevaMateriaPrima_Compras, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, 30));
-
-        jLabel86.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel86.setText("Materia Prima");
-        jPanel16.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 150, 30));
-
-        jButton20.setBackground(new java.awt.Color(255, 255, 255));
-        jButton20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-16x30.png"))); // NOI18N
-        jButton20.setText("Añadir a Carrito");
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
-            }
-        });
-        jPanel16.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, -1, 56));
-
-        spncantidadMP_Compra.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        spncantidadMP_Compra.setValue(1);
-        spncantidadMP_Compra.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                spncantidadMP_CompraStateChanged(evt);
-            }
-        });
-        jPanel16.add(spncantidadMP_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 44, 31));
-
-        btnRefreshMateriaPrima_Compra.setBackground(new java.awt.Color(255, 255, 255));
-        btnRefreshMateriaPrima_Compra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update_30px.png"))); // NOI18N
-        btnRefreshMateriaPrima_Compra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRefreshMateriaPrima_CompraActionPerformed(evt);
-            }
-        });
-        jPanel16.add(btnRefreshMateriaPrima_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 40, -1));
-        jPanel16.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, 10));
-
-        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
-
-        btnCancelar_Compra.setBackground(new java.awt.Color(255, 255, 255));
-        btnCancelar_Compra.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnCancelar_Compra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
-        btnCancelar_Compra.setText("Cancelar");
-        btnCancelar_Compra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelar_CompraActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
-        jPanel23.setLayout(jPanel23Layout);
-        jPanel23Layout.setHorizontalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel23Layout.createSequentialGroup()
-                .addGap(818, 818, 818)
-                .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel23Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(btnCancelar_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEliminarMateriaPrima_Compra)
-                        .addGap(32, 32, 32)
-                        .addComponent(btnGenerarCompra)
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel16)
-                        .addGap(20, 20, 20)
-                        .addComponent(txtTotalCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addComponent(jLabel83)
-                        .addGap(249, 249, 249)
-                        .addComponent(jLabel82))
-                    .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addComponent(jLabel46)
-                        .addGap(62, 62, 62)
-                        .addComponent(txtBuscarCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(btnAgregarProvedor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addGap(320, 320, 320)
-                        .addComponent(jLabel84))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel23Layout.setVerticalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel23Layout.createSequentialGroup()
-                .addComponent(jLabel81)
-                .addGap(10, 10, 10)
-                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel23Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel83))
-                            .addComponent(jLabel82))
-                        .addGap(8, 8, 8)
-                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel46)
-                            .addComponent(txtBuscarCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(7, 7, 7)
-                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAgregarProvedor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel84)
-                        .addGap(3, 3, 3)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btnGenerarCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnEliminarMateriaPrima_Compra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTotalCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator4)
-                            .addComponent(btnCancelar_Compra, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        tb_Ventas_Pedidos.addTab("Nueva Compra", jPanel23);
-
         tblHistorialVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1299,119 +966,6 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         );
 
         tb_Ventas_Pedidos.addTab("Ventas", jPanel1);
-
-        tblHistorialCompras.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Código", "Fecha", "Proveedor", "Total"
-            }
-        ));
-        tblHistorialCompras.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblHistorialComprasMouseClicked(evt);
-            }
-        });
-        jScrollPane7.setViewportView(tblHistorialCompras);
-
-        jLabel22.setText("Código");
-
-        jLabel25.setText("Proveedor");
-
-        jLabel28.setText("Fecha");
-
-        jDateChooser1.setDateFormatString("dd-MM-yyyy");
-
-        tblDetalleCompra.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Materia Prima", "Cantidad", "Precio Unitario", "Presentacion", "Total"
-            }
-        ));
-        jScrollPane10.setViewportView(tblDetalleCompra);
-
-        jButton4.setText("Buscar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
-        jButton5.setText("Limpiar busqueda");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
-        jPanel18.setLayout(jPanel18Layout);
-        jPanel18Layout.setHorizontalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel18Layout.createSequentialGroup()
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(316, 316, 316)
-                                .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel28))
-                        .addGap(602, 602, 602))
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtBuscarCodigoCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel22))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel18Layout.createSequentialGroup()
-                                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel18Layout.createSequentialGroup()
-                                        .addComponent(txtBuscarProveedorCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, Short.MAX_VALUE))
-                                    .addGroup(jPanel18Layout.createSequentialGroup()
-                                        .addGap(324, 324, 324)
-                                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(18, 18, 18)))
-                                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
-                            .addComponent(jLabel25)))))
-        );
-        jPanel18Layout.setVerticalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel25))
-                .addGap(3, 3, 3)
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtBuscarCodigoCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBuscarProveedorCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel28)
-                            .addComponent(jButton4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane10))
-                .addGap(23, 23, 23))
-        );
-
-        tb_Ventas_Pedidos.addTab("Compras", jPanel18);
 
         tblHistorialPedidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1700,7 +1254,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
                 spnrMPStateChanged(evt);
             }
         });
-        jPanel8.add(spnrMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 490, -1, -1));
+        jPanel8.add(spnrMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 490, -1, -1));
 
         jButton8.setText("Retirar Materia Prima");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -1896,7 +1450,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(tb_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 1146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1910,194 +1464,6 @@ public class Ventana_Empleado extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        panelProveedor.setBackground(new java.awt.Color(255, 255, 255));
-
-        txtBuscarProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtBuscarProveedorKeyReleased(evt);
-            }
-        });
-
-        lblTelefonoProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        lblTelefonoProveedor.setText("Teléfono:");
-
-        lblProveedorBuscar.setText("Buscar:");
-
-        txtProveedorTelefono.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtProveedorTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtProveedorTelefonoKeyTyped(evt);
-            }
-        });
-
-        lblTituloProveedor.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        lblTituloProveedor.setText("Proveedor");
-
-        tblProveedores.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Código", "Proveedor", "Domicilio", "Código_Postal", "Telefono"
-            }
-        ));
-        tblProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblProveedoresMouseClicked(evt);
-            }
-        });
-        jScrollPaneProveedores.setViewportView(tblProveedores);
-
-        txtProveedorNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtProveedorNombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtProveedorNombreKeyTyped(evt);
-            }
-        });
-
-        btnModificarProveedor.setBackground(new java.awt.Color(255, 255, 255));
-        btnModificarProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnModificarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/edit30x30.png"))); // NOI18N
-        btnModificarProveedor.setText("Modificar");
-        btnModificarProveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificarProveedorActionPerformed(evt);
-            }
-        });
-
-        lblNombreProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        lblNombreProveedor.setText("Nombre:");
-
-        btnEliminarProveedor.setBackground(new java.awt.Color(255, 255, 255));
-        btnEliminarProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnEliminarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/garbage-1x30.png"))); // NOI18N
-        btnEliminarProveedor.setText("Eliminar");
-        btnEliminarProveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarProveedorActionPerformed(evt);
-            }
-        });
-
-        lblDomicilioProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        lblDomicilioProveedor.setText("Domicilio:");
-
-        btnAgregarProveedor.setBackground(new java.awt.Color(255, 255, 255));
-        btnAgregarProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnAgregarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
-        btnAgregarProveedor.setText("Agregar");
-        btnAgregarProveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarProveedorActionPerformed(evt);
-            }
-        });
-
-        txtProveedorDomicilio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-
-        btnCancelar1.setBackground(new java.awt.Color(255, 255, 255));
-        btnCancelar1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnCancelar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
-        btnCancelar1.setText("Cancelar");
-        btnCancelar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelar1ActionPerformed(evt);
-            }
-        });
-
-        txtProveedorCP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtProveedorCP.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtProveedorCPKeyTyped(evt);
-            }
-        });
-
-        lblCPProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        lblCPProveedor.setText("C.P:");
-
-        javax.swing.GroupLayout panelProveedorLayout = new javax.swing.GroupLayout(panelProveedor);
-        panelProveedor.setLayout(panelProveedorLayout);
-        panelProveedorLayout.setHorizontalGroup(
-            panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProveedorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblProveedorBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtBuscarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(178, 178, 178))
-            .addGroup(panelProveedorLayout.createSequentialGroup()
-                .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelProveedorLayout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnCancelar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnAgregarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(33, 33, 33)
-                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnModificarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEliminarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelProveedorLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblTituloProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelProveedorLayout.createSequentialGroup()
-                                .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblDomicilioProveedor)
-                                    .addComponent(lblNombreProveedor)
-                                    .addComponent(lblCPProveedor)
-                                    .addComponent(lblTelefonoProveedor))
-                                .addGap(18, 18, 18)
-                                .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtProveedorCP, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtProveedorTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtProveedorDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtProveedorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(146, 146, 146)))
-                .addComponent(jScrollPaneProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81))
-        );
-        panelProveedorLayout.setVerticalGroup(
-            panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelProveedorLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBuscarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblProveedorBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelProveedorLayout.createSequentialGroup()
-                        .addComponent(lblTituloProveedor)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNombreProveedor)
-                            .addComponent(txtProveedorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblDomicilioProveedor)
-                            .addComponent(txtProveedorDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtProveedorCP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCPProveedor))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtProveedorTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTelefonoProveedor))
-                        .addGap(27, 27, 27)
-                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCancelar1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnModificarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAgregarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEliminarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(129, 129, 129))
-                    .addGroup(panelProveedorLayout.createSequentialGroup()
-                        .addComponent(jScrollPaneProveedores)
-                        .addContainerGap())))
-        );
-
-        tb_Personas.addTab("Proveedor", panelProveedor);
 
         panelCliente.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -2283,175 +1649,6 @@ public class Ventana_Empleado extends javax.swing.JFrame {
 
         tb_principal.addTab("Personas", jPanel9);
 
-        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
-
-        lblUsuarioTitulo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        lblUsuarioTitulo.setText("Usuarios");
-
-        btnUsuariosAgregar.setBackground(new java.awt.Color(255, 255, 255));
-        btnUsuariosAgregar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnUsuariosAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
-        btnUsuariosAgregar.setText("Agregar");
-        btnUsuariosAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUsuariosAgregarActionPerformed(evt);
-            }
-        });
-
-        btnUsuariosCancelar.setBackground(new java.awt.Color(255, 255, 255));
-        btnUsuariosCancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnUsuariosCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
-        btnUsuariosCancelar.setText("Cancelar");
-        btnUsuariosCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUsuariosCancelarActionPerformed(evt);
-            }
-        });
-
-        btnUsuariosModificar.setBackground(new java.awt.Color(255, 255, 255));
-        btnUsuariosModificar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnUsuariosModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/edit30x30.png"))); // NOI18N
-        btnUsuariosModificar.setText("Modificar");
-        btnUsuariosModificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUsuariosModificarActionPerformed(evt);
-            }
-        });
-
-        btnUsuariosEliminar.setBackground(new java.awt.Color(255, 255, 255));
-        btnUsuariosEliminar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnUsuariosEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/garbage-1x30.png"))); // NOI18N
-        btnUsuariosEliminar.setText("Eliminar");
-        btnUsuariosEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUsuariosEliminarActionPerformed(evt);
-            }
-        });
-
-        tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Usuario", "Tipo_Usuario", "Contraseña", "Nombre"
-            }
-        ));
-        tblUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblUsuariosMouseClicked(evt);
-            }
-        });
-        jScrollPaneUsuarios.setViewportView(tblUsuarios);
-
-        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblUsuario1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        lblUsuario1.setText("Usuario:");
-        jPanel12.add(lblUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
-
-        lblTipoU.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        lblTipoU.setText("Tipo Usuario:");
-        jPanel12.add(lblTipoU, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, -1, -1));
-
-        lblContra.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        lblContra.setText("Contraseña:");
-        jPanel12.add(lblContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
-
-        lblNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        lblNombre.setText("Nombre:");
-        jPanel12.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, -1, -1));
-
-        txtUsuariosUsuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtUsuariosUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtUsuariosUsuarioKeyTyped(evt);
-            }
-        });
-        jPanel12.add(txtUsuariosUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 130, -1));
-
-        txtUsuariosContraseña.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtUsuariosContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtUsuariosContraseñaKeyTyped(evt);
-            }
-        });
-        jPanel12.add(txtUsuariosContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 130, -1));
-
-        txtUsuariosNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtUsuariosNombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtUsuariosNombreKeyTyped(evt);
-            }
-        });
-        jPanel12.add(txtUsuariosNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, 170, -1));
-
-        cmbUsuariosTipo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        cmbUsuariosTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "EMPLEADO", "DUEÑO" }));
-        cmbUsuariosTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbUsuariosTipoActionPerformed(evt);
-            }
-        });
-        jPanel12.add(cmbUsuariosTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 170, -1));
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPaneUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 742, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(322, 322, 322)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnUsuariosCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnUsuariosAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnUsuariosModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnUsuariosEliminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(436, 436, 436)
-                        .addComponent(lblUsuarioTitulo)))
-                .addContainerGap(415, Short.MAX_VALUE))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(lblUsuarioTitulo)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jScrollPaneUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUsuariosCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnUsuariosModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUsuariosAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnUsuariosEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(252, Short.MAX_VALUE))
-        );
-
-        tb_principal.addTab("Usuarios", jPanel10);
-
-        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Ubuntu Light", 1, 48)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PRONTO");
-        jPanel11.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 790, 200));
-
-        tb_principal.addTab("Balance General", jPanel11);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -2497,9 +1694,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA Materia Prima");
         } 
     }
-    private void llenarTablaCompra(){
-        tbmCompra=(DefaultTableModel)tblCompra.getModel();
-    }  
+    
     
     private void llenarTablaPedidos(){
         tbmpedido=(DefaultTableModel)tblPedido.getModel();
@@ -2509,23 +1704,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         tbmVenta = (DefaultTableModel)tblVenta.getModel();
     }
     
-    private void LlenarTablaProveedores() throws ClassNotFoundException{
-         try {
-             conectarBD();
-             stmt=conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblProveedores.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from PERSONAS where TIPO = 'P'");
-            res=stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(6),res.getString(7)});
-                }  
-            }
-            stmt.close();
-        }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
-        } 
-    }
+    
     private void LlenarTablaP() throws ClassNotFoundException{
          try {
              
@@ -2556,27 +1735,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
         } 
     }
-    private void LlenarTablaUsuarios() throws ClassNotFoundException{
-         try {
-             conectarBD();
-             Statement stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblUsuarios.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from USUARIOS");
-             ResultSet res = stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                    if(res.getString(4).toString().equals("E"))
-                    tbm.addRow(new Object[]{res.getInt(1),res.getString(2),"EMPLEADO",res.getString(5),res.getString(3)});
-                    else{
-                        tbm.addRow(new Object[]{res.getInt(1),res.getString(2),"DUEÑO",res.getString(5),res.getString(3)});
-                    }
-                }  
-            }
-            stmt.close();
-        }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
-        } 
-    }
+   
     private void llenarTablaCliente(){
          try {
             
@@ -2595,48 +1754,8 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             showMessageDialog(null," Error en la conexion LLENAR TABLA CLIENTE. "); 
         }
     }
-    private void LlenarTablaCompras_MateriasPrimas() throws ClassNotFoundException{
-         try {
-             Statement stmt = conect.createStatement();
-            tbmMateriaPrima_Compra=(DefaultTableModel)tblCompraslMateriasPrimas.getModel();
-           tbmMateriaPrima_Compra.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS");
-             ResultSet res = stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                   Vector rowProductos=new Vector();
-                  rowProductos.add(res.getString("ID_MATERIA"));
-                  rowProductos.add(res.getString("NOMBRE"));
-                  rowProductos.add(res.getString("CANT_DISP"));
-                  rowProductos.add(res.getString("PRECIO"));
-                  tbmMateriaPrima_Compra.addRow(rowProductos);
-                }
-            }
-            
-            stmt.close();
-        }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
-        } 
-    }
-    public void LlenarTablaComprasProveedores() throws ClassNotFoundException{
-         try {
-             
-             Statement stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblProveedor_Compra.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from PERSONAS where TIPO = 'P'");
-             ResultSet res = stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(7)});
-                }  
-            }
-            stmt.close();
-        }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
-        } 
-    }
-   //
-   //
-   //
+    
+ 
     
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
      String pattern = "yyyy-MM-dd";
@@ -2654,13 +1773,10 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             //dateEntrega.setDate(dateAct);
             dateGeneracion.setDate(dateAct);
             llenarMateriaPrima();
-            LlenarTablaProveedores();
-            LlenarTablaUsuarios();
+
             llenarTablaCliente();
             LlenarTablaP();
-            LlenarTablaCompras_MateriasPrimas();
-            LlenarTablaComprasProveedores();
-            llenarTablaCompra();
+
             llenarTablaPedidos();
             LlenarTablaVenta();
             llenarPresentacion();
@@ -2669,7 +1785,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             llenarTablaProductos();
             llenarTablaHistorialPedidos();
             llenarTablaHistorialVentas();
-            llenarTablaHistorialCompras();
+            
             llenarTablaCliente2();
         } catch (Exception ex) {
             Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
@@ -2679,55 +1795,6 @@ public class Ventana_Empleado extends javax.swing.JFrame {
        
     }//GEN-LAST:event_formWindowOpened
     
-    private void txtNombreMPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreMPKeyTyped
-        
-    }//GEN-LAST:event_txtNombreMPKeyTyped
-
-    private void btnAgregarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMPActionPerformed
-        
-        try {
-            if(VerificarvaciosMP()){
-                if(MPExistente()){
-                    InsertarMP();
-                    clearMP();
-                }else{
-                    showMessageDialog(null,"MATERIA PRIMA YA EXISTENTE");
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_btnAgregarMPActionPerformed
-
-    private void btnCancelarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarMPActionPerformed
-        clearMP();
-        txtEstado.setText("Cancelado con éxito.");
-        txtNombreMP.requestFocus();
-    }//GEN-LAST:event_btnCancelarMPActionPerformed
-
-    private void tablaMateriaPrimaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMateriaPrimaMouseClicked
-        tablaMateriaPrima.getSelectedRow();
-
-        int selectedRowIndex=tablaMateriaPrima.getSelectedRow();
-        r = Integer.parseInt(tablaMateriaPrima.getValueAt(selectedRowIndex,0).toString());
-        try{
-            txtNombreMP.setText(tablaMateriaPrima.getValueAt(selectedRowIndex, 1).toString());
-            txtDescripcionMP.setText(tablaMateriaPrima.getValueAt(selectedRowIndex, 2).toString());
-            txtCantidadMP.setValue((Integer.parseInt(tablaMateriaPrima.getValueAt(selectedRowIndex, 3).toString())));
-            cmbUnidadMedidaMP.setSelectedItem(tablaMateriaPrima.getValueAt(selectedRowIndex, 4).toString());
-            if(tablaMateriaPrima.getValueAt(selectedRowIndex, 5).toString().equals("")){
-                txtPrecioMateriaPrima.setText("0");
-            }else{
-                txtPrecioMateriaPrima.setText(tablaMateriaPrima.getValueAt(selectedRowIndex, 5).toString());
-            }
-            
-        }catch(Exception e){
-            
-
-        }
-
-    }//GEN-LAST:event_tablaMateriaPrimaMouseClicked
-
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         String[] options = new String[2];
         options[0] = new String("Minimizar");
@@ -2751,253 +1818,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_jButton25ActionPerformed
-
-    private void txtBuscarCliente_PedidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarCliente_PedidoKeyReleased
-        try {
-                BuscarClientes();
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }//GEN-LAST:event_txtBuscarCliente_PedidoKeyReleased
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void txtBuscarClienteVentaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarClienteVentaKeyReleased
-            try {
-                BuscarClientesVenta();
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }//GEN-LAST:event_txtBuscarClienteVentaKeyReleased
-
-    private void txtBuscarClienteVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarClienteVentaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarClienteVentaActionPerformed
-
-    private void btnAddClienteVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddClienteVentasActionPerformed
-        VentanaCliente mdC=new VentanaCliente();
-        mdC.setVisible(true);
-    }//GEN-LAST:event_btnAddClienteVentasActionPerformed
-
-    private void txtBuscarProveedorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyReleased
-        try {
-            BuscarProveedores();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_txtBuscarProveedorKeyReleased
-
-    private void txtProveedorTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorTelefonoKeyTyped
-        ValidarNumeros(evt);
-    }//GEN-LAST:event_txtProveedorTelefonoKeyTyped
-
-    private void tblProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProveedoresMouseClicked
-        tblProveedores.getSelectedRow();
-        rowProveedor = tblProveedores.getSelectedRow();
-        txtProveedorNombre.setText(tblProveedores.getValueAt(rowProveedor, 1).toString());
-        txtProveedorDomicilio.setText(tblProveedores.getValueAt(rowProveedor, 2).toString());
-        txtProveedorCP.setText(tblProveedores.getValueAt(rowProveedor, 3).toString());
-        txtProveedorTelefono.setText(tblProveedores.getValueAt(rowProveedor, 4).toString());
-    }//GEN-LAST:event_tblProveedoresMouseClicked
-
-    private void txtProveedorNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorNombreKeyTyped
-        ValidarLetras(evt);
-    }//GEN-LAST:event_txtProveedorNombreKeyTyped
  
-    
-    private boolean VerificarvaciosProveedor(){
-        
-        if(txtProveedorNombre.getText().equals("")){
-            showMessageDialog(null, "VERIFIQUE EL NOMBRE DEL PROVEEDOR");
-            return false;
-        }
-        if(txtProveedorDomicilio.getText().equals("")){
-            showMessageDialog(null, "VERIFIQUE EL DOMICILIO");
-            return false;
-        }
-        if(txtProveedorTelefono.getText().equals("")){
-            showMessageDialog(null, "VERIFIQUE EL TELEFONO");
-            return false;
-        }
-        if (txtProveedorCP.getText().equals("")){
-            showMessageDialog(null, "VERIFIQUE EL CODIGO POSTAL");
-            return false;
-        }
-        return true;
-    }
-    private void btnModificarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarProveedorActionPerformed
-
-        try {
-            if(VerificarvaciosProveedor()){
-                ModificarProveedor();
-                limpiarProveedor();
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_btnModificarProveedorActionPerformed
-   public int rowProveedor = 0;
-   
-    private void ModificarProveedor() throws ClassNotFoundException{
-        try{
-            conectarBD();
-
-            String cad = "UPDATE PERSONAS "
-                    + "SET NOMBRE='"+ txtProveedorNombre.getText()+"',"
-                    + "APE_PAT='null',APE_MAT='null',DOMICILIO='"
-                    + txtProveedorDomicilio.getText()+ "',COD_POSTAL='"
-                    + txtProveedorCP.getText()+ "',TELEFONO='"
-                    + txtProveedorTelefono.getText() + "',TIPO="
-                    + "'P' WHERE ID_PERSONA="+ tblProveedores.getValueAt(rowProveedor,0);
-            Statement stmt = conect.createStatement();
-            stmt.executeUpdate(cad);
-            showMessageDialog(null,"Proveedor Modificado");
-            LlenarTablaProveedores();
-            stmt.close();
-        }
-            catch (SQLException ex) 
-            {
-            System.out.println("Error modificar");   
-            }
-    }
-    private void btnEliminarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProveedorActionPerformed
-
-        try {
-            if(VerificarvaciosProveedor()){
-                int j = JOptionPane.showConfirmDialog(null, "¿Deeseas eliminar el proveedor?", "Eliminar Proveedor", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-                if(j == JOptionPane.YES_OPTION){
-                    EliminarProveedor();
-                    limpiarProveedor();
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_btnEliminarProveedorActionPerformed
-
-    private void btnAgregarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProveedorActionPerformed
-        try {
-            if(VerificarvaciosProveedor()){
-                if(ProveedorExistente())
-                insertarProveedor();
-                limpiarProveedor();
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_btnAgregarProveedorActionPerformed
-    
-    private void insertarProveedor() throws ClassNotFoundException{
-        try{
-            conectarBD();
-            String cad = "INSERT INTO PERSONAS "
-                    + "VALUES('"+ txtProveedorNombre.getText()+"',"
-                    + "'null','null','"
-                    + txtProveedorDomicilio.getText()+ "','"
-                    + txtProveedorCP.getText()+ "','"
-                    + txtProveedorTelefono.getText() + "',"
-                    + "'P')";
-            Statement stmt = conect.createStatement();
-            stmt.executeUpdate(cad);
-            //showMessageDialog(null,"Proveedor Registrado");
-            LlenarTablaProveedores();
-            stmt.close();
-        }
-            catch (SQLException ex) 
-            {
-            System.out.println("Error insertar");   
-            }
-    }
-    private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
-        limpiarProveedor();
-    }//GEN-LAST:event_btnCancelar1ActionPerformed
-
-    private void txtProveedorCPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorCPKeyTyped
-        ValidarNumeros(evt);
-    }//GEN-LAST:event_txtProveedorCPKeyTyped
-    /**************************************** FORM USUARIOS*****************************************************/
-    private void btnUsuariosAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosAgregarActionPerformed
-        try {
-            if(VerificarvaciosUsuario()){
-                if(UsuarioExistente()){
-                    InsertarUsuario();
-                    limpiarUsuarios();
-                }else{
-                    showMessageDialog(null,"USUARIO YA EXISTENTE");
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_btnUsuariosAgregarActionPerformed
-
-    private void limpiarUsuarios(){
-        txtUsuariosNombre.setText(null);
-        txtUsuariosUsuario.setText(null);
-        txtUsuariosContraseña.setText(null);
-        cmbUsuariosTipo.setSelectedIndex(0);
-    }
-    
-    private void btnUsuariosCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosCancelarActionPerformed
-        limpiarUsuarios();
-    }//GEN-LAST:event_btnUsuariosCancelarActionPerformed
-
-    private void btnUsuariosModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosModificarActionPerformed
-        try {
-            if(VerificarvaciosUsuario()){
-                if(UsuarioExistente()){
-                    showMessageDialog(null,"VERIFIQUE EL NOMBRE DE USUARIO");
-                }else{
-
-                    ModificarUsuario();
-                    limpiarUsuarios();
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_btnUsuariosModificarActionPerformed
-
-    private void btnUsuariosEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosEliminarActionPerformed
-        try {
-            if(VerificarvaciosUsuario()){
-                if(UsuarioExistente()){
-                    showMessageDialog(null,"VERIFIQUE EL NOMBRE DE USUARIO");
-                }else{
-                    int j = JOptionPane.showConfirmDialog(null, "¿Está seguro?", "Eliminar Proveedor", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-                    if(j == JOptionPane.YES_OPTION){
-                        EliminarUsuario();
-                        limpiarUsuarios();
-                    }
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_btnUsuariosEliminarActionPerformed
-    public int rowUsuario = 0;
-    
-    
-    private void EliminarUsuario() throws ClassNotFoundException{
-        try{
-            conectarBD();
-            String cad = "DELETE FROM USUARIOS WHERE ID_USUARIO =" + tblUsuarios.getValueAt(rowUsuario,0).toString();
-            Statement stmt = conect.createStatement();
-            stmt.executeUpdate(cad);
-            LlenarTablaUsuarios();
-            stmt.close();
-        }
-            catch (SQLException ex) 
-            {
-            System.out.println("Error Eliminar");   
-            }
-    }
-    
     private void EliminarMP() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -3013,26 +1834,6 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             }
     }
 
-    private void InsertarUsuario(){
-        try{
-            conectarBD();
-            String cad = "INSERT INTO USUARIOS "
-                    + "VALUES('"+ txtUsuariosUsuario.getText()+"','"
-                    + txtUsuariosNombre.getText() + "','"
-                    + cmbUsuariosTipo.getSelectedItem().toString().substring(0,1) + "','"
-                    + txtUsuariosContraseña.getText() + "')";
-            Statement stmt = conect.createStatement();
-            stmt.executeUpdate(cad);
-            LlenarTablaUsuarios();
-            stmt.close();
-        }
-            catch (SQLException ex) 
-            {
-            System.out.println("Error insertar");   
-            } catch (ClassNotFoundException ex) {
-        Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    }
     private void InsertarMP(){
         try{
             
@@ -3055,27 +1856,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
     }
     }
 
-    
-    private void ModificarUsuario() throws ClassNotFoundException{
-        try{
-            conectarBD();
-            String cad;
-            cad = "UPDATE USUARIOS "
-                    + "SET NOMBRE_USUARIO='"+ txtUsuariosUsuario.getText()+"',"
-                    + "NOMBRE_PERSONA='" + txtUsuariosNombre.getText()+ "',TIPO='"
-                    + cmbUsuariosTipo.getSelectedItem().toString().substring(0,1) + "',CONTRASEÑA='"
-                    + txtUsuariosContraseña.getText()
-                    + "' WHERE ID_USUARIO="+ tblUsuarios.getValueAt(tblUsuarios.getSelectedRow(),0);
-            Statement stmt = conect.createStatement();
-            stmt.executeUpdate(cad);
-            LlenarTablaUsuarios();
-            stmt.close();
-        }
-            catch (SQLException ex) 
-            {
-            System.out.println("Error modificar");   
-            }
-    }
+  
     private void ModificarMP() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -3180,43 +1961,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         }
          return true;
     }
-    private boolean UsuarioExistente() throws ClassNotFoundException{
-         try {
-             conectarBD();
-             Statement stmt = conect.createStatement();
-             stmt.execute("select * from USUARIOS WHERE NOMBRE_USUARIO ='"+ txtUsuariosUsuario.getText()+"'");
-             ResultSet res = stmt.getResultSet();
-             if(null!=res){
-                while(res.next()){
-                   return false;
-                }
-             }
-             stmt.close();
-        }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
-        }
-         return true;
-    }
-    private boolean VerificarvaciosUsuario(){
-        
-        if(txtUsuariosNombre.getText().equals("")){
-            showMessageDialog(null, "VERIFIQUE EL NOMBRE DE LA PERSONA");
-            return false;
-        }
-        if(txtUsuariosContraseña.getText().equals("")){
-            showMessageDialog(null, "VERIFIQUELA CONTRASEÑA");
-            return false;
-        }
-        if(txtUsuariosUsuario.getText().equals("")){
-            showMessageDialog(null, "VERIFIQUE EL NOMBRE DE USUARIO");
-            return false;
-        }
-        if (cmbUsuariosTipo.getSelectedIndex() == 0){
-            showMessageDialog(null, "SELECCIONE UN TIPO DE USUARIO");
-            return false;
-        }
-        return true;
-    }
+    
     private boolean VerificarvaciosMP(){
         
         if(txtNombreMP.getText().equals("")){
@@ -3229,59 +1974,8 @@ public class Ventana_Empleado extends javax.swing.JFrame {
 //            return false;
 //        }
         return true;
-    }
-    private void tblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseClicked
-        rowUsuario = tblUsuarios.getSelectedRow();
-        txtUsuariosUsuario.setText(tblUsuarios.getValueAt(rowUsuario, 1).toString());
-        cmbUsuariosTipo.setSelectedItem(tblUsuarios.getValueAt(rowUsuario, 2));
-        txtUsuariosContraseña.setText(tblUsuarios.getValueAt(rowUsuario,3).toString());
-        txtUsuariosNombre.setText(tblUsuarios.getValueAt(rowUsuario, 4).toString());
-    }//GEN-LAST:event_tblUsuariosMouseClicked
+    }    
 
-    private void txtUsuariosUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuariosUsuarioKeyTyped
-        ValidarEspacios(evt);
-    }//GEN-LAST:event_txtUsuariosUsuarioKeyTyped
-
-    private void txtUsuariosContraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuariosContraseñaKeyTyped
-        ValidarEspacios(evt);
-    }//GEN-LAST:event_txtUsuariosContraseñaKeyTyped
-    
-    private void txtUsuariosNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuariosNombreKeyTyped
-        ValidarLetras(evt);
-    }//GEN-LAST:event_txtUsuariosNombreKeyTyped
-
-    private void txtAPMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAPMCActionPerformed
-
-    }//GEN-LAST:event_txtAPMCActionPerformed
-
-    private void btnCancelarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCActionPerformed
-        borrarC();
-       
-    }//GEN-LAST:event_btnCancelarCActionPerformed
-
-    private void btnEliminarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCActionPerformed
-        BaseDatosCliente c=new BaseDatosCliente();
-        int j = JOptionPane.showConfirmDialog(null, "¿Estás seguro?", "Eliminar Cliente", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if(j == JOptionPane.YES_OPTION){
-            try {
-                if(c.eliminar(IDCliente_Cliente))
-                borrarC();
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
-                Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
-            } catch(ArrayIndexOutOfBoundsException ex){
-                showMessageDialog(null, "No ha seleccionado ninguna fila.");
-            }
-            llenarTablaCliente();
-        }
-
-    }//GEN-LAST:event_btnEliminarCActionPerformed
-
-    public void filtro() {
-        int columnaABuscar = 1;
-        trsFiltro.setRowFilter(RowFilter.regexFilter(txtBuscasMateriaPrima_Compras.getText(), columnaABuscar));
-    }
     
     private TableRowSorter trsFiltro;
     void borrarC(){
@@ -3324,115 +2018,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             txtCPC.setText(String.valueOf(v[4]));
             txtTelC.setText(String.valueOf(v[5]));
     }
-    private void btnModificarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarCActionPerformed
-        BaseDatosCliente c=new BaseDatosCliente();
-        try {
-            if(c.modificar(IDCliente_Cliente,txtNomC.getText(),txtAPPC.getText(),txtAPMC.getText(),txtDomC.getText(),txtCPC.getText(),txtTelC.getText()))
-            borrarC();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
-        } catch(ArrayIndexOutOfBoundsException ex){
-            showMessageDialog(null, "No ha seleccionado ninguna fila.");
-        }
-        llenarTablaCliente();
-
-    }//GEN-LAST:event_btnModificarCActionPerformed
-
-    String IDCliente_Cliente=null;
-    private void txtDomCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDomCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDomCActionPerformed
-
-    private void txtCPCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCPCActionPerformed
-
-    private void txtTelCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelCActionPerformed
-
-    private void tablaClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaClienteMouseClicked
-        seleccionar();
-    }//GEN-LAST:event_tablaClienteMouseClicked
-
-    private void btnInsertarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarCActionPerformed
-        BaseDatosCliente c=new BaseDatosCliente();
-        try {
-            if(c.insertar(txtNomC.getText(),txtAPPC.getText(),txtAPMC.getText(),txtDomC.getText(),txtCPC.getText(),txtTelC.getText()))
-            borrarC();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        llenarTablaCliente();
-    }//GEN-LAST:event_btnInsertarCActionPerformed
-
-    private void txtBuscadorCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscadorCActionPerformed
-
-    private void txtBuscadorCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscadorCKeyTyped
-        txtBuscadorC.addKeyListener(new KeyAdapter() {
-            public void keyReleased(final KeyEvent e) {
-                //                String cadena = (txtBuscadorC.getText());
-                //                txtBuscadorC.setText(cadena);
-                repaint();
-                filtro();
-            }
-        });
-        trsFiltro = new TableRowSorter(tablaCliente.getModel());
-        tablaCliente.setRowSorter(trsFiltro);
-    }//GEN-LAST:event_txtBuscadorCKeyTyped
-
-    private void btnModificarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarMPActionPerformed
-        try {
-            if(VerificarvaciosMP()){
-                
-
-                    ModificarMP();
-                    clearMP();
-                
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_btnModificarMPActionPerformed
-
-    private void MPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MPActionPerformed
-        try {
-            if(VerificarvaciosMP()){
-                if(MPExistente()){
-                    showMessageDialog(null,"VERIFIQUE EL NOMBRE DE MATERIA PRIMA");
-                }else{
-                    int j = JOptionPane.showConfirmDialog(null, "¿Estás seguro?", "Eliminar Materia Prima", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-                    if(j == JOptionPane.YES_OPTION){
-                        EliminarMP();
-                        clearMP();
-                    }
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_MPActionPerformed
-
-    private void tblProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductoMouseClicked
-        tblProducto.getSelectedRow();
-        int selectedRowIndex=tblProducto.getSelectedRow();
-        txtnomP.setText(tblProducto.getValueAt(selectedRowIndex, 0).toString());
-        txtdescP.setText(tblProducto.getValueAt(selectedRowIndex, 1).toString());
-        cmbUnidadMedidaProducto.setSelectedItem(tblProducto.getValueAt(selectedRowIndex, 3).toString());
-        txtprecioP.setText(tblProducto.getValueAt(selectedRowIndex, 4).toString());
-        if(tblProducto.getValueAt(selectedRowIndex, 2).toString().equals("Por Pedido"))
-            rdbPorPedido.isSelected();
-        else
-            rdbNoDisponible.isSelected();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tblProductoMouseClicked
-private void clearP(){
+    String IDCliente_Cliente=null;private void clearP(){
         txtnomP.setText(null);
         txtdescP.setText(null);
         cmbUnidadMedidaProducto.setSelectedItem("Pieza");
@@ -3445,12 +2031,6 @@ private void clearP(){
             
         }
     }
-    private void btnCancelarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPActionPerformed
-        clearP();
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCancelarPActionPerformed
-
 
 
 
@@ -3464,99 +2044,7 @@ private boolean validarVacioP(){
 //            return false;
 //            }
             return true;
-     }
-    private void btnModificarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPActionPerformed
-        if(validarVacioP()){
-            DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
-            String nombre=txtnomP.getText();
-            String descripcion=txtdescP.getText();
-              String tipo;
-            if(rdbPorPedido.isSelected())
-                tipo="P";
-            else
-                tipo="N";
-            String u_medida=cmbUnidadMedidaProducto.getSelectedItem().toString();
-            String precio=txtprecioP.getText();
-
-            String cad = "update productos set NOMBRE='"+nombre+"', DESCRIPCION ='"+descripcion+"',TIPO='"+tipo+"',UNIDAD='"+u_medida+"',PRECIO = "+precio+" WHERE NOMBRE='"+nombre+"'";
-            try {
-                java.sql.Statement stmt=conect.createStatement();
-
-                stmt.executeUpdate(cad);
-                LlenarTablaP();
-            } catch (ClassNotFoundException ex) {
-                
-            } catch (SQLException ex) {
-                
-            }
-
-            clearP();
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnModificarPActionPerformed
-
-    private void btnAgregarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPActionPerformed
-        if(validarVacioP()){
-            DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
-            String nombre=txtnomP.getText();
-            String descripcion=txtdescP.getText();
-            String tipo;
-            if(rdbPorPedido.isSelected())
-                tipo="P";
-            else
-                tipo="N";
-            
-            String u_medida=cmbUnidadMedidaProducto.getSelectedItem().toString();
-            Float precio=Float.parseFloat((txtprecioP.getText()));
-
-            String cad = "INSERT INTO PRODUCTOS VALUES('"+nombre+"','"+descripcion+"','"+tipo+"','"+u_medida+"',"+precio+")";
-            try {
-                java.sql.Statement stmt=conect.createStatement();
-
-                stmt.executeUpdate(cad);
-                LlenarTablaP();
-            } catch (ClassNotFoundException ex) {
-                
-            } catch (SQLException ex) {
-                
-            }
-
-            clearP();}
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregarPActionPerformed
-
-    private void btnEliminarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPActionPerformed
-        if(validarVacioP()){
-            DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
-
-            String nombre=txtnomP.getText();
-
-            String cad = "DELETE FROM PRODUCTOS"
-            + " WHERE NOMBRE='"+nombre+"'";
-            try {
-                java.sql.Statement stmt=conect.createStatement();
-
-                stmt.executeUpdate(cad);
-
-                stmt.close();
-
-                LlenarTablaP();
-            } catch (SQLException ex) {
-               
-            } catch (ClassNotFoundException ex) {
-                
-            }
-            clearP();
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarPActionPerformed
-
-    private void txtprecioPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioPKeyTyped
-
-        ValidarNumeros(evt);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtprecioPKeyTyped
-    private void LlenarTablaBus() throws ClassNotFoundException{
+     }    private void LlenarTablaBus() throws ClassNotFoundException{
          try {
              conectarBD();
              
@@ -3581,10 +2069,6 @@ private boolean validarVacioP(){
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
         } 
     }
-    private void cmbUsuariosTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbUsuariosTipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbUsuariosTipoActionPerformed
-
     private void BuscarPedidos(){
          try {
              
@@ -3694,111 +2178,570 @@ private boolean validarVacioP(){
              System.out.println("ERROR AL LLENAR PEDIDOS EN VENTA");
         } 
     }
-    private void btnAgregarProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProvedorActionPerformed
-        ventanaProveedor VP=new ventanaProveedor();
-        VP.setLocationRelativeTo(null);
-        VP.setVDue(this);
-        VP.setVisible(true);
-    }//GEN-LAST:event_btnAgregarProvedorActionPerformed
+    
+   
+    
+    
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
 
-    private void txtBuscarComprasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyReleased
-            try {
-                BuscarProveedores();
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void txtBuscadorCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscadorCKeyTyped
+        txtBuscadorC.addKeyListener(new KeyAdapter() {
+            public void keyReleased(final KeyEvent e) {
+                //                String cadena = (txtBuscadorC.getText());
+                //                txtBuscadorC.setText(cadena);
+                repaint();
+                //GUARDADO
+                //filtro();
             }
-    }//GEN-LAST:event_txtBuscarComprasKeyReleased
+        });
+        trsFiltro = new TableRowSorter(tablaCliente.getModel());
+        tablaCliente.setRowSorter(trsFiltro);
+    }//GEN-LAST:event_txtBuscadorCKeyTyped
 
-    private void txtBuscarProducto_PedidotxtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProducto_PedidotxtBuscarKeyReleased
-        buscarTablaProductos_Pedido();
-    }//GEN-LAST:event_txtBuscarProducto_PedidotxtBuscarKeyReleased
+    private void txtBuscadorCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscadorCActionPerformed
+
+    private void btnInsertarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarCActionPerformed
+        BaseDatosCliente c=new BaseDatosCliente();
+        try {
+            if(c.insertar(txtNomC.getText(),txtAPPC.getText(),txtAPMC.getText(),txtDomC.getText(),txtCPC.getText(),txtTelC.getText()))
+            borrarC();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        llenarTablaCliente();
+    }//GEN-LAST:event_btnInsertarCActionPerformed
+
+    private void tablaClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaClienteMouseClicked
+        seleccionar();
+    }//GEN-LAST:event_tablaClienteMouseClicked
+
+    private void txtTelCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelCActionPerformed
+
+    private void txtCPCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCPCActionPerformed
+
+    private void txtDomCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDomCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDomCActionPerformed
+
+    private void btnModificarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarCActionPerformed
+        BaseDatosCliente c=new BaseDatosCliente();
+        try {
+            if(c.modificar(IDCliente_Cliente,txtNomC.getText(),txtAPPC.getText(),txtAPMC.getText(),txtDomC.getText(),txtCPC.getText(),txtTelC.getText()))
+            borrarC();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(ArrayIndexOutOfBoundsException ex){
+            showMessageDialog(null, "No ha seleccionado ninguna fila.");
+        }
+        llenarTablaCliente();
+    }//GEN-LAST:event_btnModificarCActionPerformed
+
+    private void btnEliminarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCActionPerformed
+        BaseDatosCliente c=new BaseDatosCliente();
+        int j = JOptionPane.showConfirmDialog(null, "¿Estás seguro?", "Eliminar Cliente", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if(j == JOptionPane.YES_OPTION){
+            try {
+                if(c.eliminar(IDCliente_Cliente))
+                borrarC();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
+            } catch(ArrayIndexOutOfBoundsException ex){
+                showMessageDialog(null, "No ha seleccionado ninguna fila.");
+            }
+            llenarTablaCliente();
+        }
+    }//GEN-LAST:event_btnEliminarCActionPerformed
+
+    private void btnCancelarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCActionPerformed
+        borrarC();
+
+    }//GEN-LAST:event_btnCancelarCActionPerformed
+
+    private void txtAPMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAPMCActionPerformed
+
+    }//GEN-LAST:event_txtAPMCActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        if(!txtAgregarPresentacion.getText().equals("")){
+            String cad = "INSERT INTO Presentacion VALUES('"+txtAgregarPresentacion.getText()+"',)";
+            try {
+                java.sql.Statement stmt=conect.createStatement();
+
+                stmt.executeUpdate(cad);
+                LlenarTablaP();
+                stmt.close();
+            } catch (ClassNotFoundException ex) {
+
+            } catch (SQLException ex) {
+
+            }
+        }
+        try {
+            llenarPresentacion();
+            // TODO add your handling code here:
+        } catch (SQLException ex) {
+            Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void txtAgregarPresentacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgregarPresentacionKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgregarPresentacionKeyTyped
+
+    private void txtAgregarPresentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgregarPresentacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgregarPresentacionActionPerformed
+
+    private void txtprecioPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioPKeyTyped
+
+        ValidarNumeros(evt);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtprecioPKeyTyped
+
+    private void btnEliminarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPActionPerformed
+        if(validarVacioP()){
+            DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
+
+            String nombre=txtnomP.getText();
+
+            String cad = "DELETE FROM PRODUCTOS"
+            + " WHERE NOMBRE='"+nombre+"'";
+            try {
+                java.sql.Statement stmt=conect.createStatement();
+
+                stmt.executeUpdate(cad);
+
+                stmt.close();
+
+                LlenarTablaP();
+            } catch (SQLException ex) {
+
+            } catch (ClassNotFoundException ex) {
+
+            }
+            clearP();
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarPActionPerformed
+
+    private void btnAgregarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPActionPerformed
+        if(validarVacioP()){
+            DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
+            String nombre=txtnomP.getText();
+            String descripcion=txtdescP.getText();
+            String tipo;
+            if(rdbPorPedido.isSelected())
+            tipo="P";
+            else
+            tipo="N";
+
+            String u_medida=cmbUnidadMedidaProducto.getSelectedItem().toString();
+            Float precio=Float.parseFloat((txtprecioP.getText()));
+
+            String cad = "INSERT INTO PRODUCTOS VALUES('"+nombre+"','"+descripcion+"','"+tipo+"','"+u_medida+"',"+precio+")";
+            try {
+                java.sql.Statement stmt=conect.createStatement();
+
+                stmt.executeUpdate(cad);
+                LlenarTablaP();
+            } catch (ClassNotFoundException ex) {
+
+            } catch (SQLException ex) {
+
+            }
+
+            clearP();}
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregarPActionPerformed
+
+    private void btnModificarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPActionPerformed
+        if(validarVacioP()){
+            DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
+            String nombre=txtnomP.getText();
+            String descripcion=txtdescP.getText();
+            String tipo;
+            if(rdbPorPedido.isSelected())
+            tipo="P";
+            else
+            tipo="N";
+            String u_medida=cmbUnidadMedidaProducto.getSelectedItem().toString();
+            String precio=txtprecioP.getText();
+
+            String cad = "update productos set NOMBRE='"+nombre+"', DESCRIPCION ='"+descripcion+"',TIPO='"+tipo+"',UNIDAD='"+u_medida+"',PRECIO = "+precio+" WHERE NOMBRE='"+nombre+"'";
+            try {
+                java.sql.Statement stmt=conect.createStatement();
+
+                stmt.executeUpdate(cad);
+                LlenarTablaP();
+            } catch (ClassNotFoundException ex) {
+
+            } catch (SQLException ex) {
+
+            }
+
+            clearP();
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnModificarPActionPerformed
+
+    private void btnCancelarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPActionPerformed
+        clearP();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarPActionPerformed
+
+    private void tblProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductoMouseClicked
+        tblProducto.getSelectedRow();
+        int selectedRowIndex=tblProducto.getSelectedRow();
+        txtnomP.setText(tblProducto.getValueAt(selectedRowIndex, 0).toString());
+        txtdescP.setText(tblProducto.getValueAt(selectedRowIndex, 1).toString());
+        cmbUnidadMedidaProducto.setSelectedItem(tblProducto.getValueAt(selectedRowIndex, 3).toString());
+        txtprecioP.setText(tblProducto.getValueAt(selectedRowIndex, 4).toString());
+        if(tblProducto.getValueAt(selectedRowIndex, 2).toString().equals("Por Pedido"))
+        rdbPorPedido.isSelected();
+        else
+        rdbNoDisponible.isSelected();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblProductoMouseClicked
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        if(!txtAgregarPresentacion1.getText().equals("")){
+            String cad = "INSERT INTO PresentacionM VALUES('"+txtAgregarPresentacion1.getText()+"')";
+            try {
+                java.sql.Statement stmt=conect.createStatement();
+
+                stmt.executeUpdate(cad);
+                LlenarTablaP();
+                stmt.close();
+            } catch (ClassNotFoundException ex) {
+
+            } catch (SQLException ex) {
+
+            }
+        }
+        try {
+            llenarPresentacionM();
+            // TODO add your handling code here:
+        } catch (SQLException ex) {
+            Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void txtAgregarPresentacion1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgregarPresentacion1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgregarPresentacion1KeyTyped
+
+    private void txtAgregarPresentacion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgregarPresentacion1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgregarPresentacion1ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        try {
+            if( Integer.parseInt(tablaMateriaPrima.getValueAt(tablaMateriaPrima.getSelectedRow(),3).toString()) >= Integer.parseInt(spnrMP.getValue().toString())){
+                retirarMateriaPrima();
+                llenarMateriaPrima();
+            }
+            else{
+                showMessageDialog(null,"Porfavor ingrese una cantidad válida no puede retirar mas materias primas de las actuales");
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void spnrMPStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnrMPStateChanged
+        spinnerNeg(spnrMP);
+    }//GEN-LAST:event_spnrMPStateChanged
+
+    private void txtNombreMPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreMPKeyTyped
+
+    }//GEN-LAST:event_txtNombreMPKeyTyped
+
+    private void btnAgregarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMPActionPerformed
+
+        try {
+            if(VerificarvaciosMP()){
+                if(MPExistente()){
+                    InsertarMP();
+                    clearMP();
+                }else{
+                    showMessageDialog(null,"MATERIA PRIMA YA EXISTENTE");
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnAgregarMPActionPerformed
+
+    private void MPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MPActionPerformed
+        try {
+            if(VerificarvaciosMP()){
+                if(MPExistente()){
+                    showMessageDialog(null,"VERIFIQUE EL NOMBRE DE MATERIA PRIMA");
+                }else{
+                    int j = JOptionPane.showConfirmDialog(null, "¿Estás seguro?", "Eliminar Materia Prima", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    if(j == JOptionPane.YES_OPTION){
+                        EliminarMP();
+                        clearMP();
+                    }
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_MPActionPerformed
+
+    private void btnModificarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarMPActionPerformed
+        try {
+            if(VerificarvaciosMP()){
+
+                ModificarMP();
+                clearMP();
+
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnModificarMPActionPerformed
+
+    private void btnCancelarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarMPActionPerformed
+        clearMP();
+        txtEstado.setText("Cancelado con éxito.");
+        txtNombreMP.requestFocus();
+    }//GEN-LAST:event_btnCancelarMPActionPerformed
+
+    private void tablaMateriaPrimaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMateriaPrimaMouseClicked
+        tablaMateriaPrima.getSelectedRow();
+
+        int selectedRowIndex=tablaMateriaPrima.getSelectedRow();
+        r = Integer.parseInt(tablaMateriaPrima.getValueAt(selectedRowIndex,0).toString());
+        try{
+            txtNombreMP.setText(tablaMateriaPrima.getValueAt(selectedRowIndex, 1).toString());
+            txtDescripcionMP.setText(tablaMateriaPrima.getValueAt(selectedRowIndex, 2).toString());
+            txtCantidadMP.setValue((Integer.parseInt(tablaMateriaPrima.getValueAt(selectedRowIndex, 3).toString())));
+            cmbUnidadMedidaMP.setSelectedItem(tablaMateriaPrima.getValueAt(selectedRowIndex, 4).toString());
+            if(tablaMateriaPrima.getValueAt(selectedRowIndex, 5).toString().equals("")){
+                txtPrecioMateriaPrima.setText("0");
+            }else{
+                txtPrecioMateriaPrima.setText(tablaMateriaPrima.getValueAt(selectedRowIndex, 5).toString());
+            }
+
+        }catch(Exception e){
+
+        }
+    }//GEN-LAST:event_tablaMateriaPrimaMouseClicked
+
+    private void tb_Ventas_PedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_Ventas_PedidosMouseClicked
+        llenarTablaHistorialPedidos();
+        
+    }//GEN-LAST:event_tb_Ventas_PedidosMouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        llenarTablaHistorialPedidos();
+        txtBuscarCodigoPedidos.setText("");
+        dateGeneracionPedido.setDate(null);
+        dateEntegaPedidos.setDate(null);
+        txtBuscarClientePedidos.setText("");
+        txtBuscarEmpleadoPedidos.setText("");
+        rdbPagado.setSelected(false);
+        rdbNoPagado.setSelected(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            buscarHistorialPedido();
+            // TODO add your handling code here:
+        } catch (SQLException ex) {
+            Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void tblHistorialPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHistorialPedidosMouseClicked
+        llenarTablaDetallePedido();
+    }//GEN-LAST:event_tblHistorialPedidosMouseClicked
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+
+        llenarTablaHistorialVentas();
+        txtBuscarCodigoPedidos1.setText("");
+        txtBuscarClientePedidos1.setText("");
+        txtBuscarEmpleadoPedidos1.setText("");
+        dateGeneracionPedido1.setDate(null);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        try {
+            buscarHistorialVenta();
+            // TODO add your handling code here:
+        } catch (SQLException ex) {
+            Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void tblHistorialVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHistorialVentasMouseClicked
+        llenarTablaDetalleVenta();
+    }//GEN-LAST:event_tblHistorialVentasMouseClicked
+
+    private void txtEfectivoPedidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEfectivoPedidoKeyTyped
+
+    private void txtEfectivoPedidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyReleased
+        generarCambioPedido();
+    }//GEN-LAST:event_txtEfectivoPedidoKeyReleased
+
+    private void btnCancelar_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar_PedidoActionPerformed
+        cancelarPedido();
+    }//GEN-LAST:event_btnCancelar_PedidoActionPerformed
+
+    private void spncantidadProducto_PedidoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spncantidadProducto_PedidoStateChanged
+       
+    }//GEN-LAST:event_spncantidadProducto_PedidoStateChanged
+
+    private void btnRefreshProducto_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProducto_PedidoActionPerformed
+        llenarTablaProductos();
+    }//GEN-LAST:event_btnRefreshProducto_PedidoActionPerformed
 
     private void btnProductoAPedidojButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductoAPedidojButton11ActionPerformed
-         if(tblProductos_Pedido.getSelectedRow()>-1){
-            
+        if(tblProductos_Pedido.getSelectedRow()>-1){
+
             AgregarcarritoPedido();
-             sumartotalPedido();
+            sumartotalPedido();
         }
         else
         showMessageDialog(this,"Debe de seleccionar un articulo.");
     }//GEN-LAST:event_btnProductoAPedidojButton11ActionPerformed
 
-    
-    private void btnEliminarMateriaPrima_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMateriaPrima_CompraActionPerformed
-        restartotalyeliminarrow();
-    }//GEN-LAST:event_btnEliminarMateriaPrima_CompraActionPerformed
+    private void txtBuscarProducto_PedidotxtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProducto_PedidotxtBuscarKeyReleased
+        buscarTablaProductos_Pedido();
+    }//GEN-LAST:event_txtBuscarProducto_PedidotxtBuscarKeyReleased
 
-    private boolean existeEnTabla(JTable tMateriasPrimas, JTable tCompra, JSpinner spin){
-
-        for(int i = 0;i<tblCompra.getRowCount();i++){
-            if (tblCompraslMateriasPrimas.getValueAt(tMateriasPrimas.getSelectedRow(),0)== tblCompra.getValueAt(i,0)){
-                tblCompra.setValueAt((Integer.parseInt(tblCompra.getValueAt(i,2)+"")+Integer.parseInt(spin.getValue()+"")),i, 2);
-                return true;
-            }
+    private void txtBuscarCliente_PedidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarCliente_PedidoKeyReleased
+        try {
+            BuscarClientes();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        return false;
-    }
-    
-    private void BuscarProveedores() throws ClassNotFoundException{
-         try {
-             conectarBD();
-             Statement stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblProveedor_Compra.getModel();
-           tbm.setRowCount(0);
-           stmt.execute("select * from PERSONAS "
-                                            + "where TIPO = 'P' "
-                                            + "AND NOMBRE LIKE '%" + txtBuscarCompras.getText() + "%'");
-             ResultSet res = stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                   Vector rowProductos=new Vector();
-                  rowProductos.add(res.getString("ID_PERSONA"));
-                  rowProductos.add(res.getString("NOMBRE"));
-                  rowProductos.add(res.getString("DOMICILIO"));
-                  rowProductos.add(res.getString("TELEFONO"));
-                  tbm.addRow(rowProductos);
-                }
-            }
-            stmt.close();
-        }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
-        } 
-    }
-    
-    private void btnGenerarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarCompraActionPerformed
-    if(tblCompra.getRowCount()!=0 && tblProveedor_Compra.getSelectedRow()>-1){
-        try { System.out.println("insertado");
-                insertarCompra();
-                detalle_compra();
-                DefaultTableModel tbm=(DefaultTableModel)tblCompra.getModel();
+    }//GEN-LAST:event_txtBuscarCliente_PedidoKeyReleased
+
+    private void btnGenerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPedidoActionPerformed
+        if(tblPedido.getRowCount()!=0 && tblClientes_Pedido.getSelectedRow()>-1 && Float.parseFloat(txtAdelantoPedido.getText())>=(Float.parseFloat(txtTotalPedido.getText()))*.5){
+            try { System.out.println("insertado");
+                insertarPedido();
+                int idPedido=detalle_pedido();
+                DefaultTableModel tbm=(DefaultTableModel)tblPedido.getModel();
+                Imprimir printPedido=new Imprimir();
+                printPedido.imprimirPedido(nombreUsuario, idPedido, efectivo, cambio, AdelantoPedido);
+
                 tbm.setRowCount(0);
-                txtTotalCompra.setText("0");
-                tblCompra.setModel(tbm);
-                LlenarTablaCompras_MateriasPrimas();
-                showMessageDialog(this, "¡Compra realizada exitosamente!");
+                txtTotalPedido.setText("0");
+                tblPedido.setModel(tbm);
+                txtAdelantoPedido.setText("0");
+                System.out.println("¡Pedido realizado exitosamente!");
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
-    }
-    else if(tblProveedor_Compra.getSelectedRow()>-1){
-            showMessageDialog(this,"Debe de ingresar articulos a la compra.");
-    }
-    else
-        showMessageDialog(this,"Debe de seleccionar un proveedor.");
-        
-    }//GEN-LAST:event_btnGenerarCompraActionPerformed
+        }
+        else if(tblClientes_Pedido.getSelectedRow()==-1){
+            showMessageDialog(this,"Debe de seleccionar un cliente.");
+        }
+        else if(tblPedido.getRowCount()==0)
+        showMessageDialog(this,"Debe de agregar un producto.");
+        else
+        showMessageDialog(this, "Debe de pagar un Anticipo minimo del 50%.");
 
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarPedidoActionPerformed
 
-    }//GEN-LAST:event_formWindowActivated
+    private void btnEliminarArticuloPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarArticuloPedidoActionPerformed
+        restartotalyeliminarrowPedido();
+    }//GEN-LAST:event_btnEliminarArticuloPedidoActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void txtEfectivoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyTyped
+
+    }//GEN-LAST:event_txtEfectivoKeyTyped
+
+    private void txtEfectivoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyReleased
+        generarCambio();
+    }//GEN-LAST:event_txtEfectivoKeyReleased
+
+    private void btnCancelarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarVentaActionPerformed
+        cancelarVenta();
+    }//GEN-LAST:event_btnCancelarVentaActionPerformed
+
+    private void btnRefreshProducto_Pedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProducto_Pedido1ActionPerformed
+        if(tblClientesVenta.getSelectedRow()>=0)
+        llenarTablaPedidos_Venta();
+        else
+        showMessageDialog(null," Favor de seleccionar un cliente.");
+    }//GEN-LAST:event_btnRefreshProducto_Pedido1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+        String date2 = simpleDateFormat.format(dateGeneracion.getDate());
+        if(tblPedidosVentas.getRowCount()>0 && date2!=null)
+        BuscarPedidos();
+        else if(date2!=null)
+        showMessageDialog(this, "Debe de seleccionar un cliente para buscar sus pedidos.");
+        else
+        showMessageDialog(this,"Debe de seleccionar una fecha de busqueda.");
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tblPedidosVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPedidosVentasMouseClicked
+        cargarPedido();
+        generarCambio();
+    }//GEN-LAST:event_tblPedidosVentasMouseClicked
+
+    private void txtBuscarClienteVentaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarClienteVentaKeyReleased
+        try {
+            BuscarClientesVenta();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_txtBuscarClienteVentaKeyReleased
+
+    private void txtBuscarClienteVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarClienteVentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarClienteVentaActionPerformed
+
+    private void txtBuscarClienteVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscarClienteVentaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarClienteVentaMouseClicked
+
+    private void btnGenerarVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGenerarVentaKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarVentaKeyTyped
 
     private void btnGenerarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarVentaActionPerformed
         if(tblVenta.getRowCount() !=0 && tblClientesVenta.getSelectedRow()>-1){
-        try {   
-                
+            try {
+
                 insertarVenta();
                 int idVentaImprimir=detalle_venta();
                 actualizarEstadoPedido();
@@ -3815,7 +2758,7 @@ private boolean validarVacioP(){
                 lblPagoRestante.setText("0.00");
                 cambio=0;
                 efectivo=0;
-                
+
                 System.out.println("¡Venta realizada exitosamente!");
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
@@ -3823,12 +2766,20 @@ private boolean validarVacioP(){
         }
         else if(tblPedidosVentas.getSelectedRow()>-1){
             showMessageDialog(this,"Debe seleccionar el cliente y el pedido a pagar");
-        
 
-        // TODO add your handling code here:
-                                      
+            // TODO add your handling code here:
+
         }
     }//GEN-LAST:event_btnGenerarVentaActionPerformed
+
+    private void tblClientesVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesVentaMouseClicked
+        llenarTablaPedidos_Venta();
+    }//GEN-LAST:event_tblClientesVentaMouseClicked
+
+    private void btnAddClienteVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddClienteVentasActionPerformed
+        VentanaCliente mdC=new VentanaCliente();
+        mdC.setVisible(true);
+    }//GEN-LAST:event_btnAddClienteVentasActionPerformed
     private void generarCambio(){
         try{
             efectivo = Float.parseFloat(txtEfectivo.getText());
@@ -3887,329 +2838,8 @@ private boolean validarVacioP(){
         
     }
     
-    void cancelarCompra(){
-         DefaultTableModel tbm = (DefaultTableModel) tblCompra.getModel();
-            for (int i = 0; i < tblCompra.getRowCount(); i++) {
-            tbm.removeRow(i);
-            i-=1;
-            }
-            tblCompra.setModel(tbm);
-            txtTotalCompra.setText("0");
-            s = 0;
-    }
-    
-    private void btnCancelar_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar_CompraActionPerformed
-        cancelarCompra();
-    }//GEN-LAST:event_btnCancelar_CompraActionPerformed
-
-    private void txtBuscasMateriaPrima_ComprasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprasKeyTyped
-        txtBuscasMateriaPrima_Compras.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyReleased(final KeyEvent e) {
-                repaint();
-                filtro();
-            }
-        });
-        trsFiltro = new TableRowSorter(tblCompraslMateriasPrimas.getModel());
-        tblCompraslMateriasPrimas.setRowSorter(trsFiltro);  
-    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprasKeyTyped
-
-    private void btnCancelar_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar_PedidoActionPerformed
-        cancelarPedido();
-    }//GEN-LAST:event_btnCancelar_PedidoActionPerformed
-
-    private void spncantidadMP_CompraStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spncantidadMP_CompraStateChanged
-        spinnerNeg(spncantidadMP_Compra);
-    }//GEN-LAST:event_spncantidadMP_CompraStateChanged
-
-    private void spncantidadProducto_PedidoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spncantidadProducto_PedidoStateChanged
-        spinnerNeg(spncantidadMP_Compra);
-    }//GEN-LAST:event_spncantidadProducto_PedidoStateChanged
-
-    private void btnGenerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPedidoActionPerformed
-        if(tblPedido.getRowCount()!=0 && tblClientes_Pedido.getSelectedRow()>-1 && Float.parseFloat(txtAdelantoPedido.getText())>=(Float.parseFloat(txtTotalPedido.getText()))*.5){
-        try { System.out.println("insertado");
-                insertarPedido();
-                int idPedido=detalle_pedido();
-                DefaultTableModel tbm=(DefaultTableModel)tblPedido.getModel();
-                Imprimir printPedido=new Imprimir();
-                printPedido.imprimirPedido(nombreUsuario, idPedido, efectivo, cambio, AdelantoPedido);
-                
-                tbm.setRowCount(0);
-                txtTotalPedido.setText("0");
-                tblPedido.setModel(tbm);
-                txtAdelantoPedido.setText("0");
-                System.out.println("¡Pedido realizado exitosamente!");
-            } catch (SQLException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }
-    else if(tblClientes_Pedido.getSelectedRow()==-1){
-            showMessageDialog(this,"Debe de seleccionar un cliente.");
-    }
-    else if(tblPedido.getRowCount()==0)
-        showMessageDialog(this,"Debe de agregar un producto.");
-        else
-            showMessageDialog(this, "Debe de pagar un Anticipo minimo del 50%.");
+  
         
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGenerarPedidoActionPerformed
-
-    private void btnCancelarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarVentaActionPerformed
-        cancelarVenta();
-    }//GEN-LAST:event_btnCancelarVentaActionPerformed
-
-    private void btnEliminarArticuloPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarArticuloPedidoActionPerformed
-        restartotalyeliminarrowPedido();
-    }//GEN-LAST:event_btnEliminarArticuloPedidoActionPerformed
-
-    private void txtBuscarClienteVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscarClienteVentaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarClienteVentaMouseClicked
-
-    private void tblClientesVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesVentaMouseClicked
-        llenarTablaPedidos_Venta();
-    }//GEN-LAST:event_tblClientesVentaMouseClicked
-
-    private void tblPedidosVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPedidosVentasMouseClicked
-        cargarPedido();
-        generarCambio();
-    }//GEN-LAST:event_tblPedidosVentasMouseClicked
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-String pattern = "yyyy-MM-dd";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
-        String date2 = simpleDateFormat.format(dateGeneracion.getDate());
-       if(tblPedidosVentas.getRowCount()>0 && date2!=null)
-        BuscarPedidos();
-       else if(date2!=null)
-           showMessageDialog(this, "Debe de seleccionar un cliente para buscar sus pedidos.");
-       else
-           showMessageDialog(this,"Debe de seleccionar una fecha de busqueda.");
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void btnRefreshProducto_Pedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProducto_Pedido1ActionPerformed
-    if(tblClientesVenta.getSelectedRow()>=0)
-        llenarTablaPedidos_Venta();
-    else
-        showMessageDialog(null," Favor de seleccionar un cliente.");
-    }//GEN-LAST:event_btnRefreshProducto_Pedido1ActionPerformed
-
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        if(tblCompraslMateriasPrimas.getSelectedRow()>-1){
-            
-            Agregarcarrito();
-             sumartotal();
-        }
-        else
-        showMessageDialog(this,"Debe de seleccionar un articulo.");
-     
-    }//GEN-LAST:event_jButton20ActionPerformed
-
-    private void btnNuevaMateriaPrima_ComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaMateriaPrima_ComprasActionPerformed
-        VentanaMateriaPrima VMP=new VentanaMateriaPrima();
-        VMP.setLocationRelativeTo(null);
-        VMP.setVisible(true);
-    }//GEN-LAST:event_btnNuevaMateriaPrima_ComprasActionPerformed
-
-    private void txtBuscasMateriaPrima_ComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprasActionPerformed
-
-    private void btnRefreshMateriaPrima_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshMateriaPrima_CompraActionPerformed
-        try {
-                tbmCompra.setRowCount(0);
-                //Busqueda
-                LlenarTablaComprasMateriasPrimas();
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }//GEN-LAST:event_btnRefreshMateriaPrima_CompraActionPerformed
-
-    private void btnRefreshProducto_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProducto_PedidoActionPerformed
-        llenarTablaProductos();
-    }//GEN-LAST:event_btnRefreshProducto_PedidoActionPerformed
-
-    private void tblHistorialComprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHistorialComprasMouseClicked
-        llenarTablaDetalleCompra();
-    }//GEN-LAST:event_tblHistorialComprasMouseClicked
-
-    private void tblHistorialPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHistorialPedidosMouseClicked
-        llenarTablaDetallePedido();
-    }//GEN-LAST:event_tblHistorialPedidosMouseClicked
-
-    private void tb_Ventas_PedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_Ventas_PedidosMouseClicked
-                llenarTablaHistorialPedidos();
-                llenarTablaHistorialCompras();
-    }//GEN-LAST:event_tb_Ventas_PedidosMouseClicked
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-            try {
-                buscarHistorialPedido();
-                // TODO add your handling code here:
-            } catch (SQLException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-        llenarTablaHistorialPedidos();
-        txtBuscarCodigoPedidos.setText("");
-        dateGeneracionPedido.setDate(null);
-        dateEntegaPedidos.setDate(null);
-        txtBuscarClientePedidos.setText("");
-        txtBuscarEmpleadoPedidos.setText("");
-        rdbPagado.setSelected(false);
-        rdbNoPagado.setSelected(false);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-            try {
-                buscarHistorialCompra();
-                // TODO add your handling code here:
-            } catch (SQLException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-         llenarTablaHistorialCompras();
-        txtBuscarCodigoCompras.setText("");
-        txtBuscarProveedorCompras.setText("");
-        jDateChooser1.setDate(null);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void tblHistorialVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHistorialVentasMouseClicked
-        llenarTablaDetalleVenta();
-    }//GEN-LAST:event_tblHistorialVentasMouseClicked
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-            try {
-                buscarHistorialVenta();
-                // TODO add your handling code here:
-            } catch (SQLException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-
-         llenarTablaHistorialVentas();
-         txtBuscarCodigoPedidos1.setText("");
-         txtBuscarClientePedidos1.setText("");
-         txtBuscarEmpleadoPedidos1.setText("");
-         dateGeneracionPedido1.setDate(null);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-            try {
-                if( Integer.parseInt(tablaMateriaPrima.getValueAt(tablaMateriaPrima.getSelectedRow(),3).toString()) >= Integer.parseInt(spnrMP.getValue().toString())){
-                retirarMateriaPrima();
-                llenarMateriaPrima();
-            }
-                else{
-                    showMessageDialog(null,"Porfavor ingrese una cantidad válida no puede retirar mas materias primas de las actuales");
-                }
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void spnrMPStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnrMPStateChanged
-        spinnerNeg(spnrMP);
-    }//GEN-LAST:event_spnrMPStateChanged
-
-    private void btnGenerarVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGenerarVentaKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGenerarVentaKeyTyped
-
-    private void txtEfectivoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyTyped
-        
-    }//GEN-LAST:event_txtEfectivoKeyTyped
-
-    private void txtEfectivoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyReleased
-        generarCambio();
-    }//GEN-LAST:event_txtEfectivoKeyReleased
-
-    private void txtEfectivoPedidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyReleased
-        generarCambioPedido();
-    }//GEN-LAST:event_txtEfectivoPedidoKeyReleased
-
-    private void txtEfectivoPedidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEfectivoPedidoKeyTyped
-
-    private void txtAgregarPresentacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgregarPresentacionKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAgregarPresentacionKeyTyped
-
-    private void txtAgregarPresentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgregarPresentacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAgregarPresentacionActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-         if(!txtAgregarPresentacion.getText().equals("")){
-                        String cad = "INSERT INTO Presentacion VALUES('"+txtAgregarPresentacion.getText()+"',)";
-            try {
-                java.sql.Statement stmt=conect.createStatement();
-
-                stmt.executeUpdate(cad);
-                LlenarTablaP();
-                   stmt.close();
-            } catch (ClassNotFoundException ex) {
-                
-            } catch (SQLException ex) {
-                
-            }
-         }
-            try {
-                llenarPresentacion();
-                // TODO add your handling code here:
-            } catch (SQLException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void txtAgregarPresentacion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgregarPresentacion1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAgregarPresentacion1ActionPerformed
-
-    private void txtAgregarPresentacion1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgregarPresentacion1KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAgregarPresentacion1KeyTyped
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-             if(!txtAgregarPresentacion1.getText().equals("")){
-                        String cad = "INSERT INTO PresentacionM VALUES('"+txtAgregarPresentacion1.getText()+"')";
-            try {
-                java.sql.Statement stmt=conect.createStatement();
-
-                stmt.executeUpdate(cad);
-                LlenarTablaP();
-                   stmt.close();
-            } catch (ClassNotFoundException ex) {
-                
-            } catch (SQLException ex) {
-                
-            }
-         }
-            try {
-                llenarPresentacionM();
-                // TODO add your handling code here:
-            } catch (SQLException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
-    
        private void llenarPresentacionM() throws SQLException{
              stmt=conect.createStatement();
             stmt.execute("Select presentacionM from presentacionM");
@@ -4260,37 +2890,7 @@ String pattern = "yyyy-MM-dd";
         } 
     }
     
-    private void buscarHistorialCompra() throws SQLException{
-            stmt = conect.createStatement();
-          
-            String  bus1="",bus2="",bus3="";
-           
-        String pattern = "yyyy-MM-dd";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        //insersion de codigos de busqueda
-        if(!txtBuscarCodigoCompras.getText().equals(""))
-            bus1= " AND ID_COMPRA LIKE '%"+txtBuscarCodigoCompras.getText()+"%'";
-        if(!txtBuscarProveedorCompras.getText().equals(""))
-            bus2 = " AND PERSONAS.NOMBRE LIKE '%"+txtBuscarProveedorCompras.getText()+"%'";
-        if(jDateChooser1.getDate()!=null){
-            String date2 = simpleDateFormat.format(jDateChooser1.getDate());
-            bus3=" AND FECHA = '"+ date2+"'";}
- 
-          Statement stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblHistorialCompras.getModel();
-            tbm.setRowCount(0);
-            
-             stmt.execute("SELECT ID_COMPRA, PERSONAS.NOMBRE, FECHA,TOTAL FROM COMPRAS, PERSONAS WHERE PERSONAS.ID_PERSONA = COMPRAS.ID_PROVEEDOR"
-                     + bus1 +bus2+bus3);
-            
-            ResultSet res = stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getDate(3),res.getInt(4)});
-                }  
-            }
-    
-    }
+  
     
     
     
@@ -4465,50 +3065,9 @@ private void llenarTablaDetallePedido(){
         }
     }
     
-    private void llenarTablaHistorialCompras(){
-         try {
-            
-            Statement stmt=conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblHistorialCompras.getModel();
-            tbm.setRowCount(0);
-            stmt.execute("SELECT ID_COMPRA, FECHA, PERSONAS.NOMBRE, TOTAL " +
-                         "FROM COMPRAS INNER JOIN PERSONAS ON COMPRAS.ID_PROVEEDOR = PERSONAS.ID_PERSONA " 
-                        );
-            ResultSet res=stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                   tbm.addRow(new Object[]{res.getString("ID_COMPRA"),res.getString("FECHA"),res.getString("NOMBRE"),res.getString("TOTAL")});
-                }  
-            }
-            stmt.close();
-        }catch (SQLException ex) {
-            showMessageDialog(null," Error en AL LLENAR TABLA PRODUCTOS POR BUSQUEDA. "); 
-        }
-    }
 
 
-private void llenarTablaDetalleCompra(){
-         try {
 
-            Statement stmt=conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblDetalleCompra.getModel();
-            tbm.setRowCount(0);
-            stmt.execute("SELECT MATERIAS_PRIMAS.NOMBRE,DETALLE_COMPRA.CANTIDAD,(DETALLE_COMPRA.TOTAL/DETALLE_COMPRA.CANTIDAD)AS UNITARIO,MATERIAS_PRIMAS.UNIDAD_MEDIDA,DETALLE_COMPRA.TOTAL " +
-                         "FROM MATERIAS_PRIMAS INNER JOIN DETALLE_COMPRA ON MATERIAS_PRIMAS.ID_MATERIA = DETALLE_COMPRA.ID_MATERIA_PRIMA " +
-                         "AND DETALLE_COMPRA.ID_COMPRA = " + tblHistorialCompras.getValueAt(tblHistorialCompras.getSelectedRow(),0)
-                        );
-            ResultSet res=stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                   tbm.addRow(new Object[]{res.getString("NOMBRE"),res.getString("CANTIDAD"),res.getString("UNITARIO"),res.getString("UNIDAD_MEDIDA"),res.getString("TOTAL")});
-                }
-            }
-            stmt.close();
-        }catch (SQLException ex) {
-            showMessageDialog(null," Error en AL LLENAR TABLA PRODUCTOS POR BUSQUEDA. "); 
-        }
-    }
-    
     
     void cancelarVenta(){
          DefaultTableModel tbm = (DefaultTableModel) tblVenta.getModel();
@@ -4575,7 +3134,7 @@ private void llenarTablaDetalleCompra(){
                     + idCliente +","+id_usuario+","+lblTotalVenta1.getText()+")";
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
-            actCant();
+            //actCant();
             //showMessageDialog(null,"Proveedor Registrado");
             stmt.close();
 
@@ -4729,24 +3288,6 @@ private void llenarTablaDetalleCompra(){
     
 
 
-
-    
-    void Agregarcarrito(){
-        
-        if(existeEnTabla(tblCompraslMateriasPrimas, tblCompra, spncantidadMP_Compra)){
-        }else{
-            r = tblCompraslMateriasPrimas.getSelectedRow();
-            String compra[] = new String[5];
-            compra[0] = tblCompraslMateriasPrimas.getValueAt(r,0).toString();
-            compra[1] = tblCompraslMateriasPrimas.getValueAt(r,1).toString();
-            compra[2] = spncantidadMP_Compra.getValue().toString();
-            compra[3] = tblCompraslMateriasPrimas.getValueAt(r,3).toString();
-            compra[4] = ""+Float.parseFloat(compra[2]) * Float.parseFloat(compra[3]);
-       
-            tbmCompra.addRow(compra);
-        }
-        
-    }
     
     private void BuscarClientes() throws ClassNotFoundException{
          try {
@@ -4787,175 +3328,22 @@ private void llenarTablaDetalleCompra(){
                     + tblClientes_Pedido.getValueAt(r,0).toString()+","+id_usuario+",'N',"+txtAdelantoPedido.getText()+","+txtTotalPedido.getText()+")";
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
-            actCant();
+            //actCant();
             //showMessageDialog(null,"Proveedor Registrado");
             stmt.close();
 
     }
 
-    private void insertarCompra () throws SQLException {
-        String pattern = "yyyy-MM-dd";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
-        String date = simpleDateFormat.format(new Date());
-        r = tblProveedor_Compra.getSelectedRow();
-    
-        String cad = "INSERT INTO COMPRAS "
-                    + "VALUES('"+ date +"',"
-                    + tblProveedor_Compra.getValueAt(r,0).toString()+","+ txtTotalCompra.getText()+")";
-            Statement stmt = conect.createStatement();
-            stmt.executeUpdate(cad);
-            actCant();
-            //showMessageDialog(null,"Proveedor Registrado");
-            stmt.close();
-
-    }
-    
-        private void detalle_compra(){
-            try {
-                cad ="";
-                int idp = tblProveedor_Compra.getSelectedRow();
-                Statement stmt = conect.createStatement();
-                stmt.execute("SELECT MAX (ID_COMPRA)  FROM COMPRAS");
-                ResultSet re = stmt.getResultSet();
-                int id = 0;
-                while (re.next()){
-                    id = re.getInt(1);
-                }
-                for (int i = 0;i< tblCompra.getRowCount();i++){
-                    cad = "INSERT INTO DETALLE_COMPRA" +
-                            " VALUES( " + id +
-                            "," + tblCompra.getValueAt(i,0).toString() +
-                            "," + tblCompra.getValueAt(i,2).toString() +
-                            "," + tblProveedor_Compra.getValueAt(idp,0) +
-                            "," + tblCompra.getValueAt(i,4) +
-                            ")";
-                            stmt.executeUpdate(cad);
-                            }
-               stmt.close(); 
-            } catch (SQLException ex) {
-                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-               
-    }
-
-
-    private void actCant() throws SQLException{
-      for(int i  = 0; i < tblCompra.getRowCount();i++){
-         String id= tblCompra.getValueAt(i,0).toString();
-          int cant = Integer.parseInt(tblCompra.getValueAt(i,2).toString());
-          cad = "UPDATE MATERIAS_PRIMAS "
-                    + "SET CANT_DISP = CANT_DISP + "+ cant +" WHERE ID_MATERIA = "+id;
-           stmt = conect.createStatement();
-            stmt.executeUpdate(cad);
-      }
-
-    }
     
     
-    void sumartotal(){
-        r =tblCompra.getRowCount()-1;
-        s+= Float.parseFloat(tblCompra.getValueAt(r,4).toString());
-        txtTotalCompra.setText(""+s);
-    }
     
-    void restartotalyeliminarrow(){
-        r = tblCompra.getSelectedRow();
-        if( r != -1){
-            DefaultTableModel tbm = (DefaultTableModel) tblCompra.getModel();
-            s -= Float.parseFloat(tblCompra.getValueAt(r,4).toString());
-            tbm.removeRow(r);
-            tblCompra.setModel(tbm);
-            txtTotalCompra.setText("" +s);
-            System.out.print("IF" +   "    " +r);
-        }else{
-            r = tblCompra.getRowCount()-1;
-            DefaultTableModel tbm = (DefaultTableModel) tblCompra.getModel();
-            s -= Float.parseFloat(tblCompra.getValueAt(r,4).toString());
-            tbm.removeRow(r);
-            tblCompra.setModel(tbm);
-            txtTotalCompra.setText("" +s);
-            System.out.print("ELSE");
-        }
-        
-    }
-    
-    
-    private void LlenarTablaComprasMateriasPrimas() throws ClassNotFoundException{
-         try {
-            res=null;
-            stmt = conect.createStatement();
-            
-           tbmMateriaPrima_Compra.setRowCount(0);
-           stmt.execute("select * from MATERIAS_PRIMAS where NOMBRE LIKE '%"+txtBuscasMateriaPrima_Compras.getText()+"%'");
-            res=stmt.getResultSet();
-            if(null!=res){
-                while(res.next()){
-                   Vector rowProductos=new Vector();
-                   rowProductos.add(res.getString("ID_MATERIA"));
-                   rowProductos.add(res.getString("NOMBRE"));
-//                  rowProductos.add(res.getString("DESCRIPCION"));
-                   rowProductos.add(res.getString("CANT_DISP"));
-                   rowProductos.add(res.getString("PRECIO"));
-                   tbmMateriaPrima_Compra.addRow(rowProductos);
-                }
-            }
-            
-            
-            stmt.close();
-        }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
-        } 
-    }
+ 
     
     
     private void ValidarEspacios(KeyEvent evt) {
        char l=evt.getKeyChar();
         if( l == KeyEvent.VK_SPACE )
            evt.consume();
-    }
-    /********************************FIN FORM*****************************/
-//    private void BuscarProveedores() throws ClassNotFoundException{
-//         try {
-//             conectarBD();
-//             Statement stmt = conect.createStatement();
-//            DefaultTableModel tbm=(DefaultTableModel)tblProveedores.getModel();
-//           tbm.setRowCount(0);stmt.execute("select * from PERSONAS "
-//                                            + "where TIPO = 'P' "
-//                                            + "AND NOMBRE LIKE '%" + txtBuscarProveedor.getText() + "%'");
-//             ResultSet res = stmt.getResultSet();
-//            if(null!=res){
-//                while(res.next()){
-//                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(6),res.getString(7)});
-//                }  
-//            }
-//            stmt.close();
-//        }catch (SQLException ex) {
-//            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
-//        } 
-//    }
-    private void EliminarProveedor() throws ClassNotFoundException{
-        try{
-            conectarBD();
-            
-            String cad = "DELETE FROM PERSONAS WHERE ID_PERSONA =" + tblProveedores.getValueAt(rowProveedor,0).toString();
-            Statement stmt = conect.createStatement();
-            stmt.executeUpdate(cad);
-            showMessageDialog(null,"Proveedor Eliminado");
-            LlenarTablaProveedores();
-            stmt.close();
-        }
-            catch (SQLException ex) 
-            {
-            System.out.println("Error Eliminar");   
-            }
-    }
-    
-     private void limpiarProveedor(){
-        txtProveedorNombre.setText(null);
-        txtProveedorDomicilio.setText(null);
-        txtProveedorCP.setText(null);
-        txtProveedorTelefono.setText(null);
     }
      private void ValidarNumeros(KeyEvent evt) {
        char l=evt.getKeyChar();
@@ -4969,32 +3357,6 @@ private void llenarTablaDetalleCompra(){
            evt.consume();
     }
 
-     private boolean ProveedorExistente() throws ClassNotFoundException{
-         try {
-             conectarBD();
-             Statement stmt = conect.createStatement();
-             stmt.execute("select * from USUARIOS WHERE NOMBRE_USUARIO ='"+ txtProveedorNombre.getText()+"'");
-             ResultSet res = stmt.getResultSet();
-             if(null!=res){
-                while(res.next()){
-                   return false;
-                }
-             }
-             stmt.close();
-        }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
-        }
-         return true;
-    }
-       // </editor-proveedor>  
-//    private void setDateTime(){
-//        Date date=new Date();
-//        for(;;){
-//        SimpleDateFormat sdf=new SimpleDateFormat("hh:mm:ss dd/mm/yyyy");
-//        lblFecha_Hora.setText(sdf.format(date));    
-//        }
-//        
-//    }
     
     private void clearMP(){
         txtNombreMP.setText(null);
@@ -5069,43 +3431,28 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JButton btnAddClienteVentas;
     private javax.swing.JButton btnAgregarMP;
     private javax.swing.JButton btnAgregarP;
-    private javax.swing.JButton btnAgregarProvedor;
-    private javax.swing.JButton btnAgregarProveedor;
-    private javax.swing.JButton btnCancelar1;
     private javax.swing.JButton btnCancelarC;
     private javax.swing.JButton btnCancelarMP;
     private javax.swing.JButton btnCancelarP;
     private javax.swing.JButton btnCancelarVenta;
-    private javax.swing.JButton btnCancelar_Compra;
     private javax.swing.JButton btnCancelar_Pedido;
     private javax.swing.JButton btnEliminarArticuloPedido;
     private javax.swing.JButton btnEliminarC;
-    private javax.swing.JButton btnEliminarMateriaPrima_Compra;
     private javax.swing.JButton btnEliminarP;
-    private javax.swing.JButton btnEliminarProveedor;
-    private javax.swing.JButton btnGenerarCompra;
     private javax.swing.JButton btnGenerarPedido;
     private javax.swing.JButton btnGenerarVenta;
     private javax.swing.JButton btnInsertarC;
     private javax.swing.JButton btnModificarC;
     private javax.swing.JButton btnModificarMP;
     private javax.swing.JButton btnModificarP;
-    private javax.swing.JButton btnModificarProveedor;
-    private javax.swing.JButton btnNuevaMateriaPrima_Compras;
     private javax.swing.JButton btnProductoAPedido;
-    private javax.swing.JButton btnRefreshMateriaPrima_Compra;
     private javax.swing.JButton btnRefreshProducto_Pedido;
     private javax.swing.JButton btnRefreshProducto_Pedido1;
-    private javax.swing.JButton btnUsuariosAgregar;
-    private javax.swing.JButton btnUsuariosCancelar;
-    private javax.swing.JButton btnUsuariosEliminar;
-    private javax.swing.JButton btnUsuariosModificar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JComboBox<String> cmbUnidadMedidaMP;
     private javax.swing.JComboBox<String> cmbUnidadMedidaProducto;
-    private javax.swing.JComboBox<String> cmbUsuariosTipo;
     private com.toedter.calendar.JDateChooser dateEntegaPedidos;
     private com.toedter.calendar.JDateChooser dateGeneracion;
     private com.toedter.calendar.JDateChooser dateGeneracionPedido;
@@ -5116,41 +3463,31 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
@@ -5166,7 +3503,6 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel56;
@@ -5189,27 +3525,16 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
-    private javax.swing.JLabel jLabel81;
-    private javax.swing.JLabel jLabel82;
-    private javax.swing.JLabel jLabel83;
-    private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    public static javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -5218,7 +3543,6 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
@@ -5226,79 +3550,51 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane18;
-    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane20;
-    private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JScrollPane jScrollPaneProveedores;
-    private javax.swing.JScrollPane jScrollPaneUsuarios;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblAnticipo;
-    private javax.swing.JLabel lblCPProveedor;
     private javax.swing.JLabel lblCambio;
     private javax.swing.JLabel lblCambioPedido;
-    private javax.swing.JLabel lblContra;
-    private javax.swing.JLabel lblDomicilioProveedor;
-    private javax.swing.JLabel lblNombre;
-    private javax.swing.JLabel lblNombreProveedor;
     private javax.swing.JLabel lblPagoRestante;
-    private javax.swing.JLabel lblProveedorBuscar;
-    private javax.swing.JLabel lblTelefonoProveedor;
-    private javax.swing.JLabel lblTipoU;
-    private javax.swing.JLabel lblTituloProveedor;
     private javax.swing.JLabel lblTotalVenta1;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JLabel lblUsuario1;
-    private javax.swing.JLabel lblUsuarioTitulo;
     private javax.swing.JPanel panelCliente;
-    private javax.swing.JPanel panelProveedor;
     private javax.swing.JRadioButton rdbEntrega;
     private javax.swing.JRadioButton rdbGeneracion;
     private javax.swing.JRadioButton rdbNoDisponible;
     private javax.swing.JRadioButton rdbNoPagado;
     private javax.swing.JRadioButton rdbPagado;
     private javax.swing.JRadioButton rdbPorPedido;
-    private javax.swing.JSpinner spncantidadMP_Compra;
     private javax.swing.JSpinner spncantidadProducto_Pedido;
     private javax.swing.JSpinner spnrMP;
     private javax.swing.JTable tablaCliente;
     private javax.swing.JTable tablaMateriaPrima;
     private javax.swing.JTabbedPane tb_Inventario;
     private javax.swing.JTabbedPane tb_Personas;
-    public static javax.swing.JTabbedPane tb_Ventas_Pedidos;
-    public static javax.swing.JTabbedPane tb_principal;
+    private javax.swing.JTabbedPane tb_Ventas_Pedidos;
+    private javax.swing.JTabbedPane tb_principal;
     private javax.swing.JTable tblClientesVenta;
     private javax.swing.JTable tblClientes_Pedido;
-    private javax.swing.JTable tblCompra;
-    private javax.swing.JTable tblCompraslMateriasPrimas;
-    private javax.swing.JTable tblDetalleCompra;
     private javax.swing.JTable tblDetalleVentas;
-    private javax.swing.JTable tblHistorialCompras;
     private javax.swing.JTable tblHistorialPedidos;
     private javax.swing.JTable tblHistorialVentas;
     private javax.swing.JTable tblPedido;
     private javax.swing.JTable tblPedidosVentas;
     private javax.swing.JTable tblProducto;
     private javax.swing.JTable tblProductos_Pedido;
-    private javax.swing.JTable tblProveedor_Compra;
-    private javax.swing.JTable tblProveedores;
-    private javax.swing.JTable tblUsuarios;
     private javax.swing.JTable tblVenta;
     private javax.swing.JTable tblpruebapedidos;
     private javax.swing.JTextField txtAPMC;
@@ -5311,17 +3607,12 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JTextField txtBuscarClientePedidos1;
     private javax.swing.JTextField txtBuscarClienteVenta;
     private javax.swing.JTextField txtBuscarCliente_Pedido;
-    private javax.swing.JTextField txtBuscarCodigoCompras;
     private javax.swing.JTextField txtBuscarCodigoPedidos;
     private javax.swing.JTextField txtBuscarCodigoPedidos1;
-    private javax.swing.JTextField txtBuscarCompras;
     private javax.swing.JTextField txtBuscarEmpleadoPedidos;
     private javax.swing.JTextField txtBuscarEmpleadoPedidos1;
     private javax.swing.JTextField txtBuscarP;
     private javax.swing.JTextField txtBuscarProducto_Pedido;
-    private javax.swing.JTextField txtBuscarProveedor;
-    private javax.swing.JTextField txtBuscarProveedorCompras;
-    private javax.swing.JTextField txtBuscasMateriaPrima_Compras;
     private javax.swing.JTextField txtCPC;
     private javax.swing.JSpinner txtCantidadMP;
     private javax.swing.JTextArea txtDescripcionMP;
@@ -5332,16 +3623,8 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JTextField txtNomC;
     private javax.swing.JTextField txtNombreMP;
     private javax.swing.JTextField txtPrecioMateriaPrima;
-    private javax.swing.JTextField txtProveedorCP;
-    private javax.swing.JTextField txtProveedorDomicilio;
-    private javax.swing.JTextField txtProveedorNombre;
-    private javax.swing.JTextField txtProveedorTelefono;
     private javax.swing.JTextField txtTelC;
-    private javax.swing.JTextField txtTotalCompra;
     private javax.swing.JLabel txtTotalPedido;
-    private javax.swing.JTextField txtUsuariosContraseña;
-    private javax.swing.JTextField txtUsuariosNombre;
-    private javax.swing.JTextField txtUsuariosUsuario;
     private javax.swing.JTextArea txtdescP;
     private javax.swing.JTextField txtnomP;
     private javax.swing.JTextField txtprecioP;
