@@ -2615,13 +2615,13 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
             stmt = conect.createStatement();
            DefaultTableModel tbm=(DefaultTableModel)tblProducto.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from PRODUCTOS");
+           tbm.setRowCount(0);stmt.execute("select * from PRODUCTOS WHERE TIPO = 'N' OR TIPO = 'P'");
             res=stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
                    Vector rowProductos=new Vector();
                   String tipo;
-                  if((res.getString("TIPO").equals('N')))
+                  if(res.getString("TIPO") == null ? ("N") != null : !res.getString("TIPO").equals("N"))
                       tipo="No Disponible";
                   else
                       tipo="Por Pedido";
@@ -3186,12 +3186,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             Statement stmt=conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblProductos_Pedido.getModel();
             tbm.setRowCount(0);
-            stmt.execute("select * from PRODUCTOS WHERE NOMBRE LIKE '%"+txtBuscarProducto_Pedido.getText()+"%'");
+            stmt.execute("select * from PRODUCTOS WHERE (TIPO = 'N' OR TIPO = 'P') AND NOMBRE LIKE '%"+txtBuscarProducto_Pedido.getText()+"%'");
             ResultSet res=stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
                     String tipo;
-                  if((res.getString("TIPO").equals('N')))
+                  if(res.getString("TIPO") == null ? ("N") != null : !res.getString("TIPO").equals("N"))
                       tipo="No Disponible";
                   else
                       tipo="Por Pedido";
@@ -3324,19 +3324,19 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     }
     private void llenarTablaProductos(){
          try {
-            
+            String tipo;
             Statement stmt=conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblProductos_Pedido.getModel();
             tbm.setRowCount(0);
-            stmt.execute("select * from PRODUCTOS");
-            ResultSet res=stmt.getResultSet();
+            stmt.execute("select * from PRODUCTOS where tipo = 'N' OR tipo ='P'");
+             res=stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
-                    String tipo;
-                  if((res.getString("TIPO").equals('N')))
-                      tipo="No Disponible";
-                  else
+                  
+                  if(res.getString("TIPO") == null ? ("N") != null : !res.getString("TIPO").equals("N"))
                       tipo="Por Pedido";
+                  else
+                      tipo="No Disponible";
                    tbm.addRow(new Object[]{res.getString("ID_PRODUCTO"),res.getString("NOMBRE"),tipo,res.getString("UNIDAD"),res.getString("PRECIO")});
                 }  
             }
@@ -3681,7 +3681,7 @@ private boolean validarVacioP(){
             String u_medida=cmbUnidadMedidaProducto.getSelectedItem().toString();
             String precio=txtprecioP.getText();
 
-            String cad = "update productos set NOMBRE='"+nombre+"', DESCRIPCION ='"+descripcion+"',TIPO='"+tipo+"',UNIDAD='"+u_medida+"',PRECIO = "+precio+" WHERE NOMBRE='"+nombreSelec+"'";
+            String cad = "update productos set NOMBRE='"+nombre+"', DESCRIPCION ='"+descripcion+"',TIPO='"+tipo+"',UNIDAD='"+u_medida+"',PRECIO = "+precio+" WHERE (TIPO = 'N' OR TIPO = 'P') AND NOMBRE='"+nombreSelec+"'";
             try {
                 java.sql.Statement stmt=conect.createStatement();
 
@@ -3730,26 +3730,28 @@ private boolean validarVacioP(){
 
     private void btnEliminarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPActionPerformed
         if(validarVacioP()){
-            DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
-
+            
+              String tipo;
+            if(rdbPorPedido.isSelected())
+                tipo="P";
+            else
+                tipo="N";
+            String u_medida=cmbUnidadMedidaProducto.getSelectedItem().toString();
+            String precio=txtprecioP.getText();
             String nombre=txtnomP.getText();
-
-            String cad = "DELETE FROM PRODUCTOS"
-            + " WHERE NOMBRE='"+nombre+"'";
+            String cad = "update productos set TIPO='E' WHERE  NOMBRE='"+nombre+"'";
             try {
                 java.sql.Statement stmt=conect.createStatement();
 
                 stmt.executeUpdate(cad);
-
-                stmt.close();
-
                 LlenarTablaP();
-            } catch (SQLException ex) {
-               
             } catch (ClassNotFoundException ex) {
-                
+
+            } catch (SQLException ex) {
+
             }
-            clearP();
+            
+            
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarPActionPerformed
@@ -3765,12 +3767,12 @@ private boolean validarVacioP(){
 
              Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblProducto.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from PRODUCTOS where NOMBRE LIKE '%"+txtBuscarP.getText()+"%'");
+           tbm.setRowCount(0);stmt.execute("select * from PRODUCTOS where (TIPO = 'N' OR TIPO = 'P') AND NOMBRE LIKE '%"+txtBuscarP.getText()+"%'");
              ResultSet res = stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
                     String tipo;
-                  if((res.getString("TIPO").equals('N')))
+                  if(res.getString("TIPO") == null ? ("N") != null : !res.getString("TIPO").equals("N"))
                       tipo="No Disponible";
                   else
                       tipo="Por Pedido";
