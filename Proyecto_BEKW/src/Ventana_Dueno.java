@@ -803,7 +803,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         ));
         jScrollPane20.setViewportView(tblProductos_Pedido);
 
-        jPanel15.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 114, 440, 340));
+        jPanel15.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 410, 340));
 
         txtBuscarProducto_Pedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtBuscarProducto_Pedido.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -839,7 +839,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnRefreshProducto_PedidoActionPerformed(evt);
             }
         });
-        jPanel15.add(btnRefreshProducto_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 40, -1));
+        jPanel15.add(btnRefreshProducto_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 40, -1));
         jPanel15.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 48, 371, 10));
 
         spncantidadProducto_Pedido.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -851,7 +851,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
         jPanel15.add(spncantidadProducto_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 50, 30));
 
-        jPanel22.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 460, 550));
+        jPanel22.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 430, 550));
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel22.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 490, 10, 40));
@@ -1240,7 +1240,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                         .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 612, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1560,7 +1560,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tb_Ventas_Pedidos.addTab("Pedidos", jPanel13);
 
-        jPanel6.add(tb_Ventas_Pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1150, 600));
+        jPanel6.add(tb_Ventas_Pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1170, 600));
 
         tb_principal.addTab("Punto de venta", jPanel6);
 
@@ -1867,7 +1867,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(tb_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         tb_principal.addTab("Inventario", jPanel5);
@@ -2431,7 +2431,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUsuariosAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUsuariosEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(252, Short.MAX_VALUE))
         );
 
         tb_principal.addTab("Usuarios", jPanel10);
@@ -2465,7 +2465,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(tb_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(tb_principal, javax.swing.GroupLayout.PREFERRED_SIZE, 687, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -3738,7 +3739,7 @@ private boolean validarVacioP(){
     
     private void btnGenerarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarCompraActionPerformed
     if(tblCompra.getRowCount()!=0 && tblProveedor_Compra.getSelectedRow()>-1){
-        try { System.out.println("insertaddo");
+        try { System.out.println("insertado");
                 insertarCompra();
                 detalle_compra();
                 DefaultTableModel tbm=(DefaultTableModel)tblCompra.getModel();
