@@ -55,7 +55,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      DefaultTableModel tbmVenta;
      int id_usuario=0;
      Date dateAct;
-     float efectivo,cambio;
+     float efectivo,cambio,SaldoRestante;
     /**
      * Creates new form Ventana_Empleado
      */
@@ -689,6 +689,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtEfectivo.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtEfectivo.setText("0.00");
         txtEfectivo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEfectivoKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtEfectivoKeyTyped(evt);
             }
@@ -3788,7 +3791,7 @@ private boolean validarVacioP(){
                 actualizarEstadoPedido();
                 llenarTablaPedidos_Venta();
                 llenarTablaHistorialVentas();
-                //generarCambio();
+                lblCambio.setText(cambio+"");
                 Imprimir printVenta=new Imprimir();
                 printVenta.imprimirVenta(nombreUsuario, idVentaImprimir,efectivo,cambio);
                 txtEfectivo.setText("0.00");
@@ -3814,13 +3817,13 @@ private boolean validarVacioP(){
         }
     }//GEN-LAST:event_btnGenerarVentaActionPerformed
     private void generarCambio(){
-        efectivo=Float.parseFloat(txtEfectivo.getText());
-        if(cambio<=Float.parseFloat(lblPagoRestante.getText())){
-            cambio=0;
-            lblCambio.setText(0.0+"");
-        } else {
-            cambio =efectivo-Float.parseFloat(lblPagoRestante.getText());
-            lblCambio.setText(cambio+"");
+        efectivo = Float.parseFloat(txtEfectivo.getText());
+        SaldoRestante = Float.parseFloat(lblPagoRestante.getText());
+         
+        if(efectivo >= SaldoRestante){
+            cambio =Math.abs(efectivo - SaldoRestante);
+            lblCambio.setText(""+cambio);
+            
         }
         
     }
@@ -4069,8 +4072,12 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_btnGenerarVentaKeyTyped
 
     private void txtEfectivoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyTyped
-        generarCambio();
+        
     }//GEN-LAST:event_txtEfectivoKeyTyped
+
+    private void txtEfectivoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyReleased
+        generarCambio();
+    }//GEN-LAST:event_txtEfectivoKeyReleased
 
     private void retirarMateriaPrima(){
          try {
