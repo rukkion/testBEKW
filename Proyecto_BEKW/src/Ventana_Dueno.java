@@ -4022,13 +4022,16 @@ private boolean validarVacioP(){
         if(tblPedido.getRowCount()!=0 && tblClientes_Pedido.getSelectedRow()>-1){
         try { System.out.println("insertado");
                 insertarPedido();
-                detalle_pedido();
+                int idPedido=detalle_pedido();
                 DefaultTableModel tbm=(DefaultTableModel)tblPedido.getModel();
+                Imprimir printPedido=new Imprimir();
+                printPedido.imprimirPedido(nombreUsuario, idPedido, efectivo, cambio, AdelantoPedido);
+                
                 tbm.setRowCount(0);
                 txtTotalPedido.setText("0");
                 tblPedido.setModel(tbm);
                 txtAdelantoPedido.setText("0");
-                showMessageDialog(this, "¡Pedido realizado exitosamente!");
+                System.out.println("¡Pedido realizado exitosamente!");
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -4611,7 +4614,7 @@ private void llenarTablaDetalleCompra(){
     }
 
     
-    private void detalle_pedido(){
+    private int detalle_pedido(){
             try {
                 cad ="";
                 int idp = tblClientes_Pedido.getSelectedRow();
@@ -4633,10 +4636,11 @@ private void llenarTablaDetalleCompra(){
                             stmt.executeUpdate(cad);
                             }
                stmt.close(); 
+               return id;
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
-               
+               return 0;
     }
     
 
