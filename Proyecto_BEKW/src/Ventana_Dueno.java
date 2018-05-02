@@ -1863,6 +1863,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel17.add(txtprecioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 150, 23));
 
         txtBuscarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtBuscarP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBuscarPKeyReleased(evt);
+            }
+        });
         jPanel17.add(txtBuscarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, 295, -1));
 
         jLabel27.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -2606,7 +2611,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     }
     private void LlenarTablaP() throws ClassNotFoundException{
          try {
-             
+
 
             stmt = conect.createStatement();
            DefaultTableModel tbm=(DefaultTableModel)tblProducto.getModel();
@@ -2632,7 +2637,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             stmt.close();
         }catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
-        } 
+        }   
     }
     private void LlenarTablaUsuarios() throws ClassNotFoundException{
          try {
@@ -3661,6 +3666,7 @@ private boolean validarVacioP(){
         if(validarVacioP()){
             DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
             String nombre=txtnomP.getText();
+            String nombreSelec= tblProducto.getValueAt(tblProducto.getSelectedRow(), 0)+"";
             String descripcion=txtdescP.getText();
               String tipo;
             if(rdbPorPedido.isSelected())
@@ -3670,16 +3676,16 @@ private boolean validarVacioP(){
             String u_medida=cmbUnidadMedidaProducto.getSelectedItem().toString();
             String precio=txtprecioP.getText();
 
-            String cad = "update productos set NOMBRE='"+nombre+"', DESCRIPCION ='"+descripcion+"',TIPO='"+tipo+"',UNIDAD='"+u_medida+"',PRECIO = "+precio+" WHERE NOMBRE='"+nombre+"'";
+            String cad = "update productos set NOMBRE='"+nombre+"', DESCRIPCION ='"+descripcion+"',TIPO='"+tipo+"',UNIDAD='"+u_medida+"',PRECIO = "+precio+" WHERE NOMBRE='"+nombreSelec+"'";
             try {
                 java.sql.Statement stmt=conect.createStatement();
 
                 stmt.executeUpdate(cad);
                 LlenarTablaP();
             } catch (ClassNotFoundException ex) {
-                
+
             } catch (SQLException ex) {
-                
+
             }
 
             clearP();
@@ -3751,27 +3757,32 @@ private boolean validarVacioP(){
     private void LlenarTablaBus() throws ClassNotFoundException{
          try {
              conectarBD();
-             
+
              Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblProducto.getModel();
            tbm.setRowCount(0);stmt.execute("select * from PRODUCTOS where NOMBRE LIKE '%"+txtBuscarP.getText()+"%'");
              ResultSet res = stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
+                    String tipo;
+                  if((res.getString("TIPO").equals('N')))
+                      tipo="No Disponible";
+                  else
+                      tipo="Por Pedido";
                    Vector rowProductos=new Vector();
                   rowProductos.add(res.getString("NOMBRE"));
                   rowProductos.add(res.getString("DESCRIPCION"));
-                  rowProductos.add(res.getString("CANT_DISP"));
+                  rowProductos.add(tipo);
                   rowProductos.add(res.getString("UNIDAD"));
                   rowProductos.add(res.getString("PRECIO"));
                   tbm.addRow(rowProductos);
-                }  
+                }
             }
-            
+
             stmt.close();
         }catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
-        } 
+        }  
     }
     private void cmbUsuariosTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbUsuariosTipoActionPerformed
         // TODO add your handling code here:
@@ -4405,6 +4416,14 @@ String pattern = "yyyy-MM-dd";
     private void tb_principalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_principalMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_tb_principalMouseClicked
+
+    private void txtBuscarPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPKeyReleased
+            try {
+                LlenarTablaBus();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_txtBuscarPKeyReleased
     
        private void llenarPresentacionM() throws SQLException{
              stmt=conect.createStatement();
