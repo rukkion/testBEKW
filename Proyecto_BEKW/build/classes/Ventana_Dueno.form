@@ -4991,7 +4991,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblProveedorCompras">
+            <Component class="javax.swing.JLabel" name="lblProveedormasCompras">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Proveedor"/>
               </Properties>
@@ -5011,7 +5011,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel62">
+            <Component class="javax.swing.JLabel" name="lblTotalEgresos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Total Egresos"/>
               </Properties>
@@ -5031,7 +5031,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel70">
+            <Component class="javax.swing.JLabel" name="lblTotalIngresos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Total Ingresos"/>
               </Properties>
