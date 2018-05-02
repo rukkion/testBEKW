@@ -142,6 +142,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
+        grupoTipoNuevoProducto = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jButton25 = new javax.swing.JButton();
@@ -325,6 +326,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtPrecioMateriaPrima = new javax.swing.JTextField();
         spnrMP = new javax.swing.JSpinner();
         jButton8 = new javax.swing.JButton();
+        txtAgregarPresentacion1 = new javax.swing.JTextField();
+        jButton10 = new javax.swing.JButton();
+        jLabel69 = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
         tblProducto = new javax.swing.JTable();
@@ -335,7 +339,6 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         btnModificarP = new javax.swing.JButton();
         btnAgregarP = new javax.swing.JButton();
         btnEliminarP = new javax.swing.JButton();
-        spincantP = new javax.swing.JSpinner();
         jLabel65 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -346,6 +349,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         txtdescP = new javax.swing.JTextArea();
         cmbUnidadMedidaProducto = new javax.swing.JComboBox<>();
+        txtAgregarPresentacion = new javax.swing.JTextField();
+        jLabel67 = new javax.swing.JLabel();
+        rdbPorPedido = new javax.swing.JRadioButton();
+        rdbNoDisponible = new javax.swing.JRadioButton();
+        jButton9 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         tb_Personas = new javax.swing.JTabbedPane();
         panelProveedor = new javax.swing.JPanel();
@@ -818,7 +826,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Código", "Nombre", "Existencia", "Medida", "Precio"
+                "Código", "Nombre", "Estado", "Presentacion", "Precio"
             }
         ));
         jScrollPane20.setViewportView(tblProductos_Pedido);
@@ -1636,7 +1644,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnCancelarMPActionPerformed(evt);
             }
         });
-        jPanel8.add(btnCancelarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 154, 36));
+        jPanel8.add(btnCancelarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 154, 36));
 
         btnModificarMP.setBackground(new java.awt.Color(255, 255, 255));
         btnModificarMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1647,7 +1655,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnModificarMPActionPerformed(evt);
             }
         });
-        jPanel8.add(btnModificarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 165, 36));
+        jPanel8.add(btnModificarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 165, 36));
 
         MP.setBackground(new java.awt.Color(255, 255, 255));
         MP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1658,7 +1666,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 MPActionPerformed(evt);
             }
         });
-        jPanel8.add(MP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 165, 36));
+        jPanel8.add(MP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 165, 36));
 
         btnAgregarMP.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregarMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1669,26 +1677,26 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnAgregarMPActionPerformed(evt);
             }
         });
-        jPanel8.add(btnAgregarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 154, 36));
+        jPanel8.add(btnAgregarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 154, 36));
 
         jLabel56.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel56.setText("Materia Prima");
         jPanel8.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
         jLabel64.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel64.setText("Unidad de medida:");
-        jPanel8.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+        jLabel64.setText("Presentacion:");
+        jPanel8.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
 
         txtCantidadMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jPanel8.add(txtCantidadMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 150, -1));
+        jPanel8.add(txtCantidadMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 150, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setText("Nombre:");
-        jPanel8.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+        jPanel8.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel15.setText("Descripción:");
-        jPanel8.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
+        jPanel8.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
         txtDescripcionMP.setColumns(20);
         txtDescripcionMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1696,11 +1704,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtDescripcionMP.setRows(5);
         jScrollPane13.setViewportView(txtDescripcionMP);
 
-        jPanel8.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 240, 90));
+        jPanel8.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 240, 90));
 
         jLabel68.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel68.setText("Cantidad disponible:");
-        jPanel8.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+        jPanel8.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         txtNombreMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtNombreMP.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1708,22 +1716,21 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 txtNombreMPKeyTyped(evt);
             }
         });
-        jPanel8.add(txtNombreMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 230, -1));
+        jPanel8.add(txtNombreMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 230, -1));
 
         cmbUnidadMedidaMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        cmbUnidadMedidaMP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Pieza", "Caja", "Carton ", "Cubeta", "Bolsa", "Barra", "Costal", "Galon (4 LT.)", "Lata 1/4 KG.", "Lata 1/4 ML.", "Lata 1/2 KG.", "Lata 1/2 ML.", "Lata 1 KG.", "Lata 1 L.", "Botella (1 LT.)", "Botella (2 LT.)" }));
-        jPanel8.add(cmbUnidadMedidaMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 180, -1));
+        jPanel8.add(cmbUnidadMedidaMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 180, -1));
 
         txtEstado.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtEstado.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jPanel8.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 620, 20));
 
         jLabel19.setText("Precio:");
-        jPanel8.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
+        jPanel8.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
 
         txtPrecioMateriaPrima.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtPrecioMateriaPrima.setText("0");
-        jPanel8.add(txtPrecioMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 180, -1));
+        jPanel8.add(txtPrecioMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 180, -1));
 
         spnrMP.setValue(1);
         spnrMP.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1740,6 +1747,31 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             }
         });
         jPanel8.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 150, 40));
+
+        txtAgregarPresentacion1.setText(" ");
+        txtAgregarPresentacion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAgregarPresentacion1ActionPerformed(evt);
+            }
+        });
+        txtAgregarPresentacion1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAgregarPresentacion1KeyTyped(evt);
+            }
+        });
+        jPanel8.add(txtAgregarPresentacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 150, 30));
+
+        jButton10.setText("+");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 40, 30));
+
+        jLabel69.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel69.setText("Agregar presentacion:");
+        jPanel8.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
 
         tb_Inventario.addTab("Materia Prima", jPanel8);
 
@@ -1775,7 +1807,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Producto", "Descripcion", "Cantidad", "Unidad", "Precio"
+                "Producto", "Descripcion", "Tipo", "Presentacion", "Precio"
             }
         ));
         tblProducto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1808,7 +1840,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnCancelarPActionPerformed(evt);
             }
         });
-        jPanel17.add(btnCancelarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 330, 140, 40));
+        jPanel17.add(btnCancelarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 140, 40));
 
         btnModificarP.setBackground(new java.awt.Color(255, 255, 255));
         btnModificarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1819,7 +1851,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnModificarPActionPerformed(evt);
             }
         });
-        jPanel17.add(btnModificarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 150, 40));
+        jPanel17.add(btnModificarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, 150, 40));
 
         btnAgregarP.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1830,7 +1862,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnAgregarPActionPerformed(evt);
             }
         });
-        jPanel17.add(btnAgregarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 380, 140, 40));
+        jPanel17.add(btnAgregarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 140, 40));
 
         btnEliminarP.setBackground(new java.awt.Color(255, 255, 255));
         btnEliminarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1841,27 +1873,19 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnEliminarPActionPerformed(evt);
             }
         });
-        jPanel17.add(btnEliminarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, 150, 40));
-
-        spincantP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        spincantP.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                spincantPStateChanged(evt);
-            }
-        });
-        jPanel17.add(spincantP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 151, -1));
+        jPanel17.add(btnEliminarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 150, 40));
 
         jLabel65.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel65.setText("Cantidad:");
-        jPanel17.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
+        jLabel65.setText("Tipo:");
+        jPanel17.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, -1, -1));
 
         jLabel66.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel66.setText("Precio");
-        jPanel17.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
+        jPanel17.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, -1, -1));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel26.setText("Unidad Medida:");
-        jPanel17.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
+        jLabel26.setText("Presentacion:");
+        jPanel17.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
         txtnomP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel17.add(txtnomP, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 152, -1));
@@ -1872,7 +1896,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 txtprecioPKeyTyped(evt);
             }
         });
-        jPanel17.add(txtprecioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 150, 23));
+        jPanel17.add(txtprecioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 150, 23));
 
         txtBuscarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel17.add(txtBuscarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, 295, -1));
@@ -1889,8 +1913,41 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel17.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 270, -1));
 
         cmbUnidadMedidaProducto.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        cmbUnidadMedidaProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Pieza", "Caja 20 PZ.", "Caja 25 Pz.", "Caja 40 PZ.", "Caja 50 PZ.", "Caja 60 PZ.", "Bolsa 8 PZ.", "Bolsa 12 PZ.", "1/4 KG.", "1/2 KG.", "1 KG." }));
         jPanel17.add(cmbUnidadMedidaProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 180, -1));
+
+        txtAgregarPresentacion.setText(" ");
+        txtAgregarPresentacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAgregarPresentacionActionPerformed(evt);
+            }
+        });
+        txtAgregarPresentacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAgregarPresentacionKeyTyped(evt);
+            }
+        });
+        jPanel17.add(txtAgregarPresentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 150, 30));
+
+        jLabel67.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel67.setText("Agregar presentacion:");
+        jPanel17.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
+
+        grupoTipoNuevoProducto.add(rdbPorPedido);
+        rdbPorPedido.setSelected(true);
+        rdbPorPedido.setText("Por Pedido");
+        jPanel17.add(rdbPorPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
+
+        grupoTipoNuevoProducto.add(rdbNoDisponible);
+        rdbNoDisponible.setText("No disponible");
+        jPanel17.add(rdbNoDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, -1, -1));
+
+        jButton9.setText("+");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 40, 30));
 
         tb_Inventario.addTab("Producto", jPanel17);
 
@@ -2572,9 +2629,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             if(null!=res){
                 while(res.next()){
                    Vector rowProductos=new Vector();
+                  String tipo;
+                  if((res.getString("TIPO").equals('N')))
+                      tipo="No Disponible";
+                  else
+                      tipo="Por Pedido";
                   rowProductos.add(res.getString("NOMBRE"));
                   rowProductos.add(res.getString("DESCRIPCION"));
-                  rowProductos.add(res.getString("CANT_DISP"));
+                  rowProductos.add(tipo);
                   rowProductos.add(res.getString("UNIDAD"));
                   rowProductos.add(res.getString("PRECIO"));
                   tbm.addRow(rowProductos);
@@ -2693,6 +2755,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             llenarTablaCompra();
             llenarTablaPedidos();
             LlenarTablaVenta();
+            llenarPresentacion();
+            llenarPresentacionM();
             llenarTablaCliente_Pedido();
             llenarTablaProductos();
             llenarTablaHistorialPedidos();
@@ -3135,7 +3199,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             ResultSet res=stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getString("ID_PRODUCTO"),res.getString("NOMBRE"),res.getString("CANT_DISP"),res.getString("UNIDAD"),res.getString("PRECIO")});
+                    String tipo;
+                  if((res.getString("TIPO").equals('N')))
+                      tipo="No Disponible";
+                  else
+                      tipo="Por Pedido";
+                   tbm.addRow(new Object[]{res.getString("ID_PRODUCTO"),res.getString("NOMBRE"),tipo,res.getString("UNIDAD"),res.getString("PRECIO")});
                 }  
             }
             stmt.close();
@@ -3153,7 +3222,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             ResultSet res=stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getString("ID_PRODUCTO"),res.getString("NOMBRE"),res.getString("CANT_DISP"),res.getString("UNIDAD"),res.getString("PRECIO")});
+                    String tipo;
+                  if((res.getString("TIPO").equals('N')))
+                      tipo="No Disponible";
+                  else
+                      tipo="Por Pedido";
+                   tbm.addRow(new Object[]{res.getString("ID_PRODUCTO"),res.getString("NOMBRE"),tipo,res.getString("UNIDAD"),res.getString("PRECIO")});
                 }  
             }
             stmt.close();
@@ -3242,10 +3316,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             return false;
         }
         
-        if (cmbUnidadMedidaMP.getSelectedIndex() == 0){
-            showMessageDialog(null, "SELECCIONE UNA UNIDAD DE MEDIDA");
-            return false;
-        }
+//        if (cmbUnidadMedidaMP.getSelectedIndex() == 0){
+//            showMessageDialog(null, "SELECCIONE UNA UNIDAD DE MEDIDA");
+//            return false;
+//        }
         return true;
     }
     private void tblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseClicked
@@ -3442,9 +3516,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         int selectedRowIndex=tblProducto.getSelectedRow();
         txtnomP.setText(tblProducto.getValueAt(selectedRowIndex, 0).toString());
         txtdescP.setText(tblProducto.getValueAt(selectedRowIndex, 1).toString());
-        spincantP.setValue(Integer.parseInt((tblProducto.getValueAt(selectedRowIndex, 2)).toString()));
         cmbUnidadMedidaProducto.setSelectedItem(tblProducto.getValueAt(selectedRowIndex, 3).toString());
         txtprecioP.setText(tblProducto.getValueAt(selectedRowIndex, 4).toString());
+        if(tblProducto.getValueAt(selectedRowIndex, 2).toString().equals("Por Pedido"))
+            rdbPorPedido.isSelected();
+        else
+            rdbNoDisponible.isSelected();
         // TODO add your handling code here:
     }//GEN-LAST:event_tblProductoMouseClicked
 private void clearP(){
@@ -3453,7 +3530,7 @@ private void clearP(){
         cmbUnidadMedidaProducto.setSelectedItem("Pieza");
         txtprecioP.setText(null);
         txtBuscarP.setText(null);
-        spincantP.setValue(0);
+        cmbUnidadMedidaProducto.setSelectedItem(conect);
         try {
             LlenarTablaP();
         } catch (ClassNotFoundException ex) {
@@ -3474,10 +3551,10 @@ private boolean validarVacioP(){
                 showMessageDialog(null,"Favor de llenar todos los campos. ");
                 return false;
             } 
-            if (cmbUnidadMedidaProducto.getSelectedIndex() == 0){
-            showMessageDialog(null, "SELECCIONE UNA UNIDAD DE MEDIDA");
-            return false;
-            }
+//            if (cmbUnidadMedidaProducto.getSelectedIndex() == 0){
+//            showMessageDialog(null, "SELECCIONE UNA UNIDAD DE MEDIDA");
+//            return false;
+//            }
             return true;
      }
     private void btnModificarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPActionPerformed
@@ -3485,11 +3562,15 @@ private boolean validarVacioP(){
             DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
             String nombre=txtnomP.getText();
             String descripcion=txtdescP.getText();
-            String cantidad_disp=(spincantP.getValue().toString());
+              String tipo;
+            if(rdbPorPedido.isSelected())
+                tipo="P";
+            else
+                tipo="N";
             String u_medida=cmbUnidadMedidaProducto.getSelectedItem().toString();
             String precio=txtprecioP.getText();
 
-            String cad = "update productos set NOMBRE='"+nombre+"', DESCRIPCION ='"+descripcion+"',CANT_DISP="+cantidad_disp+",UNIDAD='"+u_medida+"',PRECIO = "+precio+" WHERE NOMBRE='"+nombre+"'";
+            String cad = "update productos set NOMBRE='"+nombre+"', DESCRIPCION ='"+descripcion+"',TIPO='"+tipo+"',UNIDAD='"+u_medida+"',PRECIO = "+precio+" WHERE NOMBRE='"+nombre+"'";
             try {
                 java.sql.Statement stmt=conect.createStatement();
 
@@ -3511,11 +3592,16 @@ private boolean validarVacioP(){
             DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
             String nombre=txtnomP.getText();
             String descripcion=txtdescP.getText();
-            String cantidad_disp=(spincantP.getValue().toString());
+            String tipo;
+            if(rdbPorPedido.isSelected())
+                tipo="P";
+            else
+                tipo="N";
+            
             String u_medida=cmbUnidadMedidaProducto.getSelectedItem().toString();
             Float precio=Float.parseFloat((txtprecioP.getText()));
 
-            String cad = "INSERT INTO PRODUCTOS VALUES('"+nombre+"','"+descripcion+"',"+cantidad_disp+",'"+u_medida+"',"+precio+")";
+            String cad = "INSERT INTO PRODUCTOS VALUES('"+nombre+"','"+descripcion+"','"+tipo+"','"+u_medida+"',"+precio+")";
             try {
                 java.sql.Statement stmt=conect.createStatement();
 
@@ -3556,12 +3642,6 @@ private boolean validarVacioP(){
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarPActionPerformed
-
-    private void spincantPStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spincantPStateChanged
-        if (Integer.parseInt(spincantP.getValue().toString())<0)
-        spincantP.setValue(0);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_spincantPStateChanged
 
     private void txtprecioPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioPKeyTyped
 
@@ -4143,6 +4223,99 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEfectivoPedidoKeyTyped
 
+    private void txtAgregarPresentacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgregarPresentacionKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgregarPresentacionKeyTyped
+
+    private void txtAgregarPresentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgregarPresentacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgregarPresentacionActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+         if(!txtAgregarPresentacion.getText().equals("")){
+                        String cad = "INSERT INTO Presentacion VALUES('"+txtAgregarPresentacion.getText()+"',)";
+            try {
+                java.sql.Statement stmt=conect.createStatement();
+
+                stmt.executeUpdate(cad);
+                LlenarTablaP();
+                   stmt.close();
+            } catch (ClassNotFoundException ex) {
+                
+            } catch (SQLException ex) {
+                
+            }
+         }
+            try {
+                llenarPresentacion();
+                // TODO add your handling code here:
+            } catch (SQLException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void txtAgregarPresentacion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgregarPresentacion1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgregarPresentacion1ActionPerformed
+
+    private void txtAgregarPresentacion1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgregarPresentacion1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgregarPresentacion1KeyTyped
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+             if(!txtAgregarPresentacion1.getText().equals("")){
+                        String cad = "INSERT INTO PresentacionM VALUES('"+txtAgregarPresentacion1.getText()+"')";
+            try {
+                java.sql.Statement stmt=conect.createStatement();
+
+                stmt.executeUpdate(cad);
+                LlenarTablaP();
+                   stmt.close();
+            } catch (ClassNotFoundException ex) {
+                
+            } catch (SQLException ex) {
+                
+            }
+         }
+            try {
+                llenarPresentacionM();
+                // TODO add your handling code here:
+            } catch (SQLException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
+    
+       private void llenarPresentacionM() throws SQLException{
+             stmt=conect.createStatement();
+            stmt.execute("Select presentacionM from presentacionM");
+            ResultSet res = stmt.getResultSet();
+            if(null!=res){
+                cmbUnidadMedidaMP.removeAllItems();
+                while(res.next()){
+                   cmbUnidadMedidaMP.addItem(res.getString(1));
+                }  
+            }
+            stmt.close();
+        }
+    
+   private void llenarPresentacion() throws SQLException{
+             stmt=conect.createStatement();
+            stmt.execute("Select presentacion from presentacion");
+            ResultSet res = stmt.getResultSet();
+            if(null!=res){
+                cmbUnidadMedidaProducto.removeAllItems();
+                while(res.next()){
+                   cmbUnidadMedidaProducto.addItem(res.getString(1));
+                }  
+            }
+            stmt.close();
+        }
+
+   
+    
+    
     private void retirarMateriaPrima(){
          try {
             
@@ -5014,7 +5187,9 @@ private void llenarTablaDetalleCompra(){
     private com.toedter.calendar.JDateChooser dateGeneracionPedido;
     private com.toedter.calendar.JDateChooser dateGeneracionPedido1;
     private com.toedter.calendar.JDateChooser datePedido;
+    private javax.swing.ButtonGroup grupoTipoNuevoProducto;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
@@ -5025,6 +5200,7 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -5075,7 +5251,9 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
@@ -5168,9 +5346,10 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JPanel panelProveedor;
     private javax.swing.JRadioButton rdbEntrega;
     private javax.swing.JRadioButton rdbGeneracion;
+    private javax.swing.JRadioButton rdbNoDisponible;
     private javax.swing.JRadioButton rdbNoPagado;
     private javax.swing.JRadioButton rdbPagado;
-    private javax.swing.JSpinner spincantP;
+    private javax.swing.JRadioButton rdbPorPedido;
     private javax.swing.JSpinner spncantidadMP_Compra;
     private javax.swing.JSpinner spncantidadProducto_Pedido;
     private javax.swing.JSpinner spnrMP;
@@ -5201,6 +5380,8 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JTextField txtAPMC;
     private javax.swing.JTextField txtAPPC;
     private javax.swing.JTextField txtAdelantoPedido;
+    private javax.swing.JTextField txtAgregarPresentacion;
+    private javax.swing.JTextField txtAgregarPresentacion1;
     private javax.swing.JTextField txtBuscadorC;
     private javax.swing.JTextField txtBuscarClientePedidos;
     private javax.swing.JTextField txtBuscarClientePedidos1;
