@@ -418,4 +418,190 @@ public class Imprimir {
         }
 
   }
+    
+  void imprimirReporte(String fecha, float ventas, float adelantos, float compras,float totalIngresos,float totalEgresos,float Capital,
+          String materiaPrimaMasComprada, String productoMasVendido, String ProveedorMasComprado,
+          String clienteMasActivo){
+      Document documento = new Document();
+        
+        try {
+            
+            PdfWriter.getInstance(documento, new FileOutputStream("estado_resultados"+fecha+".pdf"));
+               
+            Image logo = Image.getInstance(IMG);
+            //foto.scaleToFit(650, 1000);
+            logo.setAlignment(Chunk.ALIGN_CENTER);
+
+            documento.open();
+
+
+            Paragraph empresa= new Paragraph();
+            Paragraph descripcion=new Paragraph();
+            Paragraph linea=new Paragraph();
+            Paragraph materiaprima=new Paragraph();
+            Paragraph producto=new Paragraph();
+            Paragraph proveedor=new Paragraph();
+            Paragraph cliente=new Paragraph();
+            Paragraph tipo=new Paragraph();
+            
+            
+            
+            empresa.setAlignment(Paragraph.ALIGN_CENTER);
+            empresa.setFont(FontFactory.getFont("Tahoma", 12, Font.BOLD, BaseColor.DARK_GRAY));
+            empresa.add(" PASTELERIA EL MERENGUE \n\n");
+            
+            descripcion.setAlignment(Paragraph.ALIGN_JUSTIFIED);
+            descripcion.setFont(FontFactory.getFont("Tahoma", 12, Font.NORMAL, BaseColor.DARK_GRAY));
+            descripcion.add("LEONIDAS SIBAJAS #25, CAMINERA \n\n");
+            descripcion.add("TEPIC, NAYARIT         FECHA: 02/05/2018 \n\n");
+            
+            tipo.setAlignment(Paragraph.ALIGN_CENTER);
+            tipo.setFont(FontFactory.getFont("Tahoma", 12, Font.BOLD, BaseColor.DARK_GRAY));
+            tipo.add(" REPORTE DE RESULTADOS \n");
+            
+            linea.setFont(FontFactory.getFont("Tahoma",16,Font.BOLD,BaseColor.BLACK));
+            linea.add("---------------------------------------------------------------------------------------------");
+          
+            materiaprima.setAlignment(Paragraph.ALIGN_LEFT);
+            materiaprima.setFont(FontFactory.getFont("Tahoma", 12, Font.BOLD, BaseColor.DARK_GRAY));
+            materiaprima.add("Materia Prima más comprada: "+materiaPrimaMasComprada+" \n\n");
+            
+            producto.setAlignment(Paragraph.ALIGN_LEFT);
+            producto.setFont(FontFactory.getFont("Tahoma", 12, Font.BOLD, BaseColor.DARK_GRAY));
+            producto.add("Producto más vendido: "+productoMasVendido+" \n\n");
+            
+            proveedor.setAlignment(Paragraph.ALIGN_LEFT);
+            proveedor.setFont(FontFactory.getFont("Tahoma", 12, Font.BOLD, BaseColor.DARK_GRAY));
+            proveedor.add("Proveedor con más compras: "+ProveedorMasComprado+" \n\n");
+            
+            cliente.setAlignment(Paragraph.ALIGN_LEFT);
+            cliente.setFont(FontFactory.getFont("Tahoma", 12, Font.BOLD, BaseColor.DARK_GRAY));
+            cliente.add("Cliente más activo: "+clienteMasActivo+" \n\n");
+            
+            PdfPTable tableTotales = new PdfPTable(3);
+            tableTotales.setWidthPercentage(100);
+            PdfPCell tituloTOTAL = new PdfPCell(new Phrase("TOTAL:"));
+            PdfPCell tituloINGRESOS = new PdfPCell(new Phrase(totalIngresos+""));
+            PdfPCell tituloEGRESOS = new PdfPCell(new Phrase(totalEgresos+""));
+            tituloEGRESOS.setHorizontalAlignment(Element.ALIGN_RIGHT);
+            tituloINGRESOS.setHorizontalAlignment(Element.ALIGN_RIGHT);
+             
+            
+             tituloTOTAL.setBorder(Rectangle.NO_BORDER);
+            tituloINGRESOS.setBorder(Rectangle.NO_BORDER);
+           tituloEGRESOS.setBorder(Rectangle.NO_BORDER);
+            
+           
+           tableTotales.addCell(tituloTOTAL);
+             tableTotales.addCell(tituloINGRESOS);
+             tableTotales.addCell(tituloEGRESOS);
+             
+             
+            PdfPTable tableCapital = new PdfPTable(3);
+            tableCapital.setWidthPercentage(100);
+            PdfPCell tituloCAPITAL = new PdfPCell(new Phrase("CAPITAL:"));
+            PdfPCell tituloTOTLACAPITAL = new PdfPCell(new Phrase(Capital+""));
+            PdfPCell titulo4 = new PdfPCell(new Phrase(""));
+            
+            tituloTOTLACAPITAL.setHorizontalAlignment(Element.ALIGN_RIGHT);
+
+            
+            tituloCAPITAL.setBorder(Rectangle.NO_BORDER);
+            tituloTOTLACAPITAL.setBorder(Rectangle.NO_BORDER);
+            titulo4 .setBorder(Rectangle.NO_BORDER);
+            
+            tableCapital.addCell(tituloCAPITAL);
+            tableCapital.addCell(tituloTOTLACAPITAL);
+            tableCapital.addCell(titulo4);
+            
+            
+            PdfPTable table = new PdfPTable(3);
+            table.setWidthPercentage(100);
+            PdfPCell titulo1 = new PdfPCell(new Phrase("NOMBRE"));
+            PdfPCell titulo2 = new PdfPCell(new Phrase("INGRESOS"));
+            PdfPCell titulo3 = new PdfPCell(new Phrase("EGRESOS"));
+
+            titulo2.setHorizontalAlignment(Element.ALIGN_RIGHT);
+            titulo3.setHorizontalAlignment(Element.ALIGN_RIGHT);
+
+            
+            titulo1.setBorder(Rectangle.NO_BORDER);
+            titulo2.setBorder(Rectangle.NO_BORDER);
+            titulo3.setBorder(Rectangle.NO_BORDER);
+
+
+            
+            
+            table.addCell(titulo1);
+            table.addCell(titulo2);
+            table.addCell(titulo3);
+
+            PdfPCell ventas1 = new PdfPCell(new Phrase("VENTAS:"));
+            PdfPCell ventas2 = new PdfPCell(new Phrase(ventas+""));
+            PdfPCell ventas3 = new PdfPCell(new Phrase(""));
+            ventas2.setHorizontalAlignment(Element.ALIGN_RIGHT);
+            ventas3.setHorizontalAlignment(Element.ALIGN_RIGHT);
+            ventas1.setBorder(Rectangle.NO_BORDER);
+            ventas2.setBorder(Rectangle.NO_BORDER);
+            ventas3.setBorder(Rectangle.NO_BORDER);
+            table.addCell(ventas1);
+            table.addCell(ventas2);
+            table.addCell(ventas3);
+            
+            PdfPCell adelantos1 = new PdfPCell(new Phrase("ADELANTOS:"));
+            PdfPCell adelantos2 = new PdfPCell(new Phrase(adelantos+""));
+            PdfPCell adelantos3 = new PdfPCell(new Phrase(""));
+            adelantos2.setHorizontalAlignment(Element.ALIGN_RIGHT);
+            adelantos3.setHorizontalAlignment(Element.ALIGN_RIGHT);
+            adelantos1.setBorder(Rectangle.NO_BORDER);
+            adelantos2.setBorder(Rectangle.NO_BORDER);
+            adelantos3.setBorder(Rectangle.NO_BORDER);
+            table.addCell(adelantos1);
+            table.addCell(adelantos2);
+            table.addCell(adelantos3);
+            
+            PdfPCell compras1 = new PdfPCell(new Phrase("COMPRAS:"));
+            PdfPCell compras2 = new PdfPCell(new Phrase(""));
+            PdfPCell compras3 = new PdfPCell(new Phrase(compras+""));
+            compras2.setHorizontalAlignment(Element.ALIGN_RIGHT);
+            compras3.setHorizontalAlignment(Element.ALIGN_RIGHT);
+            compras1.setBorder(Rectangle.NO_BORDER);
+            compras2.setBorder(Rectangle.NO_BORDER);
+            compras3.setBorder(Rectangle.NO_BORDER);
+            table.addCell(compras1);
+            table.addCell(compras2);
+            table.addCell(compras3);
+            
+            
+     
+            //AGRADECIMIENTO
+            
+            
+            
+            //----
+            //descripcion
+            documento.add(logo);
+            documento.add(empresa);
+            documento.add(descripcion);
+            documento.add(tipo);
+            documento.add(linea);
+            //TOTAL
+            documento.add(table);
+            documento.add(linea);
+            documento.add(tableTotales);
+            documento.add(tableCapital);
+            documento.add(linea);
+
+            //tops
+            documento.add(materiaprima);
+            documento.add(producto);
+            documento.add(proveedor);
+            documento.add(cliente);
+           
+            documento.close();
+            JOptionPane.showMessageDialog(null, "Reporte de Estado de Resultados generado exitosamente.");
+        } catch (Exception e) {
+            System.out.println("Error" + e);
+        }
+  }
 }
