@@ -16,6 +16,7 @@ import java.sql.Statement;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,6 +58,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      int id_usuario=0;
      Date dateAct;
      float efectivo,cambio,SaldoRestante,AdelantoPedido;
+     float VENTAS,COMPRAS,ADELANTOS,RELACION;
+     String MATERIAPRIMA1,CLIENTE1,PROVEEDOR1;
     /**
      * Creates new form Ventana_Empleado
      */
@@ -415,7 +418,25 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtUsuariosNombre = new javax.swing.JTextField();
         cmbUsuariosTipo = new javax.swing.JComboBox<>();
         jPanel11 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        lblTotalCompras = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        lblTotalVentas = new javax.swing.JLabel();
+        lblMateriaVendida = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        lblTotalAdelantos = new javax.swing.JLabel();
+        lblTotalCapital = new javax.swing.JLabel();
+        lblClienteActivo = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        lblProveedorCompras = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -488,6 +509,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         tb_principal.setBackground(new java.awt.Color(102, 255, 102));
         tb_principal.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         tb_principal.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tb_principal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tb_principalMouseClicked(evt);
+            }
+        });
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1896,7 +1922,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(tb_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 1146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2418,7 +2444,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(436, 436, 436)
                         .addComponent(lblUsuarioTitulo)))
-                .addContainerGap(415, Short.MAX_VALUE))
+                .addContainerGap(382, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2445,12 +2471,64 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu Light", 1, 48)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PRONTO");
-        jPanel11.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 790, 200));
+        jLabel48.setText("Egresos");
+        jPanel11.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, -1, -1));
 
-        tb_principal.addTab("Balance General", jPanel11);
+        jLabel49.setText("Ingresos");
+        jPanel11.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, -1));
+
+        lblTotalCompras.setText("TotalCompras");
+        jPanel11.add(lblTotalCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, -1, -1));
+
+        jLabel51.setText("Ventas");
+        jPanel11.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
+
+        lblTotalVentas.setText("Total Ventas");
+        jPanel11.add(lblTotalVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, -1));
+
+        lblMateriaVendida.setText("Materia Prima mas vendida");
+        jPanel11.add(lblMateriaVendida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, -1, -1));
+
+        jLabel54.setText("Adelantos");
+        jPanel11.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
+
+        lblTotalAdelantos.setText("TotalAdelantos");
+        jPanel11.add(lblTotalAdelantos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
+
+        lblTotalCapital.setText("TotalCapital");
+        jPanel11.add(lblTotalCapital, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, -1, -1));
+
+        lblClienteActivo.setText("Cliente");
+        jPanel11.add(lblClienteActivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 600, -1, -1));
+
+        jLabel58.setText("Materia Prima mas vendida");
+        jPanel11.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
+
+        jLabel59.setText("Cliente mas activo");
+        jPanel11.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, -1, -1));
+
+        jLabel60.setText("Proveedor con mas compras");
+        jPanel11.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, -1, -1));
+
+        lblProveedorCompras.setText("Proveedor");
+        jPanel11.add(lblProveedorCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, -1, -1));
+
+        jLabel57.setText("_________________________________________________________");
+        jPanel11.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 240, -1));
+
+        jLabel62.setText("Total Egresos");
+        jPanel11.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, -1, -1));
+
+        jLabel63.setText("Capital");
+        jPanel11.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
+
+        jLabel70.setText("Total Ingresos");
+        jPanel11.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
+
+        jLabel71.setText("Compras");
+        jPanel11.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+
+        tb_principal.addTab("Estado de Resultados", jPanel11);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -3119,6 +3197,120 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         }catch (SQLException ex) {
             showMessageDialog(null," Error en la conexion LLENAR TABLA PRODUCTOS. "); 
         }
+    }
+    
+    private void datosreporte(){
+        
+    try {
+        stmt=conect.createStatement();
+    
+    LocalDate initial = LocalDate.now();
+    LocalDate start = initial.withDayOfMonth(1);
+    LocalDate end = initial.withDayOfMonth(initial.lengthOfMonth());
+    
+    System.out.println(start);
+    System.out.println(end);
+        tbmVenta=(DefaultTableModel)tblVenta.getModel();
+                tbmVenta.setRowCount(0);
+        stmt.execute("select sum (TOTAL) AS VENTAS " +
+                     "FROM VENTAS " +
+                     "WHERE FECHA  between '" + start.toString() + "' AND '" + end.toString() + "'");
+                res = stmt.getResultSet();
+                if(null!=res){
+                    while(res.next()){
+                      VENTAS = res.getInt(1);
+                    }
+                }
+         System.out.println(VENTAS);
+        stmt.execute("select sum (ADELANTO) as adelanto " +
+                     "FROM PEDIDOS " +
+                     "WHERE PEDIDOS.ESTADO = 'N' " +
+                     " AND FECHA_PEDIDO  between '" + start.toString() + "' AND '" + end.toString() + "'");
+                res = stmt.getResultSet();
+                if(null!=res){
+                    while(res.next()){
+                      ADELANTOS = res.getInt(1);
+                    }
+                }
+          System.out.println(ADELANTOS);
+         stmt.execute("SELECT SUM(TOTAL) AS COMPRAS " +
+                      "FROM COMPRAS " +
+                     "WHERE FECHA  between '" + start.toString() + "' AND '" + end.toString() + "'");
+                res = stmt.getResultSet();
+                if(null!=res){
+                    while(res.next()){
+                      COMPRAS = res.getInt(1);
+                    }
+                }
+                
+                System.out.println(COMPRAS); 
+                
+           stmt.execute("select MATERIAS_PRIMAS.NOMBRE,sum(DETALLE_COMPRA.TOTAL) " +
+                        "FROM ((DETALLE_COMPRA INNER JOIN MATERIAS_PRIMAS ON DETALLE_COMPRA.ID_MATERIA_PRIMA = MATERIAS_PRIMAS.ID_MATERIA) " +
+                        "INNER JOIN COMPRAS ON DETALLE_COMPRA.ID_COMPRA = COMPRAS.ID_COMPRA) " +
+                        "WHERE COMPRAS.FECHA between '" + start.toString() + "' AND '" + end.toString() + "'" +
+                        " group by MATERIAS_PRIMAS.NOMBRE " +
+                        "Order by 2 DESC");
+                res = stmt.getResultSet();
+                if(null!=res){
+                    for(int i = 0;i<1 ;i++){
+                        res.next();
+                        if(res != null){
+                            MATERIAPRIMA1 = res.getString(1);
+                        }else{
+                        
+                        }
+                    }
+                }
+            
+               System.out.println(MATERIAPRIMA1);
+                
+                stmt.execute("Select Top 1 PERSONAS.NOMBRE, Count(ID_PROVEEDOR) " +
+                             "From COMPRAS INNER JOIN PERSONAS ON COMPRAS.ID_PROVEEDOR = PERSONAS.ID_PERSONA " +
+                             "WHERE FECHA  between '" + start.toString() + "' AND '" + end.toString() + "'" +
+                             "Group By PERSONAS.NOMBRE " +
+                             "Order By 2 DESC");
+                res = stmt.getResultSet();
+                if(null!=res){
+                    
+                    
+                    for(int i = 0;i<1;i++){
+                        res.next();
+                        PROVEEDOR1 = res.getString(1);
+                    }
+                }
+                
+             System.out.println(PROVEEDOR1);
+                
+             stmt.execute("SELECT PERSONAS.NOMBRE,count(*) as veces " +
+                          "from VENTAS INNER JOIN PERSONAS ON VENTAS.ID_CLIENTE = PERSONAS.ID_PERSONA " +
+                          "WHERE FECHA between '" + start.toString() + "' AND '" + end.toString() + "'" +
+                          "GROUP BY PERSONAS.NOMBRE HAVING COUNT(*) > 1 " +
+                          "ORDER BY 2 DESC");
+                res = stmt.getResultSet();
+                if(null!=res){
+                    
+                    
+                    for(int i = 0;i<1;i++){
+                        res.next();
+                        CLIENTE1 = res.getString(1);
+                    }
+                }
+             System.out.println(CLIENTE1);
+             stmt.close();
+            
+                
+         
+            RELACION = ((VENTAS + ADELANTOS)-COMPRAS);
+          
+            System.out.println(RELACION);
+            
+    } catch (SQLException ex) {
+        Logger.getLogger(GESTION_USUARIOS.class.getName
+()).log(Level.SEVERE, null, ex);
+    }
+        
+        
     }
     private void llenarTablaProductos(){
          try {
@@ -4209,6 +4401,10 @@ String pattern = "yyyy-MM-dd";
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void tb_principalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_principalMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tb_principalMouseClicked
     
        private void llenarPresentacionM() throws SQLException{
              stmt=conect.createStatement();
@@ -5126,7 +5322,6 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private com.toedter.calendar.JDateChooser jDateChooser1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -5168,10 +5363,20 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
@@ -5179,6 +5384,8 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
@@ -5253,16 +5460,23 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JLabel lblCPProveedor;
     private javax.swing.JLabel lblCambio;
     private javax.swing.JLabel lblCambioPedido;
+    private javax.swing.JLabel lblClienteActivo;
     private javax.swing.JLabel lblContra;
     private javax.swing.JLabel lblDomicilioProveedor;
+    private javax.swing.JLabel lblMateriaVendida;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblNombreProveedor;
     private javax.swing.JLabel lblPagoRestante;
     private javax.swing.JLabel lblProveedorBuscar;
+    private javax.swing.JLabel lblProveedorCompras;
     private javax.swing.JLabel lblTelefonoProveedor;
     private javax.swing.JLabel lblTipoU;
     private javax.swing.JLabel lblTituloProveedor;
+    private javax.swing.JLabel lblTotalAdelantos;
+    private javax.swing.JLabel lblTotalCapital;
+    private javax.swing.JLabel lblTotalCompras;
     private javax.swing.JLabel lblTotalVenta1;
+    private javax.swing.JLabel lblTotalVentas;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JLabel lblUsuario1;
     private javax.swing.JLabel lblUsuarioTitulo;
