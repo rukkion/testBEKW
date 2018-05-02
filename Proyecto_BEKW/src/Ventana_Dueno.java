@@ -3006,7 +3006,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             String cad = "INSERT INTO USUARIOS "
                     + "VALUES('"+ txtUsuariosUsuario.getText()+"','"
                     + txtUsuariosNombre.getText() + "','"
-                    + cmbUsuariosTipo.getSelectedItem().toString().substring(0) + "','"
+                    + cmbUsuariosTipo.getSelectedItem().toString().substring(0,1) + "','"
                     + txtUsuariosContraseña.getText() + "')";
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
