@@ -55,7 +55,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      DefaultTableModel tbmVenta;
      int id_usuario=0;
      Date dateAct;
-     
+     float efectivo,cambio;
     /**
      * Creates new form Ventana_Empleado
      */
@@ -183,6 +183,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         lblTotalVenta1 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
+        txtEfectivo = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        lblCambio = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         jButton14 = new javax.swing.JButton();
         jLabel75 = new javax.swing.JLabel();
@@ -542,7 +546,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnGenerarVentaActionPerformed(evt);
             }
         });
-        jPanel21.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 170, 40));
+        jPanel21.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 140, 40));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel13.setText("Total:");
@@ -673,6 +677,20 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel21.add(lblTotalVenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, -1, -1));
         jPanel21.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 180, 10));
         jPanel21.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, 190, 20));
+
+        txtEfectivo.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtEfectivo.setText("0.00");
+        jPanel21.add(txtEfectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 160, -1));
+
+        jLabel41.setText("Efectivo:");
+        jPanel21.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, -1, -1));
+
+        jLabel42.setText("Cambio:");
+        jPanel21.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, -1, -1));
+
+        lblCambio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblCambio.setText("0.00");
+        jPanel21.add(lblCambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 500, 120, -1));
 
         tb_Ventas_Pedidos.addTab("Nueva Venta", jPanel21);
 
@@ -3756,12 +3774,17 @@ private boolean validarVacioP(){
                 actualizarEstadoPedido();
                 llenarTablaPedidos_Venta();
                 llenarTablaHistorialVentas();
+                generarCambio();
                 Imprimir printVenta=new Imprimir();
                 printVenta.imprimirVenta(nombreUsuario, idVentaImprimir);
+                txtEfectivo.setText("0.00");
+                lblCambio.setText("0.00");
                 tbmVenta.setRowCount(0);
-                lblAnticipo.setText("0");
-                lblTotalVenta1.setText("0");
-                lblPagoRestante.setText("0");
+                lblAnticipo.setText("0.00");
+                lblTotalVenta1.setText("0.00");
+                lblPagoRestante.setText("0.00");
+                cambio=0;
+                efectivo=0;
                 
                 System.out.println("¡Venta realizada exitosamente!");
             } catch (SQLException ex) {
@@ -3776,6 +3799,11 @@ private boolean validarVacioP(){
                                       
         }
     }//GEN-LAST:event_btnGenerarVentaActionPerformed
+    private void generarCambio(){
+        efectivo=Float.parseFloat(txtEfectivo.getText());
+        cambio =efectivo-Float.parseFloat(lblPagoRestante.getText());
+        lblCambio.setText(cambio+"");
+    }
     
     private void actualizarEstadoPedido(){
         
@@ -4933,6 +4961,8 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
@@ -5017,6 +5047,7 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblAnticipo;
     private javax.swing.JLabel lblCPProveedor;
+    private javax.swing.JLabel lblCambio;
     private javax.swing.JLabel lblContra;
     private javax.swing.JLabel lblDomicilioProveedor;
     private javax.swing.JLabel lblNombre;
@@ -5087,6 +5118,7 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JSpinner txtCantidadMP;
     private javax.swing.JTextArea txtDescripcionMP;
     private javax.swing.JTextField txtDomC;
+    private javax.swing.JTextField txtEfectivo;
     private javax.swing.JLabel txtEstado;
     private javax.swing.JTextField txtNomC;
     private javax.swing.JTextField txtNombreMP;
