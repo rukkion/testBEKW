@@ -305,6 +305,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         tblpruebapedidos = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        btnCancelar_Pedido1 = new javax.swing.JButton();
+        rdbCancelar = new javax.swing.JRadioButton();
         jPanel5 = new javax.swing.JPanel();
         tb_Inventario = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
@@ -1496,53 +1498,69 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             }
         });
 
+        btnCancelar_Pedido1.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancelar_Pedido1.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        btnCancelar_Pedido1.setText("Cancelar  "); // NOI18N
+        btnCancelar_Pedido1.setActionCommand("Cancelar \nPedido");
+        btnCancelar_Pedido1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelar_Pedido1ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup3.add(rdbCancelar);
+        rdbCancelar.setText("Cancelado");
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addComponent(jLabel29)
+                                .addGap(106, 106, 106)
+                                .addComponent(jLabel32))
                             .addGroup(jPanel13Layout.createSequentialGroup()
                                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtBuscarClientePedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel34))
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addComponent(jLabel29)
-                                        .addGap(106, 106, 106)
-                                        .addComponent(jLabel32))
-                                    .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtBuscarClientePedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel34))
-                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(txtBuscarEmpleadoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                                .addGap(14, 14, 14)
-                                                .addComponent(jLabel35))))
-                                    .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addComponent(txtBuscarCodigoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(dateGeneracionPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(txtBuscarEmpleadoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel13Layout.createSequentialGroup()
+                                        .addGap(14, 14, 14)
+                                        .addComponent(jLabel35)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel36)
-                                    .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addComponent(rdbPagado)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(rdbNoPagado))
-                                    .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addGap(31, 31, 31)
-                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel33)
-                                            .addComponent(dateEntegaPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(rdbPagado)))
                             .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(563, 563, 563)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtBuscarCodigoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(dateGeneracionPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(rdbNoPagado)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rdbCancelar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnCancelar_Pedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(jLabel33))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dateEntegaPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 748, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1556,41 +1574,44 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel32)
+                            .addComponent(jLabel33))
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel29)
-                                    .addComponent(jLabel32))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(dateGeneracionPedido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtBuscarCodigoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel35)
-                                    .addComponent(jLabel34))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtBuscarClientePedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtBuscarEmpleadoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(22, 22, 22))
                             .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addComponent(jLabel33)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(dateEntegaPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel36)
+                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(dateGeneracionPedido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtBuscarCodigoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(rdbPagado)
-                                            .addComponent(rdbNoPagado)))
+                                            .addComponent(jLabel35)
+                                            .addComponent(jLabel34)
+                                            .addComponent(jLabel36)))
+                                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(txtBuscarClientePedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtBuscarEmpleadoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(rdbPagado)
+                                            .addComponent(rdbNoPagado)
+                                            .addComponent(rdbCancelar))
+                                        .addGap(25, 25, 25))
+                                    .addGroup(jPanel13Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(25, 25, 25)))
+                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(btnCancelar_Pedido1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE))))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(dateEntegaPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, Short.MAX_VALUE)))
                         .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
@@ -2844,6 +2865,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBuscarCliente_PedidoKeyReleased
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+VentanaCliente mdC=new VentanaCliente();
+        mdC.setVisible(true);        
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
 
@@ -3809,7 +3832,7 @@ private boolean validarVacioP(){
             
             //BUSCAR NOMBRE DE CLIENTE
             stmt.execute("SELECT ID_PERSONA from PERSONAS"
-                    + " where TIPO = 'C' AND NOMBRE='"+nombresCliente[0]+"' AND APE_PAT='"+nombresCliente[1]+"' AND APE_MAT='"+nombresCliente[2]+"'");
+                    + " where (ESTADO = 'P' OR ESTADO = 'N ') AND TIPO = 'C' AND NOMBRE='"+nombresCliente[0]+"' AND APE_PAT='"+nombresCliente[1]+"' AND APE_MAT='"+nombresCliente[2]+"'");
             ResultSet res = stmt.getResultSet();
             
             if(null!=res){
@@ -3869,7 +3892,7 @@ private boolean validarVacioP(){
             
             //BUSCAR NOMBRE DE CLIENTE
             stmt.execute("SELECT ID_PERSONA from PERSONAS"
-                    + " where TIPO = 'C' AND NOMBRE='"+nombresCliente[0]+"' AND APE_PAT='"+nombresCliente[1]+"' AND APE_MAT='"+nombresCliente[2]+"'");
+                    + " where (ESTADO = 'N' OR ESTADO ='P') AND TIPO = 'C' AND NOMBRE='"+nombresCliente[0]+"' AND APE_PAT='"+nombresCliente[1]+"' AND APE_MAT='"+nombresCliente[2]+"'");
             ResultSet res = stmt.getResultSet();
             
             if(null!=res){
@@ -4275,6 +4298,7 @@ String pattern = "yyyy-MM-dd";
         txtBuscarEmpleadoPedidos.setText("");
         rdbPagado.setSelected(false);
         rdbNoPagado.setSelected(false);
+        rdbCancelar.setSelected(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -4431,6 +4455,21 @@ String pattern = "yyyy-MM-dd";
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_txtBuscarPKeyReleased
+
+    private void btnCancelar_Pedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar_Pedido1ActionPerformed
+      
+         
+            String cad = "update pedidos set estado='C' WHERE  ID_PEDIDO="+tblHistorialPedidos.getValueAt(tblHistorialPedidos.getSelectedRow(),0)+"";
+            try {
+                java.sql.Statement stmt=conect.createStatement();
+
+                stmt.executeUpdate(cad);
+                llenarTablaHistorialPedidos();
+            } catch (SQLException ex) {
+
+            }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelar_Pedido1ActionPerformed
     
        private void llenarPresentacionM() throws SQLException{
              stmt=conect.createStatement();
@@ -4522,8 +4561,15 @@ String pattern = "yyyy-MM-dd";
             String  bus1="",bus2="",bus3="",bus4="",bus5="";
            if(rdbPagado.isSelected())
                Bus = "P";
-           else if(rdbNoPagado.isSelected())
+           if(rdbNoPagado.isSelected())
                Bus = "N";
+           if(rdbCancelar.isSelected())
+               Bus = "C";
+           System.out.println("select ID_PEDIDO, FECHA_PEDIDO, FECHA_ENTREGA, PERSONAS.NOMBRE,NOMBRE_USUARIO,ESTADO,ADELANTO,TOTAL FROM"
+                    + " PERSONAS, PEDIDOS,USUARIOS "
+                    + "WHERE PERSONAS.ID_PERSONA = PEDIDOS.ID_CLIENTE AND PEDIDOS.ID_USUARIO = USUARIOS.ID_USUARIO "
+                    + ""
+                    + bus1 + bus2 + bus3 + bus4 + bus5);
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         //insersion de codigos de busqueda
@@ -4544,7 +4590,7 @@ String pattern = "yyyy-MM-dd";
         if(!txtBuscarEmpleadoPedidos.getText().equals(""))
             bus4 = " AND NOMBRE_USUARIO LIKE '%"+txtBuscarEmpleadoPedidos.getText()+"%'";
        
-        if(rdbPagado.isSelected()||rdbNoPagado.isSelected())
+        if(rdbPagado.isSelected()||rdbNoPagado.isSelected()||rdbCancelar.isSelected())
             bus5 = " AND ESTADO = '"+Bus+"'";
            
           Statement stmt = conect.createStatement();
@@ -4555,6 +4601,13 @@ String pattern = "yyyy-MM-dd";
                     + "WHERE PERSONAS.ID_PERSONA = PEDIDOS.ID_CLIENTE AND PEDIDOS.ID_USUARIO = USUARIOS.ID_USUARIO "
                     + ""
                     + bus1 + bus2 + bus3 + bus4 + bus5);
+
+ System.out.println("select ID_PEDIDO, FECHA_PEDIDO, FECHA_ENTREGA, PERSONAS.NOMBRE,NOMBRE_USUARIO,ESTADO,ADELANTO,TOTAL FROM"
+                    + " PERSONAS, PEDIDOS,USUARIOS "
+                    + "WHERE PERSONAS.ID_PERSONA = PEDIDOS.ID_CLIENTE AND PEDIDOS.ID_USUARIO = USUARIOS.ID_USUARIO "
+                    + ""
+                    + bus1 + bus2 + bus3 + bus4 + bus5);
+
             
             ResultSet res = stmt.getResultSet();
             if(null!=res){
@@ -5300,6 +5353,7 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JButton btnCancelarVenta;
     private javax.swing.JButton btnCancelar_Compra;
     private javax.swing.JButton btnCancelar_Pedido;
+    private javax.swing.JButton btnCancelar_Pedido1;
     private javax.swing.JButton btnEliminarArticuloPedido;
     private javax.swing.JButton btnEliminarC;
     private javax.swing.JButton btnEliminarMateriaPrima_Compra;
@@ -5508,6 +5562,7 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JLabel lblUsuarioTitulo;
     private javax.swing.JPanel panelCliente;
     private javax.swing.JPanel panelProveedor;
+    private javax.swing.JRadioButton rdbCancelar;
     private javax.swing.JRadioButton rdbEntrega;
     private javax.swing.JRadioButton rdbGeneracion;
     private javax.swing.JRadioButton rdbNoDisponible;
