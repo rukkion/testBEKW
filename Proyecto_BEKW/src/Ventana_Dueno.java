@@ -602,14 +602,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblPedidosVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Cliente", "No. Pedido", "Fecha generación", "Fecha entrega"
@@ -633,6 +626,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel14.add(dateGeneracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 210, -1));
 
         buttonGroup2.add(rdbGeneracion);
+        rdbGeneracion.setSelected(true);
         rdbGeneracion.setText("Fecha Generación");
         jPanel14.add(rdbGeneracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
@@ -816,14 +810,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblProductos_Pedido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Código", "Nombre", "Estado", "Presentacion", "Precio"
@@ -1028,14 +1015,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblCompraslMateriasPrimas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Código", "Materia Prima", "Existencia", "Precio"
@@ -1199,10 +1179,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblHistorialVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Codigo", "Fecha Venta", "Cliente", "Empleado", "Total"
@@ -1239,10 +1216,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblDetalleVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Nombre", "Cantidad", "Precio unitario", "Presentacion", "Total"
@@ -1328,10 +1302,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblHistorialCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Código", "Fecha", "Proveedor", "Total"
@@ -1354,10 +1325,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblDetalleCompra.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Materia Prima", "Cantidad", "Precio Unitario", "Presentacion", "Total"
@@ -1447,10 +1415,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblHistorialPedidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Codigo", "Fecha_Pedio", "Fecha Entrega", "Cliente", "Empleado", "Estado", "Adelanto", "Total", "Saldo Restante"
@@ -1483,10 +1448,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblpruebapedidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Nombre", "Cantidad", "Precio unitario", "Presentacion", "Total"
@@ -1644,7 +1606,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnCancelarMPActionPerformed(evt);
             }
         });
-        jPanel8.add(btnCancelarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 154, 36));
+        jPanel8.add(btnCancelarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 154, 36));
 
         btnModificarMP.setBackground(new java.awt.Color(255, 255, 255));
         btnModificarMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1655,7 +1617,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnModificarMPActionPerformed(evt);
             }
         });
-        jPanel8.add(btnModificarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 165, 36));
+        jPanel8.add(btnModificarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 165, 36));
 
         MP.setBackground(new java.awt.Color(255, 255, 255));
         MP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1666,7 +1628,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 MPActionPerformed(evt);
             }
         });
-        jPanel8.add(MP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 165, 36));
+        jPanel8.add(MP, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 165, 36));
 
         btnAgregarMP.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregarMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1677,7 +1639,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnAgregarMPActionPerformed(evt);
             }
         });
-        jPanel8.add(btnAgregarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 154, 36));
+        jPanel8.add(btnAgregarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 154, 36));
 
         jLabel56.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel56.setText("Materia Prima");
@@ -1696,7 +1658,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel15.setText("Descripción:");
-        jPanel8.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
+        jPanel8.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, -1, -1));
 
         txtDescripcionMP.setColumns(20);
         txtDescripcionMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1704,7 +1666,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtDescripcionMP.setRows(5);
         jScrollPane13.setViewportView(txtDescripcionMP);
 
-        jPanel8.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 240, 90));
+        jPanel8.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 240, 90));
 
         jLabel68.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel68.setText("Cantidad disponible:");
@@ -1759,7 +1721,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 txtAgregarPresentacion1KeyTyped(evt);
             }
         });
-        jPanel8.add(txtAgregarPresentacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 150, 30));
+        jPanel8.add(txtAgregarPresentacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 150, 30));
 
         jButton10.setText("+");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -1767,11 +1729,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 jButton10ActionPerformed(evt);
             }
         });
-        jPanel8.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 40, 30));
+        jPanel8.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 490, 40, 30));
 
         jLabel69.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel69.setText("Agregar presentacion:");
-        jPanel8.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
+        jLabel69.setText("Agregar nueva presentacion:");
+        jPanel8.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
 
         tb_Inventario.addTab("Materia Prima", jPanel8);
 
@@ -1780,31 +1742,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblProducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Producto", "Descripcion", "Tipo", "Presentacion", "Precio"
@@ -1817,7 +1755,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
         jScrollPane12.setViewportView(tblProducto);
 
-        jPanel17.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 600, 340));
+        jPanel17.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 600, 450));
 
         jLabel61.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel61.setText("Producto");
@@ -1840,7 +1778,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnCancelarPActionPerformed(evt);
             }
         });
-        jPanel17.add(btnCancelarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 140, 40));
+        jPanel17.add(btnCancelarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 140, 40));
 
         btnModificarP.setBackground(new java.awt.Color(255, 255, 255));
         btnModificarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1851,7 +1789,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnModificarPActionPerformed(evt);
             }
         });
-        jPanel17.add(btnModificarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, 150, 40));
+        jPanel17.add(btnModificarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 150, 40));
 
         btnAgregarP.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1862,7 +1800,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnAgregarPActionPerformed(evt);
             }
         });
-        jPanel17.add(btnAgregarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 140, 40));
+        jPanel17.add(btnAgregarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 140, 40));
 
         btnEliminarP.setBackground(new java.awt.Color(255, 255, 255));
         btnEliminarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1873,7 +1811,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnEliminarPActionPerformed(evt);
             }
         });
-        jPanel17.add(btnEliminarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 150, 40));
+        jPanel17.add(btnEliminarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, 150, 40));
 
         jLabel65.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel65.setText("Tipo:");
@@ -1881,7 +1819,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jLabel66.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel66.setText("Precio");
-        jPanel17.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, -1, -1));
+        jPanel17.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel26.setText("Presentacion:");
@@ -1896,7 +1834,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 txtprecioPKeyTyped(evt);
             }
         });
-        jPanel17.add(txtprecioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 150, 23));
+        jPanel17.add(txtprecioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 150, 23));
 
         txtBuscarP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel17.add(txtBuscarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, 295, -1));
@@ -1926,11 +1864,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 txtAgregarPresentacionKeyTyped(evt);
             }
         });
-        jPanel17.add(txtAgregarPresentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 150, 30));
+        jPanel17.add(txtAgregarPresentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 150, 30));
 
         jLabel67.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel67.setText("Agregar presentacion:");
-        jPanel17.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
+        jPanel17.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, -1));
 
         grupoTipoNuevoProducto.add(rdbPorPedido);
         rdbPorPedido.setSelected(true);
@@ -1947,7 +1885,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        jPanel17.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 40, 30));
+        jPanel17.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, 40, 30));
 
         tb_Inventario.addTab("Producto", jPanel17);
 
@@ -1998,31 +1936,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblProveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Código", "Proveedor", "Domicilio", "Código_Postal", "Telefono"
@@ -2153,7 +2067,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelProveedorLayout.createSequentialGroup()
                         .addComponent(lblTituloProveedor)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                         .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNombreProveedor)
                             .addComponent(txtProveedorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2179,8 +2093,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                             .addComponent(btnEliminarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(129, 129, 129))
                     .addGroup(panelProveedorLayout.createSequentialGroup()
-                        .addComponent(jScrollPaneProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jScrollPaneProveedores)
+                        .addContainerGap())))
         );
 
         tb_Personas.addTab("Proveedor", panelProveedor);
@@ -2283,10 +2197,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tablaCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Código", "Nombre", "Apellido Paterno", "Apellido Materno", "Domicilio", "Codigo Postal", "Telefono"
@@ -2419,10 +2330,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Usuario", "Tipo_Usuario", "Contraseña", "Nombre"
@@ -4019,7 +3927,7 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_spncantidadProducto_PedidoStateChanged
 
     private void btnGenerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPedidoActionPerformed
-        if(tblPedido.getRowCount()!=0 && tblClientes_Pedido.getSelectedRow()>-1){
+        if(tblPedido.getRowCount()!=0 && tblClientes_Pedido.getSelectedRow()>-1 && Float.parseFloat(txtAdelantoPedido.getText())>=(Float.parseFloat(txtTotalPedido.getText()))*.5){
         try { System.out.println("insertado");
                 insertarPedido();
                 int idPedido=detalle_pedido();
@@ -4036,11 +3944,13 @@ private boolean validarVacioP(){
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
     }
-    else if(tblProveedor_Compra.getSelectedRow()>-1){
-            showMessageDialog(this,"Debe de ingresar articulos al pedido.");
+    else if(tblClientes_Pedido.getSelectedRow()==-1){
+            showMessageDialog(this,"Debe de seleccionar un cliente.");
     }
-    else
-        showMessageDialog(this,"Debe de seleccionar un cliente.");
+    else if(tblPedido.getRowCount()==0)
+        showMessageDialog(this,"Debe de agregar un producto.");
+        else
+            showMessageDialog(this, "Debe de pagar un Anticipo minimo del 50%.");
         
 
         // TODO add your handling code here:
@@ -4068,7 +3978,17 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_tblPedidosVentasMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+        String date2 = simpleDateFormat.format(dateGeneracion.getDate());
+       if(tblPedidosVentas.getRowCount()>0 && date2!=null)
         BuscarPedidos();
+       else if(date2!=null)
+           showMessageDialog(this, "Debe de seleccionar un cliente para buscar sus pedidos.");
+       else
+           showMessageDialog(this,"Debe de seleccionar una fecha de busqueda.");
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnRefreshProducto_Pedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProducto_Pedido1ActionPerformed
