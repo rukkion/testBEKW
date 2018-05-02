@@ -53,6 +53,7 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -133,6 +134,14 @@ public class Login extends javax.swing.JFrame {
 
         jSeparator2.setForeground(new java.awt.Color(255, 51, 204));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 300, 10));
+
+        jLabel4.setText("¿Olvidaste tu Contraseña?");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 450, 450));
 
@@ -272,6 +281,29 @@ public class Login extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_btnLoginKeyPressed
 
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        String a = javax.swing.JOptionPane.showInputDialog("¿Cuál es el lema de la empresa?");
+        a = a.toUpperCase();
+        
+        if(a.equals("PASTELERIA PARA GOLOZOS")){
+            try {
+                a = javax.swing.JOptionPane.showInputDialog("Introduce tu nombre de usuario");
+                a.toUpperCase();
+                String cad = "SELECT CONTRASEÑA FROM USUARIOS WHERE NOMBRE_USUARIO='" + a + "'";
+                Statement stmt = conect.createStatement();
+                stmt.executeQuery(cad);
+                ResultSet rs = stmt.getResultSet();
+                while(rs.next()){
+                    javax.swing.JOptionPane.showMessageDialog(null,"Tu contraseña es : \n" + rs.getString(1).toString());
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(null,"Incorrecto");
+        }
+    }//GEN-LAST:event_jLabel4MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -318,6 +350,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
