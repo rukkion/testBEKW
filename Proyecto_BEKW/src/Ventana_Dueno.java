@@ -56,7 +56,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      DefaultTableModel tbmVenta;
      int id_usuario=0;
      Date dateAct;
-     float efectivo,cambio,SaldoRestante;
+     float efectivo,cambio,SaldoRestante,AdelantoPedido;
     /**
      * Creates new form Ventana_Empleado
      */
@@ -220,6 +220,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         txtTotalPedido = new javax.swing.JLabel();
         datePedido = new com.toedter.calendar.JDateChooser();
+        jLabel43 = new javax.swing.JLabel();
+        txtEfectivoPedido = new javax.swing.JTextField();
+        jLabel47 = new javax.swing.JLabel();
+        lblCambioPedido = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         btnAgregarProvedor = new javax.swing.JButton();
         jLabel81 = new javax.swing.JLabel();
@@ -765,7 +769,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnEliminarArticuloPedidoActionPerformed(evt);
             }
         });
-        jPanel22.add(btnEliminarArticuloPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, 160, 40));
+        jPanel22.add(btnEliminarArticuloPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 160, 40));
 
         btnGenerarPedido.setBackground(new java.awt.Color(255, 255, 255));
         btnGenerarPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -776,11 +780,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnGenerarPedidoActionPerformed(evt);
             }
         });
-        jPanel22.add(btnGenerarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 490, 160, 40));
+        jPanel22.add(btnGenerarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 160, 40));
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel14.setText("Total:");
-        jPanel22.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 480, -1, 30));
+        jPanel22.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, -1, 30));
 
         jLabel80.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel80.setText("Pedido");
@@ -870,7 +874,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel22.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 430, 550));
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel22.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 490, 10, 40));
+        jPanel22.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, 10, 40));
 
         btnCancelar_Pedido.setBackground(new java.awt.Color(255, 255, 255));
         btnCancelar_Pedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -881,25 +885,46 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnCancelar_PedidoActionPerformed(evt);
             }
         });
-        jPanel22.add(btnCancelar_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+        jPanel22.add(btnCancelar_Pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, -1));
 
         txtAdelantoPedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtAdelantoPedido.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtAdelantoPedido.setText("0");
-        jPanel22.add(txtAdelantoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 440, 120, 30));
+        jPanel22.add(txtAdelantoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 440, 90, 30));
 
         jLabel12.setText("Anticipo:");
-        jPanel22.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, -1, -1));
+        jPanel22.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 450, -1, -1));
 
-        jLabel17.setText("Fecha pedido:");
-        jPanel22.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, -1, -1));
+        jLabel17.setText("Fecha de Entrega");
+        jPanel22.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, -1));
 
         txtTotalPedido.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtTotalPedido.setText("0");
         jPanel22.add(txtTotalPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 490, 120, -1));
 
         datePedido.setDateFormatString("dd-MM-yyyy");
-        jPanel22.add(datePedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, 130, -1));
+        jPanel22.add(datePedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 130, -1));
+
+        jLabel43.setText("Efectivo:");
+        jPanel22.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 440, -1, -1));
+
+        txtEfectivoPedido.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtEfectivoPedido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEfectivoPedidoKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEfectivoPedidoKeyTyped(evt);
+            }
+        });
+        jPanel22.add(txtEfectivoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 460, 160, -1));
+
+        jLabel47.setText("Cambio:");
+        jPanel22.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, -1, -1));
+
+        lblCambioPedido.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblCambioPedido.setText("0.00");
+        jPanel22.add(lblCambioPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 500, 120, -1));
 
         tb_Ventas_Pedidos.addTab("Nuevo Pedido", jPanel22);
 
@@ -3834,6 +3859,26 @@ private boolean validarVacioP(){
         
         
     }
+    
+    private void generarCambioPedido(){
+        try{
+            efectivo = Float.parseFloat(txtEfectivoPedido.getText());
+            AdelantoPedido = Float.parseFloat(txtAdelantoPedido.getText());
+         
+        if(efectivo >= AdelantoPedido){
+            cambio =Math.abs(efectivo - AdelantoPedido);
+            lblCambioPedido.setText(""+cambio);
+            
+        }else{
+            lblCambioPedido.setText(0.0+"");
+        }
+        }catch(Exception e){
+            
+        }
+        
+        
+    }
+    
     PlaceHolder holder;
     private void holders(){
         holder= new PlaceHolder(txtEfectivo,"0.0");
@@ -4089,6 +4134,14 @@ private boolean validarVacioP(){
     private void txtEfectivoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyReleased
         generarCambio();
     }//GEN-LAST:event_txtEfectivoKeyReleased
+
+    private void txtEfectivoPedidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyReleased
+        generarCambioPedido();
+    }//GEN-LAST:event_txtEfectivoPedidoKeyReleased
+
+    private void txtEfectivoPedidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEfectivoPedidoKeyTyped
 
     private void retirarMateriaPrima(){
          try {
@@ -5010,9 +5063,11 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel6;
@@ -5095,6 +5150,7 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JLabel lblAnticipo;
     private javax.swing.JLabel lblCPProveedor;
     private javax.swing.JLabel lblCambio;
+    private javax.swing.JLabel lblCambioPedido;
     private javax.swing.JLabel lblContra;
     private javax.swing.JLabel lblDomicilioProveedor;
     private javax.swing.JLabel lblNombre;
@@ -5166,6 +5222,7 @@ private void llenarTablaDetalleCompra(){
     private javax.swing.JTextArea txtDescripcionMP;
     private javax.swing.JTextField txtDomC;
     private javax.swing.JTextField txtEfectivo;
+    private javax.swing.JTextField txtEfectivoPedido;
     private javax.swing.JLabel txtEstado;
     private javax.swing.JTextField txtNomC;
     private javax.swing.JTextField txtNombreMP;
