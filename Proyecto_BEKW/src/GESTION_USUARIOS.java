@@ -35,7 +35,9 @@ Connection conect = null;
         initComponents();
     }
     
-    
+    /*
+        Se encarga de realizar la consulta para la inserción de los datos 
+    */
     private void InsertarUsuario(){
         try{
             conectarBD();
@@ -56,7 +58,9 @@ Connection conect = null;
         Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
-    
+    /*
+        realiza la consulta para la modificación de la información del usuario
+    */
     private void ModificarUsuario() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -76,7 +80,9 @@ Connection conect = null;
             System.out.println("Error modificar");   
             }
     }
-    
+    /*
+        realiza la consulta para eliminar el registro del usuario
+    */
     private void EliminarUsuario() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -91,7 +97,9 @@ Connection conect = null;
             System.out.println("Error Eliminar");   
             }
     }
-    
+    /*
+        verifica que todos los campos tengan información del usuario
+    */
     private boolean VerificarvaciosUsuario(){
         
         if(txtUsuariosNombre.getText().equals("")){
@@ -112,7 +120,9 @@ Connection conect = null;
         }
         return true;
     }
-    
+    /*
+        se encarga de llenar la tabla de usuarios con al información de la base de datos
+    */
     private void LlenarTablaUsuarios() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -130,7 +140,10 @@ Connection conect = null;
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
         } 
     }
-    
+    /*
+       verifica si el usuario existe
+        @return boolean
+    */
      private boolean UsuarioExistente() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -148,7 +161,9 @@ Connection conect = null;
         }
          return true;
     }
-    
+    /*
+        hace la conexión a la base de datos
+    */
     private void conectarBD() throws ClassNotFoundException, SQLException{
             try{
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -160,20 +175,26 @@ Connection conect = null;
             System.out.println("Error.");   
             }
     }
-    
+    /*
+        Vacía la información de los respectivos campos del usuario
+    */
     private void limpiarUsuarios(){
         txtUsuariosNombre.setText(null);
         txtUsuariosUsuario.setText(null);
         txtUsuariosContraseña.setText(null);
         cmbUsuariosTipo.setSelectedIndex(0);
     }
-     
+     /*
+        exita que se escriban espacios
+    */
      private void ValidarEspacios(KeyEvent evt) {
        char l=evt.getKeyChar();
         if( l == KeyEvent.VK_SPACE )
            evt.consume();
     }
-     
+     /*
+        evita que se escriban numeros
+    */
      private void ValidarLetras(KeyEvent evt) {
        char l=evt.getKeyChar();
         if(Character.isDigit(l))
@@ -406,6 +427,9 @@ Connection conect = null;
 
     private void btnUsuariosModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosModificarActionPerformed
     try {
+        /*
+            verifica si el usuario ya existe y si existe reliza la modificación sino, lo notifica
+        */
         if(VerificarvaciosUsuario()){
             if(UsuarioExistente()){
                 showMessageDialog(null,"VERIFIQUE EL NOMBRE DE USUARIO");
@@ -419,9 +443,12 @@ Connection conect = null;
         Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
     }
     }//GEN-LAST:event_btnUsuariosModificarActionPerformed
-
+    
     private void btnUsuariosEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosEliminarActionPerformed
     try {
+        /*
+            verifica si el usuario ya existe, si es así realiza la acción. Sino lo notifica
+        */
         if(VerificarvaciosUsuario()){
             if(UsuarioExistente()){
                 showMessageDialog(null,"VERIFIQUE EL NOMBRE DE USUARIO");

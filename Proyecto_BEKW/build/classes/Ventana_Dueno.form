@@ -1528,7 +1528,6 @@
                                               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jScrollPane6" min="-2" pref="300" max="-2" attributes="0"/>
                                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -1993,8 +1992,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Ventas">
-                        <Property name="tabTitle" type="java.lang.String" value="Ventas"/>
+                      <JTabbedPaneConstraints tabName="Historial deVentas">
+                        <Property name="tabTitle" type="java.lang.String" value="Historial deVentas"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2271,8 +2270,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Pedidos">
-                        <Property name="tabTitle" type="java.lang.String" value="Pedidos"/>
+                      <JTabbedPaneConstraints tabName="Historial de Pedidos">
+                        <Property name="tabTitle" type="java.lang.String" value="Historial de Pedidos"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2404,7 +2403,7 @@
                                                           <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                                                           <Component id="btnCancelar_Pedido1" alignment="3" max="32767" attributes="0"/>
                                                       </Group>
-                                                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -2616,9 +2615,6 @@
                     </Container>
                     <Component class="javax.swing.JButton" name="jButton2">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color type="null"/>
-                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
@@ -2633,9 +2629,6 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton3">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color type="null"/>
-                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
@@ -2647,9 +2640,6 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnCancelar_Pedido1">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color type="null"/>
-                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
@@ -2678,8 +2668,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Compras">
-                        <Property name="tabTitle" type="java.lang.String" value="Compras"/>
+                      <JTabbedPaneConstraints tabName="Historial de Compras">
+                        <Property name="tabTitle" type="java.lang.String" value="Historial de Compras"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>

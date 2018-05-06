@@ -312,7 +312,9 @@ Connection conect = null;
     }//GEN-LAST:event_btnModificarProveedorActionPerformed
 
     private void btnEliminarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProveedorActionPerformed
-       
+       /*
+         solicita verificación al usuario para eliminar un registro
+    */
     try {
           if(VerificarvaciosProveedor()){
                 int j = JOptionPane.showConfirmDialog(null, "¿Está seguro?", "Eliminar Proveedor", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -381,7 +383,9 @@ Connection conect = null;
         Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
     }
     }//GEN-LAST:event_txtBuscarProveedorKeyReleased
-    
+    /*
+        Realiza la consulta para registrar al proveedor en la base de datos
+    */
     private void insertarProveedor() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -403,7 +407,9 @@ Connection conect = null;
             System.out.println("Error insertar");   
             }
     }
-    
+    /*
+        Realiza la consula para modificar la información del proveedor
+    */
     private void ModificarProveedor() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -425,7 +431,9 @@ Connection conect = null;
             System.out.println("Error modificar");   
             }
     }
-    
+    /*
+      realiza la consulta para eliminar el resgistro de un proveedor  
+    */
     private void EliminarProveedor() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -443,7 +451,9 @@ Connection conect = null;
     }
     
     
-    
+    /*
+        Valida que no falte información para el regitro o modificacion del proveedor
+    */
     private boolean VerificarvaciosProveedor(){
         
         if(txtProveedorNombre.getText().equals("")){
@@ -464,7 +474,10 @@ Connection conect = null;
         }
         return true;
     }
-    
+    /*
+        verifica si el proveedor existe
+        @return boolano
+    */
     private boolean ProveedorExistente() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -482,7 +495,9 @@ Connection conect = null;
         }
          return true;
     }
-    
+    /*
+        se encarga de llenar la tabla de los proveedores
+    */
     private void LlenarTablaProveedores() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -501,6 +516,9 @@ Connection conect = null;
         } 
     }
     
+    /*
+        Se encarga de la busqueda de la información del proveedor
+    */
     private void BuscarProveedores() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -521,7 +539,9 @@ Connection conect = null;
         } 
     }
     
-    
+    /*
+        realiza a conexión a la base de datos
+    */
     CONECTAR_SERVER CS;
     private void conectarBD()throws ClassNotFoundException{
               CS.conectarBD();
@@ -529,20 +549,26 @@ Connection conect = null;
     }
     
     
-    
+    /*
+        Se encarga de vaciar el texto de los campos del proveedor
+    */
      private void limpiarProveedor(){
         txtProveedorNombre.setText(null);
         txtProveedorDomicilio.setText(null);
         txtProveedorCP.setText(null);
         txtProveedorTelefono.setText(null);
     }
-     
+     /*
+        valida que no se puedan escribir letras ni espacios el un jtextfield
+    */
      private void ValidarNumeros(KeyEvent evt) {
        char l=evt.getKeyChar();
         if(!Character.isDigit(l) || l == KeyEvent.VK_SPACE )
            evt.consume();
     }
-     
+     /*
+        valida que solo se escriban letras en un jtextfield
+    */
      private void ValidarLetras(KeyEvent evt) {
        char l=evt.getKeyChar();
         if(Character.isDigit(l))
