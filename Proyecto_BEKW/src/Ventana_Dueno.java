@@ -552,7 +552,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre ", "Domicilio", "Telefono"
+                "Código", "Nombre ", "Domicilio", "Telefono"
             }
         ));
         tblClientesVenta.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -781,7 +781,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel22.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
         jLabel79.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel79.setText("Cliente");
+        jLabel79.setText("Clientes");
         jPanel22.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         tblPedido.setModel(new javax.swing.table.DefaultTableModel(
@@ -2841,7 +2841,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             llenarTablaHistorialPedidos();
             llenarTablaHistorialVentas();
             llenarTablaHistorialCompras();
-            llenarTablaCliente2();
+            llenarTablaClienteVenta();
         } catch (Exception ex) {
             Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -3462,7 +3462,7 @@ VentanaCliente mdC=new VentanaCliente();
         }
     }
     
-    private void llenarTablaCliente2(){
+    private void llenarTablaClienteVenta(){
          try {
             
             Statement stmt=conect.createStatement();
@@ -3472,7 +3472,7 @@ VentanaCliente mdC=new VentanaCliente();
             ResultSet res=stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getString("NOMBRE")+" "+res.getString("APE_PAT")+" "+res.getString("APE_MAT"),res.getString("DOMICILIO"),res.getString("TELEFONO")});
+                   tbm.addRow(new Object[]{res.getString("ID_PERSONA"),res.getString("NOMBRE")+" "+res.getString("APE_PAT")+" "+res.getString("APE_MAT"),res.getString("DOMICILIO"),res.getString("TELEFONO")});
                 }  
             }
             stmt.close();
@@ -3910,7 +3910,7 @@ private boolean validarVacioP(){
     private void cmbUsuariosTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbUsuariosTipoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbUsuariosTipoActionPerformed
-
+//hay un error de consulta
     private void BuscarPedidos(){
          try {
              
@@ -3974,37 +3974,19 @@ private boolean validarVacioP(){
     private void llenarTablaPedidos_Venta(){
          try {
              
-            Statement stmt = conect.createStatement();
+            
             DefaultTableModel tbmPedidosVenta=(DefaultTableModel)tblPedidosVentas.getModel();
-            tbmPedidosVenta.setRowCount(0);
-            
-            //[0] ID CLIENTE - [1] NOMBRE CLIENTE
-            String nombreCliente=tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0)+"";
-            //[0] NOMBRE [1] APT PAT [2] APT MAT
-            String []nombresCliente=nombreCliente.split("\\s+");
-            
-            //BUSCAR NOMBRE DE CLIENTE
-            stmt.execute("SELECT ID_PERSONA from PERSONAS"
-                    + " where TIPO = 'C' AND NOMBRE='"+nombresCliente[0]+"' AND APE_PAT='"+nombresCliente[1]+"' AND APE_MAT='"+nombresCliente[2]+"'");
-            ResultSet res = stmt.getResultSet();
-            
-            if(null!=res){
-                while(res.next()){
-                   idCliente=res.getInt("ID_PERSONA");
-                    System.out.println(res.getInt("ID_PERSONA"));
-                }  
-            }
-            stmt.close();
+            idCliente=Integer.parseInt(tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0).toString());
             //BUSCA TODO DE PEDIDO
             if(idCliente>0){
                 stmt=conect.createStatement();
-                stmt.execute("SELECT ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA from PEDIDOS where ID_CLIENTE ="+idCliente+" AND ESTADO = 'N' ");
+                stmt.execute("SELECT ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA from PEDIDOS where ID_CLIENTE ="+idCliente+" AND ESTADO = 'N'");
                 res = stmt.getResultSet();
             
             
             if(null!=res){
                 while(res.next()){
-                   tbmPedidosVenta.addRow(new Object[]{nombreCliente,res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA")});
+                   tbmPedidosVenta.addRow(new Object[]{tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0),res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA")});
                 }  
             }
             stmt.close();
@@ -5069,7 +5051,7 @@ private void llenarTablaDetalleCompra(){
     
     private void BuscarClientesVenta() throws ClassNotFoundException{
          try {
-             conectarBD();
+             
              Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblClientesVenta.getModel();
            tbm.setRowCount(0);
@@ -5079,11 +5061,12 @@ private void llenarTablaDetalleCompra(){
              ResultSet res = stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
-                   Vector rowProductos=new Vector();
-                  rowProductos.add(res.getString("NOMBRE"));
-                  rowProductos.add(res.getString("DOMICILIO"));
-                  rowProductos.add(res.getString("TELEFONO"));
-                  tbm.addRow(rowProductos);
+                   Vector rowCliente=new Vector();
+                  rowCliente.add(res.getInt("ID_PERSONA"));
+                  rowCliente.add(res.getString("NOMBRE")+" "+res.getString("APE_PAT")+" "+res.getString("APE_MAT"));
+                  rowCliente.add(res.getString("DOMICILIO"));
+                  rowCliente.add(res.getString("TELEFONO"));
+                  tbm.addRow(rowCliente);
                 }
             }
             stmt.close();
@@ -5130,8 +5113,8 @@ private void llenarTablaDetalleCompra(){
     
     private void BuscarClientes() throws ClassNotFoundException{
          try {
-             conectarBD();
-             Statement stmt = conect.createStatement();
+            conectarBD();
+            Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblClientes_Pedido.getModel();
            tbm.setRowCount(0);
            stmt.execute("select * from PERSONAS "
