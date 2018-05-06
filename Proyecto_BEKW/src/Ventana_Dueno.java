@@ -538,13 +538,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         btnAddClienteVentas.setBackground(new java.awt.Color(255, 255, 255));
         btnAddClienteVentas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnAddClienteVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Add_User30px.png"))); // NOI18N
         btnAddClienteVentas.setText("Agregar Cliente");
         btnAddClienteVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddClienteVentasActionPerformed(evt);
             }
         });
-        jPanel21.add(btnAddClienteVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 130, 60));
+        jPanel21.add(btnAddClienteVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 80, -1, 70));
         jPanel21.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 0, 205, -1));
 
         tblClientesVenta.setModel(new javax.swing.table.DefaultTableModel(
@@ -562,11 +563,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         });
         jScrollPane17.setViewportView(tblClientesVenta);
 
-        jPanel21.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 540, 80));
+        jPanel21.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 530, 80));
 
         jLabel74.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel74.setText("Nueva Venta");
-        jPanel21.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 160, -1));
+        jPanel21.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 160, -1));
 
         jLabel76.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel76.setText("Clientes");
@@ -686,7 +687,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 btnRefreshProducto_Pedido1ActionPerformed(evt);
             }
         });
-        jPanel14.add(btnRefreshProducto_Pedido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 40, -1));
+        jPanel14.add(btnRefreshProducto_Pedido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 40, -1));
 
         jPanel21.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(727, 10, 430, 530));
 
@@ -755,13 +756,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jButton14.setBackground(new java.awt.Color(255, 255, 255));
         jButton14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Add_User30px.png"))); // NOI18N
         jButton14.setText("Agregar Cliente");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
             }
         });
-        jPanel22.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, 130, 60));
+        jPanel22.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 80, -1, 60));
         jPanel22.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 0, 205, -1));
 
         tblClientes_Pedido.setModel(new javax.swing.table.DefaultTableModel(
@@ -774,7 +776,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         ));
         jScrollPane18.setViewportView(tblClientes_Pedido);
 
-        jPanel22.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 75, 540, 70));
+        jPanel22.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 75, 520, 70));
 
         jLabel78.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel78.setText("Nuevo Pedido");
@@ -820,7 +822,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel14.setText("Total:");
-        jPanel22.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, -1, 30));
+        jPanel22.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, -1, 30));
 
         jLabel80.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel80.setText("Pedido");
@@ -919,23 +921,23 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtAdelantoPedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtAdelantoPedido.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtAdelantoPedido.setText("0");
-        jPanel22.add(txtAdelantoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 440, 90, 30));
+        jPanel22.add(txtAdelantoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 480, 90, 30));
 
         jLabel12.setText("Anticipo:");
-        jPanel22.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 450, -1, -1));
+        jPanel22.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 490, -1, -1));
 
         jLabel17.setText("Fecha de Entrega");
-        jPanel22.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, -1));
+        jPanel22.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, -1, -1));
 
         txtTotalPedido.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtTotalPedido.setText("0");
-        jPanel22.add(txtTotalPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 490, 120, -1));
+        jPanel22.add(txtTotalPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, 120, -1));
 
         datePedido.setDateFormatString("dd-MM-yyyy");
-        jPanel22.add(datePedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 130, -1));
+        jPanel22.add(datePedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, 130, -1));
 
         jLabel43.setText("Efectivo:");
-        jPanel22.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 440, -1, -1));
+        jPanel22.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 480, -1, -1));
 
         txtEfectivoPedido.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtEfectivoPedido.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -946,14 +948,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 txtEfectivoPedidoKeyTyped(evt);
             }
         });
-        jPanel22.add(txtEfectivoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 460, 160, -1));
+        jPanel22.add(txtEfectivoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, 160, -1));
 
         jLabel47.setText("Cambio:");
-        jPanel22.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, -1, -1));
+        jPanel22.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 540, -1, -1));
 
         lblCambioPedido.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblCambioPedido.setText("0.00");
-        jPanel22.add(lblCambioPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 500, 120, -1));
+        jPanel22.add(lblCambioPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 540, 120, -1));
 
         tb_Ventas_Pedidos.addTab("Nuevo Pedido", jPanel22);
 
