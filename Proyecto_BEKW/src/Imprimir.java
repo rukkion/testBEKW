@@ -14,33 +14,36 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileOutputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
- *
- * @author willi
+ * Clase para realizar las impresiones a PDF de Ventas, Pedidos y Estado de resultados.
+ * @author BEKW
  */
-
 public class Imprimir {
     public static final String IMG = "src/Icons/EL MERENGUEx100.png";
     CONECTAR_SERVER CS;
     Connection conect;
+    
+    /**
+     * Establece conexión con el Serivodor.
+     * @throws ClassNotFoundException En caso de que no se encuentre la clase de SQL.
+     */
     private void conectarBD() throws ClassNotFoundException{
         CS=new CONECTAR_SERVER();
         CS.conectarBD();
         this.conect=CS.getConect();
     }
+    
+    /**
+     * Obtener la fecha de la venta para poder imprimir el PDF.
+     * @param id ID de la venta para poder obtener la fecha de la BD.
+     * @return Retorna la Cadena de la fecha obtenida.
+     * @throws ClassNotFoundException  En Caso de que no se encuentre la clase de SQL.
+     */
     private String getDateVenta(int id) throws ClassNotFoundException{
         conectarBD();
         String fecha="";
@@ -62,6 +65,12 @@ public class Imprimir {
         }
         return fecha;
     }
+    /**
+     * Obtener la fecha del pedido para poder imprimir el PDF.
+     * @param idPedido ID del pedido para poder obtener la fecha de la BD.
+     * @return Retorna la Cadena de la fecha obtenida.
+     * @throws ClassNotFoundException En caso de que no se encuentre la clase de SQL.
+     */
     private String getFechaPedido(int idPedido) throws ClassNotFoundException{
         conectarBD();
         String fecha="";
@@ -83,6 +92,12 @@ public class Imprimir {
         }
         return fecha;
     }
+    /**
+     * Obtener la fecha de Entrega para los pedidos e imprimir su PDF.
+     * @param idPedido ID del pedido para poder obtener la fecha de entrega del mismo.
+     * @return Retorna la cadena de la fecha de entrega del pedido.
+     * @throws ClassNotFoundException En caso de que no se encuentre la clase de SQL.
+     */
     private String getFechaEntregaPedido(int idPedido) throws ClassNotFoundException{
         conectarBD();
         String fecha="";
@@ -104,6 +119,14 @@ public class Imprimir {
         }
         return fecha;
     }
+    /**
+     * Imprimir la nota del Pedido en PDF.
+     * @param empleado Nombre del empleado.
+     * @param idPedido ID del pedido.
+     * @param efectivo El monto del efectivo que se entregó.
+     * @param cambio El monto del cambio que se realizó.
+     * @param adelanto El adelanto que se entregó.
+     */
     void imprimirPedido(String empleado, int idPedido,float efectivo,float cambio,float adelanto){
         try{
             Document documento= new Document();
@@ -114,9 +137,7 @@ public class Imprimir {
             Image logo = Image.getInstance(IMG);
             
             logo.setAlignment(Chunk.ALIGN_CENTER);
-
             documento.open();
-            
 
             Paragraph empresa= new Paragraph();
             Paragraph descripcion=new Paragraph();
@@ -125,7 +146,7 @@ public class Imprimir {
             Paragraph tipo=new Paragraph();
             Paragraph bottom=new Paragraph(); //bottom = a lo de abajo del ticket :v
             
-               empresa.setAlignment(Paragraph.ALIGN_CENTER);
+            empresa.setAlignment(Paragraph.ALIGN_CENTER);
             empresa.setFont(FontFactory.getFont("Tahoma", 12, Font.BOLD, BaseColor.DARK_GRAY));
             empresa.add(" PASTELERIA EL MERENGUE \n\n");
             
@@ -159,8 +180,7 @@ public class Imprimir {
             titulo3.setBorder(Rectangle.NO_BORDER);
             titulo4.setBorder(Rectangle.NO_BORDER);
             titulo5.setBorder(Rectangle.NO_BORDER);
-            
-            
+                        
             table.addCell(titulo1);
             table.addCell(titulo2);
             table.addCell(titulo3);
@@ -169,7 +189,6 @@ public class Imprimir {
             int totalPedido=0;
             String nombreCliente="";
             try {
-
                 Statement st = conect.createStatement();
                 String consultaVenta="SELECT P.ID_PRODUCTO,P.NOMBRE as NOMBRE_PRODUCTO, DP.CANTIDAD, P.PRECIO,C.NOMBRE AS NOMBRE_CLIENTE, "
                         + "C.APE_PAT AS PATERNO, C.APE_MAT AS MATERNO " +
@@ -177,16 +196,12 @@ public class Imprimir {
                     "WHERE DP.ID_PRODUCTO=P.ID_PRODUCTO AND dp.ID_CLIENTE=c.ID_PERSONA " +
                     "AND DP.ID_PEDIDO="+idPedido;
                 ResultSet rs = st.executeQuery(consultaVenta);
-                
-                
                 if (rs.next()) {
                     do {
                         float precioUnitario=0;
                         int cantidad=0;
                         float totalProducto=0;
-                        
                         precioUnitario=rs.getFloat("PRECIO");
-                        
                         cantidad=rs.getInt("CANTIDAD");        
                         totalProducto=precioUnitario*cantidad;
                         totalPedido+=totalProducto;
@@ -263,6 +278,13 @@ public class Imprimir {
         }
         
     }
+    /**
+     * Imprimir nota de Venta en PDF.
+     * @param empleado Nombre del empleado.
+     * @param idVenta Id de la venta.
+     * @param efectivo Cantidad de efectivo que se entregó.
+     * @param cambio Cantidad de cambio que se regresó.
+     */
     void imprimirVenta(String empleado,int idVenta,float efectivo,float cambio){
       Document documento = new Document();
         
@@ -418,7 +440,20 @@ public class Imprimir {
         }
 
   }
-    
+  /**
+   * Imprimir el reporte del estado de resultados en PDF.
+   * @param fecha Fecha del reporte.
+   * @param ventas Total de las Ventas.
+   * @param adelantos Total de los adelantos.
+   * @param compras Total de las compras.
+   * @param totalIngresos Total de los Ingresos.
+   * @param totalEgresos Total de los Egresos.
+   * @param Capital Total del Capital.
+   * @param materiaPrimaMasComprada Materia prima más comprada.
+   * @param productoMasVendido Producto más vendido.
+   * @param ProveedorMasComprado Proveedor que se le compra más.
+   * @param clienteMasActivo Cliente más activo.
+   */
   void imprimirReporte(String fecha, float ventas, float adelantos, float compras,float totalIngresos,float totalEgresos,float Capital,
           String materiaPrimaMasComprada, String productoMasVendido, String ProveedorMasComprado,
           String clienteMasActivo){
@@ -590,8 +625,8 @@ public class Imprimir {
             documento.add(linea);
             documento.add(tableTotales);
             documento.add(tableCapital);
-            documento.add(linea);
-
+            
+documento.add(linea);
             //tops
             documento.add(materiaprima);
             documento.add(producto);

@@ -1,36 +1,25 @@
 
 import com.placeholder.PlaceHolder;
 import java.awt.Color;
-
 import java.sql.*;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
-import java.awt.font.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
- *
- * @author willi
+ * Login para poder iniciar sesiòn y acceder al Sistema.
+ * @author BEKW
  */
 public class Login extends javax.swing.JFrame {
     
     /**
-     * Creates new form Login
+     * Crea un nuevo Login.
      */
-    public Login() {
-        
+    public Login() { 
         initComponents();
         setLocationRelativeTo(null);
         seticon();
@@ -164,25 +153,28 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     
-//    /******************************CONECTAR BD*********************************/
-//    //LAPTOP WILLY
-////    String rutaBD="jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW";
-//    //ESCRITORIO WILLY
-//    String rutaBD="jdbc:sqlserver://BRICAIRE\\ABD;databaseName=BEKW";
-//    /**************************************************************************/
-    
 
-    
+    /**
+     * Acción del Botón iniciar sesión.
+     * @param evt Evento del botón.
+     */
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         iniciarSesion(txtusername.getText().trim(),String.valueOf(txtPass1.getPassword()).trim());
     }//GEN-LAST:event_btnLoginActionPerformed
 
-
+    /**
+     * Limpia los campos de la ventana Login.
+     */
     private void limpiarCampos(){
         txtusername.setText(null);
         txtPass1.setText(null);
         holders();
     }
+    /**
+     * Función para realizar el inicio de sesión.
+     * @param user Nombre del usuario.
+     * @param pass Contraseña.
+     */
     private void iniciarSesion(String user, String pass){
         try{
                 System.out.println("iniciando sesion... "+txtusername.getText()+" "+pass);
@@ -226,12 +218,20 @@ public class Login extends javax.swing.JFrame {
         }
     }
     CONECTAR_SERVER CS;
+    /**
+     * Conectar el sistema con la base de datos.
+     * @throws ClassNotFoundException En caso de que no se encuentre la clase.
+     */
     private void conectarBD() throws ClassNotFoundException{
         CS=new CONECTAR_SERVER();
         CS.conectarBD();
         this.conect=CS.getConect();
     }
     
+    /**
+     * Evento al momento de abrir la ventana.
+     * @param evt Evento.
+     */
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
             btnLogin.requestFocus();
@@ -246,6 +246,9 @@ public class Login extends javax.swing.JFrame {
     private void txtPass1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPass1KeyTyped
         
     }//GEN-LAST:event_txtPass1KeyTyped
+    /**
+     * Holders para mostrar texto antes de ingresar el correcto.
+     */
     private void holders(){
         holder= new PlaceHolder(txtusername,"Usuario");
         holder= new PlaceHolder(txtPass1,"Contraseña");
@@ -257,30 +260,45 @@ public class Login extends javax.swing.JFrame {
     private void txtusernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtusernameFocusLost
         
     }//GEN-LAST:event_txtusernameFocusLost
-
+    /**
+     * En caso de que se gane el focus se cambia de letra a *.
+     * @param evt Evento.
+     */
     private void txtPass1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPass1FocusGained
         txtPass1.setEchoChar('*');
         
     }//GEN-LAST:event_txtPass1FocusGained
-
+    /**
+     * Manda a llamar iniciar sesión cuando se presione la tecla Enter.
+     * @param evt Evento al precioar la tecla Enter.
+     */
     private void txtusernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtusernameKeyPressed
         if (evt.getKeyCode()==KeyEvent.VK_ENTER){
         iniciarSesion(txtusername.getText().trim(),String.valueOf(txtPass1.getPassword()).trim());
     }
     }//GEN-LAST:event_txtusernameKeyPressed
-
+    /**
+     * Manda a llamar iniciar sesión cuando se presione la tecla Enter.
+     * @param evt Evento al precioar la tecla Enter.
+     */
     private void txtPass1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPass1KeyPressed
         if (evt.getKeyCode()==KeyEvent.VK_ENTER){
         iniciarSesion(txtusername.getText().trim(),String.valueOf(txtPass1.getPassword()).trim());
     }
     }//GEN-LAST:event_txtPass1KeyPressed
-
+    /**
+     * Manda a llamar iniciar sesión cuando se presione la tecla Enter.
+     * @param evt Evento al precioar la tecla Enter.
+     */
     private void btnLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLoginKeyPressed
         if (evt.getKeyCode()==KeyEvent.VK_ENTER){
         iniciarSesion(txtusername.getText().trim(),String.valueOf(txtPass1.getPassword()).trim());
     }
     }//GEN-LAST:event_btnLoginKeyPressed
-
+    /**
+     * Muestra el mensaje para recuperar la contraseña.
+     * @param evt Evento.
+     */
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         String a = javax.swing.JOptionPane.showInputDialog("¿Cuál es el lema de la empresa?");
         a = a.toUpperCase();
@@ -305,7 +323,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
-     * @param args the command line arguments
+     * @param args Main principal.
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -338,7 +356,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
     }
-    
+    /**
+     * Establecer el icono a la ventana.
+     */
     private void seticon() {
      setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Icons\\EL MERENGUE_icon.png")));
     }
