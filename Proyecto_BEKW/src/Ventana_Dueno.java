@@ -38,8 +38,8 @@ import javax.swing.text.Document;
  */
 
 /**
- *
- * @author EDGUR
+ * Ventana funcional para el Dueño.
+ * @author BEKW
  */
 public class Ventana_Dueno extends javax.swing.JFrame {
         Connection conect = null;
@@ -61,7 +61,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      float VENTAS,COMPRAS,ADELANTOS,RELACION;
      String MATERIAPRIMA1,CLIENTE1,PROVEEDOR1,PRODUCTO1;
     /**
-     * Creates new form Ventana_Empleado
+     * Creates nueva ventana Ventana_Dueno
      */
     public Ventana_Dueno() {
         
@@ -73,6 +73,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     }
     
     String nombreUsuario="";
+    /**
+     * Constructor de Ventana_Dueno.
+     * @param nombreUsuario Nombre del usuario ingresado desde el Login.
+     */
     public Ventana_Dueno(String nombreUsuario) {
         this.nombreUsuario=nombreUsuario;
         initComponents();
@@ -82,6 +86,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
     }
     
     CONECTAR_SERVER CS;
+    /**
+     * Constructor de Ventana_Dueno.
+     * @param nombreUsuario Nombre del usuario ingresado desde el Login.
+     * @param CS dato CONECTAR_SERVER para conectar con el servidor.
+     */
     public Ventana_Dueno(String nombreUsuario,CONECTAR_SERVER CS) {
         this.nombreUsuario=nombreUsuario;
         initComponents();
@@ -90,6 +99,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         lblUsuario.setText("Bienvenido, "+this.nombreUsuario);
         this.CS=CS;
     }
+    /**
+     * Constructor de Ventana_Dueno.
+     * @param id_usuario ID del usuario.
+     * @param nombreUsuario Nombre del usuario ingresao desde el Login.
+     * @param CS dato CONECTAR_SERVER para conectar con el servidor.
+     */
     public Ventana_Dueno(int id_usuario,String nombreUsuario,CONECTAR_SERVER CS) {
         this.id_usuario=id_usuario;
         this.nombreUsuario=nombreUsuario;
@@ -99,6 +114,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         lblUsuario.setText("Bienvenido, "+nombreUsuario);
         this.CS=CS;
     }
+    /**
+     * Colocar las imagenes en los TABS principales.
+     */
     private void colocarImagenesTab(){
         ImageIcon ventas=createImageIcon("/ICON_BAR/coins_48px.png","");
         ImageIcon inventario=createImageIcon("/ICON_BAR/product_48px.png","");
@@ -114,7 +132,12 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         tb_principal.setBackground(Color.WHITE);
     }
     
-    /** Returns an ImageIcon, or null if the path was invalid. */
+    /**
+     * Función para establecer el icono de los TABS.
+     * @param path URL de la imagen.
+     * @param description Descripción de la imagen.
+     * @return Retorna una imagen.
+     */
     protected ImageIcon createImageIcon(String path,
                                            String description) {
         java.net.URL imgURL = getClass().getResource(path);
@@ -125,6 +148,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             return null;
     }
 }
+    /**
+     * Función para establecer conexión con el servidor del a Base de datos.
+     * @throws ClassNotFoundException En caso de que no se encuentre la Clase.
+     */
     private void conectarBD()throws ClassNotFoundException{
               CS.conectarBD();
               this.conect=CS.getConect();
@@ -2645,9 +2672,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    /*
-        llena la tabla de materias primas del aparta de inventario
-    */
+    /**
+     * Llena la tabla de Materia Prima en el Tab Materia Prima.
+     * @throws ClassNotFoundException En caso de que no se enuentre la clase.
+     */
     private void llenarMateriaPrima() throws ClassNotFoundException{
         try {
              
@@ -2665,20 +2693,28 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA Materia Prima");
         } 
     }
+    /**
+     * Llena la tabla de Compra en Nueva compra.
+     */
     private void llenarTablaCompra(){
         tbmCompra=(DefaultTableModel)tblCompra.getModel();
     }  
-    
+    /**
+     * Llena la tabla de Pedidos en Nuevo Pedido.
+     */
     private void llenarTablaPedidos(){
         tbmpedido=(DefaultTableModel)tblPedido.getModel();
     } 
-    
+    /**
+     * Llenar la tabla de Venta en Nueva Venta.
+     */
     private void LlenarTablaVenta(){
         tbmVenta = (DefaultTableModel)tblVenta.getModel();
     }
-    /*
-        llena la información de la tabla proveedores
-    */
+    /**
+     * Llena la tabla de proveedores en el Tab Proveedores.
+     * @throws ClassNotFoundException 
+     */
     private void LlenarTablaProveedores() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -2696,9 +2732,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
         } 
     }
-    /*
-        llena la tabla de productos del apartado de inventario
-    */
+    /**
+     * Llena la tabla de Productos en el Tab Producto.
+     * @throws ClassNotFoundException En caso de que no se encuentre la clase.
+     */
     private void LlenarTablaP() throws ClassNotFoundException{
          try {
 
@@ -2880,7 +2917,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAgregarMPActionPerformed
 
@@ -2978,7 +3015,7 @@ VentanaCliente mdC=new VentanaCliente();
         try {
             BuscarProveedores();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_txtBuscarProveedorKeyReleased
 
@@ -3032,7 +3069,7 @@ VentanaCliente mdC=new VentanaCliente();
                 limpiarProveedor();
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_btnModificarProveedorActionPerformed
@@ -3076,7 +3113,7 @@ VentanaCliente mdC=new VentanaCliente();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_btnEliminarProveedorActionPerformed
@@ -3089,7 +3126,7 @@ VentanaCliente mdC=new VentanaCliente();
                 limpiarProveedor();
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_btnAgregarProveedorActionPerformed
@@ -3136,7 +3173,7 @@ VentanaCliente mdC=new VentanaCliente();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnUsuariosAgregarActionPerformed
     /*
@@ -3165,7 +3202,7 @@ VentanaCliente mdC=new VentanaCliente();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+          
         }
     }//GEN-LAST:event_btnUsuariosModificarActionPerformed
     /*
@@ -3185,7 +3222,7 @@ VentanaCliente mdC=new VentanaCliente();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnUsuariosEliminarActionPerformed
     public int rowUsuario = 0;
@@ -3244,7 +3281,7 @@ VentanaCliente mdC=new VentanaCliente();
             {
             System.out.println("Error insertar");   
             } catch (ClassNotFoundException ex) {
-        Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+        //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
     /*
@@ -3268,7 +3305,7 @@ VentanaCliente mdC=new VentanaCliente();
             {
             System.out.println("Error al insertar Materia Prima");   
             } catch (ClassNotFoundException ex) {
-        Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+        //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
 
@@ -3486,8 +3523,7 @@ VentanaCliente mdC=new VentanaCliente();
             lblTotalEgresos.setText(""+COMPRAS);
             
     } catch (SQLException ex) {
-        Logger.getLogger(GESTION_USUARIOS.class.getName
-()).log(Level.SEVERE, null, ex);
+        //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
     }
         
         
@@ -3792,7 +3828,7 @@ VentanaCliente mdC=new VentanaCliente();
                 
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnModificarMPActionPerformed
 
@@ -3810,7 +3846,7 @@ VentanaCliente mdC=new VentanaCliente();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_MPActionPerformed
     /*

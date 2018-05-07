@@ -258,7 +258,7 @@ public class VentanaMateriaPrima extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     private void clearMP(){
@@ -285,7 +285,7 @@ public class VentanaMateriaPrima extends javax.swing.JFrame {
             {
             System.out.println("Error insertar");   
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+                //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
             }
     }
     private boolean MPExistente() throws ClassNotFoundException{

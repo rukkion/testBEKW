@@ -2873,7 +2873,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAgregarMPActionPerformed
 
@@ -2965,7 +2965,7 @@ VentanaCliente mdC=new VentanaCliente();
         try {
             BuscarProveedores();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_txtBuscarProveedorKeyReleased
 
@@ -3015,7 +3015,7 @@ VentanaCliente mdC=new VentanaCliente();
                 limpiarProveedor();
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_btnModificarProveedorActionPerformed
@@ -3054,7 +3054,7 @@ VentanaCliente mdC=new VentanaCliente();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_btnEliminarProveedorActionPerformed
@@ -3067,7 +3067,7 @@ VentanaCliente mdC=new VentanaCliente();
                 limpiarProveedor();
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_btnAgregarProveedorActionPerformed
@@ -3112,7 +3112,7 @@ VentanaCliente mdC=new VentanaCliente();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnUsuariosAgregarActionPerformed
 
@@ -3139,7 +3139,7 @@ VentanaCliente mdC=new VentanaCliente();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnUsuariosModificarActionPerformed
 
@@ -3157,7 +3157,7 @@ VentanaCliente mdC=new VentanaCliente();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnUsuariosEliminarActionPerformed
     public int rowUsuario = 0;
@@ -3210,7 +3210,7 @@ VentanaCliente mdC=new VentanaCliente();
             {
             System.out.println("Error insertar");   
             } catch (ClassNotFoundException ex) {
-        Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+//        Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
     private void InsertarMP(){
@@ -3231,7 +3231,7 @@ VentanaCliente mdC=new VentanaCliente();
             {
             System.out.println("Error al insertar Materia Prima");   
             } catch (ClassNotFoundException ex) {
-        Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+        //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
 
@@ -3439,8 +3439,7 @@ VentanaCliente mdC=new VentanaCliente();
             lblTotalEgresos.setText(""+COMPRAS);
             
     } catch (SQLException ex) {
-        Logger.getLogger(GESTION_USUARIOS.class.getName
-()).log(Level.SEVERE, null, ex);
+//        Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
     }
         
         
@@ -3722,7 +3721,7 @@ VentanaCliente mdC=new VentanaCliente();
                 
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnModificarMPActionPerformed
 
@@ -3740,7 +3739,7 @@ VentanaCliente mdC=new VentanaCliente();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+//              Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_MPActionPerformed
 

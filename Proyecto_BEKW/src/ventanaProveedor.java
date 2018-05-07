@@ -323,7 +323,7 @@ public class ventanaProveedor extends javax.swing.JFrame {
         try {
             BuscarProveedores();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_txtBuscarProveedorKeyReleased
 
@@ -356,7 +356,7 @@ public class ventanaProveedor extends javax.swing.JFrame {
                 limpiarProveedor();
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+    //            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnModificarProveedorActionPerformed
 
@@ -370,7 +370,7 @@ public class ventanaProveedor extends javax.swing.JFrame {
                 this.dispose();
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAgregarProveedorActionPerformed
     public void setVDue(Ventana_Dueno vd){
