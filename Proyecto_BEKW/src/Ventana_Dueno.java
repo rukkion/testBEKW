@@ -2766,9 +2766,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
         }   
     }
-    /*
-        llena la tabla de usuarios del apartado de usuarios
-    */
+  /**
+   * Llena la tabla de usuarios del apartado de usuarios
+   * @throws ClassNotFoundException 
+   */
     private void LlenarTablaUsuarios() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -2790,9 +2791,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
         } 
     }
-    /*
-      llena la tabla de clientes    del apartado de personas
-    */
+    /**
+     *  Llena la tabla cliente del apartado de personas
+     */
     private void llenarTablaCliente(){
          try {
             
@@ -2811,9 +2812,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             showMessageDialog(null," Error en la conexion LLENAR TABLA CLIENTE. "); 
         }
     }
-    /*
-      llena la tabla de materias primas del apartado de compras con la información de la base de datos  
-    */
+    /**
+     * Llena la tabla de Materias Primas del apartado de Punto de venta en la pestaña de Nueva Compra
+     * @throws ClassNotFoundException 
+     */
     private void LlenarTablaCompras_MateriasPrimas() throws ClassNotFoundException{
          try {
              Statement stmt = conect.createStatement();
@@ -2836,9 +2838,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
         } 
     }
-    /*
-        llena la tabla de Proveedores del apartado de compras con la información de la base de datos
-    */
+    /**
+     * 
+     * @throws ClassNotFoundException 
+     */
     public void LlenarTablaComprasProveedores() throws ClassNotFoundException{
          try {
              
@@ -2856,10 +2859,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
         } 
     }
-   //
-   //
-   //
-    
+   /**
+    * obtiene  inicializa todo lo relacionado a las tablas del sistema
+    * @param evt 
+    */
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
      String pattern = "yyyy-MM-dd";
      SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern); 
@@ -2926,9 +2929,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtEstado.setText("Cancelado con éxito.");
         txtNombreMP.requestFocus();
     }//GEN-LAST:event_btnCancelarMPActionPerformed
-    /*
-        llena de información los campos de la materia prima seleccionada en la tabla de materias primas del apartado de inventario
-    */
+    /**
+     * LLena los campos de texto de la Materia Prima seleccionada de la tabla Materias Primas del apartado de inventario
+     * @param evt 
+     */
     private void tablaMateriaPrimaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMateriaPrimaMouseClicked
         tablaMateriaPrima.getSelectedRow();
 
@@ -2951,9 +2955,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_tablaMateriaPrimaMouseClicked
-    /*
-       muestra la ventana de opciones "Minimizar" o "salir" cuando deseemos cerrar el sistema 
-    */
+    /**
+     * solicita confirmación para salir del sistema
+     * @param evt 
+     */
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         String[] options = new String[2];
         options[0] = new String("Minimizar");
@@ -2965,9 +2970,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_formWindowClosing
-    /*
-        verifica si deseamos cerrar sesion
-    */
+    /**
+     * solicita condifirmación para salir de ls sesión actual
+     * @param evt 
+     */
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         String[] options = new String[2];
         options[0] = new String("Cerrar sesión");
@@ -3022,9 +3028,10 @@ VentanaCliente mdC=new VentanaCliente();
     private void txtProveedorTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorTelefonoKeyTyped
         ValidarNumeros(evt);
     }//GEN-LAST:event_txtProveedorTelefonoKeyTyped
-    /*
-        carga la información del proveedor seleccionado en la tabla de proveedores del apartado de personas
-    */
+    /**
+     * carga la información del proveedor a los campos de texto desde la tabla Proveedores del apartado Personas
+     * @param evt 
+     */
     private void tblProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProveedoresMouseClicked
         tblProveedores.getSelectedRow();
         rowProveedor = tblProveedores.getSelectedRow();
@@ -3038,9 +3045,10 @@ VentanaCliente mdC=new VentanaCliente();
         ValidarLetras(evt);
     }//GEN-LAST:event_txtProveedorNombreKeyTyped
  
-    /*
-        verifica los campos vacios del proveedor del apartado de personas
-    */
+    /**
+     * verifica los campos de texto vacios de los Proveedores del apartado de Personas
+     * @return 
+     */
     private boolean VerificarvaciosProveedor(){
         
         if(txtProveedorNombre.getText().equals("")){
@@ -3061,6 +3069,7 @@ VentanaCliente mdC=new VentanaCliente();
         }
         return true;
     }
+    
     private void btnModificarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarProveedorActionPerformed
 
         try {
@@ -3074,8 +3083,9 @@ VentanaCliente mdC=new VentanaCliente();
 
     }//GEN-LAST:event_btnModificarProveedorActionPerformed
    public int rowProveedor = 0;
-   /*
-        realiza la consulta par ala modifiación del proveedor
+   /**
+    * realiza la consulta de modificación de Proveedor
+    * @throws ClassNotFoundException 
     */
     private void ModificarProveedor() throws ClassNotFoundException{
         try{
@@ -3099,9 +3109,10 @@ VentanaCliente mdC=new VentanaCliente();
             System.out.println("Error modificar");   
             }
     }
-    /*
-        solicita verificación para eliminar el proveedor
-    */
+    /**
+     * solicita verificación para eliminar el Proveedor
+     * @param evt 
+     */
     private void btnEliminarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProveedorActionPerformed
 
         try {
@@ -3117,7 +3128,10 @@ VentanaCliente mdC=new VentanaCliente();
         }
 
     }//GEN-LAST:event_btnEliminarProveedorActionPerformed
-    
+    /**
+     * verifica si el proveedor existe e inserta la información sino lo notifica
+     * @param evt 
+     */
     private void btnAgregarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProveedorActionPerformed
         try {
             if(VerificarvaciosProveedor()){
@@ -3130,9 +3144,10 @@ VentanaCliente mdC=new VentanaCliente();
         }
 
     }//GEN-LAST:event_btnAgregarProveedorActionPerformed
-    /*
-        realiza la consulta para el registro de un proveedor
-    */
+    /**
+     * realiza la consulta para el registro de un proveedor 
+     * @throws ClassNotFoundException 
+     */
     private void insertarProveedor() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -3176,9 +3191,9 @@ VentanaCliente mdC=new VentanaCliente();
             //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnUsuariosAgregarActionPerformed
-    /*
-        vacía la información de los jtextfield de usuarios del apartado de usuarios
-    */
+    /**
+     * vacía la información de los campos de texto de usuarios en el apartado de usuarios
+     */
     private void limpiarUsuarios(){
         txtUsuariosNombre.setText(null);
         txtUsuariosUsuario.setText(null);
@@ -3205,9 +3220,10 @@ VentanaCliente mdC=new VentanaCliente();
           
         }
     }//GEN-LAST:event_btnUsuariosModificarActionPerformed
-    /*
-        verifica si el usuario existe, sino lo notifica
-    */
+    /**
+     * verifica si el usuario existe, sino lo modifica
+     * @param evt 
+     */
     private void btnUsuariosEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosEliminarActionPerformed
         try {
             if(VerificarvaciosUsuario()){
@@ -3227,9 +3243,10 @@ VentanaCliente mdC=new VentanaCliente();
     }//GEN-LAST:event_btnUsuariosEliminarActionPerformed
     public int rowUsuario = 0;
     
-    /*
-        realiza la consulta para eliminar al usuario seleccionado
-    */
+    /**
+     * realiza la consulta para eliminar al usuario seleccionado
+     * @throws ClassNotFoundException 
+     */
     private void EliminarUsuario() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -3244,9 +3261,10 @@ VentanaCliente mdC=new VentanaCliente();
             System.out.println("Error Eliminar");   
             }
     }
-    /*
-        realia la consulta para eliminar la materia prima del apartado de inventario
-    */
+    /**
+     * realiza la consulta para eliminar la materia prima del apartado de inventario
+     * @throws ClassNotFoundException 
+     */
     private void EliminarMP() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -3261,9 +3279,9 @@ VentanaCliente mdC=new VentanaCliente();
             System.out.println("Error Eliminar Materia Prima");   
             }
     }
-    /*
-        realiza la consulta para el registro de un usuario
-    */
+    /**
+     * realiza la consulta del registro de usuario
+     */
     private void InsertarUsuario(){
         try{
             conectarBD();
@@ -3284,9 +3302,9 @@ VentanaCliente mdC=new VentanaCliente();
         //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
-    /*
-      realiza la consulta para el  registro de una maneria prima  
-    */
+    /**
+     * realia la consulta para el registro de una materia prima
+     */
     private void InsertarMP(){
         try{
             
@@ -3309,9 +3327,10 @@ VentanaCliente mdC=new VentanaCliente();
     }
     }
 
-    /*
-        realiza la conslta para la modificación de  un usuario
-    */
+    /**
+     * realiza la consulta para la modificación de un usuario
+     * @throws ClassNotFoundException 
+     */
     private void ModificarUsuario() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -3332,9 +3351,10 @@ VentanaCliente mdC=new VentanaCliente();
             System.out.println("Error modificar");   
             }
     }
-    /*
-       realiza la consulta para modificar una materia prima  
-    */
+    /**
+     * realza la consulta para modificar una materia prima
+     * @throws ClassNotFoundException 
+     */
     private void ModificarMP() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -3356,9 +3376,9 @@ VentanaCliente mdC=new VentanaCliente();
             System.out.println("Error modificar MATERIA PRIMA");   
             }
     }
-    /*
-      llena la información de busqueda de la tabla productos del apartado de pedido  
-    */
+    /**
+     * llena la información de busqueda de la tabla Productos del apartado Punto de Venta de la pestaña de Nuevo Pedido
+     */
     private void buscarTablaProductos_Pedido(){
         try {
             
@@ -3382,9 +3402,9 @@ VentanaCliente mdC=new VentanaCliente();
             showMessageDialog(null," Error en la conexion LLENAR TABLA PRODUCTOS. "); 
         }
     }
-    /*
-        obtiene los datos para la generació del Estado de Resultados
-    */
+    /**
+     * obtiene los datos para la generación del Estado de Resultados
+     */
     private void datosreporte(){
         
     try {
@@ -3528,9 +3548,9 @@ VentanaCliente mdC=new VentanaCliente();
         
         
     }
-    /*
-        llena la tabla de productos del apartado de pedido
-    */
+    /**
+     * llena la tabla productos del apartado de Pedido
+     */
     private void llenarTablaProductos(){
          try {
             String tipo;
@@ -3554,9 +3574,9 @@ VentanaCliente mdC=new VentanaCliente();
             showMessageDialog(null," Error en AL LLENAR TABLA PRODUCTOS POR BUSQUEDA. "); 
         }
     }
-    /*
-        llena la información del cliente del apartado de ventas
-    */
+    /**
+     * llena la tabala de cliente del apartado Punto de Venta de la pestaña Nueva Venta
+     */
     private void llenarTablaClienteVenta(){
          try {
             
@@ -3575,9 +3595,11 @@ VentanaCliente mdC=new VentanaCliente();
             showMessageDialog(null,"Error en la conexion LLENAR TABLA CLIENTES EN VENTAS. "); 
         }
     }
-    /*
-        verifica su la materia prima ya exite
-    */
+    /**
+     * verifica si la materia prima existe
+     * @return
+     * @throws ClassNotFoundException 
+     */
     private boolean MPExistente() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -3595,9 +3617,11 @@ VentanaCliente mdC=new VentanaCliente();
         }
          return true;
     }
-    /*
-        verifica si el usuario ya existe
-    */
+    /**
+     * verifica si el usuario ya existe
+     * @return
+     * @throws ClassNotFoundException 
+     */
     private boolean UsuarioExistente() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -3614,10 +3638,11 @@ VentanaCliente mdC=new VentanaCliente();
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
         }
          return true;
-    }/*
-      verifica los campos vaciosdel usuario  
-    */
-    
+    }
+    /**
+     * verifica los campos vacíos de usuario
+     * @return 
+     */
     private boolean VerificarvaciosUsuario(){
         
         if(txtUsuariosNombre.getText().equals("")){
@@ -3638,9 +3663,10 @@ VentanaCliente mdC=new VentanaCliente();
         }
         return true;
     }
-    /*
-      verifica los campos vacios de  materias primas 
-    */
+    /**
+     * verifica los campos vacios de materias primas
+     * @return 
+     */
     private boolean VerificarvaciosMP(){
         
         if(txtNombreMP.getText().equals("")){
@@ -3654,9 +3680,10 @@ VentanaCliente mdC=new VentanaCliente();
 //        }
         return true;
     }
-    /*
-      carga la información del usuario seleccionado de la tabla de usuarios  
-    */
+    /**
+     * carga la información del usuario seleccionado de la tabla de usuarios
+     * @param evt 
+     */
     private void tblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseClicked
         rowUsuario = tblUsuarios.getSelectedRow();
         txtUsuariosUsuario.setText(tblUsuarios.getValueAt(rowUsuario, 1).toString());
@@ -3685,9 +3712,10 @@ VentanaCliente mdC=new VentanaCliente();
         borrarC();
        
     }//GEN-LAST:event_btnCancelarCActionPerformed
-    /*
-        solicita verificación para eliminar un cliente
-    */
+    /**
+     * solicitaverificación para eliminar al cliente
+     * @param evt 
+     */
     private void btnEliminarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCActionPerformed
         BaseDatosCliente c=new BaseDatosCliente();
         int j = JOptionPane.showConfirmDialog(null, "¿Estás seguro?", "Eliminar Cliente", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -3722,9 +3750,9 @@ VentanaCliente mdC=new VentanaCliente();
         txtTelC.setText("");
     }
     
-    /*
-       carga la información del cliente seleccionado de la tabla de lcientes
-    */
+    /**
+     * carga la información del cliente de la tabla clientes
+     */
     public void seleccionar(){
         int filaseleccionada;
             //Guardamos en un entero la fila seleccionada.
@@ -3831,7 +3859,10 @@ VentanaCliente mdC=new VentanaCliente();
             //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnModificarMPActionPerformed
-
+/**
+ * verifica si la materia prima ya existe
+ * @param evt 
+ */
     private void MPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MPActionPerformed
         try {
             if(VerificarvaciosMP()){
@@ -3849,9 +3880,10 @@ VentanaCliente mdC=new VentanaCliente();
             //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_MPActionPerformed
-    /*
-        carga la información del producto seleccioando de la tabla de productos
-    */
+    /**
+     * carga la información del producto de la tabla de productos
+     * @param evt 
+     */
     private void tblProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductoMouseClicked
         tblProducto.getSelectedRow();
         int selectedRowIndex=tblProducto.getSelectedRow();
@@ -3865,9 +3897,9 @@ VentanaCliente mdC=new VentanaCliente();
             rdbNoDisponible.isSelected();
         // TODO add your handling code here:
     }//GEN-LAST:event_tblProductoMouseClicked
-    /*
-        vacía la información y establece por defecto los datos de registro de un producto
-    */
+    /**
+     * vacía la información de los campos de texto de los  productos
+     */
     private void clearP(){
         txtnomP.setText(null);
         txtdescP.setText(null);
@@ -3889,9 +3921,10 @@ VentanaCliente mdC=new VentanaCliente();
 
 
 
-    /*
-       verifca los campos vacios de productos  
-    */
+    /**
+     * verifica los campos vacios de productos
+     * @return 
+     */
 private boolean validarVacioP(){
             if((("".equals(txtdescP.getText()) || "".equals(txtnomP.getText())) || "".equals(txtprecioP.getText()))|| "".equals(cmbUnidadMedidaProducto.getSelectedItem().toString())){
                 showMessageDialog(null,"Favor de llenar todos los campos. ");
@@ -3903,7 +3936,10 @@ private boolean validarVacioP(){
 //            }
             return true;
      }
-     
+     /**
+      * realiza la consulta para la modificación del producto
+      * @param evt 
+      */
     private void btnModificarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPActionPerformed
         if(validarVacioP()){
             DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
@@ -3934,7 +3970,10 @@ private boolean validarVacioP(){
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnModificarPActionPerformed
-    
+    /**
+     * Realiza la consulta para registrar el producto del apartado de inventario
+     * @param evt 
+     */
     private void btnAgregarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPActionPerformed
         if(validarVacioP()){
             DefaultTableModel prod=(DefaultTableModel) tblProducto.getModel();
@@ -3964,7 +4003,10 @@ private boolean validarVacioP(){
             clearP();}
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAgregarPActionPerformed
-
+/**
+ * Cambia el estado  del producto a Eliminado
+ * @param evt 
+ */
     private void btnEliminarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPActionPerformed
         if(validarVacioP()){
             
@@ -3998,8 +4040,9 @@ private boolean validarVacioP(){
         ValidarNumeros(evt);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtprecioPKeyTyped
-   /*
-        llena la información de la tabla productos al buscar  en la tabla de productos del apartado inventario
+   /**
+    * llena la tabla de productos al buscar
+    * @throws ClassNotFoundException 
     */
     private void LlenarTablaBus() throws ClassNotFoundException{
          try {
@@ -4034,9 +4077,9 @@ private boolean validarVacioP(){
     private void cmbUsuariosTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbUsuariosTipoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbUsuariosTipoActionPerformed
-    /*
-        busca los pedidos ya sea por la fecha de genereación o por la fecha de entrega
-    */
+    /**
+     * busca los pedidos ya sea por la fecha de generación y la fecha de entrega
+     */
     private void BuscarPedidos(){
          try {
              
@@ -4080,9 +4123,9 @@ private boolean validarVacioP(){
              System.out.println("ERROR AL LLENAR PEDIDOS EN VENTA");
         } 
     }
-    /*
-        llena la tabla de pedidos en base al cliente seleccionado del apartado de nueva venta
-    */
+    /**
+     * llen ala informació de pedidos en base al cliente seleccionado en el apartado de Nueva Venta
+     */
     private void llenarTablaPedidos_Venta(){
          try {
              
@@ -4159,9 +4202,10 @@ private boolean validarVacioP(){
         
         return false;
     }
-    /*
-        llena la tabla con la información de busqueda de la tabla de proveedores en el apartado de nueva compra
-    */
+    /**
+     * llena tabla con la información de bsuqueda  del proveedor del apartado de Nueva Compra
+     * @throws ClassNotFoundException 
+     */
     private void BuscarProveedores() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -4187,7 +4231,10 @@ private boolean validarVacioP(){
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
         } 
     }
-    
+    /**
+     * Genera la compra
+     * @param evt 
+     */
     private void btnGenerarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarCompraActionPerformed
     if(tblCompra.getRowCount()!=0 && tblProveedor_Compra.getSelectedRow()>-1){
         try { System.out.println("insertado");
@@ -4216,7 +4263,10 @@ private boolean validarVacioP(){
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
 
     }//GEN-LAST:event_formWindowActivated
-    
+    /**
+     * Genera la venta
+     * @param evt 
+     */
     private void btnGenerarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarVentaActionPerformed
         if(tblVenta.getRowCount() !=0 && tblClientesVenta.getSelectedRow()>-1){
         try {   
@@ -4251,9 +4301,9 @@ private boolean validarVacioP(){
                                       
         }
     }//GEN-LAST:event_btnGenerarVentaActionPerformed
-    /*
-        Realiza el calculo del cambio al ingresar el importe en el apartado de nueva venta
-    */
+    /**
+     * realiza el cualculo del cambio al ingresar el importe en el apartado de Nueva venta
+     */
     private void generarCambio(){
         try{
             efectivo = Float.parseFloat(txtEfectivo.getText());
@@ -4272,9 +4322,9 @@ private boolean validarVacioP(){
         
         
     }
-    /*
-        Realiza el calculo del cambio al ingresar el importe en el apartado de nuevo pedido
-    */
+    /**
+     * realiza el calculo del cambio al ingresar el importe  en el apartado de Nuevo Pedido
+     */
     private void generarCambioPedido(){
         try{
             efectivo = Float.parseFloat(txtEfectivoPedido.getText());
@@ -4299,9 +4349,9 @@ private boolean validarVacioP(){
         holder= new PlaceHolder(txtEfectivo,"0.0");
 
     }
-    /*
-        actualiza el estado de pedido de No pagado(N) a Pagado(P)
-    */
+    /**
+     * Cambia el estado del pedido de No pagado a Pagado
+     */
     private void actualizarEstadoPedido(){
         
             try {
@@ -4316,9 +4366,9 @@ private boolean validarVacioP(){
         
         
     }
-    /*
-    limpia le carro de compra del apartado de nueva compra
-    */
+    /**
+     * limpia le carrito de compra del apartado Nueva Compra
+     */
     void cancelarCompra(){
          DefaultTableModel tbm = (DefaultTableModel) tblCompra.getModel();
             for (int i = 0; i < tblCompra.getRowCount(); i++) {
@@ -4357,7 +4407,10 @@ private boolean validarVacioP(){
     private void spncantidadProducto_PedidoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spncantidadProducto_PedidoStateChanged
         spinnerNeg(spncantidadMP_Compra);
     }//GEN-LAST:event_spncantidadProducto_PedidoStateChanged
-    
+    /**
+     * Genera el pedido
+     * @param evt 
+     */
     private void btnGenerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPedidoActionPerformed
         if(tblPedido.getRowCount()!=0 && tblClientes_Pedido.getSelectedRow()>-1 && Float.parseFloat(txtAdelantoPedido.getText())>=(Float.parseFloat(txtTotalPedido.getText()))*.5){
         try { System.out.println("insertado");
@@ -4408,7 +4461,7 @@ private boolean validarVacioP(){
         cargarPedido();
         generarCambio();
     }//GEN-LAST:event_tblPedidosVentasMouseClicked
-
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -4437,7 +4490,10 @@ private boolean validarVacioP(){
         showMessageDialog(this,"Debe de seleccionar un articulo.");
      
     }//GEN-LAST:event_jButton20ActionPerformed
-
+    /**
+     * abre la ventana de acceso rapido de Materia Prima
+     * @param evt 
+     */
     private void btnNuevaMateriaPrima_ComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaMateriaPrima_ComprasActionPerformed
         VentanaMateriaPrima VMP=new VentanaMateriaPrima();
         VMP.setLocationRelativeTo(null);
@@ -4483,7 +4539,10 @@ private boolean validarVacioP(){
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_jButton2ActionPerformed
-
+/**
+ * Reestablece la Busqueda del Historial de Pedidos
+ * @param evt 
+ */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
         llenarTablaHistorialPedidos();
@@ -4506,7 +4565,10 @@ private boolean validarVacioP(){
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_jButton4ActionPerformed
-
+/**
+ * Reestablece la busqueda del Historial de Compras
+ * @param evt 
+ */
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
          llenarTablaHistorialCompras();
         txtBuscarCodigoCompras.setText("");
@@ -4527,7 +4589,10 @@ private boolean validarVacioP(){
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_jButton6ActionPerformed
-
+/**
+ * Reestablece la busqueda del Historial de Pedidos
+ * @param evt 
+ */
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 
          llenarTablaHistorialVentas();
@@ -4537,7 +4602,10 @@ private boolean validarVacioP(){
          dateGeneracionPedido1.setDate(null);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
-
+/**
+ * Valida que no se pueda retirar una cantidad mayor de materia prima a la actual
+ * @param evt 
+ */
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
             try {
                 if( Integer.parseInt(tablaMateriaPrima.getValueAt(tablaMateriaPrima.getSelectedRow(),3).toString()) >= Integer.parseInt(spnrMP.getValue().toString())){
@@ -4583,7 +4651,10 @@ private boolean validarVacioP(){
     private void txtAgregarPresentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgregarPresentacionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAgregarPresentacionActionPerformed
-
+/**
+ * Realiza el registro de una nueva MPresentación para los Produtos
+ * @param evt 
+ */
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
          if(!txtAgregarPresentacion.getText().equals("")){
                         String cad = "INSERT INTO Presentacion VALUES('"+txtAgregarPresentacion.getText()+"',)";
@@ -4614,7 +4685,10 @@ private boolean validarVacioP(){
     private void txtAgregarPresentacion1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgregarPresentacion1KeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAgregarPresentacion1KeyTyped
-
+/**
+ * Reliza la inserción de una nueva presentación para Materias Primas
+ * @param evt 
+ */
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
              if(!txtAgregarPresentacion1.getText().equals("")){
                         String cad = "INSERT INTO PresentacionM VALUES('"+txtAgregarPresentacion1.getText()+"')";
@@ -4651,7 +4725,9 @@ private boolean validarVacioP(){
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_txtBuscarPKeyReleased
-
+/**
+ * cambia el estado del pedido a cancelado
+ */
     private void btnCancelar_Pedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar_Pedido1ActionPerformed
       
          
@@ -4667,6 +4743,9 @@ private boolean validarVacioP(){
             }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelar_Pedido1ActionPerformed
+    /**
+     * Imprimer el Estado  de Resultados
+     */
     private void imprimirDatosReporte(){
         Imprimir printReporte=new Imprimir();
         String fecha="05";
@@ -4679,7 +4758,10 @@ private boolean validarVacioP(){
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         imprimirDatosReporte();
     }//GEN-LAST:event_jButton11ActionPerformed
-    
+    /**
+     * Lllena el combo de las presentaciones de Materias Primas
+     * @throws SQLException 
+     */
        private void llenarPresentacionM() throws SQLException{
              stmt=conect.createStatement();
             stmt.execute("Select presentacionM from presentacionM");
@@ -4692,7 +4774,10 @@ private boolean validarVacioP(){
             }
             stmt.close();
         }
-    
+    /**
+     * LLen el combo de las presentaciones de los Productos
+     * @throws SQLException 
+     */
    private void llenarPresentacion() throws SQLException{
              stmt=conect.createStatement();
             stmt.execute("Select presentacion from presentacion");
@@ -4705,10 +4790,9 @@ private boolean validarVacioP(){
             }
             stmt.close();
         }
-
-   
-    
-    
+/**
+ * Decrece la existencia de materias primas existentes
+ */
     private void retirarMateriaPrima(){
          try {
             
@@ -4729,7 +4813,10 @@ private boolean validarVacioP(){
             javax.swing.JOptionPane.showMessageDialog(this, "Error en llenar tabla HistorialPedidos");
         } 
     }
-    
+    /**
+     * Busca la información y la muestra en la tabla de Historial de compras en base a los diferentes filtros que se presentan
+     * @throws SQLException 
+     */
     private void buscarHistorialCompra() throws SQLException{
             stmt = conect.createStatement();
           
@@ -4762,8 +4849,10 @@ private boolean validarVacioP(){
     
     }
     
-    
-    
+    /**
+     * Busca la información y la presenta en la tabla de historial de Pedidos en base  a los diferentes filtros que se presentan
+     * @throws SQLException 
+     */
     private void buscarHistorialPedido() throws SQLException{
             stmt = conect.createStatement();
           String  Bus = "";
@@ -4826,6 +4915,9 @@ private boolean validarVacioP(){
             }
     
     }
+    /**
+     * Llena la tabla de historial de Pedidos
+     */
     private void llenarTablaHistorialPedidos(){
          try {
              
@@ -4844,7 +4936,9 @@ private boolean validarVacioP(){
             javax.swing.JOptionPane.showMessageDialog(this, "Error en llenar tabla HistorialPedidos");
         } 
     }  
-    
+    /**
+     * Llena la tabla de historial de Ventas
+     */
      private void llenarTablaHistorialVentas(){
          try {
              
@@ -4863,7 +4957,10 @@ private boolean validarVacioP(){
             javax.swing.JOptionPane.showMessageDialog(this, "Error en llenar tabla HistorialVentas");
         } 
     } 
-     
+     /**
+      * Llena la tabla de historial de Ventas
+      * @throws SQLException 
+      */
      private void buscarHistorialVenta() throws SQLException{
             stmt = conect.createStatement();
          
@@ -4903,9 +5000,10 @@ private boolean validarVacioP(){
     
     }
      
-     
-     
-
+     /**
+      * Muestra el detalle del pedido seleccionado de la tabla Historial Pedidos
+      * 
+      */
 private void llenarTablaDetallePedido(){
          try {
 
@@ -4927,6 +5025,9 @@ private void llenarTablaDetallePedido(){
             showMessageDialog(null," Error en AL LLENAR TABLA PRODUCTOS POR BUSQUEDA. "); 
         }
     }
+/**
+ * Muestra el detalle de la venta  seleccionada de la tabla Hisotrial de Venta
+ */
     private void llenarTablaDetalleVenta(){
          try {
 
@@ -4948,7 +5049,9 @@ private void llenarTablaDetallePedido(){
             showMessageDialog(null," Error en AL LLENAR TABLA PRODUCTOS POR BUSQUEDA. "); 
         }
     }
-    
+    /**
+     * Llena la tabla del historial de comoras
+     */
     private void llenarTablaHistorialCompras(){
          try {
             
@@ -4970,7 +5073,9 @@ private void llenarTablaDetallePedido(){
         }
     }
 
-
+/**
+     * Muestra el detalle de la compra seleccionada en la tabla de Historial Compras
+     */
 private void llenarTablaDetalleCompra(){
          try {
 
@@ -4993,7 +5098,9 @@ private void llenarTablaDetalleCompra(){
         }
     }
     
-    
+    /**
+     * Restablece los valores por defecto de la ventana de Nueva Venta
+     */
     void cancelarVenta(){
          DefaultTableModel tbm = (DefaultTableModel) tblVenta.getModel();
             for (int i = 0; i < tblVenta.getRowCount(); i++) {
@@ -5005,7 +5112,9 @@ private void llenarTablaDetalleCompra(){
             lblTotalVenta1.setText("0");
             lblPagoRestante.setText("0");
     }
-    
+    /**
+     * Reestablece los valores por defecto de la ventana de Nueo Pedido
+     */
     void cancelarPedido(){
          DefaultTableModel tbm = (DefaultTableModel) tblPedido.getModel();
             for (int i = 0; i < tblPedido.getRowCount(); i++) {
@@ -5017,7 +5126,10 @@ private void llenarTablaDetalleCompra(){
             s = 0;
     }
 
-    
+    /**
+     * Inserta el detalle del nuevo pedido registrado
+     * @return 
+     */
     private int detalle_pedido(){
             try {
                 cad ="";
@@ -5048,7 +5160,10 @@ private void llenarTablaDetalleCompra(){
     }
     
 
-    
+    /**
+     * Realiza la consulta para el registro de una nueva Venta
+     * @throws SQLException 
+     */
     private void insertarVenta() throws SQLException {
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -5064,7 +5179,10 @@ private void llenarTablaDetalleCompra(){
             stmt.close();
 
     }
-    
+    /**
+     * Realiza el registro de el detalle de una Nueva Venta
+     * @return 
+     */
     private int detalle_venta(){
             try {
                 cad ="";
@@ -5092,7 +5210,9 @@ private void llenarTablaDetalleCompra(){
             }
                return 0;
     }
-    
+    /**
+     * Actualiza el total del pedido al eliminar un producto del carrito de pedido
+     */
     void restartotalyeliminarrowPedido(){
         r = tblPedido.getSelectedRow();
         if( r != -1){
@@ -5113,7 +5233,9 @@ private void llenarTablaDetalleCompra(){
         }
         
     }
-    
+    /**
+     * suma el monto total de lso pedidos agregardos al carrito de pedidos
+     */
     void sumartotalPedido(){
         s = Float.parseFloat(txtTotalPedido.getText());
         r =tblPedido.getRowCount()-1;
@@ -5121,7 +5243,9 @@ private void llenarTablaDetalleCompra(){
         txtTotalPedido.setText(""+s);
     }
     
-    
+    /**
+     *Realiza la carga de datos de el pedido seleccionado y llena la tabla de ventas  
+     */
     private void cargarPedido(){
             try {
      
@@ -5171,6 +5295,10 @@ private void llenarTablaDetalleCompra(){
             } 
     }
     
+    /**
+     * Realiza la busqueda de los clientes en la ventana Ventas y filtra la tabla de clientes con la busqueda
+     * @throws ClassNotFoundException 
+     */
     private void BuscarClientesVenta() throws ClassNotFoundException{
          try {
              
@@ -5198,7 +5326,9 @@ private void llenarTablaDetalleCompra(){
         } 
     }
     
-    
+    /**
+     * Agrega el product seleccionado a la tabla de Pedidos (Carrit de pedido)
+     */
     private void AgregarcarritoPedido(){
     
             r = tblProductos_Pedido.getSelectedRow();
@@ -5216,7 +5346,9 @@ private void llenarTablaDetalleCompra(){
 
 
 
-    
+    /**
+     * Agrega el producto seleccionado a la tabla de Compra(carrito de compra)
+     */
     void Agregarcarrito(){
         
         if(existeEnTabla(tblCompraslMateriasPrimas, tblCompra, spncantidadMP_Compra)){
@@ -5233,7 +5365,11 @@ private void llenarTablaDetalleCompra(){
         }
         
     }
-    
+   
+    /**
+     *  Realiza la busqueda de los clientes en la ventana Pedidos y filtra la tabla de clientes con la busqueda
+     * @throws ClassNotFoundException Clase no encontrada
+     */
     private void BuscarClientes() throws ClassNotFoundException{
          try {
             conectarBD();
@@ -5261,6 +5397,10 @@ private void llenarTablaDetalleCompra(){
         } 
     }
     
+    /**
+     * Genera el pedido con los datos ingresados en la tabla pedidos y se insertan en la BD
+     * @throws SQLException 
+     */
             private void insertarPedido() throws SQLException {
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -5280,6 +5420,10 @@ private void llenarTablaDetalleCompra(){
 
     }
 
+            /**
+             *  Genera a compra con los datos ingresados en la tabla compra y se insertan en la BD
+             * @throws SQLException 
+             */
     private void insertarCompra () throws SQLException {
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -5298,6 +5442,9 @@ private void llenarTablaDetalleCompra(){
 
     }
     
+    /**
+     * Genera los detales de la compra y se insertan en la BD
+     */
         private void detalle_compra(){
             try {
                 cad ="";
@@ -5326,7 +5473,10 @@ private void llenarTablaDetalleCompra(){
                
     }
 
-
+/**
+ * Actualiza la exsitencia de las materias primas en la BD al realiza a compra
+ * @throws SQLException 
+ */
     private void actCant() throws SQLException{
       for(int i  = 0; i < tblCompra.getRowCount();i++){
          String id= tblCompra.getValueAt(i,0).toString();
@@ -5339,13 +5489,20 @@ private void llenarTablaDetalleCompra(){
 
     }
     
-    
+    /**
+     * Realiza la suma total de la compra y la muestra en un campo de texto
+     */
     void sumartotal(){
         r =tblCompra.getRowCount()-1;
         s+= Float.parseFloat(tblCompra.getValueAt(r,4).toString());
         txtTotalCompra.setText(""+s);
     }
-    
+   
+   
+     /**
+     * Actualiza el total del pedido al eliminar un producto del carrito de compra
+     */
+     
     void restartotalyeliminarrow(){
         r = tblCompra.getSelectedRow();
         if( r != -1){
@@ -5367,7 +5524,10 @@ private void llenarTablaDetalleCompra(){
         
     }
     
-    
+   /**
+    * LLena la tabla de materias primas dentro de la ventana de compras
+    * @throws ClassNotFoundException 
+    */ 
     private void LlenarTablaComprasMateriasPrimas() throws ClassNotFoundException{
          try {
             res=null;
@@ -5395,7 +5555,10 @@ private void llenarTablaDetalleCompra(){
         } 
     }
     
-    
+    /**
+     * Valida que no existan espacios y consume el evento
+     * @param evt 
+     */
     private void ValidarEspacios(KeyEvent evt) {
        char l=evt.getKeyChar();
         if( l == KeyEvent.VK_SPACE )
@@ -5421,6 +5584,10 @@ private void llenarTablaDetalleCompra(){
 //            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
 //        } 
 //    }
+    /**
+     * Eliminar el provedor seleccionado
+     * @throws ClassNotFoundException 
+     */
     private void EliminarProveedor() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -5437,25 +5604,38 @@ private void llenarTablaDetalleCompra(){
             System.out.println("Error Eliminar");   
             }
     }
-    
+   /**
+    * Limpia los campos en la ventna poveedor
+    */ 
      private void limpiarProveedor(){
         txtProveedorNombre.setText(null);
         txtProveedorDomicilio.setText(null);
         txtProveedorCP.setText(null);
         txtProveedorTelefono.setText(null);
     }
+     /**
+      * Valida la existencia de numeros y consume el evento
+      * @param evt 
+      */
      private void ValidarNumeros(KeyEvent evt) {
        char l=evt.getKeyChar();
         if(!Character.isDigit(l) || l == KeyEvent.VK_SPACE )
            evt.consume();
     }
-     
+     /**
+      * Valida la existencia de letras y consume el evento
+      * @param evt 
+      */
      private void ValidarLetras(KeyEvent evt) {
        char l=evt.getKeyChar();
         if(Character.isDigit(l))
            evt.consume();
     }
-
+/**
+ * Valid la existencias de los proveedores
+ * @return
+ * @throws ClassNotFoundException 
+ */
      private boolean ProveedorExistente() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -5482,7 +5662,9 @@ private void llenarTablaDetalleCompra(){
 //        }
 //        
 //    }
-    
+    /**
+     *  Limpia los campos en la ventana materias primas
+     */
     private void clearMP(){
         txtNombreMP.setText(null);
         txtDescripcionMP.setText(null);
@@ -5490,6 +5672,9 @@ private void llenarTablaDetalleCompra(){
         cmbUnidadMedidaMP.setSelectedIndex(0);
         txtPrecioMateriaPrima.setText("0");
     }
+    /**
+     * Se encarga de llenar la tabla clientes en la ventana pedidos
+     */
     private void llenarTablaCliente_Pedido(){
          try {
              
@@ -5543,6 +5728,10 @@ private void llenarTablaDetalleCompra(){
         });
     }
     public Ventana_Dueno VD;
+    /**
+     * Evita que el spinner genere numeros negativos
+     * @param spin 
+     */
     private void spinnerNeg( JSpinner spin){
         if(Integer.parseInt(spin.getValue().toString())<1)
             spin.setValue(1);
