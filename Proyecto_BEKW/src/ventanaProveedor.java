@@ -334,7 +334,11 @@ public class ventanaProveedor extends javax.swing.JFrame {
     private void txtProveedorTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorTelefonoKeyTyped
         ValidarNumeros(evt);
     }//GEN-LAST:event_txtProveedorTelefonoKeyTyped
-
+    /**
+     * Carga la información en los campos de texto del proveedor seleccionado 
+     * @param evt 
+     */
+    
     private void tblProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProveedoresMouseClicked
         tblProveedores.getSelectedRow();
         rowProveedor = tblProveedores.getSelectedRow();
@@ -414,6 +418,10 @@ public class ventanaProveedor extends javax.swing.JFrame {
            evt.consume();
     }
     /********************************FIN FORM*****************************/
+    /**
+     * Busca el proveedor en base a la información de busqueda.
+     * @throws ClassNotFoundException 
+     */
     private void BuscarProveedores() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -433,6 +441,10 @@ public class ventanaProveedor extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
         } 
     }
+    /**
+     * Genera la consulta de eliminación del registro del proveedor seleccionado
+     * @throws ClassNotFoundException 
+     */
     private void EliminarProveedor() throws ClassNotFoundException{
         try{
             conectarBD();
@@ -449,24 +461,37 @@ public class ventanaProveedor extends javax.swing.JFrame {
             System.out.println("Error Eliminar");   
             }
     }
-    
+    /**
+     * Vacía la información de los campos de texto.
+     */
      private void limpiarProveedor(){
         txtProveedorNombre.setText(null);
         txtProveedorDomicilio.setText(null);
         txtProveedorCP.setText(null);
         txtProveedorTelefono.setText(null);
     }
+     /**
+      * Evita que el usuario pueda escribir numeros y espacios en el campo de texto
+      * @param evt 
+      */
      private void ValidarNumeros(KeyEvent evt) {
        char l=evt.getKeyChar();
         if(!Character.isDigit(l) || l == KeyEvent.VK_SPACE )
            evt.consume();
     }
-     
+     /**
+      * Evita que el usuario esciba letras en el campo de texto
+      * @param evt 
+      */
      private void ValidarLetras(KeyEvent evt) {
        char l=evt.getKeyChar();
         if(Character.isDigit(l))
            evt.consume();
     }
+     /**
+      * Carga la información de todos los proveedores.
+      * @throws ClassNotFoundException 
+      */
      private void LlenarTablaProveedores() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -484,6 +509,11 @@ public class ventanaProveedor extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
         } 
     }
+     /**
+      * 
+      * @return verdaderro si el proveedor no existe y falso si el proveedor existe
+      * @throws ClassNotFoundException 
+      */
      private boolean ProveedorExistente() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -501,23 +531,19 @@ public class ventanaProveedor extends javax.swing.JFrame {
         }
          return true;
     }
-       // </editor-proveedor>  
-//    private void setDateTime(){
-//        Date date=new Date();
-//        for(;;){
-//        SimpleDateFormat sdf=new SimpleDateFormat("hh:mm:ss dd/mm/yyyy");
-//        lblFecha_Hora.setText(sdf.format(date));    
-//        }
-//        
-//    }
-    
+       
+    /**
+     * realiza la conexión con la base de datos
+     */
     CONECTAR_SERVER CS;
      private void conectarBD()throws ClassNotFoundException{
               CS= new CONECTAR_SERVER();
               CS.conectarBD();
               this.conect=CS.getConect();
     }
-     
+     /**
+      * Realiza la consulta de modificación del registro del proveedor seleccionado
+      */
     public int rowProveedor = 0;
     private void ModificarProveedor() throws ClassNotFoundException{
         try{
@@ -543,6 +569,10 @@ public class ventanaProveedor extends javax.swing.JFrame {
     }
     
     Connection conect = null;
+    /**
+     * Verifica que los campos de texto estén completos
+     * @return 
+     */
     
     private boolean VerificarvaciosProveedor(){
         
@@ -564,7 +594,10 @@ public class ventanaProveedor extends javax.swing.JFrame {
         }
         return true;
     }
-    
+    /**
+     * Realiza la consulta para el registro de un nuevo proveedor
+     * @throws ClassNotFoundException 
+     */
     private void insertarProveedor() throws ClassNotFoundException{
         try{
             conectarBD();
