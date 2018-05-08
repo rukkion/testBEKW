@@ -22,13 +22,15 @@ import javax.swing.*;
 
 /**
  *
- * @author EDGUR
+ * @author BEKW
  */
 public class VentanaCliente extends javax.swing.JFrame {
 
+    //Atributos de la clase
     BaseDatosCliente c=new BaseDatosCliente();
     String IDCliente=null;
     
+    //Constructor
     public VentanaCliente() {
         initComponents();
         RestrictedTextField NOM = new RestrictedTextField(txtNomC);
@@ -298,6 +300,11 @@ public class VentanaCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelCActionPerformed
 
+    /**
+     * formWindowOpened:
+     * Llena la tabla Cliente de esta ventana
+     * @param evt 
+     */
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         tablaClienteM();
     }//GEN-LAST:event_formWindowOpened
@@ -313,7 +320,11 @@ public class VentanaCliente extends javax.swing.JFrame {
     private void txtAPMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAPMCActionPerformed
         
     }//GEN-LAST:event_txtAPMCActionPerformed
-
+    /**
+     * btnModificarCActionPerformed
+     * Clase para hacer la funcion del boton modificar llamando el metodo modificar desde la clase BaseDatosCliente
+     * @param evt 
+     */
     private void btnModificarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarCActionPerformed
         
         try {
@@ -329,11 +340,19 @@ public class VentanaCliente extends javax.swing.JFrame {
         tablaClienteM();
         
     }//GEN-LAST:event_btnModificarCActionPerformed
-
+    
+    /**
+     * Metodo para realizar accion al dar click al mapa dando llamar al metodo seleccionar.
+     * @param evt 
+     */
     private void tablaCMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaCMMouseClicked
         seleccionar();
     }//GEN-LAST:event_tablaCMMouseClicked
-
+    /**
+     * btnCancelarCActionPerdormed
+     * Boton para realizar la accion Cancelar cliente, dando llamar el metodo borrarC y cierra la ventana
+     * @param evt 
+     */
     private void btnCancelarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCActionPerformed
         borrarC();
         this.setVisible(false);
@@ -347,6 +366,11 @@ public class VentanaCliente extends javax.swing.JFrame {
          
     }//GEN-LAST:event_txtNomCKeyTyped
 
+    /**
+     * Metodo para boton para realizar insertar cliente en  la tabla
+     * da llamar la funcion insertar
+     * @param evt 
+     */
     private void btnInsertarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarCActionPerformed
         try {
             if(c.insertar(txtNomC.getText(),txtAPPC.getText(),txtAPMC.getText(),txtDomC.getText(),txtCPC.getText(),txtTelC.getText()))
@@ -362,7 +386,11 @@ public class VentanaCliente extends javax.swing.JFrame {
     private void txtBuscadorCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscadorCActionPerformed
-
+    /**
+     * Metodo para realizar actualizaciones en la tabla de cliente dando llamar varios metodos
+     * repaint y filtro
+     * @param evt 
+     */
     private void txtBuscadorCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscadorCKeyTyped
           txtBuscadorC.addKeyListener(new KeyAdapter() {
             public void keyReleased(final KeyEvent e) {
@@ -440,6 +468,11 @@ public class VentanaCliente extends javax.swing.JFrame {
     private javax.swing.JTextField txtTelC;
     // End of variables declaration//GEN-END:variables
     
+    
+    /**
+     * Metodo seleccionar
+     * El objetivo del metodo es llenar los jtextField con los datos que son seleccionado en la tabla cliente
+     */
     public void seleccionar(){
         int filaseleccionada;
             //Guardamos en un entero la fila seleccionada.
@@ -471,6 +504,10 @@ public class VentanaCliente extends javax.swing.JFrame {
             txtTelC.setText(String.valueOf(v[5]));
     }
     
+    /**
+     * Metodo tablaClienteM
+     * El objetivo de este metodo es llenar la tabla del cliente con la base de datos BEKW
+     */
     void tablaClienteM(){
          try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -493,6 +530,9 @@ public class VentanaCliente extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Objetivo del metodo es solamente borrar los jTextField que se encuentra en la ventana
+     */
     void borrarC(){
         txtNomC.setText("");
         txtAPPC.setText("");
@@ -501,6 +541,10 @@ public class VentanaCliente extends javax.swing.JFrame {
         txtCPC.setText("");
         txtTelC.setText("");
     }
+    
+    /**
+     * Objetivo del metodo para actualizar la tabla cliente
+     */
     
     public void filtro() {
         int columnaABuscar = 1;
