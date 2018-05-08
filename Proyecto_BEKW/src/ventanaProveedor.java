@@ -318,7 +318,10 @@ public class ventanaProveedor extends javax.swing.JFrame {
     private void txtBuscarProveedorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyPressed
 
     }//GEN-LAST:event_txtBuscarProveedorKeyPressed
-
+    /**
+     * busca el proveedor con lo que se encuentra escrito en el campo de texto
+     * @param evt 
+     */
     private void txtBuscarProveedorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyReleased
         try {
             BuscarProveedores();
@@ -330,7 +333,10 @@ public class ventanaProveedor extends javax.swing.JFrame {
     private void txtBuscarProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyTyped
 
     }//GEN-LAST:event_txtBuscarProveedorKeyTyped
-
+    /**
+     * evento para mandar  a llamar la validación de los números
+     * @param evt 
+     */
     private void txtProveedorTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorTelefonoKeyTyped
         ValidarNumeros(evt);
     }//GEN-LAST:event_txtProveedorTelefonoKeyTyped
@@ -347,11 +353,17 @@ public class ventanaProveedor extends javax.swing.JFrame {
         txtProveedorCP.setText(tblProveedores.getValueAt(rowProveedor, 3).toString());
         txtProveedorTelefono.setText(tblProveedores.getValueAt(rowProveedor, 4).toString());
     }//GEN-LAST:event_tblProveedoresMouseClicked
-
+    /**
+     * evento para mandar a llamar la validación de las letras
+     * @param evt 
+     */
     private void txtProveedorNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorNombreKeyTyped
         ValidarLetras(evt);
     }//GEN-LAST:event_txtProveedorNombreKeyTyped
-
+    /**
+     * Verifica si hay campos de texto vacíos, sino modifca al proveedor y limpia los campos de texto
+     * @param evt 
+     */
     private void btnModificarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarProveedorActionPerformed
 
         try {
@@ -363,7 +375,10 @@ public class ventanaProveedor extends javax.swing.JFrame {
     //            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnModificarProveedorActionPerformed
-
+    /**
+     * Verifica si hay campo de texto vacios, sino registra verifica si ya existe, sino registra un neuvo prvoeedor
+     * @param evt 
+     */
     private void btnAgregarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProveedorActionPerformed
         try {
             if(VerificarvaciosProveedor()){
@@ -377,17 +392,24 @@ public class ventanaProveedor extends javax.swing.JFrame {
 //            Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAgregarProveedorActionPerformed
-    public void setVDue(Ventana_Dueno vd){
-        venD = vd;
-    }
+    /**
+     * Cierra la ventana del registro de un nuevo proveedor
+     * @param evt 
+     */
     private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelar1ActionPerformed
-
+    /**
+     * Evento que activa la validación de números
+     * @param evt 
+     */
     private void txtProveedorCPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorCPKeyTyped
         ValidarNumeros(evt);
     }//GEN-LAST:event_txtProveedorCPKeyTyped
-
+    /**
+     * Evento que llama a la función para llenar la tabla de proveedores
+     * @param evt 
+     */
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
             LlenarTablaProveedores();
@@ -399,7 +421,10 @@ public class ventanaProveedor extends javax.swing.JFrame {
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowClosed
-
+    /**
+     * Evento que se activa al cerrarse el formulario y llama a la función para llenar la tabla de proveedores
+     * @param evt 
+     */
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         try {
             // TODO add your handling code here:
