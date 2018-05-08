@@ -4265,7 +4265,7 @@ private boolean validarVacioP(){
     private void btnAgregarProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProvedorActionPerformed
         ventanaProveedor VP=new ventanaProveedor();
         VP.setLocationRelativeTo(null);
-        VP.setVDue(this);
+
         VP.setVisible(true);
     }//GEN-LAST:event_btnAgregarProvedorActionPerformed
 
