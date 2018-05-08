@@ -242,10 +242,18 @@ public class VentanaMateriaPrima extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+ 
+    
+    /**
+     * Botón de cancelar en ventana Materia Prima
+     * @param evt 
+     */
     private void btnCancelarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarMPActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarMPActionPerformed
+    /**
+     * Agregar materia Prima y llama la funcion InsertarMP
+     */
     private void agregarMP(){
         try {
             if(VerificarvaciosMP()){
@@ -267,6 +275,9 @@ public class VentanaMateriaPrima extends javax.swing.JFrame {
         txtCantidadMP.setValue(0);
         cmbUnidadMedidaMP.setSelectedIndex(0);
     }
+    /**
+     * Actualización de la base de datos de Materia Prima para insertar una nueva.
+     */
     private void InsertarMP(){
         try{
             conectarBD();
@@ -288,6 +299,11 @@ public class VentanaMateriaPrima extends javax.swing.JFrame {
                 //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
             }
     }
+    /**
+     * Verifica si ya existe la materia prima
+     * @return Retorna si existe o no una materia prima con el nombre ingresado.
+     * @throws ClassNotFoundException En caso de que no xista la clase.
+     */
     private boolean MPExistente() throws ClassNotFoundException{
          try {
              conectarBD();
@@ -305,6 +321,10 @@ public class VentanaMateriaPrima extends javax.swing.JFrame {
         }
          return true;
     }
+    /**
+     * Verifica que los campos no estén vacíos en Materia Prima
+     * @return Retorna si están vacíos o no los campos.
+     */
     private boolean VerificarvaciosMP(){
         
         if(txtNombreMP.getText().equals("")){
@@ -320,16 +340,28 @@ public class VentanaMateriaPrima extends javax.swing.JFrame {
     }
     CONECTAR_SERVER CS;
     Connection conect = null;
+    /**
+     * Conecta con la base de datos la ventana.
+     * @throws ClassNotFoundException En caso de que no se encuentre la clase.
+     */
     private void conectarBD()throws ClassNotFoundException{
               CS=new CONECTAR_SERVER();
               CS.conectarBD();
               this.conect=CS.getConect();
               
     }
+    /**
+     * Botón para agregar Materia Prima
+     * @param evt Evento
+     */
     private void btnAgregarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMPActionPerformed
         agregarMP();
     }//GEN-LAST:event_btnAgregarMPActionPerformed
 
+    /**
+     * Evento al abrir la ventana.
+     * @param evt Evento.
+     */
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
             conectarBD();
@@ -380,6 +412,9 @@ public class VentanaMateriaPrima extends javax.swing.JFrame {
             }
         });
     }
+    /**
+     * Establecer un icono a la ventana.
+     */
      private void seticon() {
      setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Icons\\EL MERENGUE_icon.png")));
     }

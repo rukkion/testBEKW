@@ -2860,7 +2860,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         } 
     }
    /**
-    * obtiene  inicializa todo lo relacionado a las tablas del sistema
+    * Evento al abrir la ventana. E inicializa todas las funciones que se necesitan al abrir la ventana.
     * @param evt 
     */
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -2908,6 +2908,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         
     }//GEN-LAST:event_txtNombreMPKeyTyped
 
+    /**
+     * Evento del botón Agregar Materia Prima en materia prima
+     * @param evt evento del botón
+     */
     private void btnAgregarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMPActionPerformed
         
         try {
@@ -2924,6 +2928,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAgregarMPActionPerformed
 
+    /**
+     * Evento del botón Cancelar Mataeria prima en materia prima.
+     * @param evt 
+     */
     private void btnCancelarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarMPActionPerformed
         clearMP();
         txtEstado.setText("Cancelado con éxito.");
@@ -2985,7 +2993,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_jButton25ActionPerformed
-    
+    /**
+     * Botón al presionar teclas en el cuadro de búsqueda de clientes.
+     * @param evt 
+     */
     private void txtBuscarCliente_PedidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarCliente_PedidoKeyReleased
         try {
                 BuscarClientes();
@@ -2994,12 +3005,20 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_txtBuscarCliente_PedidoKeyReleased
 
+    /**
+     * Botón de agregar un nuevo cliente en pedidos. Abre una nueva ventana. 
+     * @param evt 
+     */
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
 VentanaCliente mdC=new VentanaCliente();
         mdC.setVisible(true);        
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
 
+    /**
+     * Cuadro de texto de buscar el cliente en venta.
+     * @param evt 
+     */
     private void txtBuscarClienteVentaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarClienteVentaKeyReleased
             try {
                 BuscarClientesVenta();
@@ -3012,11 +3031,19 @@ VentanaCliente mdC=new VentanaCliente();
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscarClienteVentaActionPerformed
 
+    /**
+     * Botón de agregar cliente en ventas. Abre una nueva ventana.
+     * @param evt 
+     */
     private void btnAddClienteVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddClienteVentasActionPerformed
         VentanaCliente mdC=new VentanaCliente();
         mdC.setVisible(true);
     }//GEN-LAST:event_btnAddClienteVentasActionPerformed
 
+    /**
+     * Cuadro de texto para buscar el proveedor al presionar teclas.
+     * @param evt 
+     */
     private void txtBuscarProveedorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyReleased
         try {
             BuscarProveedores();
@@ -3025,6 +3052,10 @@ VentanaCliente mdC=new VentanaCliente();
         }
     }//GEN-LAST:event_txtBuscarProveedorKeyReleased
 
+    /**
+     * Valida el número de teléfono en proveedor
+     * @param evt 
+     */
     private void txtProveedorTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorTelefonoKeyTyped
         ValidarNumeros(evt);
     }//GEN-LAST:event_txtProveedorTelefonoKeyTyped
@@ -3041,6 +3072,10 @@ VentanaCliente mdC=new VentanaCliente();
         txtProveedorTelefono.setText(tblProveedores.getValueAt(rowProveedor, 4).toString());
     }//GEN-LAST:event_tblProveedoresMouseClicked
 
+    /**
+     * Valida el nombre del proveedor.
+     * @param evt 
+     */
     private void txtProveedorNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorNombreKeyTyped
         ValidarLetras(evt);
     }//GEN-LAST:event_txtProveedorNombreKeyTyped
@@ -3069,7 +3104,10 @@ VentanaCliente mdC=new VentanaCliente();
         }
         return true;
     }
-    
+    /**
+     * Botón de modificar proveedor.
+     * @param evt 
+     */
     private void btnModificarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarProveedorActionPerformed
 
         try {
@@ -3169,14 +3207,25 @@ VentanaCliente mdC=new VentanaCliente();
             System.out.println("Error insertar");   
             }
     }
+    /**
+     * Botón de limpiar campos en proveedor.
+     * @param evt 
+     */
     private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
         limpiarProveedor();
     }//GEN-LAST:event_btnCancelar1ActionPerformed
 
+    /**
+     * Validar el código postal al preisonar teclas.
+     * @param evt 
+     */
     private void txtProveedorCPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorCPKeyTyped
         ValidarNumeros(evt);
     }//GEN-LAST:event_txtProveedorCPKeyTyped
-    /**************************************** FORM USUARIOS*****************************************************/
+    /**
+     * Botón de agregar usuarios en usuarios.
+     * @param evt 
+     */
     private void btnUsuariosAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosAgregarActionPerformed
         try {
             if(VerificarvaciosUsuario()){
@@ -3200,11 +3249,18 @@ VentanaCliente mdC=new VentanaCliente();
         txtUsuariosContraseña.setText(null);
         cmbUsuariosTipo.setSelectedIndex(0);
     }
-    
+    /**
+     * Botón que limpia los campos de usuario.
+     * @param evt 
+     */
     private void btnUsuariosCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosCancelarActionPerformed
         limpiarUsuarios();
     }//GEN-LAST:event_btnUsuariosCancelarActionPerformed
 
+    /**
+     * Botón que modifica los datos de usuario.
+     * @param evt 
+     */
     private void btnUsuariosModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosModificarActionPerformed
         try {
             if(VerificarvaciosUsuario()){
@@ -3692,14 +3748,25 @@ VentanaCliente mdC=new VentanaCliente();
         txtUsuariosNombre.setText(tblUsuarios.getValueAt(rowUsuario, 4).toString());
     }//GEN-LAST:event_tblUsuariosMouseClicked
 
+    /**
+     * Valida el texto del usuario al presionar teclas.
+     * @param evt 
+     */
     private void txtUsuariosUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuariosUsuarioKeyTyped
         ValidarEspacios(evt);
     }//GEN-LAST:event_txtUsuariosUsuarioKeyTyped
 
+    /**
+     * Valida el texto de contraseña del usuario al presionar teclas.
+     * @param evt 
+     */
     private void txtUsuariosContraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuariosContraseñaKeyTyped
         ValidarEspacios(evt);
     }//GEN-LAST:event_txtUsuariosContraseñaKeyTyped
-    
+    /**
+     * Valida el nombre dle usuario al presionar teclas.
+     * @param evt 
+     */
     private void txtUsuariosNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuariosNombreKeyTyped
         ValidarLetras(evt);
     }//GEN-LAST:event_txtUsuariosNombreKeyTyped
@@ -3708,6 +3775,10 @@ VentanaCliente mdC=new VentanaCliente();
 
     }//GEN-LAST:event_txtAPMCActionPerformed
 
+    /**
+     * Botón de cancelar compra.
+     * @param evt 
+     */
     private void btnCancelarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCActionPerformed
         borrarC();
        
@@ -3735,12 +3806,18 @@ VentanaCliente mdC=new VentanaCliente();
 
     }//GEN-LAST:event_btnEliminarCActionPerformed
     
+    /**
+     * Filtro para buscar en Materia primas en compras.
+     */
     public void filtro() {
         int columnaABuscar = 1;
         trsFiltro.setRowFilter(RowFilter.regexFilter(txtBuscasMateriaPrima_Compras.getText(), columnaABuscar));
     }
     
     private TableRowSorter trsFiltro;
+    /**
+     * Función para limpiar campos en compras.
+     */
     void borrarC(){
         txtNomC.setText("");
         txtAPPC.setText("");
@@ -3783,6 +3860,10 @@ VentanaCliente mdC=new VentanaCliente();
             txtCPC.setText(String.valueOf(v[4]));
             txtTelC.setText(String.valueOf(v[5]));
     }
+    /**
+     * Botón de Modificar clientes.
+     * @param evt 
+     */
     private void btnModificarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarCActionPerformed
         BaseDatosCliente c=new BaseDatosCliente();
         try {
@@ -3816,6 +3897,10 @@ VentanaCliente mdC=new VentanaCliente();
         seleccionar();
     }//GEN-LAST:event_tablaClienteMouseClicked
 
+    /**
+     * Botón de insertar clientes en clientes.
+     * @param evt 
+     */
     private void btnInsertarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarCActionPerformed
         BaseDatosCliente c=new BaseDatosCliente();
         try {
@@ -3833,6 +3918,10 @@ VentanaCliente mdC=new VentanaCliente();
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscadorCActionPerformed
 
+    /**
+     * Texto de buscar cliente al presionar teclas.
+     * @param evt 
+     */
     private void txtBuscadorCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscadorCKeyTyped
         txtBuscadorC.addKeyListener(new KeyAdapter() {
             public void keyReleased(final KeyEvent e) {
@@ -3846,6 +3935,10 @@ VentanaCliente mdC=new VentanaCliente();
         tablaCliente.setRowSorter(trsFiltro);
     }//GEN-LAST:event_txtBuscadorCKeyTyped
 
+    /**
+     * Botón de modificar Materia prima.
+     * @param evt 
+     */
     private void btnModificarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarMPActionPerformed
         try {
             if(VerificarvaciosMP()){
@@ -3913,6 +4006,10 @@ VentanaCliente mdC=new VentanaCliente();
             
         }
     }
+    /**
+     * Botón de limpiar los campos de productos.
+     * @param evt 
+     */
     private void btnCancelarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPActionPerformed
         clearP();
 
@@ -4035,6 +4132,10 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarPActionPerformed
 
+    /**
+     * Valida el precio del producto en producto al presionar teclas.
+     * @param evt 
+     */
     private void txtprecioPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioPKeyTyped
 
         ValidarNumeros(evt);
@@ -4157,6 +4258,10 @@ private boolean validarVacioP(){
              System.out.println("ERROR AL LLENAR PEDIDOS EN VENTA");
         } 
     }
+    /**
+     * Botón de agregar productos.
+     * @param evt 
+     */
     private void btnAgregarProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProvedorActionPerformed
         ventanaProveedor VP=new ventanaProveedor();
         VP.setLocationRelativeTo(null);
@@ -4164,6 +4269,10 @@ private boolean validarVacioP(){
         VP.setVisible(true);
     }//GEN-LAST:event_btnAgregarProvedorActionPerformed
 
+    /**
+     * Cuadro de texto para buscar compras al presionar teclas.
+     * @param evt 
+     */
     private void txtBuscarComprasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyReleased
             try {
                 BuscarProveedores();
@@ -4172,10 +4281,18 @@ private boolean validarVacioP(){
             }
     }//GEN-LAST:event_txtBuscarComprasKeyReleased
 
+    /**
+     * Cuadro de texto de buscar Producto en pedido al presionar teclas
+     * @param evt 
+     */
     private void txtBuscarProducto_PedidotxtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProducto_PedidotxtBuscarKeyReleased
         buscarTablaProductos_Pedido();
     }//GEN-LAST:event_txtBuscarProducto_PedidotxtBuscarKeyReleased
 
+    /**
+     * Botón para agregar producto al carrito.
+     * @param evt 
+     */
     private void btnProductoAPedidojButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductoAPedidojButton11ActionPerformed
          if(tblProductos_Pedido.getSelectedRow()>-1){
             
@@ -4186,11 +4303,20 @@ private boolean validarVacioP(){
         showMessageDialog(this,"Debe de seleccionar un articulo.");
     }//GEN-LAST:event_btnProductoAPedidojButton11ActionPerformed
 
-    
+    /**
+     * Botón de eliminar Materia prima en Compra
+     * @param evt 
+     */
     private void btnEliminarMateriaPrima_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMateriaPrima_CompraActionPerformed
         restartotalyeliminarrow();
     }//GEN-LAST:event_btnEliminarMateriaPrima_CompraActionPerformed
-    
+    /**
+     * Función que valida si existe en MAteria prima.
+     * @param tMateriasPrimas Tabla de Materias Primas
+     * @param tCompra Tabla de Compra
+     * @param spin Spinner de la cantidad.
+     * @return 
+     */
     private boolean existeEnTabla(JTable tMateriasPrimas, JTable tCompra, JSpinner spin){
 
         for(int i = 0;i<tblCompra.getRowCount();i++){
@@ -4379,11 +4505,17 @@ private boolean validarVacioP(){
             txtTotalCompra.setText("0");
             s = 0;
     }
-    
+    /**
+     * Botón de cancelar compra.
+     * @param evt 
+     */
     private void btnCancelar_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar_CompraActionPerformed
         cancelarCompra();
     }//GEN-LAST:event_btnCancelar_CompraActionPerformed
-    
+    /**
+     * Cuadro de texto de buscar materias primas en compras.
+     * @param evt 
+     */
     private void txtBuscasMateriaPrima_ComprasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprasKeyTyped
         txtBuscasMateriaPrima_Compras.addKeyListener(new KeyAdapter() {
             @Override
@@ -4396,6 +4528,10 @@ private boolean validarVacioP(){
         tblCompraslMateriasPrimas.setRowSorter(trsFiltro);  
     }//GEN-LAST:event_txtBuscasMateriaPrima_ComprasKeyTyped
 
+    /**
+     * Botón de cancelar pedido.
+     * @param evt 
+     */
     private void btnCancelar_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar_PedidoActionPerformed
         cancelarPedido();
     }//GEN-LAST:event_btnCancelar_PedidoActionPerformed
@@ -4441,10 +4577,17 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGenerarPedidoActionPerformed
 
+    /**
+     * Botón de cancelar la venta.
+     * @param evt 
+     */
     private void btnCancelarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarVentaActionPerformed
         cancelarVenta();
     }//GEN-LAST:event_btnCancelarVentaActionPerformed
-    
+    /**
+     * Botón de eliminar articulo en pedido.
+     * @param evt 
+     */
     private void btnEliminarArticuloPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarArticuloPedidoActionPerformed
         restartotalyeliminarrowPedido();
     }//GEN-LAST:event_btnEliminarArticuloPedidoActionPerformed
@@ -4453,10 +4596,18 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscarClienteVentaMouseClicked
 
+    /**
+     * Evento al dar click en clientes de venta.
+     * @param evt 
+     */
     private void tblClientesVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesVentaMouseClicked
         llenarTablaPedidos_Venta();
     }//GEN-LAST:event_tblClientesVentaMouseClicked
 
+    /**
+     * Evento al dar click a la tabla de pedidos en venta.
+     * @param evt 
+     */
     private void tblPedidosVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPedidosVentasMouseClicked
         cargarPedido();
         generarCambio();
@@ -4473,6 +4624,10 @@ private boolean validarVacioP(){
            showMessageDialog(this,"Debe de seleccionar un cliente para la busqueda.");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+     * Volver a llenar la tabla de pedidos en venta.
+     * @param evt 
+     */
     private void btnRefreshProducto_Pedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProducto_Pedido1ActionPerformed
     if(tblClientesVenta.getSelectedRow()>=0)
         llenarTablaPedidos_Venta();
@@ -4504,6 +4659,10 @@ private boolean validarVacioP(){
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscasMateriaPrima_ComprasActionPerformed
 
+    /**
+     * Botón para volver a llenar Materia prima en compra
+     * @param evt 
+     */
     private void btnRefreshMateriaPrima_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshMateriaPrima_CompraActionPerformed
         try {
                 tbmCompra.setRowCount(0);
@@ -4513,15 +4672,24 @@ private boolean validarVacioP(){
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_btnRefreshMateriaPrima_CompraActionPerformed
-
+/**
+ * Botón para volver a llenar la tabla de productos en pedido.
+ * @param evt 
+ */
     private void btnRefreshProducto_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProducto_PedidoActionPerformed
         llenarTablaProductos();
     }//GEN-LAST:event_btnRefreshProducto_PedidoActionPerformed
-
+/**
+ * Evento al dar click en historial de compra para llenar el historial de compra.
+ * @param evt 
+ */
     private void tblHistorialComprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHistorialComprasMouseClicked
         llenarTablaDetalleCompra();
     }//GEN-LAST:event_tblHistorialComprasMouseClicked
-
+/**
+ * Evento al dar click en historial de pedido para llenar el historial de pedido
+ * @param evt 
+ */
     private void tblHistorialPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHistorialPedidosMouseClicked
         llenarTablaDetallePedido();
     }//GEN-LAST:event_tblHistorialPedidosMouseClicked
@@ -4556,7 +4724,10 @@ private boolean validarVacioP(){
         rdbCancelar.setSelected(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
-
+/**
+ * Botón para buscar historial de compra.
+ * @param evt 
+ */
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
             try {
                 buscarHistorialCompra();
@@ -4576,11 +4747,17 @@ private boolean validarVacioP(){
         jDateChooser1.setDate(null);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
-
+/**
+ * Evento de la tabla de historial de ventas para llenar su tabla.
+ * @param evt 
+ */
     private void tblHistorialVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHistorialVentasMouseClicked
         llenarTablaDetalleVenta();
     }//GEN-LAST:event_tblHistorialVentasMouseClicked
-
+/**
+ * Bottón paara buscar historial de venta.
+ * @param evt 
+ */
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
             try {
                 buscarHistorialVenta();
@@ -4590,7 +4767,7 @@ private boolean validarVacioP(){
             }
     }//GEN-LAST:event_jButton6ActionPerformed
 /**
- * Reestablece la busqueda del Historial de Pedidos
+ * Restablece la busqueda del Historial de Pedidos
  * @param evt 
  */
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -5564,26 +5741,7 @@ private void llenarTablaDetalleCompra(){
         if( l == KeyEvent.VK_SPACE )
            evt.consume();
     }
-    /********************************FIN FORM*****************************/
-//    private void BuscarProveedores() throws ClassNotFoundException{
-//         try {
-//             conectarBD();
-//             Statement stmt = conect.createStatement();
-//            DefaultTableModel tbm=(DefaultTableModel)tblProveedores.getModel();
-//           tbm.setRowCount(0);stmt.execute("select * from PERSONAS "
-//                                            + "where TIPO = 'P' "
-//                                            + "AND NOMBRE LIKE '%" + txtBuscarProveedor.getText() + "%'");
-//             ResultSet res = stmt.getResultSet();
-//            if(null!=res){
-//                while(res.next()){
-//                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(6),res.getString(7)});
-//                }  
-//            }
-//            stmt.close();
-//        }catch (SQLException ex) {
-//            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
-//        } 
-//    }
+
     /**
      * Eliminar el provedor seleccionado
      * @throws ClassNotFoundException 
@@ -5653,15 +5811,7 @@ private void llenarTablaDetalleCompra(){
         }
          return true;
     }
-       // </editor-proveedor>  
-//    private void setDateTime(){
-//        Date date=new Date();
-//        for(;;){
-//        SimpleDateFormat sdf=new SimpleDateFormat("hh:mm:ss dd/mm/yyyy");
-//        lblFecha_Hora.setText(sdf.format(date));    
-//        }
-//        
-//    }
+
     /**
      *  Limpia los campos en la ventana materias primas
      */
