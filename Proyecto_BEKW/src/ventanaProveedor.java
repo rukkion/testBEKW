@@ -1,4 +1,5 @@
 
+
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -452,10 +453,11 @@ public class ventanaProveedor extends javax.swing.JFrame {
              conectarBD();
              Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblProveedores.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from PERSONAS "
+           tbm.setRowCount(0);
+           ResultSet res=stmt.executeQuery("select * from PERSONAS "
                                             + "where TIPO = 'P' "
                                             + "AND NOMBRE LIKE '%" + txtBuscarProveedor.getText() + "%'");
-             ResultSet res = stmt.getResultSet();
+            
             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(6),res.getString(7)});
@@ -522,9 +524,9 @@ public class ventanaProveedor extends javax.swing.JFrame {
              conectarBD();
              Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblProveedores.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from PERSONAS where TIPO = 'P'");
-             ResultSet res = stmt.getResultSet();
-            if(null!=res){
+           tbm.setRowCount(0);
+           ResultSet res=stmt.executeQuery("select * from PERSONAS where TIPO = 'P'");
+             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(6),res.getString(7)});
                 }  
@@ -543,8 +545,7 @@ public class ventanaProveedor extends javax.swing.JFrame {
          try {
              conectarBD();
              Statement stmt = conect.createStatement();
-             stmt.execute("select * from USUARIOS WHERE NOMBRE_USUARIO ='"+ txtProveedorNombre.getText()+"'");
-             ResultSet res = stmt.getResultSet();
+             ResultSet res=stmt.executeQuery("select * from USUARIOS WHERE NOMBRE_USUARIO ='"+ txtProveedorNombre.getText()+"'");
              if(null!=res){
                 while(res.next()){
                    return false;

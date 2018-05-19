@@ -515,8 +515,8 @@ public class VentanaCliente extends javax.swing.JFrame {
             Statement stmt=con.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tablaCM.getModel();
             tbm.setRowCount(0);
-            stmt.execute("select * from PERSONAS where TIPO = 'C'");
-            ResultSet res=stmt.getResultSet();
+            ResultSet res=stmt.executeQuery("select * from PERSONAS where TIPO = 'C'");
+            
             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7)});

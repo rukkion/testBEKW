@@ -308,8 +308,7 @@ public class VentanaMateriaPrima extends javax.swing.JFrame {
          try {
              conectarBD();
              Statement stmt = conect.createStatement();
-             stmt.execute("select * from MATERIAS_PRIMAS WHERE NOMBRE='"+ txtNombreMP.getText()+"'");
-             ResultSet res = stmt.getResultSet();
+             ResultSet res=stmt.executeQuery("select * from MATERIAS_PRIMAS WHERE NOMBRE='"+ txtNombreMP.getText()+"'");
              if(null!=res){
                 while(res.next()){
                    return false;

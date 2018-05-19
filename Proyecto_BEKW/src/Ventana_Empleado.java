@@ -1748,8 +1748,8 @@ public class Ventana_Empleado extends javax.swing.JFrame {
              
            Statement stmt = conect.createStatement();
            DefaultTableModel tbm=(DefaultTableModel)tablaMateriaPrima.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from MATERIAS_PRIMAS");
-             ResultSet res = stmt.getResultSet();
+           tbm.setRowCount(0);
+           res=stmt.executeQuery("select * from MATERIAS_PRIMAS");
             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getInt("PRECIO")});
@@ -1791,8 +1791,8 @@ public class Ventana_Empleado extends javax.swing.JFrame {
 
             stmt = conect.createStatement();
            DefaultTableModel tbm=(DefaultTableModel)tblProducto.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from PRODUCTOS WHERE TIPO = 'N' OR TIPO = 'P'");
-            res=stmt.getResultSet();
+           tbm.setRowCount(0);
+           res=stmt.executeQuery("select * from PRODUCTOS WHERE TIPO = 'N' OR TIPO = 'P'");
             if(null!=res){
                 while(res.next()){
                    Vector rowProductos=new Vector();
@@ -1825,8 +1825,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             Statement stmt=conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tablaCliente.getModel();
             tbm.setRowCount(0);
-            stmt.execute("select * from PERSONAS where TIPO = 'C'");
-            ResultSet res=stmt.getResultSet();
+            res=stmt.executeQuery("select * from PERSONAS where TIPO = 'C'");
             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7)});
@@ -2103,8 +2102,7 @@ VentanaCliente mdC=new VentanaCliente();
             Statement stmt=conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblProductos_Pedido.getModel();
             tbm.setRowCount(0);
-            stmt.execute("select * from PRODUCTOS WHERE (TIPO = 'N' OR TIPO = 'P') AND NOMBRE LIKE '%"+txtBuscarProducto_Pedido.getText()+"%'");
-            ResultSet res=stmt.getResultSet();
+            res=stmt.executeQuery("select * from PRODUCTOS WHERE (TIPO = 'N' OR TIPO = 'P') AND NOMBRE LIKE '%"+txtBuscarProducto_Pedido.getText()+"%'");
             if(null!=res){
                 while(res.next()){
                     String tipo;
@@ -2130,8 +2128,7 @@ VentanaCliente mdC=new VentanaCliente();
             Statement stmt=conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblProductos_Pedido.getModel();
             tbm.setRowCount(0);
-            stmt.execute("select * from PRODUCTOS where tipo = 'N' OR tipo ='P'");
-             res=stmt.getResultSet();
+            res=stmt.executeQuery("select * from PRODUCTOS where tipo = 'N' OR tipo ='P'");
             if(null!=res){
                 while(res.next()){
                   
@@ -2156,8 +2153,7 @@ VentanaCliente mdC=new VentanaCliente();
             Statement stmt=conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblClientesVenta.getModel();
             tbm.setRowCount(0);
-            stmt.execute("select ID_PERSONA, NOMBRE ,APE_PAT, APE_MAT ,TELEFONO from PERSONAS where TIPO = 'C'");
-            ResultSet res=stmt.getResultSet();
+            res=stmt.executeQuery("select ID_PERSONA, NOMBRE ,APE_PAT, APE_MAT ,TELEFONO from PERSONAS where TIPO = 'C'");
             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getString("ID_PERSONA"),res.getString("NOMBRE"),res.getString("APE_PAT"),res.getString("APE_MAT"),res.getString("TELEFONO")});
@@ -2177,8 +2173,7 @@ VentanaCliente mdC=new VentanaCliente();
          try {
              conectarBD();
              Statement stmt = conect.createStatement();
-             stmt.execute("select * from MATERIAS_PRIMAS WHERE NOMBRE='"+ txtNombreMP.getText()+"'");
-             ResultSet res = stmt.getResultSet();
+             res=stmt.executeQuery("select * from MATERIAS_PRIMAS WHERE NOMBRE='"+ txtNombreMP.getText()+"'");
              if(null!=res){
                 while(res.next()){
                    return false;
@@ -2583,8 +2578,8 @@ private boolean validarVacioP(){
 
              Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblProducto.getModel();
-           tbm.setRowCount(0);stmt.execute("select * from PRODUCTOS where (TIPO = 'N' OR TIPO = 'P') AND NOMBRE LIKE '%"+txtBuscarP.getText()+"%'");
-             ResultSet res = stmt.getResultSet();
+           tbm.setRowCount(0);
+           res=stmt.executeQuery("select * from PRODUCTOS where (TIPO = 'N' OR TIPO = 'P') AND NOMBRE LIKE '%"+txtBuscarP.getText()+"%'");
             if(null!=res){
                 while(res.next()){
                     String tipo;
@@ -2631,9 +2626,8 @@ private boolean validarVacioP(){
 
         String date2 = simpleDateFormat.format(dateGeneracion.getDate());
 
-           stmt.execute("select ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA from PEDIDOS "
+           res=stmt.executeQuery("select ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA from PEDIDOS "
                 + "where FECHA_"+Bus+" = '"+date2+"'  and ESTADO = 'N' and ID_CLIENTE = "+ idCliente+"");  
-            res = stmt.getResultSet();            
             if(res!=null){
                 while(res.next()){
                    tbmPedidosVenta.addRow(new Object[]{tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 1),res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA")});
@@ -2664,11 +2658,8 @@ private boolean validarVacioP(){
             //BUSCA TODO DE PEDIDO
             if(idCliente>0){
                 stmt=conect.createStatement();
-                stmt.execute("SELECT ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA from PEDIDOS where ID_CLIENTE ="+idCliente+" AND ESTADO = 'N'");
-                res = stmt.getResultSet();
-            
-            
-            if(null!=res){
+                res=stmt.executeQuery("SELECT ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA from PEDIDOS where ID_CLIENTE ="+idCliente+" AND ESTADO = 'N'");
+                if(null!=res){
                 while(res.next()){
                    tbmPedidosVenta.addRow(new Object[]{tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0),res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA")});
                 }  
@@ -3140,8 +3131,7 @@ private boolean validarVacioP(){
      */
        private void llenarPresentacionM() throws SQLException{
              stmt=conect.createStatement();
-            stmt.execute("Select presentacionM from presentacionM");
-            ResultSet res = stmt.getResultSet();
+            res=stmt.executeQuery("Select presentacionM from presentacionM");
             if(null!=res){
                 cmbUnidadMedidaMP.removeAllItems();
                 while(res.next()){
@@ -3156,8 +3146,7 @@ private boolean validarVacioP(){
      */
    private void llenarPresentacion() throws SQLException{
              stmt=conect.createStatement();
-            stmt.execute("Select presentacion from presentacion");
-            ResultSet res = stmt.getResultSet();
+            res=stmt.executeQuery("Select presentacion from presentacion");
             if(null!=res){
                 cmbUnidadMedidaProducto.removeAllItems();
                 while(res.next()){
@@ -3178,7 +3167,7 @@ private boolean validarVacioP(){
             stmt.executeUpdate("UPDATE MATERIAS_PRIMAS " +
                                "  SET CANT_DISP = (CANT_DISP - " + spnrMP.getValue() + ")" +
                                "  where ID_MATERIA = " + r);
-            ResultSet res = stmt.getResultSet();
+            res=stmt.executeQuery("SELECT * FROM MATERIAS_PRIMAS");
             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getDate(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getInt(8)-res.getInt(7)});
@@ -3236,7 +3225,7 @@ private boolean validarVacioP(){
           Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblHistorialPedidos.getModel();
             tbm.setRowCount(0);
-            stmt.execute("select ID_PEDIDO, FECHA_PEDIDO, FECHA_ENTREGA, PERSONAS.NOMBRE,NOMBRE_USUARIO,ESTADO,ADELANTO,TOTAL FROM"
+            res=stmt.executeQuery("select ID_PEDIDO, FECHA_PEDIDO, FECHA_ENTREGA, PERSONAS.NOMBRE,NOMBRE_USUARIO,ESTADO,ADELANTO,TOTAL FROM"
                     + " PERSONAS, PEDIDOS,USUARIOS "
                     + "WHERE PERSONAS.ID_PERSONA = PEDIDOS.ID_CLIENTE AND PEDIDOS.ID_USUARIO = USUARIOS.ID_USUARIO "
                     + ""
@@ -3248,8 +3237,6 @@ private boolean validarVacioP(){
                     + ""
                     + bus1 + bus2 + bus3 + bus4 + bus5);
 
-            
-            ResultSet res = stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getDate(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getInt(8)-res.getInt(7)});
@@ -3266,9 +3253,8 @@ private boolean validarVacioP(){
             Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblHistorialPedidos.getModel();
             tbm.setRowCount(0);
-            stmt.execute("select ID_PEDIDO, FECHA_PEDIDO, FECHA_ENTREGA, PERSONAS.NOMBRE,NOMBRE_USUARIO,ESTADO,ADELANTO,TOTAL FROM PERSONAS, PEDIDOS,USUARIOS WHERE PERSONAS.ID_PERSONA = PEDIDOS.ID_CLIENTE AND PEDIDOS.ID_USUARIO = USUARIOS.ID_USUARIO");
-            ResultSet res = stmt.getResultSet();
-            if(null!=res){
+            res=stmt.executeQuery("select ID_PEDIDO, FECHA_PEDIDO, FECHA_ENTREGA, PERSONAS.NOMBRE,NOMBRE_USUARIO,ESTADO,ADELANTO,TOTAL FROM PERSONAS, PEDIDOS,USUARIOS WHERE PERSONAS.ID_PERSONA = PEDIDOS.ID_CLIENTE AND PEDIDOS.ID_USUARIO = USUARIOS.ID_USUARIO");
+              if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getDate(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getInt(8)-res.getInt(7)});
                 }  
@@ -3287,8 +3273,7 @@ private boolean validarVacioP(){
             Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblHistorialVentas.getModel();
             tbm.setRowCount(0);
-            stmt.execute("select ID_VENTA, FECHA, PERSONAS.NOMBRE ,NOMBRE_USUARIO,TOTAL FROM PERSONAS, VENTAS,USUARIOS WHERE PERSONAS.ID_PERSONA = VENTAS.ID_CLIENTE AND VENTAS.ID_USUARIO = USUARIOS.ID_USUARIO");
-            ResultSet res = stmt.getResultSet();
+            res=stmt.executeQuery("select ID_VENTA, FECHA, PERSONAS.NOMBRE ,NOMBRE_USUARIO,TOTAL FROM PERSONAS, VENTAS,USUARIOS WHERE PERSONAS.ID_PERSONA = VENTAS.ID_CLIENTE AND VENTAS.ID_USUARIO = USUARIOS.ID_USUARIO");
             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getString(3),res.getString(4),res.getInt(5)});
@@ -3330,11 +3315,9 @@ private boolean validarVacioP(){
           Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblHistorialPedidos.getModel();
             tbm.setRowCount(0);
-            stmt.execute("select ID_VENTA, FECHA, PERSONAS.NOMBRE ,NOMBRE_USUARIO,TOTAL FROM PERSONAS, VENTAS,USUARIOS WHERE PERSONAS.ID_PERSONA = VENTAS.ID_CLIENTE AND VENTAS.ID_USUARIO = USUARIOS.ID_USUARIO "
+            res=stmt.executeQuery("select ID_VENTA, FECHA, PERSONAS.NOMBRE ,NOMBRE_USUARIO,TOTAL FROM PERSONAS, VENTAS,USUARIOS WHERE PERSONAS.ID_PERSONA = VENTAS.ID_CLIENTE AND VENTAS.ID_USUARIO = USUARIOS.ID_USUARIO "
                     + ""
                     + bus1 + bus2 + bus3 + bus4 );
-            
-            ResultSet res = stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getString(3),res.getString(4),res.getInt(5)});}  
@@ -3352,11 +3335,10 @@ private void llenarTablaDetallePedido(){
             Statement stmt=conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblpruebapedidos.getModel();
             tbm.setRowCount(0);
-            stmt.execute("SELECT PRODUCTOS.NOMBRE,DETALLE_PEDIDO.CANTIDAD,(DETALLE_PEDIDO.TOTAL/DETALLE_PEDIDO.CANTIDAD) AS UNITARIO,PRODUCTOS.UNIDAD,DETALLE_PEDIDO.TOTAL " +
+            res=stmt.executeQuery("SELECT PRODUCTOS.NOMBRE,DETALLE_PEDIDO.CANTIDAD,(DETALLE_PEDIDO.TOTAL/DETALLE_PEDIDO.CANTIDAD) AS UNITARIO,PRODUCTOS.UNIDAD,DETALLE_PEDIDO.TOTAL " +
                          "FROM PRODUCTOS INNER JOIN DETALLE_PEDIDO ON PRODUCTOS.ID_PRODUCTO = DETALLE_PEDIDO.ID_PRODUCTO " +
                          "AND DETALLE_PEDIDO.ID_PEDIDO = " + tblHistorialPedidos.getValueAt(tblHistorialPedidos.getSelectedRow(),0)
                         );
-            ResultSet res=stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getString("NOMBRE"),res.getString("CANTIDAD"),res.getString("UNITARIO"),res.getString("UNIDAD"),res.getString("TOTAL")});
@@ -3376,11 +3358,10 @@ private void llenarTablaDetallePedido(){
             Statement stmt=conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblDetalleVentas.getModel();
             tbm.setRowCount(0);
-            stmt.execute("SELECT PRODUCTOS.NOMBRE,DETALLE_VENTAS.CANTIDAD,(DETALLE_VENTAS.TOTAL/DETALLE_VENTAS.CANTIDAD) AS UNITARIO,PRODUCTOS.UNIDAD,DETALLE_VENTAS.TOTAL " +
+            res=stmt.executeQuery("SELECT PRODUCTOS.NOMBRE,DETALLE_VENTAS.CANTIDAD,(DETALLE_VENTAS.TOTAL/DETALLE_VENTAS.CANTIDAD) AS UNITARIO,PRODUCTOS.UNIDAD,DETALLE_VENTAS.TOTAL " +
                          "FROM PRODUCTOS INNER JOIN DETALLE_VENTAS ON PRODUCTOS.ID_PRODUCTO = DETALLE_VENTAS.ID_PRODUCTO " +
                          "AND DETALLE_VENTAS.ID_VENTA ="+ tblHistorialVentas.getValueAt(tblHistorialVentas.getSelectedRow(),0)
                         );
-            ResultSet res=stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getString("NOMBRE"),res.getString("CANTIDAD"),res.getString("UNITARIO"),res.getString("UNIDAD"),res.getString("TOTAL")});
@@ -3431,11 +3412,10 @@ private void llenarTablaDetallePedido(){
                 cad ="";
                 int idp = tblClientes_Pedido.getSelectedRow();
                 Statement stmt = conect.createStatement();
-                stmt.execute("SELECT MAX (ID_PEDIDO)  FROM PEDIDOS");
-                ResultSet re = stmt.getResultSet();
+                res=stmt.executeQuery("SELECT MAX (ID_PEDIDO)  FROM PEDIDOS");
                 int id = 0;
-                while (re.next()){
-                    id = re.getInt(1);
+                while (res.next()){
+                    id = res.getInt(1);
                 }
                 for (int i = 0;i< tblPedido.getRowCount();i++){
                     cad = "INSERT INTO DETALLE_PEDIDO" +
@@ -3484,11 +3464,10 @@ private void llenarTablaDetallePedido(){
             try {
                 cad ="";
                 Statement stmt = conect.createStatement();
-                stmt.execute("SELECT MAX (ID_VENTA)  FROM VENTAS");
-                ResultSet re = stmt.getResultSet();
+                res=stmt.executeQuery("SELECT MAX (ID_VENTA)  FROM VENTAS");
                 int id = 0;
-                while (re.next()){
-                    id = re.getInt(1);
+                while (res.next()){
+                    id = res.getInt(1);
                 }
                 for (int i = 0;i< tblVenta.getRowCount();i++){
                     cad = "INSERT INTO DETALLE_VENTAS" +
@@ -3550,10 +3529,9 @@ private void llenarTablaDetallePedido(){
                 tbmVenta=(DefaultTableModel)tblVenta.getModel();
                 tbmVenta.setRowCount(0);
                 System.out.print(tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1));
-                stmt.execute("SELECT PRODUCTOS.ID_PRODUCTO,PRODUCTOS.NOMBRE,PRODUCTOS.PRECIO, DETALLE_PEDIDO.CANTIDAD, (DETALLE_PEDIDO.CANTIDAD * PRODUCTOS.PRECIO) AS TOTAL " +
+                res=stmt.executeQuery("SELECT PRODUCTOS.ID_PRODUCTO,PRODUCTOS.NOMBRE,PRODUCTOS.PRECIO, DETALLE_PEDIDO.CANTIDAD, (DETALLE_PEDIDO.CANTIDAD * PRODUCTOS.PRECIO) AS TOTAL " +
                                 "FROM PRODUCTOS INNER JOIN DETALLE_PEDIDO ON PRODUCTOS.ID_PRODUCTO = DETALLE_PEDIDO.ID_PRODUCTO " +
                                 "AND DETALLE_PEDIDO.ID_PEDIDO =" + tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1));
-                res = stmt.getResultSet();
                 if(null!=res){
                     while(res.next()){
                         Vector rowProductos=new Vector();
@@ -3565,16 +3543,14 @@ private void llenarTablaDetallePedido(){
                         tbmVenta.addRow(rowProductos);
                     }
                     
-                    stmt.execute("SELECT ADELANTO FROM PEDIDOS WHERE ID_PEDIDO =" + tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1));
-                    res = stmt.getResultSet();
+                    res=stmt.executeQuery("SELECT ADELANTO FROM PEDIDOS WHERE ID_PEDIDO =" + tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1));
                     if(null!=res){
                         while(res.next()){
                             lblAnticipo.setText(""+res.getFloat(1));
                         }
                     }
                     
-                    stmt.execute("SELECT TOTAL FROM PEDIDOS WHERE ID_PEDIDO =" + tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1));
-                    res = stmt.getResultSet();
+                    res=stmt.executeQuery("SELECT TOTAL FROM PEDIDOS WHERE ID_PEDIDO =" + tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1));
                     if(null!=res){
                         while(res.next()){
                             lblTotalVenta1.setText(""+ res.getFloat(1));
@@ -3602,11 +3578,10 @@ private void llenarTablaDetallePedido(){
              Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblClientesVenta.getModel();
            tbm.setRowCount(0);
-           stmt.execute("select ID_PERSONA, NOMBRE ,APE_PAT, APE_MAT ,TELEFONO from PERSONAS "
+           res=stmt.executeQuery("select ID_PERSONA, NOMBRE ,APE_PAT, APE_MAT ,TELEFONO from PERSONAS "
                                             + "where TIPO = 'C' "
                                             + "AND NOMBRE LIKE '%" + txtBuscarClienteVenta.getText() + "%'");
-             ResultSet res = stmt.getResultSet();
-            if(null!=res){
+             if(null!=res){
                 while(res.next()){
                    Vector rowCliente=new Vector();
                   rowCliente.add(res.getInt("ID_PERSONA"));
@@ -3654,10 +3629,9 @@ private void llenarTablaDetallePedido(){
             Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblClientes_Pedido.getModel();
            tbm.setRowCount(0);
-           stmt.execute("select ID_PERSONA, NOMBRE ,APE_PAT, APE_MAT ,TELEFONO from PERSONAS "
+           res=stmt.executeQuery("select ID_PERSONA, NOMBRE ,APE_PAT, APE_MAT ,TELEFONO from PERSONAS "
                                             + "where TIPO = 'C' "
                                             + "AND NOMBRE LIKE '%" + txtBuscarCliente_Pedido.getText() + "%'");
-             ResultSet res = stmt.getResultSet();
             if(null!=res){
                 while(res.next()){
                    Vector rowProductos=new Vector();
@@ -3759,8 +3733,7 @@ private void llenarTablaDetallePedido(){
             Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblClientes_Pedido.getModel();
             tbm.setRowCount(0);
-            stmt.execute("select ID_PERSONA, NOMBRE ,APE_PAT, APE_MAT ,TELEFONO from PERSONAS where TIPO = 'C'");
-            ResultSet res = stmt.getResultSet();
+            res=stmt.executeQuery("select ID_PERSONA, NOMBRE ,APE_PAT, APE_MAT ,TELEFONO from PERSONAS where TIPO = 'C'");
             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5)});
