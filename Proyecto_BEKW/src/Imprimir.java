@@ -488,7 +488,7 @@ public class Imprimir {
             descripcion.setAlignment(Paragraph.ALIGN_JUSTIFIED);
             descripcion.setFont(FontFactory.getFont("Tahoma", 12, Font.NORMAL, BaseColor.DARK_GRAY));
             descripcion.add("LEONIDAS SIBAJAS #25, CAMINERA \n\n");
-            descripcion.add("TEPIC, NAYARIT         FECHA: 02/05/2018 \n\n");
+            descripcion.add("TEPIC, NAYARIT         FECHA: Del 01/05/2018 al 31/05/2018\n\n");
             
             tipo.setAlignment(Paragraph.ALIGN_CENTER);
             tipo.setFont(FontFactory.getFont("Tahoma", 12, Font.BOLD, BaseColor.DARK_GRAY));

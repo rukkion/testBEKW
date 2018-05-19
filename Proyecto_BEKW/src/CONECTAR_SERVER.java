@@ -1,7 +1,9 @@
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Clase configurada para la conexión del Servidor SQLServer.
@@ -10,7 +12,7 @@ import java.sql.SQLException;
 public class CONECTAR_SERVER {
     
     Connection conect = null;
-    String rutaBD="jdbc:sqlserver://localhost;databaseName=BEKW";
+    String rutaBD="jdbc:sqlite:BEKW.db";
 
 
     
@@ -56,8 +58,9 @@ public class CONECTAR_SERVER {
     public void conectarBD() throws ClassNotFoundException {
         try{
             //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-            conect = DriverManager.getConnection(rutaBD,"sa","123");
+            conect = DriverManager.getConnection(rutaBD);
             System.out.println("Conectado.");
+           
         }
         catch (SQLException ex)
         {

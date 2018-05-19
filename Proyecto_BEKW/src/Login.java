@@ -181,8 +181,8 @@ public class Login extends javax.swing.JFrame {
                 String cad = "SELECT ID_USUARIO, NOMBRE_PERSONA, TIPO FROM USUARIOS"
                         + " WHERE NOMBRE_USUARIO='"+user+"' AND CONTRASEÑA='"+pass+"'";
                 Statement stmt = conect.createStatement();
-                stmt.executeQuery(cad);
-                ResultSet rs = stmt.getResultSet();
+                
+                ResultSet rs = stmt.executeQuery(cad);
                 int id_usuario=0;
                 String name = null;
                 String tipo=null;
@@ -193,6 +193,8 @@ public class Login extends javax.swing.JFrame {
                     id_usuario=rs.getInt("ID_USUARIO");
                     count++;
                     }
+                    rs.close();
+                    stmt.close();
                     if(count==1){
                         JOptionPane.showMessageDialog(this,"Bienvenido "+name+".","Mensaje de bienvenida.",JOptionPane.INFORMATION_MESSAGE);
                         if(tipo.equals("E")){
@@ -213,6 +215,7 @@ public class Login extends javax.swing.JFrame {
                         limpiarCampos();
                         txtusername.requestFocus();
                     }  
+                    
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }
@@ -309,11 +312,12 @@ public class Login extends javax.swing.JFrame {
                 a.toUpperCase();
                 String cad = "SELECT CONTRASEÑA FROM USUARIOS WHERE NOMBRE_USUARIO='" + a + "'";
                 Statement stmt = conect.createStatement();
-                stmt.executeQuery(cad);
-                ResultSet rs = stmt.getResultSet();
+                ResultSet rs = stmt.executeQuery(cad);
                 while(rs.next()){
                     javax.swing.JOptionPane.showMessageDialog(null,"Tu contraseña es : \n" + rs.getString(1).toString());
                 }
+                rs.close();
+                stmt.close();
             } catch (SQLException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }

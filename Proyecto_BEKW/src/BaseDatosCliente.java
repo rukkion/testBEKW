@@ -1,10 +1,7 @@
 
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import static javax.swing.JOptionPane.showMessageDialog;
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -31,6 +28,7 @@ public class BaseDatosCliente {
   private String codp; 
   private String tel; 
   private String tipo;
+  String rutaBD="jdbc:sqlite:BEKW.db";
   
 //Constructor de la clase. 
   BaseDatosCliente() {
@@ -63,8 +61,8 @@ public class BaseDatosCliente {
     variables(nom,app,apm,dom,codp,tel); 
     if(verificar()){   
     try{
-        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        con = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
+        //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        con = DriverManager.getConnection(rutaBD);
         String cad = "INSERT INTO PERSONAS "+"VALUES('"+this.nom+"','"+this.app+"','"+this.apm+"','"+this.dom+"','"+this.codp+"','"+this.tel+"','C')";
         dec = con.createStatement();
         dec.executeUpdate(cad);
@@ -85,8 +83,8 @@ public class BaseDatosCliente {
     conectar();
     this.id = id;
     try{
-        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        con = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
+        //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        con = DriverManager.getConnection(rutaBD);
         String cad = "DELETE FROM PERSONAS WHERE ID_PERSONA='"+this.id+"'";
         dec = con.createStatement();
         dec.executeUpdate(cad);
@@ -114,8 +112,8 @@ public class BaseDatosCliente {
     variables(nom,app,apm,dom,codp,tel);
     if(verificar()){   
     try{
-        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        con = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
+        //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        con = DriverManager.getConnection(rutaBD);
         String cad = "UPDATE PERSONAS SET NOMBRE = '"+this.nom+"',APE_PAT='"+this.app+"',APE_MAT='"+this.apm+"',DOMICILIO='"+this.dom+"',COD_POSTAL='"+this.codp+"',TELEFONO='"+this.tel+"'  WHERE ID_PERSONA ="+this.id;
         dec = con.createStatement();
         dec.executeUpdate(cad);
@@ -132,8 +130,8 @@ public class BaseDatosCliente {
     void conectar() throws ClassNotFoundException, SQLException {
         con = null;
         try{
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            con = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
+            //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            con = DriverManager.getConnection(rutaBD);
         }catch (SQLException ex) {
             System.out.println("Error Conexion.");
         }
