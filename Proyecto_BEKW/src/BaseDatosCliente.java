@@ -63,9 +63,10 @@ public class BaseDatosCliente {
     try{
         //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         con = DriverManager.getConnection(rutaBD);
-        String cad = "INSERT INTO PERSONAS "+"VALUES('"+this.nom+"','"+this.app+"','"+this.apm+"','"+this.dom+"','"+this.codp+"','"+this.tel+"','C')";
+        String cad = "INSERT INTO PERSONAS (NOMBRE,APE_PAT,APE_MAT,DOMICILIO,COD_POSTAL,TELEFONO,TIPO) "+"VALUES('"+this.nom+"','"+this.app+"','"+this.apm+"','"+this.dom+"','"+this.codp+"','"+this.tel+"','C')";
         dec = con.createStatement();
         dec.executeUpdate(cad);
+        con.close();
      }catch (SQLException ex) {
             System.out.println("Error.");  
      }

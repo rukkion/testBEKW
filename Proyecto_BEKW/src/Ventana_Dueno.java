@@ -2699,7 +2699,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      */
     private void LlenarTablaProveedores() throws ClassNotFoundException{
          try {
-             conectarBD();
+             //conectarBD();
              stmt=conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblProveedores.getModel();
            tbm.setRowCount(0);
@@ -2721,9 +2721,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      */
     private void LlenarTablaP() throws ClassNotFoundException{
          try {
-
-
-            stmt = conect.createStatement();
+             
+           stmt = conect.createStatement();
            DefaultTableModel tbm=(DefaultTableModel)tblProducto.getModel();
            tbm.setRowCount(0);
            res=stmt.executeQuery("select * from PRODUCTOS WHERE TIPO = 'N' OR TIPO = 'P'");
@@ -2755,7 +2754,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
    */
     private void LlenarTablaUsuarios() throws ClassNotFoundException{
          try {
-             conectarBD();
+             //conectarBD();
              Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblUsuarios.getModel();
            tbm.setRowCount(0);
@@ -2816,6 +2815,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             }
             
             stmt.close();
+            
         }catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
         } 
@@ -3171,7 +3171,7 @@ VentanaCliente mdC=new VentanaCliente();
     private void insertarProveedor() throws ClassNotFoundException{
         try{
             conectarBD();
-            String cad = "INSERT INTO PERSONAS "
+            String cad = "INSERT INTO PERSONAS (NOMBRE,APE_PAT,APE_MAT,DOMICILIO,COD_POSTAL,TELEFONO,TIPO) "
                     + "VALUES('"+ txtProveedorNombre.getText()+"',"
                     + "'null','null','"
                     + txtProveedorDomicilio.getText()+ "','"
@@ -3287,7 +3287,6 @@ VentanaCliente mdC=new VentanaCliente();
      */
     private void EliminarUsuario() throws ClassNotFoundException{
         try{
-            conectarBD();
             String cad = "DELETE FROM USUARIOS WHERE ID_USUARIO =" + tblUsuarios.getValueAt(rowUsuario,0).toString();
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
@@ -3305,7 +3304,6 @@ VentanaCliente mdC=new VentanaCliente();
      */
     private void EliminarMP() throws ClassNotFoundException{
         try{
-            conectarBD();
             String cad = "DELETE FROM MATERIAS_PRIMAS WHERE ID_MATERIA =" + tablaMateriaPrima.getValueAt(tablaMateriaPrima.getSelectedRow(),0).toString();
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
@@ -3314,7 +3312,7 @@ VentanaCliente mdC=new VentanaCliente();
         }
             catch (SQLException ex) 
             {
-            System.out.println("Error Eliminar Materia Prima");   
+            System.out.println(ex.toString()+ "\n"+"Error Eliminar Materia Prima");   
             }
     }
     /**
@@ -3323,7 +3321,7 @@ VentanaCliente mdC=new VentanaCliente();
     private void InsertarUsuario(){
         try{
             conectarBD();
-            String cad = "INSERT INTO USUARIOS "
+            String cad = "INSERT INTO USUARIOS (NOMBRE_USUARIO,NOMBRE_PERSONA,TIPO,CONTRASEÑA) "
                     + "VALUES('"+ txtUsuariosUsuario.getText()+"','"
                     + txtUsuariosNombre.getText() + "','"
                     + cmbUsuariosTipo.getSelectedItem().toString().substring(0,1) + "','"
@@ -3346,7 +3344,7 @@ VentanaCliente mdC=new VentanaCliente();
     private void InsertarMP(){
         try{
             
-            String cad = "INSERT INTO MATERIAS_PRIMAS "
+            String cad = "INSERT INTO MATERIAS_PRIMAS (NOMBRE,DESCRIPCION,CANT_DISP,UNIDAD_MEDIDA,PRECIO) "
                     + "VALUES('"+ txtNombreMP.getText()+"','"
                     + txtDescripcionMP.getText() + "','"
                     + txtCantidadMP.getValue().toString()+ "','"
@@ -3359,7 +3357,7 @@ VentanaCliente mdC=new VentanaCliente();
         }
             catch (SQLException ex) 
             {
-            System.out.println("Error al insertar Materia Prima");   
+            System.out.println(ex.toString() + "\n"+ "Error al insertar Materia Prima");   
             } catch (ClassNotFoundException ex) {
         //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -3371,7 +3369,6 @@ VentanaCliente mdC=new VentanaCliente();
      */
     private void ModificarUsuario() throws ClassNotFoundException{
         try{
-            conectarBD();
             String cad;
             cad = "UPDATE USUARIOS "
                     + "SET NOMBRE_USUARIO='"+ txtUsuariosUsuario.getText()+"',"
@@ -3466,8 +3463,8 @@ VentanaCliente mdC=new VentanaCliente();
                 VENTAS = res.getInt("TOTAL_VENTAS");
             }
         }
-        stmt.close();
-        stmt=conect.createStatement();
+        //stmt.close();
+        //stmt=conect.createStatement();
         System.out.println(VENTAS);
         lblTotalVentas.setText(""+VENTAS);
         res = stmt.executeQuery("select sum (ADELANTO) as TOTAL_ADELANTOS " +
@@ -3479,7 +3476,7 @@ VentanaCliente mdC=new VentanaCliente();
                 ADELANTOS = res.getInt("TOTAL_ADELANTOS");
             }
         }
-        stmt=conect.createStatement();
+        //stmt=conect.createStatement();
         System.out.println(ADELANTOS);
         lblTotalAdelantos.setText(""+ADELANTOS);
         res=stmt.executeQuery("SELECT SUM(TOTAL) AS COMPRAS " +
@@ -3491,7 +3488,7 @@ VentanaCliente mdC=new VentanaCliente();
                       COMPRAS = res.getInt("COMPRAS");
                     }
                 }
-                stmt=conect.createStatement();
+                //stmt=conect.createStatement();
                 System.out.println(COMPRAS); 
                 lblTotalCompras.setText(""+COMPRAS);
            res=stmt.executeQuery("select MATERIAS_PRIMAS.NOMBRE,sum(DETALLE_COMPRA.TOTAL) as COMPRADO " +
@@ -3512,7 +3509,7 @@ VentanaCliente mdC=new VentanaCliente();
                         }
                     }
                 }
-            stmt=conect.createStatement();
+            //stmt=conect.createStatement();
                System.out.println(MATERIAPRIMA1);
                 lblMateriaVendida.setText(""+MATERIAPRIMA1);
                 res=stmt.executeQuery("Select PERSONAS.NOMBRE " +
@@ -3529,7 +3526,7 @@ VentanaCliente mdC=new VentanaCliente();
                     }
                 }
                 
-                stmt=conect.createStatement();   
+               // stmt=conect.createStatement();   
              System.out.println(PROVEEDOR1);
              lblProveedormasCompras.setText(""+PROVEEDOR1);
              res=stmt.executeQuery("SELECT PERSONAS.NOMBRE " +
@@ -3548,7 +3545,7 @@ VentanaCliente mdC=new VentanaCliente();
                  System.out.println(CLIENTE1);
              lblClienteActivo.setText(""+CLIENTE1);
              
-             stmt=conect.createStatement();   
+             //stmt=conect.createStatement();   
             
              
              res=stmt.executeQuery("SELECT PRODUCTOS.NOMBRE " +
@@ -3655,7 +3652,6 @@ VentanaCliente mdC=new VentanaCliente();
      */
     private boolean UsuarioExistente() throws ClassNotFoundException{
          try {
-             conectarBD();
              Statement stmt = conect.createStatement();
              res=stmt.executeQuery("select * from USUARIOS WHERE NOMBRE_USUARIO ='"+ txtUsuariosUsuario.getText()+"'");
              if(null!=res){
@@ -4059,9 +4055,9 @@ private boolean validarVacioP(){
             String u_medida=cmbUnidadMedidaProducto.getSelectedItem().toString();
             Float precio=Float.parseFloat((txtprecioP.getText()));
 
-            String cad = "INSERT INTO PRODUCTOS VALUES('"+nombre+"','"+descripcion+"','"+tipo+"','"+u_medida+"',"+precio+")";
+            String cad = "INSERT INTO PRODUCTOS (NOMBRE,DESCRIPCION,TIPO,UNIDAD,PRECIO) VALUES('"+nombre+"','"+descripcion+"','"+tipo+"','"+u_medida+"',"+precio+")";
             try {
-                java.sql.Statement stmt=conect.createStatement();
+                //java.sql.Statement stmt=conect.createStatement();
 
                 stmt.executeUpdate(cad);
                 LlenarTablaP();
@@ -4213,7 +4209,7 @@ private boolean validarVacioP(){
                 
             if(null!=res){
                 while(res.next()){
-                   tbmPedidosVenta.addRow(new Object[]{tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0),res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA")});
+                   tbmPedidosVenta.addRow(new Object[]{tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0),res.getInt("ID_PEDIDO"), res.getString("FECHA_PEDIDO"),res.getString("FECHA_ENTREGA")});
                 }  
             }
             stmt.close();
@@ -4452,6 +4448,7 @@ private boolean validarVacioP(){
                         "WHERE ID_PEDIDO =" + tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1) ;
                 Statement stmt = conect.createStatement();
                 stmt.executeUpdate(cad);
+                stmt.close();
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -5058,18 +5055,17 @@ private boolean validarVacioP(){
     private void llenarTablaHistorialPedidos(){
          try {
              
-            Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblHistorialPedidos.getModel();
             tbm.setRowCount(0);
             res=stmt.executeQuery("select ID_PEDIDO, FECHA_PEDIDO, FECHA_ENTREGA, PERSONAS.NOMBRE,NOMBRE_USUARIO,ESTADO,ADELANTO,TOTAL FROM PERSONAS, PEDIDOS,USUARIOS WHERE PERSONAS.ID_PERSONA = PEDIDOS.ID_CLIENTE AND PEDIDOS.ID_USUARIO = USUARIOS.ID_USUARIO");
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getDate(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getInt(8)-res.getInt(7)});
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getInt(8)-res.getInt(7)});
                 }  
             }
             stmt.close();
         }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en llenar tabla HistorialPedidos");
+            javax.swing.JOptionPane.showMessageDialog(this, ex.toString() + "\n" +"Error en llenar tabla HistorialPedidos");
         } 
     }  
     /**
@@ -5084,7 +5080,7 @@ private boolean validarVacioP(){
             res=stmt.executeQuery("select ID_VENTA, FECHA, PERSONAS.NOMBRE ,NOMBRE_USUARIO,TOTAL FROM PERSONAS, VENTAS,USUARIOS WHERE PERSONAS.ID_PERSONA = VENTAS.ID_CLIENTE AND VENTAS.ID_USUARIO = USUARIOS.ID_USUARIO");
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getString(3),res.getString(4),res.getInt(5)});
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getInt(5)});
                 }  
             }
             stmt.close();
@@ -5185,10 +5181,9 @@ private void llenarTablaDetallePedido(){
     /**
      * Llena la tabla del historial de comoras
      */
+    
     private void llenarTablaHistorialCompras(){
          try {
-            
-            Statement stmt=conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblHistorialCompras.getModel();
             tbm.setRowCount(0);
             res=stmt.executeQuery("SELECT ID_COMPRA, FECHA, PERSONAS.NOMBRE, TOTAL " +
@@ -5210,8 +5205,6 @@ private void llenarTablaDetallePedido(){
      */
 private void llenarTablaDetalleCompra(){
          try {
-
-            Statement stmt=conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblDetalleCompra.getModel();
             tbm.setRowCount(0);
             res=stmt.executeQuery("SELECT MATERIAS_PRIMAS.NOMBRE,DETALLE_COMPRA.CANTIDAD,(DETALLE_COMPRA.TOTAL/DETALLE_COMPRA.CANTIDAD)AS UNITARIO,MATERIAS_PRIMAS.UNIDAD_MEDIDA,DETALLE_COMPRA.TOTAL " +
@@ -5299,7 +5292,7 @@ private void llenarTablaDetalleCompra(){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         
         String date = simpleDateFormat.format(new Date());
-        String cad = "INSERT INTO VENTAS "
+        String cad = "INSERT INTO VENTAS (FECHA,ID_CLIENTE,ID_USUARIO,TOTAL) "
                     + "VALUES('"+ date +"',"
                     + idCliente +","+id_usuario+","+lblTotalVenta1.getText()+")";
             Statement stmt = conect.createStatement();
@@ -5533,10 +5526,10 @@ private void llenarTablaDetalleCompra(){
         String date2 = simpleDateFormat.format(datePedido.getDate());
         System.out.println(date2);
         r = tblClientes_Pedido.getSelectedRow();
-        String cad = "INSERT INTO PEDIDOS "
+        String cad = "INSERT INTO PEDIDOS (FECHA_PEDIDO,FECHA_ENTREGA,ID_CLIENTE,ID_USUARIO,ESTADO,ADELANTO,TOTAL)"
                     + "VALUES('"+ date +"','"+date2+"',"
                     + tblClientes_Pedido.getValueAt(r,0).toString()+","+id_usuario+",'N',"+txtAdelantoPedido.getText()+","+txtTotalPedido.getText()+")";
-            Statement stmt = conect.createStatement();
+            //Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
             actCant();
             //showMessageDialog(null,"Proveedor Registrado");
@@ -5555,7 +5548,7 @@ private void llenarTablaDetalleCompra(){
         String date = simpleDateFormat.format(new Date());
         r = tblProveedor_Compra.getSelectedRow();
     
-        String cad = "INSERT INTO COMPRAS "
+        String cad = "INSERT INTO COMPRAS (FECHA,ID_PROVEEDOR,TOTAL) "
                     + "VALUES('"+ date +"',"
                     + tblProveedor_Compra.getValueAt(r,0).toString()+","+ txtTotalCompra.getText()+")";
             Statement stmt = conect.createStatement();
