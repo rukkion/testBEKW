@@ -45,7 +45,7 @@ public class Imprimir {
      * @throws ClassNotFoundException  En Caso de que no se encuentre la clase de SQL.
      */
     private String getDateVenta(int id) throws ClassNotFoundException{
-        conectarBD();
+      
         String fecha="";
         try{    
                 String cad = "SELECT FECHA FROM VENTAS"
@@ -60,6 +60,8 @@ public class Imprimir {
                     }
                     return fecha;
                 }
+                
+                stmt.close();
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
@@ -72,7 +74,7 @@ public class Imprimir {
      * @throws ClassNotFoundException En caso de que no se encuentre la clase de SQL.
      */
     private String getFechaPedido(int idPedido) throws ClassNotFoundException{
-        conectarBD();
+        
         String fecha="";
         try{    
                 String cad = "SELECT FECHA_PEDIDO as FECHA FROM PEDIDOS"
@@ -87,6 +89,7 @@ public class Imprimir {
                     }
                     return fecha;
                 }
+                stmt.close();
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
@@ -99,7 +102,7 @@ public class Imprimir {
      * @throws ClassNotFoundException En caso de que no se encuentre la clase de SQL.
      */
     private String getFechaEntregaPedido(int idPedido) throws ClassNotFoundException{
-        conectarBD();
+        
         String fecha="";
         try{    
                 String cad = "SELECT FECHA_ENTREGA as FECHA FROM PEDIDOS"
@@ -114,6 +117,7 @@ public class Imprimir {
                     }
                     return fecha;
                 }
+                stmt.close();
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
@@ -231,7 +235,7 @@ public class Imprimir {
                         table.addCell(celltotalProducto);
                         nombreCliente=rs.getString("NOMBRE_CLIENTE")+" "+rs.getString("PATERNO")+" "+rs.getString("MATERNO");
                     } while (rs.next());
-                    
+                    st.close();
                 }
             } catch (Exception e) {
             }
@@ -401,7 +405,7 @@ public class Imprimir {
                         table.addCell(celltotalProducto);
                         nombreCliente=rs.getString("NOMBRE_CLIENTE")+" "+rs.getString("PATERNO")+" "+rs.getString("MATERNO");
                     } while (rs.next());
-                    
+                    st.close();
                 }
             } catch (Exception e) {
             }
