@@ -51,13 +51,16 @@ public class Imprimir {
                 String cad = "SELECT FECHA FROM VENTAS"
                         + " WHERE ID_VENTA="+id;
                 Statement stmt = conect.createStatement();
-                stmt.executeQuery(cad);
-                ResultSet rs = stmt.getResultSet();
+                
+                ResultSet rs =stmt.executeQuery(cad);
                 
                 if(null!=rs){
                     while(rs.next()){
-                        fecha=rs.getDate("FECHA").toString();
+                        fecha=rs.getString("FECHA");
                     }
+                    
+                    stmt.close();
+                    rs.close();
                     return fecha;
                 }
                 
@@ -80,16 +83,18 @@ public class Imprimir {
                 String cad = "SELECT FECHA_PEDIDO as FECHA FROM PEDIDOS"
                         + " WHERE ID_PEDIDO="+idPedido;
                 Statement stmt = conect.createStatement();
-                stmt.executeQuery(cad);
-                ResultSet rs = stmt.getResultSet();
+                ResultSet rs=stmt.executeQuery(cad);
                 
                 if(null!=rs){
                     while(rs.next()){
-                        fecha=rs.getDate("FECHA").toString();
+                        fecha=rs.getString("FECHA");
                     }
+                    rs.close();
+                    stmt.close();
                     return fecha;
                 }
                 stmt.close();
+                
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
@@ -108,15 +113,17 @@ public class Imprimir {
                 String cad = "SELECT FECHA_ENTREGA as FECHA FROM PEDIDOS"
                         + " WHERE ID_PEDIDO="+idPedido;
                 Statement stmt = conect.createStatement();
-                stmt.executeQuery(cad);
-                ResultSet rs = stmt.getResultSet();
+                ResultSet rs=stmt.executeQuery(cad);
                 
                 if(null!=rs){
                     while(rs.next()){
-                        fecha=rs.getDate("FECHA").toString();
+                        fecha=rs.getString("FECHA");
                     }
+                    stmt.close();
+                    rs.close();
                     return fecha;
                 }
+                
                 stmt.close();
         }catch(Exception e){
             System.out.println(e.getMessage());
@@ -132,7 +139,9 @@ public class Imprimir {
      * @param adelanto El adelanto que se entregó.
      */
     void imprimirPedido(String empleado, int idPedido,float efectivo,float cambio,float adelanto){
+        
         try{
+            conectarBD();
             Document documento= new Document();
             PdfWriter.getInstance(documento, new FileOutputStream("Pedido_"+idPedido+".pdf"));
               
@@ -236,6 +245,7 @@ public class Imprimir {
                         nombreCliente=rs.getString("NOMBRE_CLIENTE")+" "+rs.getString("PATERNO")+" "+rs.getString("MATERNO");
                     } while (rs.next());
                     st.close();
+                    rs.close();
                 }
             } catch (Exception e) {
             }
@@ -293,6 +303,7 @@ public class Imprimir {
       Document documento = new Document();
         
         try {
+            conectarBD();
             //idVenta="102";
             String FechaVenta=getDateVenta(idVenta); 
             PdfWriter.getInstance(documento, new FileOutputStream("Venta_"+idVenta+".pdf"));
@@ -406,6 +417,8 @@ public class Imprimir {
                         nombreCliente=rs.getString("NOMBRE_CLIENTE")+" "+rs.getString("PATERNO")+" "+rs.getString("MATERNO");
                     } while (rs.next());
                     st.close();
+                    rs.close();
+                    
                 }
             } catch (Exception e) {
             }
@@ -439,6 +452,7 @@ public class Imprimir {
             documento.add(bottom);
             documento.close();
             JOptionPane.showMessageDialog(null, "Venta "+idVenta+" generada exitosamente.");
+            
         } catch (Exception e) {
             System.out.println("Error" + e);
         }

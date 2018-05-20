@@ -489,7 +489,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Pastelería El Merengue");
         setBackground(new java.awt.Color(255, 255, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -2950,14 +2950,17 @@ public class Ventana_Dueno extends javax.swing.JFrame {
      * @param evt 
      */
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        String[] options = new String[2];
+        String[] options = new String[3];
         options[0] = new String("Minimizar");
         options[1] = new String("Salir");
+        options[2]=new String("Cancelar");
         int res=JOptionPane.showOptionDialog(this,"¿Deseas salir o minimizar?","Salir", 0,JOptionPane.INFORMATION_MESSAGE,null,options,null);
         if(res==0){
             this.setState(Frame.ICONIFIED);
-        }else{
+        }else if(res==1){
             this.dispose();
+        }else{
+            
         }
     }//GEN-LAST:event_formWindowClosing
     /**
@@ -4172,12 +4175,12 @@ private boolean validarVacioP(){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
         String date2 = simpleDateFormat.format(dateGeneracion.getDate());
-
+            tbmPedidosVenta.setRowCount(0);
            res=stmt.executeQuery("select ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA from PEDIDOS "
                 + "where FECHA_"+Bus+" = '"+date2+"'  and ESTADO = 'N' and ID_CLIENTE = "+ idCliente+"");  
             if(res!=null){
                 while(res.next()){
-                   tbmPedidosVenta.addRow(new Object[]{tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 1),res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA")});
+                   tbmPedidosVenta.addRow(new Object[]{tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 1),res.getInt("ID_PEDIDO"), res.getString("FECHA_PEDIDO"),res.getString("FECHA_ENTREGA")});
                 }  
             }
             stmt.close();
@@ -4203,16 +4206,18 @@ private boolean validarVacioP(){
             DefaultTableModel tbmPedidosVenta=(DefaultTableModel)tblPedidosVentas.getModel();
             idCliente=Integer.parseInt(tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0).toString());
             //BUSCA TODO DE PEDIDO
+            tbmPedidosVenta.setRowCount(0);
             if(idCliente>0){
                 stmt=conect.createStatement();
                 res=stmt.executeQuery("SELECT ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA from PEDIDOS where ID_CLIENTE ="+idCliente+" AND ESTADO = 'N'");
                 
             if(null!=res){
                 while(res.next()){
-                   tbmPedidosVenta.addRow(new Object[]{tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0),res.getInt("ID_PEDIDO"), res.getString("FECHA_PEDIDO"),res.getString("FECHA_ENTREGA")});
+                   tbmPedidosVenta.addRow(new Object[]{tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 1),res.getInt("ID_PEDIDO"), res.getString("FECHA_PEDIDO"),res.getString("FECHA_ENTREGA")});
                 }  
             }
             stmt.close();
+            
             }else{
                 showMessageDialog(this, "Selecciona un cliente para buscar pedidos en Venta.");
             }
