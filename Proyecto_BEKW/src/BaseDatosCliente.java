@@ -59,7 +59,7 @@ public class BaseDatosCliente {
   boolean insertar(String nom,String app, String apm, String dom, String codp, String tel) throws ClassNotFoundException, SQLException {
     conectar(); 
     variables(nom,app,apm,dom,codp,tel); 
-    if(verificar()){   
+    //if(verificar()){   
     try{
         //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         con = DriverManager.getConnection(rutaBD);
@@ -71,8 +71,8 @@ public class BaseDatosCliente {
             System.out.println("Error.");  
      }
     return true;
-    }else    
-    return false;
+    //}else    
+    //return false;
   }
   
 /**
@@ -111,7 +111,7 @@ public class BaseDatosCliente {
     conectar();
     this.id = id;
     variables(nom,app,apm,dom,codp,tel);
-    if(verificar()){   
+    //if(verificar()){   
     try{
         //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         con = DriverManager.getConnection(rutaBD);
@@ -122,8 +122,8 @@ public class BaseDatosCliente {
         System.out.println("Error.");   
      }
     return true;
-    }else
-    return false;
+   // }else
+    
   }
 
  //Metodos de Control. Para se realize en buen funcionamiento los metodos Insertar, Eliminar y Modificar.

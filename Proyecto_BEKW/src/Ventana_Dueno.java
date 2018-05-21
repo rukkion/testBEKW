@@ -8,6 +8,7 @@ import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.FileOutputStream;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -17,9 +18,12 @@ import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Currency;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -760,6 +764,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel21.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, 190, 20));
 
         txtEfectivo.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtEfectivo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEfectivoFocusLost(evt);
+            }
+        });
         txtEfectivo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEfectivoKeyReleased(evt);
@@ -884,6 +893,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel15.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 410, 340));
 
         txtBuscarProducto_Pedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtBuscarProducto_Pedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarProducto_PedidoActionPerformed(evt);
+            }
+        });
         txtBuscarProducto_Pedido.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtBuscarProducto_PedidotxtBuscarKeyReleased(evt);
@@ -948,6 +962,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         txtAdelantoPedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtAdelantoPedido.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtAdelantoPedido.setText("0");
+        txtAdelantoPedido.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtAdelantoPedidoFocusLost(evt);
+            }
+        });
         jPanel22.add(txtAdelantoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 480, 90, 30));
 
         jLabel12.setText("Anticipo:");
@@ -968,6 +987,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel22.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 480, -1, -1));
 
         txtEfectivoPedido.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtEfectivoPedido.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEfectivoPedidoFocusLost(evt);
+            }
+        });
         txtEfectivoPedido.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEfectivoPedidoKeyReleased(evt);
@@ -1258,6 +1282,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         jLabel38.setText("Fecha Generacion");
 
+        dateGeneracionPedido1.setDateFormatString("dd-MM-yyyy");
+
         jLabel39.setText("Código");
 
         jLabel40.setText("Cliente");
@@ -1394,6 +1420,10 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         buttonGroup3.add(rdbNoPagado);
         rdbNoPagado.setText("No Pagado");
+
+        dateGeneracionPedido.setDateFormatString("dd-MM-yyyy");
+
+        dateEntegaPedidos.setDateFormatString("dd-MM-yyyy");
 
         tblpruebapedidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1778,6 +1808,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         txtPrecioMateriaPrima.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtPrecioMateriaPrima.setText("0");
+        txtPrecioMateriaPrima.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPrecioMateriaPrimaFocusLost(evt);
+            }
+        });
         jPanel8.add(txtPrecioMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 180, -1));
 
         spnrMP.setValue(1);
@@ -1915,6 +1950,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel17.add(txtnomP, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 152, -1));
 
         txtprecioP.setText(" ");
+        txtprecioP.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtprecioPFocusLost(evt);
+            }
+        });
         txtprecioP.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtprecioPKeyTyped(evt);
@@ -2958,7 +2998,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         if(res==0){
             this.setState(Frame.ICONIFIED);
         }else if(res==1){
-            this.dispose();
+            this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         }else{
             
         }
@@ -3093,6 +3133,36 @@ VentanaCliente mdC=new VentanaCliente();
      * Botón de modificar proveedor.
      * @param evt 
      */
+    
+     private boolean VerificarvaciosCliente(){
+        
+        if(txtNomC.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL NOMBRE DEL CLIENTE");
+            return false;
+        }
+        if(txtAPPC.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL APELLIDO PATERNO");
+            return false;
+        }
+        if(txtAPMC.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL APELLIDO MATERNO");
+            return false;
+        }
+        if (txtDomC.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL DOMICILIO");
+            return false;
+        }
+        if (txtCPC.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL CODIGO POSTAL");
+            return false;
+        }
+        if (txtTelC.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL NUMERO TELEFONICO");
+            return false;
+        }
+        return true;
+    }
+    
     private void btnModificarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarProveedorActionPerformed
 
         try {
@@ -3875,6 +3945,7 @@ VentanaCliente mdC=new VentanaCliente();
      * @param evt 
      */
     private void btnInsertarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarCActionPerformed
+       if(VerificarvaciosCliente()){
         BaseDatosCliente c=new BaseDatosCliente();
         try {
             if(c.insertar(txtNomC.getText(),txtAPPC.getText(),txtAPMC.getText(),txtDomC.getText(),txtCPC.getText(),txtTelC.getText()))
@@ -3884,7 +3955,7 @@ VentanaCliente mdC=new VentanaCliente();
         } catch (SQLException ex) {
             Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-        llenarTablaCliente();
+        llenarTablaCliente();}
     }//GEN-LAST:event_btnInsertarCActionPerformed
 
     private void txtBuscadorCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorCActionPerformed
@@ -4172,9 +4243,10 @@ private boolean validarVacioP(){
            else
                Bus = "ENTREGA";
         String pattern = "yyyy-MM-dd";
+               
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
         String date2 = simpleDateFormat.format(dateGeneracion.getDate());
+        System.err.println(date2);
             tbmPedidosVenta.setRowCount(0);
            res=stmt.executeQuery("select ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA from PEDIDOS "
                 + "where FECHA_"+Bus+" = '"+date2+"'  and ESTADO = 'N' and ID_CLIENTE = "+ idCliente+"");  
@@ -4516,6 +4588,10 @@ private boolean validarVacioP(){
      * @param evt 
      */
     private void btnGenerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPedidoActionPerformed
+        if(datePedido.getDate()!=null){
+     
+            
+        
         if(tblPedido.getRowCount()!=0 && tblClientes_Pedido.getSelectedRow()>-1 && Float.parseFloat(txtAdelantoPedido.getText())>=(Float.parseFloat(txtTotalPedido.getText()))*.5){
         try { System.out.println("insertado");
                 insertarPedido();
@@ -4541,7 +4617,9 @@ private boolean validarVacioP(){
         else
             showMessageDialog(this, "Debe de pagar un Anticipo minimo del 50%.");
         
-
+        }
+        else
+            showMessageDialog(this,"Debe de seleccionar una de fecha entrega para la el pedido.");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGenerarPedidoActionPerformed
 
@@ -4582,14 +4660,14 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_tblPedidosVentasMouseClicked
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String pattern = "yyyy-MM-dd";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
-        String date2 = simpleDateFormat.format(dateGeneracion.getDate());
+    if(dateGeneracion.getDate()!=null){
        if(tblClientesVenta.getSelectedRow()>-1)
             BuscarPedidos();
        else
            showMessageDialog(this,"Debe de seleccionar un cliente para la busqueda.");
+    }
+    else 
+        showMessageDialog(this,"Debe de seleccionar una fecha para la busqueda.");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -4778,11 +4856,29 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_txtEfectivoKeyTyped
 
     private void txtEfectivoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyReleased
-        generarCambio();
+           try {// if is number
+    Double.parseDouble(txtEfectivo.getText());
+     System.out.println("va va valido");
+     generarCambio();
+    } catch (NumberFormatException e) {
+        System.out.println("no valido");
+    // else then do blah
+    }
+
+        //
     }//GEN-LAST:event_txtEfectivoKeyReleased
 
     private void txtEfectivoPedidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyReleased
-        generarCambioPedido();
+        String pattern = "\\d.\\d$";
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(txtEfectivoPedido.getText());
+        if(m.find()){
+            System.out.println("si!");
+        }
+        else{ 
+            evt.consume();
+            System.out.println("no!");}
+     //generarCambioPedido();
     }//GEN-LAST:event_txtEfectivoPedidoKeyReleased
 
     private void txtEfectivoPedidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyTyped
@@ -4903,6 +4999,81 @@ private boolean validarVacioP(){
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         imprimirDatosReporte();
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void txtBuscarProducto_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarProducto_PedidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarProducto_PedidoActionPerformed
+
+    private void txtEfectivoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEfectivoFocusLost
+                   try {// if is number
+    Double.parseDouble(txtEfectivo.getText());
+     
+   
+    } catch (NumberFormatException e) {
+                       showMessageDialog(null,"CANTIDAD DE EFECTIVO INVALIDO");
+                       txtEfectivo.setText("");
+    // else then do blah
+    }
+
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEfectivoFocusLost
+
+    private void txtEfectivoPedidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoFocusLost
+                         try {// if is number
+    Double.parseDouble(txtEfectivoPedido.getText());
+     
+   
+    } catch (NumberFormatException e) {
+                       showMessageDialog(null,"CANTIDAD DE EFECTIVO INVALIDO");
+                       txtEfectivoPedido.setText("");
+    // else then do blah
+    }
+
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEfectivoPedidoFocusLost
+
+    private void txtAdelantoPedidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAdelantoPedidoFocusLost
+                               try {// if is number
+    Double.parseDouble(txtAdelantoPedido.getText());
+     
+   
+    } catch (NumberFormatException e) {
+                       showMessageDialog(null,"CANTIDAD DE ANTICIPO INVALIDO");
+                       txtAdelantoPedido.setText("");
+    // else then do blah
+    }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAdelantoPedidoFocusLost
+
+    private void txtPrecioMateriaPrimaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecioMateriaPrimaFocusLost
+                                    try {// if is number
+    Double.parseDouble(txtPrecioMateriaPrima.getText());
+     
+   
+    } catch (NumberFormatException e) {
+                       showMessageDialog(null,"PRECIO INVALIDO");
+                       txtPrecioMateriaPrima.setText("0.0");
+    // else then do blah
+    }
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecioMateriaPrimaFocusLost
+
+    private void txtprecioPFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtprecioPFocusLost
+                                            try {// if is number
+    Double.parseDouble(txtprecioP.getText());
+     
+   
+    } catch (NumberFormatException e) {
+                       showMessageDialog(null,"PRECIO INVALIDO");
+                       txtprecioP.setText("0.0");
+    // else then do blah
+    }
+       
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtprecioPFocusLost
     /**
      * Lllena el combo de las presentaciones de Materias Primas
      * @throws SQLException 
@@ -4984,7 +5155,7 @@ private boolean validarVacioP(){
                      + bus1 +bus2+bus3);
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getDate(3),res.getString(2),res.getInt(4)});
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(3),res.getString(2),res.getInt(4)});
                 }  
             }
     
@@ -5049,7 +5220,7 @@ private boolean validarVacioP(){
 
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getDate(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getInt(8)-res.getInt(7)});
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getInt(8)-res.getInt(7)});
                 }  
             }
     
@@ -5110,6 +5281,7 @@ private boolean validarVacioP(){
         
         if(dateGeneracionPedido1.getDate()!=null){
             String date2 = simpleDateFormat.format(dateGeneracionPedido1.getDate());
+            System.err.println(date2);
             bus2=" AND FECHA = '"+ date2+"'";}
         
  
@@ -5122,7 +5294,7 @@ private boolean validarVacioP(){
      
            
           stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblHistorialPedidos.getModel();
+            DefaultTableModel tbm=(DefaultTableModel)tblHistorialVentas.getModel();
             tbm.setRowCount(0);
             res=stmt.executeQuery("select ID_VENTA, FECHA, PERSONAS.NOMBRE ,NOMBRE_USUARIO,TOTAL FROM PERSONAS, VENTAS,USUARIOS WHERE PERSONAS.ID_PERSONA = VENTAS.ID_CLIENTE AND VENTAS.ID_USUARIO = USUARIOS.ID_USUARIO "
                     + ""
@@ -5131,7 +5303,7 @@ private boolean validarVacioP(){
             
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getString(3),res.getString(4),res.getInt(5)});}  
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getInt(5)});}  
             }
     
     }
@@ -5719,6 +5891,11 @@ private void llenarTablaDetalleCompra(){
       * @param evt 
       */
      private void ValidarNumeros(KeyEvent evt) {
+         
+         
+
+ 
+  
        char l=evt.getKeyChar();
         if(!Character.isDigit(l) || l == KeyEvent.VK_SPACE )
            evt.consume();
