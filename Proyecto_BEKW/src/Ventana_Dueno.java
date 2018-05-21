@@ -2345,12 +2345,22 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 txtCPCActionPerformed(evt);
             }
         });
+        txtCPC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCPCKeyTyped(evt);
+            }
+        });
         jPanel7.add(txtCPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 140, -1));
 
         txtTelC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtTelC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelCActionPerformed(evt);
+            }
+        });
+        txtTelC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelCKeyTyped(evt);
             }
         });
         jPanel7.add(txtTelC, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 136, 30));
@@ -3111,7 +3121,10 @@ VentanaCliente mdC=new VentanaCliente();
      * @param evt 
      */
     private void txtProveedorTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorTelefonoKeyTyped
-   
+   char l=evt.getKeyChar();
+        if(!(Character.isDigit(l) ) )
+            evt.consume();
+        
     }//GEN-LAST:event_txtProveedorTelefonoKeyTyped
     /**
      * carga la información del proveedor a los campos de texto desde la tabla Proveedores del apartado Personas
@@ -3304,7 +3317,10 @@ VentanaCliente mdC=new VentanaCliente();
      * @param evt 
      */
     private void txtProveedorCPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorCPKeyTyped
-
+         char l=evt.getKeyChar();
+        if(!(Character.isDigit(l) ) )
+            evt.consume();
+     
     }//GEN-LAST:event_txtProveedorCPKeyTyped
     /**
      * Botón de agregar usuarios en usuarios.
@@ -5078,6 +5094,22 @@ generarCambio();
     private void txtEfectivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEfectivoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEfectivoActionPerformed
+
+    private void txtCPCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCPCKeyTyped
+           char l=evt.getKeyChar();
+        if(!(Character.isDigit(l) ) )
+            evt.consume();
+     
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCPCKeyTyped
+
+    private void txtTelCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelCKeyTyped
+           char l=evt.getKeyChar();
+        if(!(Character.isDigit(l) ) )
+            evt.consume();
+     
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelCKeyTyped
     /**
      * Lllena el combo de las presentaciones de Materias Primas
      * @throws SQLException 
