@@ -771,6 +771,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 txtEfectivoFocusLost(evt);
             }
         });
+        txtEfectivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEfectivoActionPerformed(evt);
+            }
+        });
         txtEfectivo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtEfectivoKeyPressed(evt);
@@ -4469,6 +4474,7 @@ private boolean validarVacioP(){
                 printVenta.imprimirVenta(nombreUsuario, idVentaImprimir,efectivo,cambio);
                 txtEfectivo.setText("0.00");
                 lblCambio.setText("0.00");
+                
                 tbmVenta.setRowCount(0);
                 lblAnticipo.setText("0.00");
                 lblTotalVenta1.setText("0.00");
@@ -4626,6 +4632,8 @@ private boolean validarVacioP(){
                 tbm.setRowCount(0);
                 txtTotalPedido.setText("0");
                 tblPedido.setModel(tbm);
+                
+                txtEfectivoPedido.setText("0.00");
                 txtAdelantoPedido.setText("0");
                 System.out.println("¡Pedido realizado exitosamente!");
             } catch (SQLException ex) {
@@ -4876,22 +4884,24 @@ private boolean validarVacioP(){
 
     private void txtEfectivoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyTyped
       
-      ValidarNumeros(evt,txtEfectivo);
-        
+      
+              ValidarNumeros(evt,txtEfectivo);
+        generarCambio();
     }//GEN-LAST:event_txtEfectivoKeyTyped
 
     private void txtEfectivoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyReleased
-
+generarCambio();
  
     }//GEN-LAST:event_txtEfectivoKeyReleased
 
     private void txtEfectivoPedidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyReleased
-  
-     //generarCambioPedido();
+        
+     generarCambioPedido();
     }//GEN-LAST:event_txtEfectivoPedidoKeyReleased
 
     private void txtEfectivoPedidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyTyped
-         ValidarNumeros(evt,txtEfectivoPedido);
+        generarCambioPedido();
+        ValidarNumeros(evt,txtEfectivoPedido);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEfectivoPedidoKeyTyped
 
@@ -5064,6 +5074,10 @@ private boolean validarVacioP(){
         ValidarNumeros(evt,txtPrecioMateriaPrima);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPrecioMateriaPrimaKeyTyped
+
+    private void txtEfectivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEfectivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEfectivoActionPerformed
     /**
      * Lllena el combo de las presentaciones de Materias Primas
      * @throws SQLException 
