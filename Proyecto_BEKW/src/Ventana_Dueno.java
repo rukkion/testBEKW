@@ -31,10 +31,12 @@ import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.JSpinner;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import javax.swing.text.Document;
+import org.sqlite.util.StringUtils;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -770,6 +772,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             }
         });
         txtEfectivo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEfectivoKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEfectivoKeyReleased(evt);
             }
@@ -967,6 +972,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 txtAdelantoPedidoFocusLost(evt);
             }
         });
+        txtAdelantoPedido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAdelantoPedidoKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAdelantoPedidoKeyTyped(evt);
+            }
+        });
         jPanel22.add(txtAdelantoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 480, 90, 30));
 
         jLabel12.setText("Anticipo:");
@@ -977,7 +990,7 @@ public class Ventana_Dueno extends javax.swing.JFrame {
 
         txtTotalPedido.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txtTotalPedido.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        txtTotalPedido.setText("0");
+        txtTotalPedido.setText("0.00");
         jPanel22.add(txtTotalPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, 120, -1));
 
         datePedido.setDateFormatString("dd-MM-yyyy");
@@ -1813,6 +1826,14 @@ public class Ventana_Dueno extends javax.swing.JFrame {
                 txtPrecioMateriaPrimaFocusLost(evt);
             }
         });
+        txtPrecioMateriaPrima.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPrecioMateriaPrimaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPrecioMateriaPrimaKeyTyped(evt);
+            }
+        });
         jPanel8.add(txtPrecioMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 180, -1));
 
         spnrMP.setValue(1);
@@ -1956,6 +1977,9 @@ public class Ventana_Dueno extends javax.swing.JFrame {
             }
         });
         txtprecioP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtprecioPKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtprecioPKeyTyped(evt);
             }
@@ -3082,7 +3106,7 @@ VentanaCliente mdC=new VentanaCliente();
      * @param evt 
      */
     private void txtProveedorTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorTelefonoKeyTyped
-        ValidarNumeros(evt);
+   
     }//GEN-LAST:event_txtProveedorTelefonoKeyTyped
     /**
      * carga la información del proveedor a los campos de texto desde la tabla Proveedores del apartado Personas
@@ -3275,7 +3299,7 @@ VentanaCliente mdC=new VentanaCliente();
      * @param evt 
      */
     private void txtProveedorCPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorCPKeyTyped
-        ValidarNumeros(evt);
+
     }//GEN-LAST:event_txtProveedorCPKeyTyped
     /**
      * Botón de agregar usuarios en usuarios.
@@ -4181,8 +4205,7 @@ private boolean validarVacioP(){
      * @param evt 
      */
     private void txtprecioPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioPKeyTyped
-
-        ValidarNumeros(evt);
+ ValidarNumeros(evt,txtprecioP);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtprecioPKeyTyped
    /**
@@ -4852,36 +4875,23 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_btnGenerarVentaKeyTyped
 
     private void txtEfectivoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyTyped
+      
+      ValidarNumeros(evt,txtEfectivo);
         
     }//GEN-LAST:event_txtEfectivoKeyTyped
 
     private void txtEfectivoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyReleased
-           try {// if is number
-    Double.parseDouble(txtEfectivo.getText());
-     System.out.println("va va valido");
-     generarCambio();
-    } catch (NumberFormatException e) {
-        System.out.println("no valido");
-    // else then do blah
-    }
 
-        //
+ 
     }//GEN-LAST:event_txtEfectivoKeyReleased
 
     private void txtEfectivoPedidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyReleased
-        String pattern = "\\d.\\d$";
-        Pattern p = Pattern.compile(pattern);
-        Matcher m = p.matcher(txtEfectivoPedido.getText());
-        if(m.find()){
-            System.out.println("si!");
-        }
-        else{ 
-            evt.consume();
-            System.out.println("no!");}
+  
      //generarCambioPedido();
     }//GEN-LAST:event_txtEfectivoPedidoKeyReleased
 
     private void txtEfectivoPedidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyTyped
+         ValidarNumeros(evt,txtEfectivoPedido);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEfectivoPedidoKeyTyped
 
@@ -5005,75 +5015,55 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_txtBuscarProducto_PedidoActionPerformed
 
     private void txtEfectivoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEfectivoFocusLost
-                   try {// if is number
-    Double.parseDouble(txtEfectivo.getText());
      
-   
-    } catch (NumberFormatException e) {
-                       showMessageDialog(null,"CANTIDAD DE EFECTIVO INVALIDO");
-                       txtEfectivo.setText("");
-    // else then do blah
-    }
-
         
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtEfectivoFocusLost
 
     private void txtEfectivoPedidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoFocusLost
-                         try {// if is number
-    Double.parseDouble(txtEfectivoPedido.getText());
-     
-   
-    } catch (NumberFormatException e) {
-                       showMessageDialog(null,"CANTIDAD DE EFECTIVO INVALIDO");
-                       txtEfectivoPedido.setText("");
-    // else then do blah
-    }
-
-        
-        // TODO add your handling code here:
+ 
     }//GEN-LAST:event_txtEfectivoPedidoFocusLost
 
     private void txtAdelantoPedidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAdelantoPedidoFocusLost
-                               try {// if is number
-    Double.parseDouble(txtAdelantoPedido.getText());
-     
-   
-    } catch (NumberFormatException e) {
-                       showMessageDialog(null,"CANTIDAD DE ANTICIPO INVALIDO");
-                       txtAdelantoPedido.setText("");
-    // else then do blah
-    }
-        // TODO add your handling code here:
+  
     }//GEN-LAST:event_txtAdelantoPedidoFocusLost
 
     private void txtPrecioMateriaPrimaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecioMateriaPrimaFocusLost
-                                    try {// if is number
-    Double.parseDouble(txtPrecioMateriaPrima.getText());
      
-   
-    } catch (NumberFormatException e) {
-                       showMessageDialog(null,"PRECIO INVALIDO");
-                       txtPrecioMateriaPrima.setText("0.0");
-    // else then do blah
-    }
-        
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtPrecioMateriaPrimaFocusLost
 
     private void txtprecioPFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtprecioPFocusLost
-                                            try {// if is number
-    Double.parseDouble(txtprecioP.getText());
-     
-   
-    } catch (NumberFormatException e) {
-                       showMessageDialog(null,"PRECIO INVALIDO");
-                       txtprecioP.setText("0.0");
-    // else then do blah
-    }
+  
+    }//GEN-LAST:event_txtprecioPFocusLost
+
+    private void txtAdelantoPedidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAdelantoPedidoKeyReleased
        
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtprecioPFocusLost
+    }//GEN-LAST:event_txtAdelantoPedidoKeyReleased
+
+    private void txtPrecioMateriaPrimaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioMateriaPrimaKeyReleased
+    
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecioMateriaPrimaKeyReleased
+
+    private void txtprecioPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioPKeyReleased
+       
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtprecioPKeyReleased
+
+    private void txtEfectivoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyPressed
+    
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEfectivoKeyPressed
+
+    private void txtAdelantoPedidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAdelantoPedidoKeyTyped
+          ValidarNumeros(evt,txtAdelantoPedido);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAdelantoPedidoKeyTyped
+
+    private void txtPrecioMateriaPrimaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioMateriaPrimaKeyTyped
+        ValidarNumeros(evt,txtPrecioMateriaPrima);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecioMateriaPrimaKeyTyped
     /**
      * Lllena el combo de las presentaciones de Materias Primas
      * @throws SQLException 
@@ -5408,10 +5398,12 @@ private void llenarTablaDetalleCompra(){
             tbm.removeRow(i);
             i-=1;
             }
+            lblCambio.setText("0.00");
             tblVenta.setModel(tbm);
-            lblAnticipo.setText("0");
-            lblTotalVenta1.setText("0");
-            lblPagoRestante.setText("0");
+            txtEfectivo.setText("0.00");
+            lblAnticipo.setText("0.00");
+            lblTotalVenta1.setText("0.00");
+            lblPagoRestante.setText("0.00");
     }
     /**
      * Reestablece los valores por defecto de la ventana de Nueo Pedido
@@ -5422,8 +5414,12 @@ private void llenarTablaDetalleCompra(){
             tbm.removeRow(i);
             i-=1;
             }
+            txtAdelantoPedido.setText("0.00");
+            txtEfectivoPedido.setText("0.00");
+            lblCambioPedido.setText("0.00");
             tblPedido.setModel(tbm);
-            txtTotalPedido.setText("0");
+            txtTotalPedido.setText("0.00");
+            
             s = 0;
     }
 
@@ -5890,15 +5886,20 @@ private void llenarTablaDetalleCompra(){
       * Valida la existencia de numeros y consume el evento
       * @param evt 
       */
-     private void ValidarNumeros(KeyEvent evt) {
-         
-         
-
- 
-  
-       char l=evt.getKeyChar();
-        if(!Character.isDigit(l) || l == KeyEvent.VK_SPACE )
-           evt.consume();
+     private void ValidarNumeros(KeyEvent evt,JTextField textF) {
+        char someChar = '.';
+        int count = 0;
+        for (int i = 0; i < textF.getText().length(); i++) {
+            if (textF.getText().charAt(i) == someChar) {
+        count++;
+            }
+        } 
+        char l=evt.getKeyChar();
+        if ((l == KeyEvent.VK_PERIOD) && (count>0))
+            evt.consume();
+       
+        if(!(Character.isDigit(l) || l == KeyEvent.VK_PERIOD ) )
+            evt.consume();
     }
      /**
       * Valida la existencia de letras y consume el evento
