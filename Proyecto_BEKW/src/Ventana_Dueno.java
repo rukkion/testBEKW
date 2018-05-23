@@ -72,7 +72,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         seticon();
         this.setBackground(Color.WHITE);
-        this.setExtendedState(this.getExtendedState()|JFrame.MAXIMIZED_BOTH);
+        //this.setExtendedState(this.getExtendedState()|JFrame.MAXIMIZED_BOTH);
+        setResizable(false);
     }
     
     String nombreUsuario="";
@@ -86,7 +87,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         seticon();
         lblUsuario.setText("Bienvenido, "+this.nombreUsuario);
-        this.setExtendedState(this.getExtendedState()|JFrame.MAXIMIZED_BOTH);
+        //this.setExtendedState(this.getExtendedState()|JFrame.MAXIMIZED_BOTH);
+        setResizable(false);
     }
     
     CONECTAR_SERVER CS;
@@ -102,7 +104,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         seticon();
         lblUsuario.setText("Bienvenido, "+this.nombreUsuario);
         this.CS=CS;
-        this.setExtendedState(this.getExtendedState()|JFrame.MAXIMIZED_BOTH);
+        setResizable(false);
+//this.setExtendedState(this.getExtendedState()|JFrame.MAXIMIZED_BOTH);
     }
     /**
      * Constructor de Ventana_Dueno.
@@ -118,7 +121,8 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         seticon();
         lblUsuario.setText("Bienvenido, "+nombreUsuario);
         this.CS=CS;
-        this.setExtendedState(this.getExtendedState()|JFrame.MAXIMIZED_BOTH);
+        setResizable(false);
+//this.setExtendedState(this.getExtendedState()|JFrame.MAXIMIZED_BOTH);
     }
     /**
      * Colocar las imagenes en los TABS principales.
@@ -6049,7 +6053,7 @@ private void llenarTablaDetalleCompra(){
     }
     
     private void seticon() {
-     setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Icons\\EL MERENGUE_icon.png")));
+     setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Icons/EL MERENGUE_icon.png")));
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton MP;

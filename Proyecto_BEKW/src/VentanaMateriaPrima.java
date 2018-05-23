@@ -415,7 +415,7 @@ public class VentanaMateriaPrima extends javax.swing.JFrame {
      * Establecer un icono a la ventana.
      */
      private void seticon() {
-     setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Icons\\EL MERENGUE_icon.png")));
+     setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Icons/EL MERENGUE_icon.png")));
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarMP;
