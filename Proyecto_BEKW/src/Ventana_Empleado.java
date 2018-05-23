@@ -7,21 +7,29 @@ import java.awt.Frame;
 import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+
 import java.sql.Connection;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.JSpinner;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
@@ -63,7 +71,8 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         seticon();
         this.setBackground(Color.WHITE);
-        
+        //this.setExtendedState(this.getExtendedState()|JFrame.MAXIMIZED_BOTH);
+        setResizable(false);
     }
     
     String nombreUsuario="";
@@ -77,6 +86,8 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         seticon();
         lblUsuario.setText("Bienvenido, "+this.nombreUsuario);
+        //this.setExtendedState(this.getExtendedState()|JFrame.MAXIMIZED_BOTH);
+        setResizable(false);
     }
     
     CONECTAR_SERVER CS;
@@ -92,6 +103,8 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         seticon();
         lblUsuario.setText("Bienvenido, "+this.nombreUsuario);
         this.CS=CS;
+        setResizable(false);
+//this.setExtendedState(this.getExtendedState()|JFrame.MAXIMIZED_BOTH);
     }
     /**
      * Constructor de Ventana_Dueno.
@@ -107,6 +120,8 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         seticon();
         lblUsuario.setText("Bienvenido, "+nombreUsuario);
         this.CS=CS;
+        setResizable(false);
+//this.setExtendedState(this.getExtendedState()|JFrame.MAXIMIZED_BOTH);
     }
     /**
      * Colocar las imagenes en los TABS principales.
@@ -377,7 +392,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Pastelería El Merengue");
         setBackground(new java.awt.Color(255, 255, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -391,6 +406,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -405,6 +421,8 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 95, -1, -1));
+
         jPanel4.setBackground(new java.awt.Color(51, 51, 51));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -417,22 +435,24 @@ public class Ventana_Empleado extends javax.swing.JFrame {
                 jButton25ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 20, 170, 54));
+        jPanel4.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 10, 170, 54));
 
         jLabel3.setFont(new java.awt.Font("Ubuntu Light", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/EL MERENGUEx75.png"))); // NOI18N
         jLabel3.setText("               Empleado");
-        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 563, -1));
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 563, -1));
 
         lblUsuario.setFont(new java.awt.Font("Ubuntu Light", 0, 18)); // NOI18N
         lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuario.setText("Bienvenido, Usuario");
-        jPanel4.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 40, -1, -1));
+        jPanel4.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, -1, -1));
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1480, 77));
 
         tb_principal.setBackground(new java.awt.Color(102, 255, 102));
         tb_principal.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        tb_principal.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tb_principal.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         tb_principal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tb_principalMouseClicked(evt);
@@ -643,7 +663,20 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jPanel21.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, 190, 20));
 
         txtEfectivo.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtEfectivo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEfectivoFocusLost(evt);
+            }
+        });
+        txtEfectivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEfectivoActionPerformed(evt);
+            }
+        });
         txtEfectivo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEfectivoKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEfectivoKeyReleased(evt);
             }
@@ -767,6 +800,11 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jPanel15.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 410, 340));
 
         txtBuscarProducto_Pedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtBuscarProducto_Pedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarProducto_PedidoActionPerformed(evt);
+            }
+        });
         txtBuscarProducto_Pedido.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtBuscarProducto_PedidotxtBuscarKeyReleased(evt);
@@ -831,6 +869,19 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         txtAdelantoPedido.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtAdelantoPedido.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtAdelantoPedido.setText("0");
+        txtAdelantoPedido.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtAdelantoPedidoFocusLost(evt);
+            }
+        });
+        txtAdelantoPedido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAdelantoPedidoKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAdelantoPedidoKeyTyped(evt);
+            }
+        });
         jPanel22.add(txtAdelantoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 480, 90, 30));
 
         jLabel12.setText("Anticipo:");
@@ -841,7 +892,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
 
         txtTotalPedido.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txtTotalPedido.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        txtTotalPedido.setText("0");
+        txtTotalPedido.setText("0.00");
         jPanel22.add(txtTotalPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, 120, -1));
 
         datePedido.setDateFormatString("dd-MM-yyyy");
@@ -851,6 +902,11 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jPanel22.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 480, -1, -1));
 
         txtEfectivoPedido.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtEfectivoPedido.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEfectivoPedidoFocusLost(evt);
+            }
+        });
         txtEfectivoPedido.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEfectivoPedidoKeyReleased(evt);
@@ -890,6 +946,8 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jLabel37.setText("Empleado");
 
         jLabel38.setText("Fecha Generacion");
+
+        dateGeneracionPedido1.setDateFormatString("dd-MM-yyyy");
 
         jLabel39.setText("Código");
 
@@ -965,35 +1023,33 @@ public class Ventana_Empleado extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel39)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(dateGeneracionPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBuscarCodigoPedidos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel40)
+                                    .addComponent(jLabel37))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtBuscarClientePedidos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBuscarEmpleadoPedidos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
                                         .addComponent(jButton6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jButton7))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel39)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(dateGeneracionPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtBuscarCodigoPedidos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel40)
-                                            .addComponent(jLabel37))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(txtBuscarClientePedidos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtBuscarEmpleadoPedidos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel38)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addComponent(jLabel38))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        tb_Ventas_Pedidos.addTab("Historial deVentas", jPanel1);
+        tb_Ventas_Pedidos.addTab("Historial de Ventas", jPanel1);
 
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1029,6 +1085,10 @@ public class Ventana_Empleado extends javax.swing.JFrame {
 
         buttonGroup3.add(rdbNoPagado);
         rdbNoPagado.setText("No Pagado");
+
+        dateGeneracionPedido.setDateFormatString("dd-MM-yyyy");
+
+        dateEntegaPedidos.setDateFormatString("dd-MM-yyyy");
 
         tblpruebapedidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1076,12 +1136,28 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 748, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addComponent(jLabel29)
-                                .addGap(106, 106, 106)
-                                .addComponent(jLabel32))
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel13Layout.createSequentialGroup()
+                                        .addComponent(jLabel29)
+                                        .addGap(106, 106, 106)
+                                        .addComponent(jLabel32))
+                                    .addGroup(jPanel13Layout.createSequentialGroup()
+                                        .addComponent(txtBuscarCodigoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(dateGeneracionPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel13Layout.createSequentialGroup()
+                                        .addGap(24, 24, 24)
+                                        .addComponent(jLabel33))
+                                    .addGroup(jPanel13Layout.createSequentialGroup()
+                                        .addGap(19, 19, 19)
+                                        .addComponent(dateEntegaPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel13Layout.createSequentialGroup()
                                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtBuscarClientePedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1093,41 +1169,23 @@ public class Ventana_Empleado extends javax.swing.JFrame {
                                     .addGroup(jPanel13Layout.createSequentialGroup()
                                         .addGap(14, 14, 14)
                                         .addComponent(jLabel35)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel36)
-                                    .addComponent(rdbPagado)))
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addComponent(txtBuscarCodigoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(dateGeneracionPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(rdbNoPagado)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rdbCancelar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCancelar_Pedido1))
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(jLabel33))
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(dateEntegaPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jButton3))))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 748, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel13Layout.createSequentialGroup()
+                                        .addComponent(rdbPagado)
+                                        .addGap(2, 2, 2)
+                                        .addComponent(rdbNoPagado)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(rdbCancelar)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnCancelar_Pedido1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1152,29 +1210,28 @@ public class Ventana_Empleado extends javax.swing.JFrame {
                                             .addComponent(jLabel35)
                                             .addComponent(jLabel34)
                                             .addComponent(jLabel36)))
-                                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(txtBuscarClientePedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtBuscarEmpleadoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(rdbPagado)
-                                            .addComponent(rdbNoPagado)
-                                            .addComponent(rdbCancelar))
-                                        .addGap(25, 25, 25))
-                                    .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jButton3)
-                                            .addComponent(btnCancelar_Pedido1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel13Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(dateEntegaPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, Short.MAX_VALUE)))
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(dateEntegaPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtBuscarClientePedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBuscarEmpleadoPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnCancelar_Pedido1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(6, 6, 6))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(rdbPagado)
+                                    .addComponent(rdbNoPagado)
+                                    .addComponent(rdbCancelar))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane11))
+                .addContainerGap())
         );
 
         tb_Ventas_Pedidos.addTab("Historial de Pedidos", jPanel13);
@@ -1300,6 +1357,19 @@ public class Ventana_Empleado extends javax.swing.JFrame {
 
         txtPrecioMateriaPrima.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtPrecioMateriaPrima.setText("0");
+        txtPrecioMateriaPrima.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPrecioMateriaPrimaFocusLost(evt);
+            }
+        });
+        txtPrecioMateriaPrima.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPrecioMateriaPrimaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPrecioMateriaPrimaKeyTyped(evt);
+            }
+        });
         jPanel8.add(txtPrecioMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 180, -1));
 
         spnrMP.setValue(1);
@@ -1437,7 +1507,15 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jPanel17.add(txtnomP, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 152, -1));
 
         txtprecioP.setText(" ");
+        txtprecioP.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtprecioPFocusLost(evt);
+            }
+        });
         txtprecioP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtprecioPKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtprecioPKeyTyped(evt);
             }
@@ -1509,7 +1587,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(tb_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 1146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1610,12 +1688,22 @@ public class Ventana_Empleado extends javax.swing.JFrame {
                 txtCPCActionPerformed(evt);
             }
         });
+        txtCPC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCPCKeyTyped(evt);
+            }
+        });
         jPanel7.add(txtCPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 140, -1));
 
         txtTelC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtTelC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelCActionPerformed(evt);
+            }
+        });
+        txtTelC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelCKeyTyped(evt);
             }
         });
         jPanel7.add(txtTelC, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 136, 30));
@@ -1699,7 +1787,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
                 .addGroup(panelClienteLayout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(24, Short.MAX_VALUE)))
+                    .addContainerGap(26, Short.MAX_VALUE)))
         );
 
         tb_Personas.addTab("Cliente", panelCliente);
@@ -1708,28 +1796,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
 
         tb_principal.addTab("Personas", jPanel9);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tb_principal))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(tb_principal, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
-        );
+        getContentPane().add(tb_principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1744,7 +1811,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
            DefaultTableModel tbm=(DefaultTableModel)tablaMateriaPrima.getModel();
            tbm.setRowCount(0);
            res=stmt.executeQuery("select * from MATERIAS_PRIMAS");
-            if(null!=res){
+             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getInt("PRECIO")});
                 }  
@@ -1770,20 +1837,15 @@ public class Ventana_Empleado extends javax.swing.JFrame {
     private void LlenarTablaVenta(){
         tbmVenta = (DefaultTableModel)tblVenta.getModel();
     }
-    /**
-     * Llena la tabla de proveedores en el Tab Proveedores.
-     * @throws ClassNotFoundException 
-     */
-
+    
     /**
      * Llena la tabla de Productos en el Tab Producto.
      * @throws ClassNotFoundException En caso de que no se encuentre la clase.
      */
     private void LlenarTablaP() throws ClassNotFoundException{
          try {
-
-
-            stmt = conect.createStatement();
+             
+           stmt = conect.createStatement();
            DefaultTableModel tbm=(DefaultTableModel)tblProducto.getModel();
            tbm.setRowCount(0);
            res=stmt.executeQuery("select * from PRODUCTOS WHERE TIPO = 'N' OR TIPO = 'P'");
@@ -1809,7 +1871,11 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
         }   
     }
-
+  /**
+   * Llena la tabla de usuarios del apartado de usuarios
+   * @throws ClassNotFoundException 
+   */
+    
     /**
      *  Llena la tabla cliente del apartado de personas
      */
@@ -1830,8 +1896,8 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             showMessageDialog(null," Error en la conexion LLENAR TABLA CLIENTE. "); 
         }
     }
-
-
+    
+  
    /**
     * Evento al abrir la ventana. E inicializa todas las funciones que se necesitan al abrir la ventana.
     * @param evt 
@@ -1864,7 +1930,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             llenarTablaProductos();
             llenarTablaHistorialPedidos();
             llenarTablaHistorialVentas();
-            
+
             llenarTablaClienteVenta();
         } catch (Exception ex) {
             Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
@@ -1938,14 +2004,17 @@ public class Ventana_Empleado extends javax.swing.JFrame {
      * @param evt 
      */
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        String[] options = new String[2];
+        String[] options = new String[3];
         options[0] = new String("Minimizar");
         options[1] = new String("Salir");
+        options[2]=new String("Cancelar");
         int res=JOptionPane.showOptionDialog(this,"¿Deseas salir o minimizar?","Salir", 0,JOptionPane.INFORMATION_MESSAGE,null,options,null);
         if(res==0){
             this.setState(Frame.ICONIFIED);
+        }else if(res==1){
+            this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         }else{
-            this.dispose();
+            
         }
     }//GEN-LAST:event_formWindowClosing
     /**
@@ -2011,7 +2080,42 @@ VentanaCliente mdC=new VentanaCliente();
     }//GEN-LAST:event_btnAddClienteVentasActionPerformed
 
 
-  public int rowProveedor = 0;
+
+    /**
+     * Botón de modificar proveedor.
+     * @param evt 
+     */
+    
+     private boolean VerificarvaciosCliente(){
+        
+        if(txtNomC.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL NOMBRE DEL CLIENTE");
+            return false;
+        }
+        if(txtAPPC.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL APELLIDO PATERNO");
+            return false;
+        }
+        if(txtAPMC.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL APELLIDO MATERNO");
+            return false;
+        }
+        if (txtDomC.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL DOMICILIO");
+            return false;
+        }
+        if (txtCPC.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL CODIGO POSTAL");
+            return false;
+        }
+        if (txtTelC.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL NUMERO TELEFONICO");
+            return false;
+        }
+        return true;
+    }
+       public int rowProveedor = 0;
+
 
 
    public int rowUsuario = 0;
@@ -2023,7 +2127,6 @@ VentanaCliente mdC=new VentanaCliente();
      */
     private void EliminarMP() throws ClassNotFoundException{
         try{
-            conectarBD();
             String cad = "DELETE FROM MATERIAS_PRIMAS WHERE ID_MATERIA =" + tablaMateriaPrima.getValueAt(tablaMateriaPrima.getSelectedRow(),0).toString();
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
@@ -2032,7 +2135,7 @@ VentanaCliente mdC=new VentanaCliente();
         }
             catch (SQLException ex) 
             {
-            System.out.println("Error Eliminar Materia Prima");   
+            System.out.println(ex.toString()+ "\n"+"Error Eliminar Materia Prima");   
             }
     }
 
@@ -2042,7 +2145,7 @@ VentanaCliente mdC=new VentanaCliente();
     private void InsertarMP(){
         try{
             
-            String cad = "INSERT INTO MATERIAS_PRIMAS "
+            String cad = "INSERT INTO MATERIAS_PRIMAS (NOMBRE,DESCRIPCION,CANT_DISP,UNIDAD_MEDIDA,PRECIO) "
                     + "VALUES('"+ txtNombreMP.getText()+"','"
                     + txtDescripcionMP.getText() + "','"
                     + txtCantidadMP.getValue().toString()+ "','"
@@ -2055,7 +2158,7 @@ VentanaCliente mdC=new VentanaCliente();
         }
             catch (SQLException ex) 
             {
-            System.out.println("Error al insertar Materia Prima");   
+            System.out.println(ex.toString() + "\n"+ "Error al insertar Materia Prima");   
             } catch (ClassNotFoundException ex) {
         //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -2112,7 +2215,7 @@ VentanaCliente mdC=new VentanaCliente();
             showMessageDialog(null," Error en la conexion LLENAR TABLA PRODUCTOS. "); 
         }
     }
-
+    
     /**
      * llena la tabla productos del apartado de Pedido
      */
@@ -2179,7 +2282,7 @@ VentanaCliente mdC=new VentanaCliente();
         }
          return true;
     }
-  
+
 
     /**
      * verifica los campos vacios de materias primas
@@ -2234,7 +2337,6 @@ VentanaCliente mdC=new VentanaCliente();
     }//GEN-LAST:event_btnEliminarCActionPerformed
     
 
-    
     private TableRowSorter trsFiltro;
     /**
      * Función para limpiar campos en compras.
@@ -2323,6 +2425,7 @@ VentanaCliente mdC=new VentanaCliente();
      * @param evt 
      */
     private void btnInsertarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarCActionPerformed
+       if(VerificarvaciosCliente()){
         BaseDatosCliente c=new BaseDatosCliente();
         try {
             if(c.insertar(txtNomC.getText(),txtAPPC.getText(),txtAPMC.getText(),txtDomC.getText(),txtCPC.getText(),txtTelC.getText()))
@@ -2332,7 +2435,7 @@ VentanaCliente mdC=new VentanaCliente();
         } catch (SQLException ex) {
             Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-        llenarTablaCliente();
+        llenarTablaCliente();}
     }//GEN-LAST:event_btnInsertarCActionPerformed
 
     private void txtBuscadorCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorCActionPerformed
@@ -2506,9 +2609,9 @@ private boolean validarVacioP(){
             String u_medida=cmbUnidadMedidaProducto.getSelectedItem().toString();
             Float precio=Float.parseFloat((txtprecioP.getText()));
 
-            String cad = "INSERT INTO PRODUCTOS VALUES('"+nombre+"','"+descripcion+"','"+tipo+"','"+u_medida+"',"+precio+")";
+            String cad = "INSERT INTO PRODUCTOS (NOMBRE,DESCRIPCION,TIPO,UNIDAD,PRECIO) VALUES('"+nombre+"','"+descripcion+"','"+tipo+"','"+u_medida+"',"+precio+")";
             try {
-                java.sql.Statement stmt=conect.createStatement();
+                //java.sql.Statement stmt=conect.createStatement();
 
                 stmt.executeUpdate(cad);
                 LlenarTablaP();
@@ -2558,8 +2661,7 @@ private boolean validarVacioP(){
      * @param evt 
      */
     private void txtprecioPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioPKeyTyped
-
-        ValidarNumeros(evt);
+ ValidarNumeros(evt,txtprecioP);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtprecioPKeyTyped
    /**
@@ -2616,15 +2718,16 @@ private boolean validarVacioP(){
            else
                Bus = "ENTREGA";
         String pattern = "yyyy-MM-dd";
+               
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
         String date2 = simpleDateFormat.format(dateGeneracion.getDate());
-
+        System.err.println(date2);
+            tbmPedidosVenta.setRowCount(0);
            res=stmt.executeQuery("select ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA from PEDIDOS "
                 + "where FECHA_"+Bus+" = '"+date2+"'  and ESTADO = 'N' and ID_CLIENTE = "+ idCliente+"");  
             if(res!=null){
                 while(res.next()){
-                   tbmPedidosVenta.addRow(new Object[]{tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 1),res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA")});
+                   tbmPedidosVenta.addRow(new Object[]{tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 1),res.getInt("ID_PEDIDO"), res.getString("FECHA_PEDIDO"),res.getString("FECHA_ENTREGA")});
                 }  
             }
             stmt.close();
@@ -2650,22 +2753,21 @@ private boolean validarVacioP(){
             DefaultTableModel tbmPedidosVenta=(DefaultTableModel)tblPedidosVentas.getModel();
             idCliente=Integer.parseInt(tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0).toString());
             //BUSCA TODO DE PEDIDO
+            tbmPedidosVenta.setRowCount(0);
             if(idCliente>0){
                 stmt=conect.createStatement();
                 res=stmt.executeQuery("SELECT ID_PEDIDO,FECHA_PEDIDO,FECHA_ENTREGA from PEDIDOS where ID_CLIENTE ="+idCliente+" AND ESTADO = 'N'");
-                if(null!=res){
+                
+            if(null!=res){
                 while(res.next()){
-                   tbmPedidosVenta.addRow(new Object[]{tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 0),res.getInt("ID_PEDIDO"), res.getDate("FECHA_PEDIDO"),res.getDate("FECHA_ENTREGA")});
+                   tbmPedidosVenta.addRow(new Object[]{tblClientesVenta.getValueAt(tblClientesVenta.getSelectedRow(), 1),res.getInt("ID_PEDIDO"), res.getString("FECHA_PEDIDO"),res.getString("FECHA_ENTREGA")});
                 }  
             }
             stmt.close();
+            
             }else{
                 showMessageDialog(this, "Selecciona un cliente para buscar pedidos en Venta.");
             }
-            
-            
-         
-            
             
         }catch (SQLException ex) {
              System.out.println("ERROR AL LLENAR PEDIDOS EN VENTA");
@@ -2716,6 +2818,7 @@ private boolean validarVacioP(){
                 printVenta.imprimirVenta(nombreUsuario, idVentaImprimir,efectivo,cambio);
                 txtEfectivo.setText("0.00");
                 lblCambio.setText("0.00");
+                
                 tbmVenta.setRowCount(0);
                 lblAnticipo.setText("0.00");
                 lblTotalVenta1.setText("0.00");
@@ -2795,13 +2898,14 @@ private boolean validarVacioP(){
                         "WHERE ID_PEDIDO =" + tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1) ;
                 Statement stmt = conect.createStatement();
                 stmt.executeUpdate(cad);
+                stmt.close();
             } catch (SQLException ex) {
                 Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
             }
         
         
     }
-  
+
     /**
      * Botón de cancelar pedido.
      * @param evt 
@@ -2818,6 +2922,10 @@ private boolean validarVacioP(){
      * @param evt 
      */
     private void btnGenerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPedidoActionPerformed
+        if(datePedido.getDate()!=null){
+     
+            
+        
         if(tblPedido.getRowCount()!=0 && tblClientes_Pedido.getSelectedRow()>-1 && Float.parseFloat(txtAdelantoPedido.getText())>=(Float.parseFloat(txtTotalPedido.getText()))*.5){
         try { System.out.println("insertado");
                 insertarPedido();
@@ -2829,6 +2937,8 @@ private boolean validarVacioP(){
                 tbm.setRowCount(0);
                 txtTotalPedido.setText("0");
                 tblPedido.setModel(tbm);
+                
+                txtEfectivoPedido.setText("0.00");
                 txtAdelantoPedido.setText("0");
                 System.out.println("¡Pedido realizado exitosamente!");
             } catch (SQLException ex) {
@@ -2843,7 +2953,9 @@ private boolean validarVacioP(){
         else
             showMessageDialog(this, "Debe de pagar un Anticipo minimo del 50%.");
         
-
+        }
+        else
+            showMessageDialog(this,"Debe de seleccionar una de fecha entrega para la el pedido.");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGenerarPedidoActionPerformed
 
@@ -2884,14 +2996,14 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_tblPedidosVentasMouseClicked
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String pattern = "yyyy-MM-dd";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
-        String date2 = simpleDateFormat.format(dateGeneracion.getDate());
+    if(dateGeneracion.getDate()!=null){
        if(tblClientesVenta.getSelectedRow()>-1)
             BuscarPedidos();
        else
            showMessageDialog(this,"Debe de seleccionar un cliente para la busqueda.");
+    }
+    else 
+        showMessageDialog(this,"Debe de seleccionar una fecha para la busqueda.");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -2905,12 +3017,18 @@ private boolean validarVacioP(){
         showMessageDialog(null," Favor de seleccionar un cliente.");
     }//GEN-LAST:event_btnRefreshProducto_Pedido1ActionPerformed
 
-
+/**
+ * Botón para volver a llenar la tabla de productos en pedido.
+ * @param evt 
+ */
     private void btnRefreshProducto_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProducto_PedidoActionPerformed
         llenarTablaProductos();
     }//GEN-LAST:event_btnRefreshProducto_PedidoActionPerformed
 
-
+/**
+ * Evento al dar click en historial de pedido para llenar el historial de pedido
+ * @param evt 
+ */
     private void tblHistorialPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHistorialPedidosMouseClicked
         llenarTablaDetallePedido();
     }//GEN-LAST:event_tblHistorialPedidosMouseClicked
@@ -3005,18 +3123,25 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_btnGenerarVentaKeyTyped
 
     private void txtEfectivoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyTyped
-        
+      
+      
+              ValidarNumeros(evt,txtEfectivo);
+        generarCambio();
     }//GEN-LAST:event_txtEfectivoKeyTyped
 
     private void txtEfectivoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyReleased
-        generarCambio();
+generarCambio();
+ 
     }//GEN-LAST:event_txtEfectivoKeyReleased
 
     private void txtEfectivoPedidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyReleased
-        generarCambioPedido();
+        
+     generarCambioPedido();
     }//GEN-LAST:event_txtEfectivoPedidoKeyReleased
 
     private void txtEfectivoPedidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoKeyTyped
+        generarCambioPedido();
+        ValidarNumeros(evt,txtEfectivoPedido);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEfectivoPedidoKeyTyped
 
@@ -3091,7 +3216,7 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void tb_principalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_principalMouseClicked
-       
+        //datosreporte();
     }//GEN-LAST:event_tb_principalMouseClicked
 
     private void txtBuscarPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPKeyReleased
@@ -3119,7 +3244,82 @@ private boolean validarVacioP(){
             }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelar_Pedido1ActionPerformed
-      /**
+ 
+    private void txtBuscarProducto_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarProducto_PedidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarProducto_PedidoActionPerformed
+
+    private void txtEfectivoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEfectivoFocusLost
+     
+        
+    }//GEN-LAST:event_txtEfectivoFocusLost
+
+    private void txtEfectivoPedidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEfectivoPedidoFocusLost
+ 
+    }//GEN-LAST:event_txtEfectivoPedidoFocusLost
+
+    private void txtAdelantoPedidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAdelantoPedidoFocusLost
+  
+    }//GEN-LAST:event_txtAdelantoPedidoFocusLost
+
+    private void txtPrecioMateriaPrimaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecioMateriaPrimaFocusLost
+     
+    }//GEN-LAST:event_txtPrecioMateriaPrimaFocusLost
+
+    private void txtprecioPFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtprecioPFocusLost
+  
+    }//GEN-LAST:event_txtprecioPFocusLost
+
+    private void txtAdelantoPedidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAdelantoPedidoKeyReleased
+       
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAdelantoPedidoKeyReleased
+
+    private void txtPrecioMateriaPrimaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioMateriaPrimaKeyReleased
+    
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecioMateriaPrimaKeyReleased
+
+    private void txtprecioPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioPKeyReleased
+       
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtprecioPKeyReleased
+
+    private void txtEfectivoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEfectivoKeyPressed
+    
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEfectivoKeyPressed
+
+    private void txtAdelantoPedidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAdelantoPedidoKeyTyped
+          ValidarNumeros(evt,txtAdelantoPedido);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAdelantoPedidoKeyTyped
+
+    private void txtPrecioMateriaPrimaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioMateriaPrimaKeyTyped
+        ValidarNumeros(evt,txtPrecioMateriaPrima);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecioMateriaPrimaKeyTyped
+
+    private void txtEfectivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEfectivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEfectivoActionPerformed
+
+    private void txtCPCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCPCKeyTyped
+           char l=evt.getKeyChar();
+        if(!(Character.isDigit(l) ) )
+            evt.consume();
+     
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCPCKeyTyped
+
+    private void txtTelCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelCKeyTyped
+           char l=evt.getKeyChar();
+        if(!(Character.isDigit(l) ) )
+            evt.consume();
+     
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelCKeyTyped
+    /**
      * Lllena el combo de las presentaciones de Materias Primas
      * @throws SQLException 
      */
@@ -3161,7 +3361,7 @@ private boolean validarVacioP(){
             stmt.executeUpdate("UPDATE MATERIAS_PRIMAS " +
                                "  SET CANT_DISP = (CANT_DISP - " + spnrMP.getValue() + ")" +
                                "  where ID_MATERIA = " + r);
-            res=stmt.executeQuery("SELECT * FROM MATERIAS_PRIMAS");
+            res=stmt.executeQuery("SELECT * from MATERIAS_PRIMAS");
             if(null!=res){
                 while(res.next()){
                    tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getDate(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getInt(8)-res.getInt(7)});
@@ -3233,7 +3433,7 @@ private boolean validarVacioP(){
 
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getDate(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getInt(8)-res.getInt(7)});
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getInt(8)-res.getInt(7)});
                 }  
             }
     
@@ -3244,18 +3444,17 @@ private boolean validarVacioP(){
     private void llenarTablaHistorialPedidos(){
          try {
              
-            Statement stmt = conect.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tblHistorialPedidos.getModel();
             tbm.setRowCount(0);
             res=stmt.executeQuery("select ID_PEDIDO, FECHA_PEDIDO, FECHA_ENTREGA, PERSONAS.NOMBRE,NOMBRE_USUARIO,ESTADO,ADELANTO,TOTAL FROM PERSONAS, PEDIDOS,USUARIOS WHERE PERSONAS.ID_PERSONA = PEDIDOS.ID_CLIENTE AND PEDIDOS.ID_USUARIO = USUARIOS.ID_USUARIO");
-              if(null!=res){
+            if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getDate(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getInt(8)-res.getInt(7)});
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getInt(7),res.getInt(8),res.getInt(8)-res.getInt(7)});
                 }  
             }
             stmt.close();
         }catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en llenar tabla HistorialPedidos");
+            javax.swing.JOptionPane.showMessageDialog(this, ex.toString() + "\n" +"Error en llenar tabla HistorialPedidos");
         } 
     }  
     /**
@@ -3270,7 +3469,7 @@ private boolean validarVacioP(){
             res=stmt.executeQuery("select ID_VENTA, FECHA, PERSONAS.NOMBRE ,NOMBRE_USUARIO,TOTAL FROM PERSONAS, VENTAS,USUARIOS WHERE PERSONAS.ID_PERSONA = VENTAS.ID_CLIENTE AND VENTAS.ID_USUARIO = USUARIOS.ID_USUARIO");
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getString(3),res.getString(4),res.getInt(5)});
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getInt(5)});
                 }  
             }
             stmt.close();
@@ -3295,6 +3494,7 @@ private boolean validarVacioP(){
         
         if(dateGeneracionPedido1.getDate()!=null){
             String date2 = simpleDateFormat.format(dateGeneracionPedido1.getDate());
+            System.err.println(date2);
             bus2=" AND FECHA = '"+ date2+"'";}
         
  
@@ -3306,15 +3506,17 @@ private boolean validarVacioP(){
        
      
            
-          Statement stmt = conect.createStatement();
-            DefaultTableModel tbm=(DefaultTableModel)tblHistorialPedidos.getModel();
+          stmt = conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblHistorialVentas.getModel();
             tbm.setRowCount(0);
             res=stmt.executeQuery("select ID_VENTA, FECHA, PERSONAS.NOMBRE ,NOMBRE_USUARIO,TOTAL FROM PERSONAS, VENTAS,USUARIOS WHERE PERSONAS.ID_PERSONA = VENTAS.ID_CLIENTE AND VENTAS.ID_USUARIO = USUARIOS.ID_USUARIO "
                     + ""
                     + bus1 + bus2 + bus3 + bus4 );
+            
+            
             if(null!=res){
                 while(res.next()){
-                   tbm.addRow(new Object[]{res.getInt(1),res.getDate(2),res.getString(3),res.getString(4),res.getInt(5)});}  
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getInt(5)});}  
             }
     
     }
@@ -3368,6 +3570,7 @@ private void llenarTablaDetallePedido(){
     }
 
 
+
     
     /**
      * Restablece los valores por defecto de la ventana de Nueva Venta
@@ -3378,10 +3581,12 @@ private void llenarTablaDetallePedido(){
             tbm.removeRow(i);
             i-=1;
             }
+            lblCambio.setText("0.00");
             tblVenta.setModel(tbm);
-            lblAnticipo.setText("0");
-            lblTotalVenta1.setText("0");
-            lblPagoRestante.setText("0");
+            txtEfectivo.setText("0.00");
+            lblAnticipo.setText("0.00");
+            lblTotalVenta1.setText("0.00");
+            lblPagoRestante.setText("0.00");
     }
     /**
      * Reestablece los valores por defecto de la ventana de Nueo Pedido
@@ -3392,8 +3597,12 @@ private void llenarTablaDetallePedido(){
             tbm.removeRow(i);
             i-=1;
             }
+            txtAdelantoPedido.setText("0.00");
+            txtEfectivoPedido.setText("0.00");
+            lblCambioPedido.setText("0.00");
             tblPedido.setModel(tbm);
-            txtTotalPedido.setText("0");
+            txtTotalPedido.setText("0.00");
+            
             s = 0;
     }
 
@@ -3439,7 +3648,7 @@ private void llenarTablaDetallePedido(){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         
         String date = simpleDateFormat.format(new Date());
-        String cad = "INSERT INTO VENTAS "
+        String cad = "INSERT INTO VENTAS (FECHA,ID_CLIENTE,ID_USUARIO,TOTAL) "
                     + "VALUES('"+ date +"',"
                     + idCliente +","+id_usuario+","+lblTotalVenta1.getText()+")";
             Statement stmt = conect.createStatement();
@@ -3449,7 +3658,6 @@ private void llenarTablaDetallePedido(){
             stmt.close();
 
     }
-
     /**
      * Realiza el registro de el detalle de una Nueva Venta
      * @return 
@@ -3544,7 +3752,7 @@ private void llenarTablaDetallePedido(){
                         }
                     }
                     
-                    res=stmt.executeQuery("SELECT TOTAL FROM PEDIDOS WHERE ID_PEDIDO =" + tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1));
+                    stmt.executeQuery("SELECT TOTAL FROM PEDIDOS WHERE ID_PEDIDO =" + tblPedidosVentas.getValueAt(tblPedidosVentas.getSelectedRow(),1));
                     if(null!=res){
                         while(res.next()){
                             lblTotalVenta1.setText(""+ res.getFloat(1));
@@ -3575,7 +3783,7 @@ private void llenarTablaDetallePedido(){
            res=stmt.executeQuery("select ID_PERSONA, NOMBRE ,APE_PAT, APE_MAT ,TELEFONO from PERSONAS "
                                             + "where TIPO = 'C' "
                                             + "AND NOMBRE LIKE '%" + txtBuscarClienteVenta.getText() + "%'");
-             if(null!=res){
+            if(null!=res){
                 while(res.next()){
                    Vector rowCliente=new Vector();
                   rowCliente.add(res.getInt("ID_PERSONA"));
@@ -3609,6 +3817,7 @@ private void llenarTablaDetallePedido(){
     }
 
     
+
 
 
 
@@ -3655,12 +3864,12 @@ private void llenarTablaDetallePedido(){
         String date2 = simpleDateFormat.format(datePedido.getDate());
         System.out.println(date2);
         r = tblClientes_Pedido.getSelectedRow();
-        String cad = "INSERT INTO PEDIDOS "
+        String cad = "INSERT INTO PEDIDOS (FECHA_PEDIDO,FECHA_ENTREGA,ID_CLIENTE,ID_USUARIO,ESTADO,ADELANTO,TOTAL)"
                     + "VALUES('"+ date +"','"+date2+"',"
                     + tblClientes_Pedido.getValueAt(r,0).toString()+","+id_usuario+",'N',"+txtAdelantoPedido.getText()+","+txtTotalPedido.getText()+")";
-            Statement stmt = conect.createStatement();
+            //Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
-//            actCant();
+            //actCant();
             //showMessageDialog(null,"Proveedor Registrado");
             stmt.close();
 
@@ -3671,8 +3880,8 @@ private void llenarTablaDetallePedido(){
 
 
 
-    
 
+   
    
 
 
@@ -3693,10 +3902,20 @@ private void llenarTablaDetallePedido(){
       * Valida la existencia de numeros y consume el evento
       * @param evt 
       */
-     private void ValidarNumeros(KeyEvent evt) {
-       char l=evt.getKeyChar();
-        if(!Character.isDigit(l) || l == KeyEvent.VK_SPACE )
-           evt.consume();
+     private void ValidarNumeros(KeyEvent evt,JTextField textF) {
+        char someChar = '.';
+        int count = 0;
+        for (int i = 0; i < textF.getText().length(); i++) {
+            if (textF.getText().charAt(i) == someChar) {
+        count++;
+            }
+        } 
+        char l=evt.getKeyChar();
+        if ((l == KeyEvent.VK_PERIOD) && (count>0))
+            evt.consume();
+       
+        if(!(Character.isDigit(l) || l == KeyEvent.VK_PERIOD ) )
+            evt.consume();
     }
      /**
       * Valida la existencia de letras y consume el evento
@@ -3707,6 +3926,7 @@ private void llenarTablaDetallePedido(){
         if(Character.isDigit(l))
            evt.consume();
     }
+
 
     /**
      *  Limpia los campos en la ventana materias primas
