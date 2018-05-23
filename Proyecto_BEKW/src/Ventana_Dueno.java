@@ -1,5 +1,5 @@
 
-import com.itextpdf.text.pdf.PdfWriter;
+
 import com.placeholder.PlaceHolder;
 import java.util.Date;
 import java.awt.Color;
@@ -7,10 +7,9 @@ import java.awt.Frame;
 import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.io.FileOutputStream;
-import java.math.BigDecimal;
+
 import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -18,12 +17,11 @@ import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Currency;
+
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -35,8 +33,6 @@ import javax.swing.JTextField;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
-import javax.swing.text.Document;
-import org.sqlite.util.StringUtils;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

@@ -364,11 +364,11 @@ public class Login extends javax.swing.JFrame {
      * Establecer el icono a la ventana.
      */
     private void seticon() {
-     setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Icons\\EL MERENGUE_icon.png")));
+     setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Icons/EL MERENGUE_icon.png")));
     }
     PlaceHolder holder;
     Connection conect = null;
-    final ImageIcon eIcon = new ImageIcon(getClass().getResource("RESULT_ICONS\\cancel_48.png"));
+    ImageIcon eIcon = new ImageIcon(getClass().getResource("RESULT_ICONS/cancel_48.png"));
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
