@@ -2961,7 +2961,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             //REMOVER USUARIOS
             tb_principal.remove(3);
             //REMOVER PROVEEDOR 
-            tb_Inventario.remove(0);
+            tb_Personas.remove(0);
             //REMOVER HISTORIAL COMPRAS
             tb_PuntoVenta.remove(5);
             //REMOVER COMPRAS
