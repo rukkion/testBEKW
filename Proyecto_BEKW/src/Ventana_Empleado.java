@@ -24,6 +24,7 @@ import java.util.logging.Logger;
 
 
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.JSpinner;
@@ -136,8 +137,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         tb_principal.setIconAt(0, ventas);
         tb_principal.setIconAt(1, inventario);
         tb_principal.setIconAt(2, personas);
-        tb_principal.setIconAt(3, usuarios);
-        tb_principal.setIconAt(4, balance);
+
         tb_principal.setBackground(Color.WHITE);
     }
     
@@ -189,7 +189,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         lblUsuario = new javax.swing.JLabel();
         tb_principal = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
-        tb_Ventas_Pedidos = new javax.swing.JTabbedPane();
+        tb_PuntoVenta = new javax.swing.JTabbedPane();
         jPanel21 = new javax.swing.JPanel();
         btnAddClienteVentas = new javax.swing.JButton();
         jLabel73 = new javax.swing.JLabel();
@@ -262,6 +262,34 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         txtEfectivoPedido = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
         lblCambioPedido = new javax.swing.JLabel();
+        panelNuevaCompra = new javax.swing.JPanel();
+        btnAgregarProvedor = new javax.swing.JButton();
+        jLabel81 = new javax.swing.JLabel();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        tblProveedor_Compra = new javax.swing.JTable();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tblCompra = new javax.swing.JTable();
+        btnEliminarMateriaPrima_Compra = new javax.swing.JButton();
+        btnGenerarCompra = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        txtTotalCompra = new javax.swing.JTextField();
+        txtBuscarCompras = new javax.swing.JTextField();
+        jLabel46 = new javax.swing.JLabel();
+        jPanel16 = new javax.swing.JPanel();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        tblCompraslMateriasPrimas = new javax.swing.JTable();
+        txtBuscasMateriaPrima_Compras = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        btnNuevaMateriaPrima_Compras = new javax.swing.JButton();
+        jLabel86 = new javax.swing.JLabel();
+        jButton20 = new javax.swing.JButton();
+        spncantidadMP_Compra = new javax.swing.JSpinner();
+        btnRefreshMateriaPrima_Compra = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        btnCancelar_Compra = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane15 = new javax.swing.JScrollPane();
         tblHistorialVentas = new javax.swing.JTable();
@@ -299,6 +327,19 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         btnCancelar_Pedido1 = new javax.swing.JButton();
         rdbCancelar = new javax.swing.JRadioButton();
+        panelHistorialCompras = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tblHistorialCompras = new javax.swing.JTable();
+        jLabel22 = new javax.swing.JLabel();
+        txtBuscarCodigoCompras = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        txtBuscarProveedorCompras = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        tblDetalleCompra = new javax.swing.JTable();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         tb_Inventario = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
@@ -353,6 +394,24 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         tb_Personas = new javax.swing.JTabbedPane();
+        panelProveedor = new javax.swing.JPanel();
+        txtBuscarProveedor = new javax.swing.JTextField();
+        lblTelefonoProveedor = new javax.swing.JLabel();
+        lblProveedorBuscar = new javax.swing.JLabel();
+        txtProveedorTelefono = new javax.swing.JTextField();
+        lblTituloProveedor = new javax.swing.JLabel();
+        jScrollPaneProveedores = new javax.swing.JScrollPane();
+        tblProveedores = new javax.swing.JTable();
+        txtProveedorNombre = new javax.swing.JTextField();
+        btnModificarProveedor = new javax.swing.JButton();
+        lblNombreProveedor = new javax.swing.JLabel();
+        btnEliminarProveedor = new javax.swing.JButton();
+        lblDomicilioProveedor = new javax.swing.JLabel();
+        btnAgregarProveedor = new javax.swing.JButton();
+        txtProveedorDomicilio = new javax.swing.JTextField();
+        btnCancelar1 = new javax.swing.JButton();
+        txtProveedorCP = new javax.swing.JTextField();
+        lblCPProveedor = new javax.swing.JLabel();
         panelCliente = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         txtNomC = new javax.swing.JTextField();
@@ -376,6 +435,49 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        panelUsuarios = new javax.swing.JPanel();
+        lblUsuarioTitulo = new javax.swing.JLabel();
+        btnUsuariosAgregar = new javax.swing.JButton();
+        btnUsuariosCancelar = new javax.swing.JButton();
+        btnUsuariosModificar = new javax.swing.JButton();
+        btnUsuariosEliminar = new javax.swing.JButton();
+        jScrollPaneUsuarios = new javax.swing.JScrollPane();
+        tblUsuarios = new javax.swing.JTable();
+        jPanel12 = new javax.swing.JPanel();
+        lblUsuario1 = new javax.swing.JLabel();
+        lblTipoU = new javax.swing.JLabel();
+        lblContra = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        txtUsuariosUsuario = new javax.swing.JTextField();
+        txtUsuariosContraseña = new javax.swing.JTextField();
+        txtUsuariosNombre = new javax.swing.JTextField();
+        cmbUsuariosTipo = new javax.swing.JComboBox<>();
+        panelEstadoResultados = new javax.swing.JPanel();
+        jButton11 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel19 = new javax.swing.JPanel();
+        lblMateriaVendida = new javax.swing.JLabel();
+        lblClienteActivo = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        lblProveedormasCompras = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        lblProductomasVentas = new javax.swing.JLabel();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        lblTotalCompras = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        lblTotalVentas = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        lblTotalAdelantos = new javax.swing.JLabel();
+        lblTotalCapital = new javax.swing.JLabel();
+        lblTotalEgresos = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        lblTotalIngresos = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -462,10 +564,10 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tb_Ventas_Pedidos.setBackground(new java.awt.Color(255, 204, 204));
-        tb_Ventas_Pedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+        tb_PuntoVenta.setBackground(new java.awt.Color(255, 204, 204));
+        tb_PuntoVenta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tb_Ventas_PedidosMouseClicked(evt);
+                tb_PuntoVentaMouseClicked(evt);
             }
         });
 
@@ -696,7 +798,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         lblCambio.setText("0.00");
         jPanel21.add(lblCambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 500, 120, -1));
 
-        tb_Ventas_Pedidos.addTab("Nueva Venta", jPanel21);
+        tb_PuntoVenta.addTab("Nueva Venta", jPanel21);
 
         jPanel22.setBackground(new java.awt.Color(255, 255, 255));
         jPanel22.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -924,7 +1026,257 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         lblCambioPedido.setText("0.00");
         jPanel22.add(lblCambioPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 120, -1));
 
-        tb_Ventas_Pedidos.addTab("Nuevo Pedido", jPanel22);
+        tb_PuntoVenta.addTab("Nuevo Pedido", jPanel22);
+
+        panelNuevaCompra.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnAgregarProvedor.setBackground(new java.awt.Color(255, 255, 255));
+        btnAgregarProvedor.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnAgregarProvedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Add_User30px.png"))); // NOI18N
+        btnAgregarProvedor.setText("Agregar Proveedor");
+        btnAgregarProvedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProvedorActionPerformed(evt);
+            }
+        });
+
+        tblProveedor_Compra.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, "", "", ""}
+            },
+            new String [] {
+                "Código", "Nombre ", "Domicilio", "Telefono"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane19.setViewportView(tblProveedor_Compra);
+
+        jLabel82.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel82.setText("Nueva Compra");
+
+        jLabel83.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel83.setText("Provedor");
+
+        tblCompra.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Código", "Materia", "Cantidad", "Precio", "Total"
+            }
+        ));
+        jScrollPane6.setViewportView(tblCompra);
+
+        btnEliminarMateriaPrima_Compra.setBackground(new java.awt.Color(255, 255, 255));
+        btnEliminarMateriaPrima_Compra.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnEliminarMateriaPrima_Compra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-17x30.png"))); // NOI18N
+        btnEliminarMateriaPrima_Compra.setText("Eliminar artículo");
+        btnEliminarMateriaPrima_Compra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarMateriaPrima_CompraActionPerformed(evt);
+            }
+        });
+
+        btnGenerarCompra.setBackground(new java.awt.Color(255, 255, 255));
+        btnGenerarCompra.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnGenerarCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/success30x30.png"))); // NOI18N
+        btnGenerarCompra.setText("Generar Compra");
+        btnGenerarCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarCompraActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel16.setText("Total:");
+
+        txtTotalCompra.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtTotalCompra.setText("0");
+        txtTotalCompra.setEnabled(false);
+        txtTotalCompra.setFocusable(false);
+
+        txtBuscarCompras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtBuscarCompras.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBuscarComprasKeyReleased(evt);
+            }
+        });
+
+        jLabel46.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel46.setText("Buscar:");
+
+        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblCompraslMateriasPrimas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Código", "Materia Prima", "Existencia", "Precio"
+            }
+        ));
+        jScrollPane21.setViewportView(tblCompraslMateriasPrimas);
+
+        jPanel16.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 360, 360));
+
+        txtBuscasMateriaPrima_Compras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtBuscasMateriaPrima_Compras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscasMateriaPrima_ComprasActionPerformed(evt);
+            }
+        });
+        txtBuscasMateriaPrima_Compras.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBuscasMateriaPrima_ComprasKeyTyped(evt);
+            }
+        });
+        jPanel16.add(txtBuscasMateriaPrima_Compras, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 260, -1));
+
+        jLabel31.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel31.setText("Buscar:");
+        jPanel16.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
+
+        btnNuevaMateriaPrima_Compras.setBackground(new java.awt.Color(255, 255, 255));
+        btnNuevaMateriaPrima_Compras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnNuevaMateriaPrima_Compras.setText("Nueva Materia Prima");
+        btnNuevaMateriaPrima_Compras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevaMateriaPrima_ComprasActionPerformed(evt);
+            }
+        });
+        jPanel16.add(btnNuevaMateriaPrima_Compras, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, 30));
+
+        jLabel86.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel86.setText("Materia Prima");
+        jPanel16.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 150, 30));
+
+        jButton20.setBackground(new java.awt.Color(255, 255, 255));
+        jButton20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart-16x30.png"))); // NOI18N
+        jButton20.setText("Añadir a Carrito");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, -1, 56));
+
+        spncantidadMP_Compra.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        spncantidadMP_Compra.setValue(1);
+        spncantidadMP_Compra.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                spncantidadMP_CompraStateChanged(evt);
+            }
+        });
+        jPanel16.add(spncantidadMP_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 44, 31));
+
+        btnRefreshMateriaPrima_Compra.setBackground(new java.awt.Color(255, 255, 255));
+        btnRefreshMateriaPrima_Compra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update_30px.png"))); // NOI18N
+        btnRefreshMateriaPrima_Compra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshMateriaPrima_CompraActionPerformed(evt);
+            }
+        });
+        jPanel16.add(btnRefreshMateriaPrima_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 40, -1));
+        jPanel16.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, 10));
+
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        btnCancelar_Compra.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancelar_Compra.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnCancelar_Compra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
+        btnCancelar_Compra.setText("Cancelar");
+        btnCancelar_Compra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelar_CompraActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelNuevaCompraLayout = new javax.swing.GroupLayout(panelNuevaCompra);
+        panelNuevaCompra.setLayout(panelNuevaCompraLayout);
+        panelNuevaCompraLayout.setHorizontalGroup(
+            panelNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelNuevaCompraLayout.createSequentialGroup()
+                .addGap(818, 818, 818)
+                .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panelNuevaCompraLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(panelNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panelNuevaCompraLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(btnCancelar_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnEliminarMateriaPrima_Compra)
+                        .addGap(32, 32, 32)
+                        .addComponent(btnGenerarCompra)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel16)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtTotalCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelNuevaCompraLayout.createSequentialGroup()
+                        .addComponent(jLabel83)
+                        .addGap(249, 249, 249)
+                        .addComponent(jLabel82))
+                    .addGroup(panelNuevaCompraLayout.createSequentialGroup()
+                        .addComponent(jLabel46)
+                        .addGap(62, 62, 62)
+                        .addComponent(txtBuscarCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelNuevaCompraLayout.createSequentialGroup()
+                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnAgregarProvedor))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        panelNuevaCompraLayout.setVerticalGroup(
+            panelNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelNuevaCompraLayout.createSequentialGroup()
+                .addComponent(jLabel81)
+                .addGap(10, 10, 10)
+                .addGroup(panelNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelNuevaCompraLayout.createSequentialGroup()
+                        .addGroup(panelNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelNuevaCompraLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel83))
+                            .addComponent(jLabel82))
+                        .addGap(8, 8, 8)
+                        .addGroup(panelNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel46)
+                            .addComponent(txtBuscarCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(7, 7, 7)
+                        .addGroup(panelNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNuevaCompraLayout.createSequentialGroup()
+                                .addComponent(btnAgregarProvedor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(19, 19, 19)))
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addGroup(panelNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(panelNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnGenerarCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnEliminarMateriaPrima_Compra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(panelNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTotalCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator4)
+                            .addComponent(btnCancelar_Compra, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        tb_PuntoVenta.addTab("Nueva Compra", panelNuevaCompra);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1049,7 +1401,7 @@ public class Ventana_Empleado extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        tb_Ventas_Pedidos.addTab("Historial de Ventas", jPanel1);
+        tb_PuntoVenta.addTab("Historial deVentas", jPanel1);
 
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1234,9 +1586,125 @@ public class Ventana_Empleado extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        tb_Ventas_Pedidos.addTab("Historial de Pedidos", jPanel13);
+        tb_PuntoVenta.addTab("Historial de Pedidos", jPanel13);
 
-        jPanel6.add(tb_Ventas_Pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1170, 600));
+        panelHistorialCompras.setBackground(new java.awt.Color(255, 255, 255));
+
+        tblHistorialCompras.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Código", "Fecha", "Proveedor", "Total"
+            }
+        ));
+        tblHistorialCompras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblHistorialComprasMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(tblHistorialCompras);
+
+        jLabel22.setText("Código");
+
+        jLabel25.setText("Proveedor");
+
+        jLabel28.setText("Fecha");
+
+        jDateChooser1.setDateFormatString("dd-MM-yyyy");
+
+        tblDetalleCompra.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Materia Prima", "Cantidad", "Precio Unitario", "Presentacion", "Total"
+            }
+        ));
+        jScrollPane10.setViewportView(tblDetalleCompra);
+
+        jButton4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Search30px.png"))); // NOI18N
+        jButton4.setText("Buscar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton5.setText("Limpiar busqueda");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelHistorialComprasLayout = new javax.swing.GroupLayout(panelHistorialCompras);
+        panelHistorialCompras.setLayout(panelHistorialComprasLayout);
+        panelHistorialComprasLayout.setHorizontalGroup(
+            panelHistorialComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHistorialComprasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelHistorialComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelHistorialComprasLayout.createSequentialGroup()
+                        .addGroup(panelHistorialComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelHistorialComprasLayout.createSequentialGroup()
+                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(panelHistorialComprasLayout.createSequentialGroup()
+                                .addGroup(panelHistorialComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel28)
+                                    .addComponent(jLabel22))
+                                .addGap(134, 134, 134)
+                                .addGroup(panelHistorialComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelHistorialComprasLayout.createSequentialGroup()
+                                        .addComponent(jLabel25)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(panelHistorialComprasLayout.createSequentialGroup()
+                                        .addComponent(txtBuscarProveedorCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(120, 120, 120)
+                                        .addGroup(panelHistorialComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                        .addGap(9, 9, 9))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBuscarCodigoCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
+        );
+        panelHistorialComprasLayout.setVerticalGroup(
+            panelHistorialComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHistorialComprasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelHistorialComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panelHistorialComprasLayout.createSequentialGroup()
+                        .addGroup(panelHistorialComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelHistorialComprasLayout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(panelHistorialComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtBuscarCodigoCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBuscarProveedorCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel28))
+                            .addGroup(panelHistorialComprasLayout.createSequentialGroup()
+                                .addComponent(jLabel25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton4)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelHistorialComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane10))
+                .addGap(23, 23, 23))
+        );
+
+        tb_PuntoVenta.addTab("Historial de Compras", panelHistorialCompras);
+
+        jPanel6.add(tb_PuntoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1170, 600));
 
         tb_principal.addTab("Punto de venta", jPanel6);
 
@@ -1602,6 +2070,194 @@ public class Ventana_Empleado extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        panelProveedor.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtBuscarProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBuscarProveedorKeyReleased(evt);
+            }
+        });
+
+        lblTelefonoProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblTelefonoProveedor.setText("Teléfono:");
+
+        lblProveedorBuscar.setText("Buscar:");
+
+        txtProveedorTelefono.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtProveedorTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtProveedorTelefonoKeyTyped(evt);
+            }
+        });
+
+        lblTituloProveedor.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lblTituloProveedor.setText("Proveedor");
+
+        tblProveedores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Código", "Proveedor", "Domicilio", "Código_Postal", "Telefono"
+            }
+        ));
+        tblProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblProveedoresMouseClicked(evt);
+            }
+        });
+        jScrollPaneProveedores.setViewportView(tblProveedores);
+
+        txtProveedorNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtProveedorNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtProveedorNombreKeyTyped(evt);
+            }
+        });
+
+        btnModificarProveedor.setBackground(new java.awt.Color(255, 255, 255));
+        btnModificarProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnModificarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/edit30x30.png"))); // NOI18N
+        btnModificarProveedor.setText("Modificar");
+        btnModificarProveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarProveedorActionPerformed(evt);
+            }
+        });
+
+        lblNombreProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblNombreProveedor.setText("Nombre:");
+
+        btnEliminarProveedor.setBackground(new java.awt.Color(255, 255, 255));
+        btnEliminarProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnEliminarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/garbage-1x30.png"))); // NOI18N
+        btnEliminarProveedor.setText("Eliminar");
+        btnEliminarProveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarProveedorActionPerformed(evt);
+            }
+        });
+
+        lblDomicilioProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblDomicilioProveedor.setText("Domicilio:");
+
+        btnAgregarProveedor.setBackground(new java.awt.Color(255, 255, 255));
+        btnAgregarProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnAgregarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
+        btnAgregarProveedor.setText("Agregar");
+        btnAgregarProveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProveedorActionPerformed(evt);
+            }
+        });
+
+        txtProveedorDomicilio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+
+        btnCancelar1.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancelar1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnCancelar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
+        btnCancelar1.setText("Cancelar");
+        btnCancelar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelar1ActionPerformed(evt);
+            }
+        });
+
+        txtProveedorCP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtProveedorCP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtProveedorCPKeyTyped(evt);
+            }
+        });
+
+        lblCPProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblCPProveedor.setText("C.P:");
+
+        javax.swing.GroupLayout panelProveedorLayout = new javax.swing.GroupLayout(panelProveedor);
+        panelProveedor.setLayout(panelProveedorLayout);
+        panelProveedorLayout.setHorizontalGroup(
+            panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProveedorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblProveedorBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtBuscarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(178, 178, 178))
+            .addGroup(panelProveedorLayout.createSequentialGroup()
+                .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelProveedorLayout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnCancelar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAgregarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnModificarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEliminarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelProveedorLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblTituloProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelProveedorLayout.createSequentialGroup()
+                                .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblDomicilioProveedor)
+                                    .addComponent(lblNombreProveedor)
+                                    .addComponent(lblCPProveedor)
+                                    .addComponent(lblTelefonoProveedor))
+                                .addGap(18, 18, 18)
+                                .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtProveedorCP, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtProveedorTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtProveedorDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtProveedorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(146, 146, 146)))
+                .addComponent(jScrollPaneProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
+        );
+        panelProveedorLayout.setVerticalGroup(
+            panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProveedorLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBuscarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProveedorBuscar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelProveedorLayout.createSequentialGroup()
+                        .addComponent(lblTituloProveedor)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblNombreProveedor)
+                            .addComponent(txtProveedorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblDomicilioProveedor)
+                            .addComponent(txtProveedorDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtProveedorCP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCPProveedor))
+                        .addGap(18, 18, 18)
+                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtProveedorTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTelefonoProveedor))
+                        .addGap(27, 27, 27)
+                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCancelar1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnModificarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAgregarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEliminarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(129, 129, 129))
+                    .addGroup(panelProveedorLayout.createSequentialGroup()
+                        .addComponent(jScrollPaneProveedores)
+                        .addContainerGap())))
+        );
+
+        tb_Personas.addTab("Proveedor", panelProveedor);
+
         panelCliente.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
@@ -1796,6 +2452,282 @@ public class Ventana_Empleado extends javax.swing.JFrame {
 
         tb_principal.addTab("Personas", jPanel9);
 
+        panelUsuarios.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblUsuarioTitulo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lblUsuarioTitulo.setText("Usuarios");
+
+        btnUsuariosAgregar.setBackground(new java.awt.Color(255, 255, 255));
+        btnUsuariosAgregar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnUsuariosAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus30x30.png"))); // NOI18N
+        btnUsuariosAgregar.setText("Agregar");
+        btnUsuariosAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuariosAgregarActionPerformed(evt);
+            }
+        });
+
+        btnUsuariosCancelar.setBackground(new java.awt.Color(255, 255, 255));
+        btnUsuariosCancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnUsuariosCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/error30x30.png"))); // NOI18N
+        btnUsuariosCancelar.setText("Cancelar");
+        btnUsuariosCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuariosCancelarActionPerformed(evt);
+            }
+        });
+
+        btnUsuariosModificar.setBackground(new java.awt.Color(255, 255, 255));
+        btnUsuariosModificar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnUsuariosModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/edit30x30.png"))); // NOI18N
+        btnUsuariosModificar.setText("Modificar");
+        btnUsuariosModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuariosModificarActionPerformed(evt);
+            }
+        });
+
+        btnUsuariosEliminar.setBackground(new java.awt.Color(255, 255, 255));
+        btnUsuariosEliminar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnUsuariosEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/garbage-1x30.png"))); // NOI18N
+        btnUsuariosEliminar.setText("Eliminar");
+        btnUsuariosEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuariosEliminarActionPerformed(evt);
+            }
+        });
+
+        tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Usuario", "Tipo_Usuario", "Contraseña", "Nombre"
+            }
+        ));
+        tblUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblUsuariosMouseClicked(evt);
+            }
+        });
+        jScrollPaneUsuarios.setViewportView(tblUsuarios);
+
+        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblUsuario1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblUsuario1.setText("Usuario:");
+        jPanel12.add(lblUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
+
+        lblTipoU.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblTipoU.setText("Tipo Usuario:");
+        jPanel12.add(lblTipoU, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, -1, -1));
+
+        lblContra.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblContra.setText("Contraseña:");
+        jPanel12.add(lblContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
+
+        lblNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblNombre.setText("Nombre:");
+        jPanel12.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, -1, -1));
+
+        txtUsuariosUsuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtUsuariosUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUsuariosUsuarioKeyTyped(evt);
+            }
+        });
+        jPanel12.add(txtUsuariosUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 130, -1));
+
+        txtUsuariosContraseña.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtUsuariosContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUsuariosContraseñaKeyTyped(evt);
+            }
+        });
+        jPanel12.add(txtUsuariosContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 130, -1));
+
+        txtUsuariosNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtUsuariosNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUsuariosNombreKeyTyped(evt);
+            }
+        });
+        jPanel12.add(txtUsuariosNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, 170, -1));
+
+        cmbUsuariosTipo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        cmbUsuariosTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "EMPLEADO", "DUEÑO" }));
+        cmbUsuariosTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbUsuariosTipoActionPerformed(evt);
+            }
+        });
+        jPanel12.add(cmbUsuariosTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 170, -1));
+
+        javax.swing.GroupLayout panelUsuariosLayout = new javax.swing.GroupLayout(panelUsuarios);
+        panelUsuarios.setLayout(panelUsuariosLayout);
+        panelUsuariosLayout.setHorizontalGroup(
+            panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelUsuariosLayout.createSequentialGroup()
+                .addGroup(panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelUsuariosLayout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addGroup(panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPaneUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 742, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelUsuariosLayout.createSequentialGroup()
+                        .addGap(322, 322, 322)
+                        .addGroup(panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnUsuariosCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnUsuariosAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addGroup(panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnUsuariosModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnUsuariosEliminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelUsuariosLayout.createSequentialGroup()
+                        .addGap(436, 436, 436)
+                        .addComponent(lblUsuarioTitulo)))
+                .addContainerGap(408, Short.MAX_VALUE))
+        );
+        panelUsuariosLayout.setVerticalGroup(
+            panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelUsuariosLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(lblUsuarioTitulo)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addComponent(jScrollPaneUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUsuariosCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUsuariosModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUsuariosAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUsuariosEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(207, Short.MAX_VALUE))
+        );
+
+        tb_principal.addTab("Usuarios", panelUsuarios);
+
+        panelEstadoResultados.setBackground(new java.awt.Color(255, 255, 255));
+        panelEstadoResultados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton11.setBackground(new java.awt.Color(255, 255, 255));
+        jButton11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/print30.png"))); // NOI18N
+        jButton11.setText("Imprimir Estado de Resultados");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        panelEstadoResultados.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 450, 320, 70));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/EL MERENGUEx400.png"))); // NOI18N
+        panelEstadoResultados.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 420, 390));
+
+        jPanel19.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel19.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblMateriaVendida.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblMateriaVendida.setText("Materia Prima mas comprada");
+        jPanel19.add(lblMateriaVendida, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, -1, -1));
+
+        lblClienteActivo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblClienteActivo.setText("Cliente");
+        jPanel19.add(lblClienteActivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
+
+        jLabel59.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel59.setText("Cliente más activo:");
+        jPanel19.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 140, -1));
+
+        jLabel60.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel60.setText("Producto más vendido:");
+        jPanel19.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 170, -1));
+
+        lblProveedormasCompras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblProveedormasCompras.setText("Proveedor");
+        jPanel19.add(lblProveedormasCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
+
+        jLabel62.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel62.setText("Materia Prima más comprada:");
+        jPanel19.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 210, -1));
+
+        jLabel70.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel70.setText("Proveedor con más compras:");
+        jPanel19.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 210, -1));
+
+        lblProductomasVentas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblProductomasVentas.setText("Producto más vendido");
+        jPanel19.add(lblProductomasVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, -1, -1));
+
+        panelEstadoResultados.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 500, 180));
+
+        jPanel20.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel20.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel20.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel48.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel48.setText("Egresos");
+        jPanel20.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, -1, -1));
+
+        jLabel49.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel49.setText("Ingresos");
+        jPanel20.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
+
+        lblTotalCompras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblTotalCompras.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTotalCompras.setText("TotalCompras");
+        jPanel20.add(lblTotalCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 110, -1));
+
+        jLabel51.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel51.setText("Ventas:");
+        jPanel20.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
+
+        lblTotalVentas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblTotalVentas.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTotalVentas.setText("Total Ventas");
+        jPanel20.add(lblTotalVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 120, 20));
+
+        jLabel54.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel54.setText("Adelantos:");
+        jPanel20.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+
+        lblTotalAdelantos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblTotalAdelantos.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTotalAdelantos.setText("TotalAdelantos");
+        jPanel20.add(lblTotalAdelantos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 120, -1));
+
+        lblTotalCapital.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblTotalCapital.setText("TotalCapital");
+        jPanel20.add(lblTotalCapital, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
+
+        lblTotalEgresos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblTotalEgresos.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTotalEgresos.setText("Total Egresos");
+        jPanel20.add(lblTotalEgresos, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 120, -1));
+
+        jLabel63.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel63.setText("Capital:");
+        jPanel20.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, -1, -1));
+
+        lblTotalIngresos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblTotalIngresos.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTotalIngresos.setText("Total Ingresos");
+        jPanel20.add(lblTotalIngresos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 110, -1));
+
+        jLabel71.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel71.setText("Compras:");
+        jPanel20.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
+        jPanel20.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 230, 10));
+
+        panelEstadoResultados.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 500, 330));
+
+        tb_principal.addTab("Estado de Resultados", panelEstadoResultados);
+
         getContentPane().add(tb_principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
 
         pack();
@@ -1824,7 +2756,9 @@ public class Ventana_Empleado extends javax.swing.JFrame {
     /**
      * Llena la tabla de Compra en Nueva compra.
      */
-
+    private void llenarTablaCompra(){
+        tbmCompra=(DefaultTableModel)tblCompra.getModel();
+    }  
     /**
      * Llena la tabla de Pedidos en Nuevo Pedido.
      */
@@ -1837,7 +2771,28 @@ public class Ventana_Empleado extends javax.swing.JFrame {
     private void LlenarTablaVenta(){
         tbmVenta = (DefaultTableModel)tblVenta.getModel();
     }
-    
+    /**
+     * Llena la tabla de proveedores en el Tab Proveedores.
+     * @throws ClassNotFoundException 
+     */
+    private void LlenarTablaProveedores() throws ClassNotFoundException{
+         try {
+             //conectarBD();
+             stmt=conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblProveedores.getModel();
+           tbm.setRowCount(0);
+           
+            res=stmt.executeQuery("select * from PERSONAS where TIPO = 'P'");
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(6),res.getString(7)});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+        } 
+    }
     /**
      * Llena la tabla de Productos en el Tab Producto.
      * @throws ClassNotFoundException En caso de que no se encuentre la clase.
@@ -1875,7 +2830,27 @@ public class Ventana_Empleado extends javax.swing.JFrame {
    * Llena la tabla de usuarios del apartado de usuarios
    * @throws ClassNotFoundException 
    */
-    
+    private void LlenarTablaUsuarios() throws ClassNotFoundException{
+         try {
+             //conectarBD();
+             Statement stmt = conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblUsuarios.getModel();
+           tbm.setRowCount(0);
+           res=stmt.executeQuery("select * from USUARIOS");
+             if(null!=res){
+                while(res.next()){
+                    if(res.getString(4).toString().equals("E"))
+                    tbm.addRow(new Object[]{res.getInt(1),res.getString(2),"EMPLEADO",res.getString(5),res.getString(3)});
+                    else{
+                        tbm.addRow(new Object[]{res.getInt(1),res.getString(2),"DUEÑO",res.getString(5),res.getString(3)});
+                    }
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+        } 
+    }
     /**
      *  Llena la tabla cliente del apartado de personas
      */
@@ -1896,8 +2871,54 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             showMessageDialog(null," Error en la conexion LLENAR TABLA CLIENTE. "); 
         }
     }
-    
-  
+    /**
+     * Llena la tabla de Materias Primas del apartado de Punto de venta en la pestaña de Nueva Compra
+     * @throws ClassNotFoundException 
+     */
+    private void LlenarTablaCompras_MateriasPrimas() throws ClassNotFoundException{
+         try {
+             Statement stmt = conect.createStatement();
+            tbmMateriaPrima_Compra=(DefaultTableModel)tblCompraslMateriasPrimas.getModel();
+           tbmMateriaPrima_Compra.setRowCount(0);
+           res=stmt.executeQuery("select * from MATERIAS_PRIMAS");
+             if(null!=res){
+                while(res.next()){
+                   Vector rowProductos=new Vector();
+                  rowProductos.add(res.getString("ID_MATERIA"));
+                  rowProductos.add(res.getString("NOMBRE"));
+                  rowProductos.add(res.getString("CANT_DISP"));
+                  rowProductos.add(res.getString("PRECIO"));
+                  tbmMateriaPrima_Compra.addRow(rowProductos);
+                }
+            }
+            
+            stmt.close();
+            
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
+        } 
+    }
+    /**
+     * 
+     * @throws ClassNotFoundException 
+     */
+    public void LlenarTablaComprasProveedores() throws ClassNotFoundException{
+         try {
+             
+             Statement stmt = conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblProveedor_Compra.getModel();
+           tbm.setRowCount(0);
+           res=stmt.executeQuery("select * from PERSONAS where TIPO = 'P'");
+             if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(2),res.getString(5),res.getString(7)});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+        } 
+    }
    /**
     * Evento al abrir la ventana. E inicializa todas las funciones que se necesitan al abrir la ventana.
     * @param evt 
@@ -1918,10 +2939,13 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             //dateEntrega.setDate(dateAct);
             dateGeneracion.setDate(dateAct);
             llenarMateriaPrima();
-
+            LlenarTablaProveedores();
+            LlenarTablaUsuarios();
             llenarTablaCliente();
             LlenarTablaP();
-
+            LlenarTablaCompras_MateriasPrimas();
+            LlenarTablaComprasProveedores();
+            llenarTablaCompra();
             llenarTablaPedidos();
             LlenarTablaVenta();
             llenarPresentacion();
@@ -1930,8 +2954,19 @@ public class Ventana_Empleado extends javax.swing.JFrame {
             llenarTablaProductos();
             llenarTablaHistorialPedidos();
             llenarTablaHistorialVentas();
-
+            llenarTablaHistorialCompras();
             llenarTablaClienteVenta();
+            //REMOVER ESTADO DE RESOLTADOS
+            tb_principal.remove(4);
+            //REMOVER USUARIOS
+            tb_principal.remove(3);
+            //REMOVER PROVEEDOR 
+            tb_Inventario.remove(0);
+            //REMOVER HISTORIAL COMPRAS
+            tb_PuntoVenta.remove(5);
+            //REMOVER COMPRAS
+            tb_PuntoVenta.remove(2);
+            
         } catch (Exception ex) {
             Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2079,8 +3114,73 @@ VentanaCliente mdC=new VentanaCliente();
         mdC.setVisible(true);
     }//GEN-LAST:event_btnAddClienteVentasActionPerformed
 
+    /**
+     * Cuadro de texto para buscar el proveedor al presionar teclas.
+     * @param evt 
+     */
+    private void txtBuscarProveedorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProveedorKeyReleased
+        try {
+            BuscarProveedores();
+        } catch (ClassNotFoundException ex) {
+            //Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_txtBuscarProveedorKeyReleased
 
+    /**
+     * Valida el número de teléfono en proveedor
+     * @param evt 
+     */
+    private void txtProveedorTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorTelefonoKeyTyped
+   char l=evt.getKeyChar();
+        if(!(Character.isDigit(l) ) )
+            evt.consume();
+        
+    }//GEN-LAST:event_txtProveedorTelefonoKeyTyped
+    /**
+     * carga la información del proveedor a los campos de texto desde la tabla Proveedores del apartado Personas
+     * @param evt 
+     */
+    private void tblProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProveedoresMouseClicked
+        tblProveedores.getSelectedRow();
+        rowProveedor = tblProveedores.getSelectedRow();
+        txtProveedorNombre.setText(tblProveedores.getValueAt(rowProveedor, 1).toString());
+        txtProveedorDomicilio.setText(tblProveedores.getValueAt(rowProveedor, 2).toString());
+        txtProveedorCP.setText(tblProveedores.getValueAt(rowProveedor, 3).toString());
+        txtProveedorTelefono.setText(tblProveedores.getValueAt(rowProveedor, 4).toString());
+    }//GEN-LAST:event_tblProveedoresMouseClicked
 
+    /**
+     * Valida el nombre del proveedor.
+     * @param evt 
+     */
+    private void txtProveedorNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorNombreKeyTyped
+        ValidarLetras(evt);
+    }//GEN-LAST:event_txtProveedorNombreKeyTyped
+ 
+    /**
+     * verifica los campos de texto vacios de los Proveedores del apartado de Personas
+     * @return 
+     */
+    private boolean VerificarvaciosProveedor(){
+        
+        if(txtProveedorNombre.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL NOMBRE DEL PROVEEDOR");
+            return false;
+        }
+        if(txtProveedorDomicilio.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL DOMICILIO");
+            return false;
+        }
+        if(txtProveedorTelefono.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL TELEFONO");
+            return false;
+        }
+        if (txtProveedorCP.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL CODIGO POSTAL");
+            return false;
+        }
+        return true;
+    }
     /**
      * Botón de modificar proveedor.
      * @param evt 
@@ -2114,13 +3214,218 @@ VentanaCliente mdC=new VentanaCliente();
         }
         return true;
     }
-       public int rowProveedor = 0;
-
-
-
-   public int rowUsuario = 0;
     
+    private void btnModificarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarProveedorActionPerformed
 
+        try {
+            if(VerificarvaciosProveedor()){
+                ModificarProveedor();
+                limpiarProveedor();
+            }
+        } catch (ClassNotFoundException ex) {
+            //Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnModificarProveedorActionPerformed
+   public int rowProveedor = 0;
+   /**
+    * realiza la consulta de modificación de Proveedor
+    * @throws ClassNotFoundException 
+    */
+    private void ModificarProveedor() throws ClassNotFoundException{
+        try{
+            conectarBD();
+
+            String cad = "UPDATE PERSONAS "
+                    + "SET NOMBRE='"+ txtProveedorNombre.getText()+"',"
+                    + "APE_PAT='null',APE_MAT='null',DOMICILIO='"
+                    + txtProveedorDomicilio.getText()+ "',COD_POSTAL='"
+                    + txtProveedorCP.getText()+ "',TELEFONO='"
+                    + txtProveedorTelefono.getText() + "',TIPO="
+                    + "'P' WHERE ID_PERSONA="+ tblProveedores.getValueAt(rowProveedor,0);
+            Statement stmt = conect.createStatement();
+            stmt.executeUpdate(cad);
+            showMessageDialog(null,"Proveedor Modificado");
+            LlenarTablaProveedores();
+            stmt.close();
+        }
+            catch (SQLException ex) 
+            {
+            System.out.println("Error modificar");   
+            }
+    }
+    /**
+     * solicita verificación para eliminar el Proveedor
+     * @param evt 
+     */
+    private void btnEliminarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProveedorActionPerformed
+
+        try {
+            if(VerificarvaciosProveedor()){
+                int j = JOptionPane.showConfirmDialog(null, "¿Deeseas eliminar el proveedor?", "Eliminar Proveedor", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if(j == JOptionPane.YES_OPTION){
+                    EliminarProveedor();
+                    limpiarProveedor();
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            //Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnEliminarProveedorActionPerformed
+    /**
+     * verifica si el proveedor existe e inserta la información sino lo notifica
+     * @param evt 
+     */
+    private void btnAgregarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProveedorActionPerformed
+        try {
+            if(VerificarvaciosProveedor()){
+                if(ProveedorExistente())
+                insertarProveedor();
+                limpiarProveedor();
+            }
+        } catch (ClassNotFoundException ex) {
+            //Logger.getLogger(GESTION_PROVEEDORES.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnAgregarProveedorActionPerformed
+    /**
+     * realiza la consulta para el registro de un proveedor 
+     * @throws ClassNotFoundException 
+     */
+    private void insertarProveedor() throws ClassNotFoundException{
+        try{
+            conectarBD();
+            String cad = "INSERT INTO PERSONAS (NOMBRE,APE_PAT,APE_MAT,DOMICILIO,COD_POSTAL,TELEFONO,TIPO) "
+                    + "VALUES('"+ txtProveedorNombre.getText()+"',"
+                    + "'null','null','"
+                    + txtProveedorDomicilio.getText()+ "','"
+                    + txtProveedorCP.getText()+ "','"
+                    + txtProveedorTelefono.getText() + "',"
+                    + "'P')";
+            Statement stmt = conect.createStatement();
+            stmt.executeUpdate(cad);
+            //showMessageDialog(null,"Proveedor Registrado");
+            LlenarTablaProveedores();
+            stmt.close();
+        }
+            catch (SQLException ex) 
+            {
+            System.out.println("Error insertar");   
+            }
+    }
+    /**
+     * Botón de limpiar campos en proveedor.
+     * @param evt 
+     */
+    private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
+        limpiarProveedor();
+    }//GEN-LAST:event_btnCancelar1ActionPerformed
+
+    /**
+     * Validar el código postal al preisonar teclas.
+     * @param evt 
+     */
+    private void txtProveedorCPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProveedorCPKeyTyped
+         char l=evt.getKeyChar();
+        if(!(Character.isDigit(l) ) )
+            evt.consume();
+     
+    }//GEN-LAST:event_txtProveedorCPKeyTyped
+    /**
+     * Botón de agregar usuarios en usuarios.
+     * @param evt 
+     */
+    private void btnUsuariosAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosAgregarActionPerformed
+        try {
+            if(VerificarvaciosUsuario()){
+                if(UsuarioExistente()){
+                    InsertarUsuario();
+                    limpiarUsuarios();
+                }else{
+                    showMessageDialog(null,"USUARIO YA EXISTENTE");
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnUsuariosAgregarActionPerformed
+    /**
+     * vacía la información de los campos de texto de usuarios en el apartado de usuarios
+     */
+    private void limpiarUsuarios(){
+        txtUsuariosNombre.setText(null);
+        txtUsuariosUsuario.setText(null);
+        txtUsuariosContraseña.setText(null);
+        cmbUsuariosTipo.setSelectedIndex(0);
+    }
+    /**
+     * Botón que limpia los campos de usuario.
+     * @param evt 
+     */
+    private void btnUsuariosCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosCancelarActionPerformed
+        limpiarUsuarios();
+    }//GEN-LAST:event_btnUsuariosCancelarActionPerformed
+
+    /**
+     * Botón que modifica los datos de usuario.
+     * @param evt 
+     */
+    private void btnUsuariosModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosModificarActionPerformed
+        try {
+            if(VerificarvaciosUsuario()){
+                if(UsuarioExistente()){
+                    showMessageDialog(null,"VERIFIQUE EL NOMBRE DE USUARIO");
+                }else{
+
+                    ModificarUsuario();
+                    limpiarUsuarios();
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+          
+        }
+    }//GEN-LAST:event_btnUsuariosModificarActionPerformed
+    /**
+     * verifica si el usuario existe, sino lo modifica
+     * @param evt 
+     */
+    private void btnUsuariosEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosEliminarActionPerformed
+        try {
+            if(VerificarvaciosUsuario()){
+                if(UsuarioExistente()){
+                    showMessageDialog(null,"VERIFIQUE EL NOMBRE DE USUARIO");
+                }else{
+                    int j = JOptionPane.showConfirmDialog(null, "¿Está seguro?", "Eliminar Proveedor", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    if(j == JOptionPane.YES_OPTION){
+                        EliminarUsuario();
+                        limpiarUsuarios();
+                    }
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnUsuariosEliminarActionPerformed
+    public int rowUsuario = 0;
+    
+    /**
+     * realiza la consulta para eliminar al usuario seleccionado
+     * @throws ClassNotFoundException 
+     */
+    private void EliminarUsuario() throws ClassNotFoundException{
+        try{
+            String cad = "DELETE FROM USUARIOS WHERE ID_USUARIO =" + tblUsuarios.getValueAt(rowUsuario,0).toString();
+            Statement stmt = conect.createStatement();
+            stmt.executeUpdate(cad);
+            LlenarTablaUsuarios();
+            stmt.close();
+        }
+            catch (SQLException ex) 
+            {
+            System.out.println("Error Eliminar");   
+            }
+    }
     /**
      * realiza la consulta para eliminar la materia prima del apartado de inventario
      * @throws ClassNotFoundException 
@@ -2138,7 +3443,29 @@ VentanaCliente mdC=new VentanaCliente();
             System.out.println(ex.toString()+ "\n"+"Error Eliminar Materia Prima");   
             }
     }
-
+    /**
+     * realiza la consulta del registro de usuario
+     */
+    private void InsertarUsuario(){
+        try{
+            conectarBD();
+            String cad = "INSERT INTO USUARIOS (NOMBRE_USUARIO,NOMBRE_PERSONA,TIPO,CONTRASEÑA) "
+                    + "VALUES('"+ txtUsuariosUsuario.getText()+"','"
+                    + txtUsuariosNombre.getText() + "','"
+                    + cmbUsuariosTipo.getSelectedItem().toString().substring(0,1) + "','"
+                    + txtUsuariosContraseña.getText() + "')";
+            Statement stmt = conect.createStatement();
+            stmt.executeUpdate(cad);
+            LlenarTablaUsuarios();
+            stmt.close();
+        }
+            catch (SQLException ex) 
+            {
+            System.out.println("Error insertar");   
+            } catch (ClassNotFoundException ex) {
+        //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }
     /**
      * realia la consulta para el registro de una materia prima
      */
@@ -2164,7 +3491,29 @@ VentanaCliente mdC=new VentanaCliente();
     }
     }
 
-
+    /**
+     * realiza la consulta para la modificación de un usuario
+     * @throws ClassNotFoundException 
+     */
+    private void ModificarUsuario() throws ClassNotFoundException{
+        try{
+            String cad;
+            cad = "UPDATE USUARIOS "
+                    + "SET NOMBRE_USUARIO='"+ txtUsuariosUsuario.getText()+"',"
+                    + "NOMBRE_PERSONA='" + txtUsuariosNombre.getText()+ "',TIPO='"
+                    + cmbUsuariosTipo.getSelectedItem().toString().substring(0,1) + "',CONTRASEÑA='"
+                    + txtUsuariosContraseña.getText()
+                    + "' WHERE ID_USUARIO="+ tblUsuarios.getValueAt(tblUsuarios.getSelectedRow(),0);
+            Statement stmt = conect.createStatement();
+            stmt.executeUpdate(cad);
+            LlenarTablaUsuarios();
+            stmt.close();
+        }
+            catch (SQLException ex) 
+            {
+            System.out.println("Error modificar");   
+            }
+    }
     /**
      * realza la consulta para modificar una materia prima
      * @throws ClassNotFoundException 
@@ -2215,7 +3564,149 @@ VentanaCliente mdC=new VentanaCliente();
             showMessageDialog(null," Error en la conexion LLENAR TABLA PRODUCTOS. "); 
         }
     }
+    /**
+     * obtiene los datos para la generación del Estado de Resultados
+     */
+    private void datosreporte(){
+        
+    try {
+        
     
+    LocalDate initial = LocalDate.now();
+    LocalDate start = initial.withDayOfMonth(1);
+    LocalDate end = initial.withDayOfMonth(initial.lengthOfMonth());
+    
+    System.out.println(start);
+    System.out.println(end);
+    stmt=conect.createStatement();
+    
+        tbmVenta=(DefaultTableModel)tblVenta.getModel();
+        tbmVenta.setRowCount(0);
+        
+        res = stmt.executeQuery("select sum (TOTAL) AS TOTAL_VENTAS " +
+                     "FROM VENTAS " +
+                     "WHERE FECHA  between '" + start.toString() + "' AND '" + end.toString() + "'");
+        if(null!=res){
+            while(res.next()){
+                VENTAS = res.getInt("TOTAL_VENTAS");
+            }
+        }
+        //stmt.close();
+        //stmt=conect.createStatement();
+        System.out.println(VENTAS);
+        lblTotalVentas.setText(""+VENTAS);
+        res = stmt.executeQuery("select sum (ADELANTO) as TOTAL_ADELANTOS " +
+                     "FROM PEDIDOS " +
+                     "WHERE PEDIDOS.ESTADO = 'N' " +
+                     " AND FECHA_PEDIDO  between '" + start.toString() + "' AND '" + end.toString() + "'");
+        if(null!=res){
+            while(res.next()){
+                ADELANTOS = res.getInt("TOTAL_ADELANTOS");
+            }
+        }
+        //stmt=conect.createStatement();
+        System.out.println(ADELANTOS);
+        lblTotalAdelantos.setText(""+ADELANTOS);
+        res=stmt.executeQuery("SELECT SUM(TOTAL) AS COMPRAS " +
+                      "FROM COMPRAS " +
+                     "WHERE FECHA  between '" + start.toString() + "' AND '" + end.toString() + "'");
+                
+                if(null!=res){
+                    while(res.next()){
+                      COMPRAS = res.getInt("COMPRAS");
+                    }
+                }
+                //stmt=conect.createStatement();
+                System.out.println(COMPRAS); 
+                lblTotalCompras.setText(""+COMPRAS);
+           res=stmt.executeQuery("select MATERIAS_PRIMAS.NOMBRE,sum(DETALLE_COMPRA.TOTAL) as COMPRADO " +
+                        "FROM ((DETALLE_COMPRA INNER JOIN MATERIAS_PRIMAS ON DETALLE_COMPRA.ID_MATERIA_PRIMA = MATERIAS_PRIMAS.ID_MATERIA) " +
+                        "INNER JOIN COMPRAS ON DETALLE_COMPRA.ID_COMPRA = COMPRAS.ID_COMPRA) " +
+                        "WHERE COMPRAS.FECHA between '" + start.toString() + "' AND '" + end.toString() + "'" +
+                        " group by MATERIAS_PRIMAS.NOMBRE " +
+                        "Order by 2 DESC");
+                
+                if(null!=res){
+                    for(int i = 0;i<1 ;i++){
+                        res.next();
+                        if(res != null){
+                            MATERIAPRIMA1 = res.getString(1);
+                            //MATERIAPRIMA1 = res.getString(2);
+                        }else{
+                        
+                        }
+                    }
+                }
+            //stmt=conect.createStatement();
+               System.out.println(MATERIAPRIMA1);
+                lblMateriaVendida.setText(""+MATERIAPRIMA1);
+                res=stmt.executeQuery("Select PERSONAS.NOMBRE " +
+                             "From COMPRAS INNER JOIN PERSONAS ON COMPRAS.ID_PROVEEDOR = PERSONAS.ID_PERSONA " +
+                             "WHERE FECHA  between '" + start.toString() + "' AND '" + end.toString() + "'" +
+                             "Group By PERSONAS.NOMBRE " +
+                             "Order By PERSONAS.ID_PERSONA ASC LIMIT 1");
+                if(null!=res){
+                    
+                    
+                    for(int i = 0;i<1;i++){
+                        res.next();
+                        PROVEEDOR1 = res.getString("NOMBRE");
+                    }
+                }
+                
+               // stmt=conect.createStatement();   
+             System.out.println(PROVEEDOR1);
+             lblProveedormasCompras.setText(""+PROVEEDOR1);
+             res=stmt.executeQuery("SELECT PERSONAS.NOMBRE " +
+                          "from VENTAS INNER JOIN PERSONAS ON VENTAS.ID_CLIENTE = PERSONAS.ID_PERSONA " +
+                          "WHERE FECHA between '" + start.toString() + "' AND '" + end.toString() + "' " +
+                          "GROUP BY PERSONAS.NOMBRE " +
+                          "ORDER BY PERSONAS.ID_PERSONA ASC LIMIT 1");
+                if(null!=res){
+                    
+                    
+                    for(int i = 0;i<1;i++){
+                        res.next();
+                        CLIENTE1 = res.getString(1);
+                    }
+                }
+                 System.out.println(CLIENTE1);
+             lblClienteActivo.setText(""+CLIENTE1);
+             
+             //stmt=conect.createStatement();   
+            
+             
+             res=stmt.executeQuery("SELECT PRODUCTOS.NOMBRE " +
+                          "FROM DETALLE_VENTAS INNER JOIN PRODUCTOS ON DETALLE_VENTAS.ID_PRODUCTO=PRODUCTOS.ID_PRODUCTO " +
+                          "GROUP BY PRODUCTOS.NOMBRE " +
+                          "ORDER BY PRODUCTOS.ID_PRODUCTO ASC LIMIT 1");
+                if(null!=res){
+                    
+                    
+                    for(int i = 0;i<1;i++){
+                        res.next();
+                        PRODUCTO1 = res.getString(1);
+                    }
+                }
+                lblProductomasVentas.setText(PRODUCTO1);
+                
+            
+             stmt.close();
+            
+           
+         
+            RELACION = ((VENTAS + ADELANTOS)-COMPRAS);
+           lblTotalCapital.setText(""+ RELACION);
+            System.out.println(RELACION);
+            lblTotalIngresos.setText(""+(VENTAS+ADELANTOS));
+            lblTotalEgresos.setText(""+COMPRAS);
+            
+    } catch (SQLException ex) {
+        //Logger.getLogger(GESTION_USUARIOS.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        
+        
+    }
     /**
      * llena la tabla productos del apartado de Pedido
      */
@@ -2282,8 +3773,50 @@ VentanaCliente mdC=new VentanaCliente();
         }
          return true;
     }
-
-
+    /**
+     * verifica si el usuario ya existe
+     * @return
+     * @throws ClassNotFoundException 
+     */
+    private boolean UsuarioExistente() throws ClassNotFoundException{
+         try {
+             Statement stmt = conect.createStatement();
+             res=stmt.executeQuery("select * from USUARIOS WHERE NOMBRE_USUARIO ='"+ txtUsuariosUsuario.getText()+"'");
+             if(null!=res){
+                while(res.next()){
+                   return false;
+                }
+             }
+             stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+        }
+         return true;
+    }
+    /**
+     * verifica los campos vacíos de usuario
+     * @return 
+     */
+    private boolean VerificarvaciosUsuario(){
+        
+        if(txtUsuariosNombre.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL NOMBRE DE LA PERSONA");
+            return false;
+        }
+        if(txtUsuariosContraseña.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUELA CONTRASEÑA");
+            return false;
+        }
+        if(txtUsuariosUsuario.getText().equals("")){
+            showMessageDialog(null, "VERIFIQUE EL NOMBRE DE USUARIO");
+            return false;
+        }
+        if (cmbUsuariosTipo.getSelectedIndex() == 0){
+            showMessageDialog(null, "SELECCIONE UN TIPO DE USUARIO");
+            return false;
+        }
+        return true;
+    }
     /**
      * verifica los campos vacios de materias primas
      * @return 
@@ -2301,6 +3834,41 @@ VentanaCliente mdC=new VentanaCliente();
 //        }
         return true;
     }
+    /**
+     * carga la información del usuario seleccionado de la tabla de usuarios
+     * @param evt 
+     */
+    private void tblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseClicked
+        rowUsuario = tblUsuarios.getSelectedRow();
+        txtUsuariosUsuario.setText(tblUsuarios.getValueAt(rowUsuario, 1).toString());
+        cmbUsuariosTipo.setSelectedItem(tblUsuarios.getValueAt(rowUsuario, 2));
+        txtUsuariosContraseña.setText(tblUsuarios.getValueAt(rowUsuario,3).toString());
+        txtUsuariosNombre.setText(tblUsuarios.getValueAt(rowUsuario, 4).toString());
+    }//GEN-LAST:event_tblUsuariosMouseClicked
+
+    /**
+     * Valida el texto del usuario al presionar teclas.
+     * @param evt 
+     */
+    private void txtUsuariosUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuariosUsuarioKeyTyped
+        ValidarEspacios(evt);
+    }//GEN-LAST:event_txtUsuariosUsuarioKeyTyped
+
+    /**
+     * Valida el texto de contraseña del usuario al presionar teclas.
+     * @param evt 
+     */
+    private void txtUsuariosContraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuariosContraseñaKeyTyped
+        ValidarEspacios(evt);
+    }//GEN-LAST:event_txtUsuariosContraseñaKeyTyped
+    /**
+     * Valida el nombre dle usuario al presionar teclas.
+     * @param evt 
+     */
+    private void txtUsuariosNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuariosNombreKeyTyped
+        ValidarLetras(evt);
+    }//GEN-LAST:event_txtUsuariosNombreKeyTyped
+
     private void txtAPMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAPMCActionPerformed
 
     }//GEN-LAST:event_txtAPMCActionPerformed
@@ -2336,7 +3904,14 @@ VentanaCliente mdC=new VentanaCliente();
 
     }//GEN-LAST:event_btnEliminarCActionPerformed
     
-
+    /**
+     * Filtro para buscar en Materia primas en compras.
+     */
+    public void filtro() {
+        int columnaABuscar = 1;
+        trsFiltro.setRowFilter(RowFilter.regexFilter(txtBuscasMateriaPrima_Compras.getText(), columnaABuscar));
+    }
+    
     private TableRowSorter trsFiltro;
     /**
      * Función para limpiar campos en compras.
@@ -2452,7 +4027,7 @@ VentanaCliente mdC=new VentanaCliente();
                 //                String cadena = (txtBuscadorC.getText());
                 //                txtBuscadorC.setText(cadena);
                 repaint();
-                //filtro();
+                filtro();
             }
         });
         trsFiltro = new TableRowSorter(tablaCliente.getModel());
@@ -2697,7 +4272,11 @@ private boolean validarVacioP(){
         }catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
         }  
-    }    /**
+    }
+    private void cmbUsuariosTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbUsuariosTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbUsuariosTipoActionPerformed
+    /**
      * busca los pedidos ya sea por la fecha de generación y la fecha de entrega
      */
     private void BuscarPedidos(){
@@ -2774,6 +4353,29 @@ private boolean validarVacioP(){
         } 
     }
     /**
+     * Botón de agregar productos.
+     * @param evt 
+     */
+    private void btnAgregarProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProvedorActionPerformed
+        ventanaProveedor VP=new ventanaProveedor();
+        VP.setLocationRelativeTo(null);
+
+        VP.setVisible(true);
+    }//GEN-LAST:event_btnAgregarProvedorActionPerformed
+
+    /**
+     * Cuadro de texto para buscar compras al presionar teclas.
+     * @param evt 
+     */
+    private void txtBuscarComprasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarComprasKeyReleased
+            try {
+                BuscarProveedores();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_txtBuscarComprasKeyReleased
+
+    /**
      * Cuadro de texto de buscar Producto en pedido al presionar teclas
      * @param evt 
      */
@@ -2795,7 +4397,87 @@ private boolean validarVacioP(){
         showMessageDialog(this,"Debe de seleccionar un articulo.");
     }//GEN-LAST:event_btnProductoAPedidojButton11ActionPerformed
 
+    /**
+     * Botón de eliminar Materia prima en Compra
+     * @param evt 
+     */
+    private void btnEliminarMateriaPrima_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMateriaPrima_CompraActionPerformed
+        restartotalyeliminarrow();
+    }//GEN-LAST:event_btnEliminarMateriaPrima_CompraActionPerformed
+    /**
+     * Función que valida si existe en MAteria prima.
+     * @param tMateriasPrimas Tabla de Materias Primas
+     * @param tCompra Tabla de Compra
+     * @param spin Spinner de la cantidad.
+     * @return 
+     */
+    private boolean existeEnTabla(JTable tMateriasPrimas, JTable tCompra, JSpinner spin){
 
+        for(int i = 0;i<tblCompra.getRowCount();i++){
+            if (tblCompraslMateriasPrimas.getValueAt(tMateriasPrimas.getSelectedRow(),0)== tblCompra.getValueAt(i,0)){
+                tblCompra.setValueAt((Integer.parseInt(tblCompra.getValueAt(i,2)+"")+Integer.parseInt(spin.getValue()+"")),i, 2);
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    /**
+     * llena tabla con la información de bsuqueda  del proveedor del apartado de Nueva Compra
+     * @throws ClassNotFoundException 
+     */
+    private void BuscarProveedores() throws ClassNotFoundException{
+         try {
+             conectarBD();
+             Statement stmt = conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblProveedor_Compra.getModel();
+           tbm.setRowCount(0);
+           res=stmt.executeQuery("select * from PERSONAS "
+                                            + "where TIPO = 'P' "
+                                            + "AND NOMBRE LIKE '%" + txtBuscarCompras.getText() + "%'");
+            if(null!=res){
+                while(res.next()){
+                   Vector rowProductos=new Vector();
+                  rowProductos.add(res.getString("ID_PERSONA"));
+                  rowProductos.add(res.getString("NOMBRE"));
+                  rowProductos.add(res.getString("DOMICILIO"));
+                  rowProductos.add(res.getString("TELEFONO"));
+                  tbm.addRow(rowProductos);
+                }
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+        } 
+    }
+    /**
+     * Genera la compra
+     * @param evt 
+     */
+    private void btnGenerarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarCompraActionPerformed
+    if(tblCompra.getRowCount()!=0 && tblProveedor_Compra.getSelectedRow()>-1){
+        try { System.out.println("insertado");
+                insertarCompra();
+                detalle_compra();
+                DefaultTableModel tbm=(DefaultTableModel)tblCompra.getModel();
+                tbm.setRowCount(0);
+                txtTotalCompra.setText("0");
+                tblCompra.setModel(tbm);
+                LlenarTablaCompras_MateriasPrimas();
+                showMessageDialog(this, "¡Compra realizada exitosamente!");
+            } catch (SQLException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+    else if(tblProveedor_Compra.getSelectedRow()>-1){
+            showMessageDialog(this,"Debe de ingresar articulos a la compra.");
+    }
+    else
+        showMessageDialog(this,"Debe de seleccionar un proveedor.");
+        
+    }//GEN-LAST:event_btnGenerarCompraActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
 
@@ -2905,6 +4587,41 @@ private boolean validarVacioP(){
         
         
     }
+    /**
+     * limpia le carrito de compra del apartado Nueva Compra
+     */
+    void cancelarCompra(){
+         DefaultTableModel tbm = (DefaultTableModel) tblCompra.getModel();
+            for (int i = 0; i < tblCompra.getRowCount(); i++) {
+            tbm.removeRow(i);
+            i-=1;
+            }
+            tblCompra.setModel(tbm);
+            txtTotalCompra.setText("0");
+            s = 0;
+    }
+    /**
+     * Botón de cancelar compra.
+     * @param evt 
+     */
+    private void btnCancelar_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar_CompraActionPerformed
+        cancelarCompra();
+    }//GEN-LAST:event_btnCancelar_CompraActionPerformed
+    /**
+     * Cuadro de texto de buscar materias primas en compras.
+     * @param evt 
+     */
+    private void txtBuscasMateriaPrima_ComprasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprasKeyTyped
+        txtBuscasMateriaPrima_Compras.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(final KeyEvent e) {
+                repaint();
+                filtro();
+            }
+        });
+        trsFiltro = new TableRowSorter(tblCompraslMateriasPrimas.getModel());
+        tblCompraslMateriasPrimas.setRowSorter(trsFiltro);  
+    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprasKeyTyped
 
     /**
      * Botón de cancelar pedido.
@@ -2914,8 +4631,12 @@ private boolean validarVacioP(){
         cancelarPedido();
     }//GEN-LAST:event_btnCancelar_PedidoActionPerformed
 
+    private void spncantidadMP_CompraStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spncantidadMP_CompraStateChanged
+        spinnerNeg(spncantidadMP_Compra);
+    }//GEN-LAST:event_spncantidadMP_CompraStateChanged
+
     private void spncantidadProducto_PedidoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spncantidadProducto_PedidoStateChanged
-        
+        spinnerNeg(spncantidadMP_Compra);
     }//GEN-LAST:event_spncantidadProducto_PedidoStateChanged
     /**
      * Genera el pedido
@@ -3017,6 +4738,43 @@ private boolean validarVacioP(){
         showMessageDialog(null," Favor de seleccionar un cliente.");
     }//GEN-LAST:event_btnRefreshProducto_Pedido1ActionPerformed
 
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        if(tblCompraslMateriasPrimas.getSelectedRow()>-1){
+            
+            Agregarcarrito();
+             sumartotal();
+        }
+        else
+        showMessageDialog(this,"Debe de seleccionar un articulo.");
+     
+    }//GEN-LAST:event_jButton20ActionPerformed
+    /**
+     * abre la ventana de acceso rapido de Materia Prima
+     * @param evt 
+     */
+    private void btnNuevaMateriaPrima_ComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaMateriaPrima_ComprasActionPerformed
+        VentanaMateriaPrima VMP=new VentanaMateriaPrima();
+        VMP.setLocationRelativeTo(null);
+        VMP.setVisible(true);
+    }//GEN-LAST:event_btnNuevaMateriaPrima_ComprasActionPerformed
+
+    private void txtBuscasMateriaPrima_ComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscasMateriaPrima_ComprasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscasMateriaPrima_ComprasActionPerformed
+
+    /**
+     * Botón para volver a llenar Materia prima en compra
+     * @param evt 
+     */
+    private void btnRefreshMateriaPrima_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshMateriaPrima_CompraActionPerformed
+        try {
+                tbmCompra.setRowCount(0);
+                //Busqueda
+                LlenarTablaComprasMateriasPrimas();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_btnRefreshMateriaPrima_CompraActionPerformed
 /**
  * Botón para volver a llenar la tabla de productos en pedido.
  * @param evt 
@@ -3024,7 +4782,13 @@ private boolean validarVacioP(){
     private void btnRefreshProducto_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProducto_PedidoActionPerformed
         llenarTablaProductos();
     }//GEN-LAST:event_btnRefreshProducto_PedidoActionPerformed
-
+/**
+ * Evento al dar click en historial de compra para llenar el historial de compra.
+ * @param evt 
+ */
+    private void tblHistorialComprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHistorialComprasMouseClicked
+        llenarTablaDetalleCompra();
+    }//GEN-LAST:event_tblHistorialComprasMouseClicked
 /**
  * Evento al dar click en historial de pedido para llenar el historial de pedido
  * @param evt 
@@ -3033,10 +4797,10 @@ private boolean validarVacioP(){
         llenarTablaDetallePedido();
     }//GEN-LAST:event_tblHistorialPedidosMouseClicked
 
-    private void tb_Ventas_PedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_Ventas_PedidosMouseClicked
+    private void tb_PuntoVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_PuntoVentaMouseClicked
                 llenarTablaHistorialPedidos();
-                
-    }//GEN-LAST:event_tb_Ventas_PedidosMouseClicked
+                llenarTablaHistorialCompras();
+    }//GEN-LAST:event_tb_PuntoVentaMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
             try {
@@ -3063,7 +4827,29 @@ private boolean validarVacioP(){
         rdbCancelar.setSelected(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
-
+/**
+ * Botón para buscar historial de compra.
+ * @param evt 
+ */
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+            try {
+                buscarHistorialCompra();
+                // TODO add your handling code here:
+            } catch (SQLException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_jButton4ActionPerformed
+/**
+ * Reestablece la busqueda del Historial de Compras
+ * @param evt 
+ */
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+         llenarTablaHistorialCompras();
+        txtBuscarCodigoCompras.setText("");
+        txtBuscarProveedorCompras.setText("");
+        jDateChooser1.setDate(null);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 /**
  * Evento de la tabla de historial de ventas para llenar su tabla.
  * @param evt 
@@ -3216,7 +5002,7 @@ generarCambio();
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void tb_principalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_principalMouseClicked
-        //datosreporte();
+        datosreporte();
     }//GEN-LAST:event_tb_principalMouseClicked
 
     private void txtBuscarPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarPKeyReleased
@@ -3244,7 +5030,22 @@ generarCambio();
             }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelar_Pedido1ActionPerformed
- 
+    /**
+     * Imprimer el Estado  de Resultados
+     */
+    private void imprimirDatosReporte(){
+        Imprimir printReporte=new Imprimir();
+        String fecha="05";
+        VENTAS=Float.parseFloat(lblTotalVentas.getText());
+        ADELANTOS=Float.parseFloat(lblTotalAdelantos.getText());
+        COMPRAS=Float.parseFloat(lblTotalCompras.getText());
+        
+        printReporte.imprimirReporte(fecha,VENTAS,ADELANTOS,COMPRAS,(VENTAS+ADELANTOS),COMPRAS,RELACION,lblMateriaVendida.getText(),lblProductomasVentas.getText(),lblProveedormasCompras.getText(),lblClienteActivo.getText());
+    }
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        imprimirDatosReporte();
+    }//GEN-LAST:event_jButton11ActionPerformed
+
     private void txtBuscarProducto_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarProducto_PedidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscarProducto_PedidoActionPerformed
@@ -3372,7 +5173,39 @@ generarCambio();
             javax.swing.JOptionPane.showMessageDialog(this, "Error en llenar tabla HistorialPedidos");
         } 
     }
-
+    /**
+     * Busca la información y la muestra en la tabla de Historial de compras en base a los diferentes filtros que se presentan
+     * @throws SQLException 
+     */
+    private void buscarHistorialCompra() throws SQLException{
+            stmt = conect.createStatement();
+          
+            String  bus1="",bus2="",bus3="";
+           
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        //insersion de codigos de busqueda
+        if(!txtBuscarCodigoCompras.getText().equals(""))
+            bus1= " AND ID_COMPRA LIKE '%"+txtBuscarCodigoCompras.getText()+"%'";
+        if(!txtBuscarProveedorCompras.getText().equals(""))
+            bus2 = " AND PERSONAS.NOMBRE LIKE '%"+txtBuscarProveedorCompras.getText()+"%'";
+        if(jDateChooser1.getDate()!=null){
+            String date2 = simpleDateFormat.format(jDateChooser1.getDate());
+            bus3=" AND FECHA = '"+ date2+"'";}
+ 
+          Statement stmt = conect.createStatement();
+            DefaultTableModel tbm=(DefaultTableModel)tblHistorialCompras.getModel();
+            tbm.setRowCount(0);
+            
+            res=stmt.executeQuery("SELECT ID_COMPRA, PERSONAS.NOMBRE, FECHA,TOTAL FROM COMPRAS, PERSONAS WHERE PERSONAS.ID_PERSONA = COMPRAS.ID_PROVEEDOR"
+                     + bus1 +bus2+bus3);
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getInt(1),res.getString(3),res.getString(2),res.getInt(4)});
+                }  
+            }
+    
+    }
     
     /**
      * Busca la información y la presenta en la tabla de historial de Pedidos en base  a los diferentes filtros que se presentan
@@ -3568,9 +5401,49 @@ private void llenarTablaDetallePedido(){
             showMessageDialog(null," Error en AL LLENAR TABLA PRODUCTOS POR BUSQUEDA. "); 
         }
     }
+    /**
+     * Llena la tabla del historial de comoras
+     */
+    
+    private void llenarTablaHistorialCompras(){
+         try {
+            DefaultTableModel tbm=(DefaultTableModel)tblHistorialCompras.getModel();
+            tbm.setRowCount(0);
+            res=stmt.executeQuery("SELECT ID_COMPRA, FECHA, PERSONAS.NOMBRE, TOTAL " +
+                         "FROM COMPRAS INNER JOIN PERSONAS ON COMPRAS.ID_PROVEEDOR = PERSONAS.ID_PERSONA " 
+                        );
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getString("ID_COMPRA"),res.getString("FECHA"),res.getString("NOMBRE"),res.getString("TOTAL")});
+                }  
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            showMessageDialog(null," Error en AL LLENAR TABLA PRODUCTOS POR BUSQUEDA. "); 
+        }
+    }
 
-
-
+/**
+     * Muestra el detalle de la compra seleccionada en la tabla de Historial Compras
+     */
+private void llenarTablaDetalleCompra(){
+         try {
+            DefaultTableModel tbm=(DefaultTableModel)tblDetalleCompra.getModel();
+            tbm.setRowCount(0);
+            res=stmt.executeQuery("SELECT MATERIAS_PRIMAS.NOMBRE,DETALLE_COMPRA.CANTIDAD,(DETALLE_COMPRA.TOTAL/DETALLE_COMPRA.CANTIDAD)AS UNITARIO,MATERIAS_PRIMAS.UNIDAD_MEDIDA,DETALLE_COMPRA.TOTAL " +
+                         "FROM MATERIAS_PRIMAS INNER JOIN DETALLE_COMPRA ON MATERIAS_PRIMAS.ID_MATERIA = DETALLE_COMPRA.ID_MATERIA_PRIMA " +
+                         "AND DETALLE_COMPRA.ID_COMPRA = " + tblHistorialCompras.getValueAt(tblHistorialCompras.getSelectedRow(),0)
+                        );
+            if(null!=res){
+                while(res.next()){
+                   tbm.addRow(new Object[]{res.getString("NOMBRE"),res.getString("CANTIDAD"),res.getString("UNITARIO"),res.getString("UNIDAD_MEDIDA"),res.getString("TOTAL")});
+                }
+            }
+            stmt.close();
+        }catch (SQLException ex) {
+            showMessageDialog(null," Error en AL LLENAR TABLA PRODUCTOS POR BUSQUEDA. "); 
+        }
+    }
     
     /**
      * Restablece los valores por defecto de la ventana de Nueva Venta
@@ -3653,7 +5526,7 @@ private void llenarTablaDetallePedido(){
                     + idCliente +","+id_usuario+","+lblTotalVenta1.getText()+")";
             Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
-            //actCant();
+            actCant();
             //showMessageDialog(null,"Proveedor Registrado");
             stmt.close();
 
@@ -3820,7 +5693,25 @@ private void llenarTablaDetallePedido(){
 
 
 
-
+    /**
+     * Agrega el producto seleccionado a la tabla de Compra(carrito de compra)
+     */
+    void Agregarcarrito(){
+        
+        if(existeEnTabla(tblCompraslMateriasPrimas, tblCompra, spncantidadMP_Compra)){
+        }else{
+            r = tblCompraslMateriasPrimas.getSelectedRow();
+            String compra[] = new String[5];
+            compra[0] = tblCompraslMateriasPrimas.getValueAt(r,0).toString();
+            compra[1] = tblCompraslMateriasPrimas.getValueAt(r,1).toString();
+            compra[2] = spncantidadMP_Compra.getValue().toString();
+            compra[3] = tblCompraslMateriasPrimas.getValueAt(r,3).toString();
+            compra[4] = ""+Float.parseFloat(compra[2]) * Float.parseFloat(compra[3]);
+       
+            tbmCompra.addRow(compra);
+        }
+        
+    }
    
     /**
      *  Realiza la busqueda de los clientes en la ventana Pedidos y filtra la tabla de clientes con la busqueda
@@ -3869,22 +5760,144 @@ private void llenarTablaDetallePedido(){
                     + tblClientes_Pedido.getValueAt(r,0).toString()+","+id_usuario+",'N',"+txtAdelantoPedido.getText()+","+txtTotalPedido.getText()+")";
             //Statement stmt = conect.createStatement();
             stmt.executeUpdate(cad);
-            //actCant();
+            actCant();
             //showMessageDialog(null,"Proveedor Registrado");
             stmt.close();
 
     }
 
+            /**
+             *  Genera a compra con los datos ingresados en la tabla compra y se insertan en la BD
+             * @throws SQLException 
+             */
+    private void insertarCompra () throws SQLException {
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
+        String date = simpleDateFormat.format(new Date());
+        r = tblProveedor_Compra.getSelectedRow();
     
+        String cad = "INSERT INTO COMPRAS (FECHA,ID_PROVEEDOR,TOTAL) "
+                    + "VALUES('"+ date +"',"
+                    + tblProveedor_Compra.getValueAt(r,0).toString()+","+ txtTotalCompra.getText()+")";
+            Statement stmt = conect.createStatement();
+            stmt.executeUpdate(cad);
+            actCant();
+            //showMessageDialog(null,"Proveedor Registrado");
+            stmt.close();
 
+    }
+    
+    /**
+     * Genera los detales de la compra y se insertan en la BD
+     */
+        private void detalle_compra(){
+            try {
+                cad ="";
+                int idp = tblProveedor_Compra.getSelectedRow();
+                Statement stmt = conect.createStatement();
+                res=stmt.executeQuery("SELECT MAX (ID_COMPRA)  FROM COMPRAS");
+                int id = 0;
+                while (res.next()){
+                    id = res.getInt(1);
+                }
+                for (int i = 0;i< tblCompra.getRowCount();i++){
+                    cad = "INSERT INTO DETALLE_COMPRA" +
+                            " VALUES( " + id +
+                            "," + tblCompra.getValueAt(i,0).toString() +
+                            "," + tblCompra.getValueAt(i,2).toString() +
+                            "," + tblProveedor_Compra.getValueAt(idp,0) +
+                            "," + tblCompra.getValueAt(i,4) +
+                            ")";
+                            stmt.executeUpdate(cad);
+                            }
+               stmt.close(); 
+            } catch (SQLException ex) {
+                Logger.getLogger(Ventana_Dueno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+               
+    }
 
+/**
+ * Actualiza la exsitencia de las materias primas en la BD al realiza a compra
+ * @throws SQLException 
+ */
+    private void actCant() throws SQLException{
+      for(int i  = 0; i < tblCompra.getRowCount();i++){
+         String id= tblCompra.getValueAt(i,0).toString();
+          int cant = Integer.parseInt(tblCompra.getValueAt(i,2).toString());
+          cad = "UPDATE MATERIAS_PRIMAS "
+                    + "SET CANT_DISP = CANT_DISP + "+ cant +" WHERE ID_MATERIA = "+id;
+           stmt = conect.createStatement();
+            stmt.executeUpdate(cad);
+      }
 
-
+    }
+    
+    /**
+     * Realiza la suma total de la compra y la muestra en un campo de texto
+     */
+    void sumartotal(){
+        r =tblCompra.getRowCount()-1;
+        s+= Float.parseFloat(tblCompra.getValueAt(r,4).toString());
+        txtTotalCompra.setText(""+s);
+    }
    
    
-
-
+     /**
+     * Actualiza el total del pedido al eliminar un producto del carrito de compra
+     */
+     
+    void restartotalyeliminarrow(){
+        r = tblCompra.getSelectedRow();
+        if( r != -1){
+            DefaultTableModel tbm = (DefaultTableModel) tblCompra.getModel();
+            s -= Float.parseFloat(tblCompra.getValueAt(r,4).toString());
+            tbm.removeRow(r);
+            tblCompra.setModel(tbm);
+            txtTotalCompra.setText("" +s);
+            System.out.print("IF" +   "    " +r);
+        }else{
+            r = tblCompra.getRowCount()-1;
+            DefaultTableModel tbm = (DefaultTableModel) tblCompra.getModel();
+            s -= Float.parseFloat(tblCompra.getValueAt(r,4).toString());
+            tbm.removeRow(r);
+            tblCompra.setModel(tbm);
+            txtTotalCompra.setText("" +s);
+            System.out.print("ELSE");
+        }
+        
+    }
+    
+   /**
+    * LLena la tabla de materias primas dentro de la ventana de compras
+    * @throws ClassNotFoundException 
+    */ 
+    private void LlenarTablaComprasMateriasPrimas() throws ClassNotFoundException{
+         try {
+            res=null;
+            stmt = conect.createStatement();
+            
+           tbmMateriaPrima_Compra.setRowCount(0);
+           res=stmt.executeQuery("select * from MATERIAS_PRIMAS where NOMBRE LIKE '%"+txtBuscasMateriaPrima_Compras.getText()+"%'");
+            if(null!=res){
+                while(res.next()){
+                   Vector rowProductos=new Vector();
+                   rowProductos.add(res.getString("ID_MATERIA"));
+                   rowProductos.add(res.getString("NOMBRE"));
+//                  rowProductos.add(res.getString("DESCRIPCION"));
+                   rowProductos.add(res.getString("CANT_DISP"));
+                   rowProductos.add(res.getString("PRECIO"));
+                   tbmMateriaPrima_Compra.addRow(rowProductos);
+                }
+            }
+            
+            
+            stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion");
+        } 
+    }
     
     /**
      * Valida que no existan espacios y consume el evento
@@ -3896,8 +5909,35 @@ private void llenarTablaDetallePedido(){
            evt.consume();
     }
 
-
-
+    /**
+     * Eliminar el provedor seleccionado
+     * @throws ClassNotFoundException 
+     */
+    private void EliminarProveedor() throws ClassNotFoundException{
+        try{
+            conectarBD();
+            
+            String cad = "DELETE FROM PERSONAS WHERE ID_PERSONA =" + tblProveedores.getValueAt(rowProveedor,0).toString();
+            Statement stmt = conect.createStatement();
+            stmt.executeUpdate(cad);
+            showMessageDialog(null,"Proveedor Eliminado");
+            LlenarTablaProveedores();
+            stmt.close();
+        }
+            catch (SQLException ex) 
+            {
+            System.out.println("Error Eliminar");   
+            }
+    }
+   /**
+    * Limpia los campos en la ventna poveedor
+    */ 
+     private void limpiarProveedor(){
+        txtProveedorNombre.setText(null);
+        txtProveedorDomicilio.setText(null);
+        txtProveedorCP.setText(null);
+        txtProveedorTelefono.setText(null);
+    }
      /**
       * Valida la existencia de numeros y consume el evento
       * @param evt 
@@ -3926,7 +5966,27 @@ private void llenarTablaDetallePedido(){
         if(Character.isDigit(l))
            evt.consume();
     }
-
+/**
+ * Valid la existencias de los proveedores
+ * @return
+ * @throws ClassNotFoundException 
+ */
+     private boolean ProveedorExistente() throws ClassNotFoundException{
+         try {
+             conectarBD();
+             Statement stmt = conect.createStatement();
+             res=stmt.executeQuery("select * from USUARIOS WHERE NOMBRE_USUARIO ='"+ txtProveedorNombre.getText()+"'");
+             if(null!=res){
+                while(res.next()){
+                   return false;
+                }
+             }
+             stmt.close();
+        }catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexion LLENAR TABLA");
+        }
+         return true;
+    }
 
     /**
      *  Limpia los campos en la ventana materias primas
@@ -4010,29 +6070,44 @@ private void llenarTablaDetallePedido(){
     private javax.swing.JButton btnAddClienteVentas;
     private javax.swing.JButton btnAgregarMP;
     private javax.swing.JButton btnAgregarP;
+    private javax.swing.JButton btnAgregarProvedor;
+    private javax.swing.JButton btnAgregarProveedor;
+    private javax.swing.JButton btnCancelar1;
     private javax.swing.JButton btnCancelarC;
     private javax.swing.JButton btnCancelarMP;
     private javax.swing.JButton btnCancelarP;
     private javax.swing.JButton btnCancelarVenta;
+    private javax.swing.JButton btnCancelar_Compra;
     private javax.swing.JButton btnCancelar_Pedido;
     private javax.swing.JButton btnCancelar_Pedido1;
     private javax.swing.JButton btnEliminarArticuloPedido;
     private javax.swing.JButton btnEliminarC;
+    private javax.swing.JButton btnEliminarMateriaPrima_Compra;
     private javax.swing.JButton btnEliminarP;
+    private javax.swing.JButton btnEliminarProveedor;
+    private javax.swing.JButton btnGenerarCompra;
     private javax.swing.JButton btnGenerarPedido;
     private javax.swing.JButton btnGenerarVenta;
     private javax.swing.JButton btnInsertarC;
     private javax.swing.JButton btnModificarC;
     private javax.swing.JButton btnModificarMP;
     private javax.swing.JButton btnModificarP;
+    private javax.swing.JButton btnModificarProveedor;
+    private javax.swing.JButton btnNuevaMateriaPrima_Compras;
     private javax.swing.JButton btnProductoAPedido;
+    private javax.swing.JButton btnRefreshMateriaPrima_Compra;
     private javax.swing.JButton btnRefreshProducto_Pedido;
     private javax.swing.JButton btnRefreshProducto_Pedido1;
+    private javax.swing.JButton btnUsuariosAgregar;
+    private javax.swing.JButton btnUsuariosCancelar;
+    private javax.swing.JButton btnUsuariosEliminar;
+    private javax.swing.JButton btnUsuariosModificar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JComboBox<String> cmbUnidadMedidaMP;
     private javax.swing.JComboBox<String> cmbUnidadMedidaProducto;
+    private javax.swing.JComboBox<String> cmbUsuariosTipo;
     private com.toedter.calendar.JDateChooser dateEntegaPedidos;
     private com.toedter.calendar.JDateChooser dateGeneracion;
     private com.toedter.calendar.JDateChooser dateGeneracionPedido;
@@ -4041,33 +6116,44 @@ private void llenarTablaDetallePedido(){
     private javax.swing.ButtonGroup grupoTipoNuevoProducto;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
@@ -4083,11 +6169,20 @@ private void llenarTablaDetallePedido(){
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
@@ -4095,6 +6190,8 @@ private void llenarTablaDetallePedido(){
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
@@ -4103,14 +6200,22 @@ private void llenarTablaDetallePedido(){
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel3;
@@ -4121,6 +6226,7 @@ private void llenarTablaDetallePedido(){
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
@@ -4128,28 +6234,63 @@ private void llenarTablaDetallePedido(){
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JScrollPane jScrollPaneProveedores;
+    private javax.swing.JScrollPane jScrollPaneUsuarios;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblAnticipo;
+    private javax.swing.JLabel lblCPProveedor;
     private javax.swing.JLabel lblCambio;
     private javax.swing.JLabel lblCambioPedido;
+    private javax.swing.JLabel lblClienteActivo;
+    private javax.swing.JLabel lblContra;
+    private javax.swing.JLabel lblDomicilioProveedor;
+    private javax.swing.JLabel lblMateriaVendida;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombreProveedor;
     private javax.swing.JLabel lblPagoRestante;
+    private javax.swing.JLabel lblProductomasVentas;
+    private javax.swing.JLabel lblProveedorBuscar;
+    private javax.swing.JLabel lblProveedormasCompras;
+    private javax.swing.JLabel lblTelefonoProveedor;
+    private javax.swing.JLabel lblTipoU;
+    private javax.swing.JLabel lblTituloProveedor;
+    private javax.swing.JLabel lblTotalAdelantos;
+    private javax.swing.JLabel lblTotalCapital;
+    private javax.swing.JLabel lblTotalCompras;
+    private javax.swing.JLabel lblTotalEgresos;
+    private javax.swing.JLabel lblTotalIngresos;
     private javax.swing.JLabel lblTotalVenta1;
+    private javax.swing.JLabel lblTotalVentas;
     private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblUsuario1;
+    private javax.swing.JLabel lblUsuarioTitulo;
     private javax.swing.JPanel panelCliente;
+    public static javax.swing.JPanel panelEstadoResultados;
+    private javax.swing.JPanel panelHistorialCompras;
+    private javax.swing.JPanel panelNuevaCompra;
+    private javax.swing.JPanel panelProveedor;
+    private javax.swing.JPanel panelUsuarios;
     private javax.swing.JRadioButton rdbCancelar;
     private javax.swing.JRadioButton rdbEntrega;
     private javax.swing.JRadioButton rdbGeneracion;
@@ -4157,23 +6298,31 @@ private void llenarTablaDetallePedido(){
     private javax.swing.JRadioButton rdbNoPagado;
     private javax.swing.JRadioButton rdbPagado;
     private javax.swing.JRadioButton rdbPorPedido;
+    private javax.swing.JSpinner spncantidadMP_Compra;
     private javax.swing.JSpinner spncantidadProducto_Pedido;
     private javax.swing.JSpinner spnrMP;
     private javax.swing.JTable tablaCliente;
     private javax.swing.JTable tablaMateriaPrima;
     private javax.swing.JTabbedPane tb_Inventario;
     private javax.swing.JTabbedPane tb_Personas;
-    public static javax.swing.JTabbedPane tb_Ventas_Pedidos;
+    public static javax.swing.JTabbedPane tb_PuntoVenta;
     public static javax.swing.JTabbedPane tb_principal;
     private javax.swing.JTable tblClientesVenta;
     private javax.swing.JTable tblClientes_Pedido;
+    private javax.swing.JTable tblCompra;
+    private javax.swing.JTable tblCompraslMateriasPrimas;
+    private javax.swing.JTable tblDetalleCompra;
     private javax.swing.JTable tblDetalleVentas;
+    private javax.swing.JTable tblHistorialCompras;
     private javax.swing.JTable tblHistorialPedidos;
     private javax.swing.JTable tblHistorialVentas;
     private javax.swing.JTable tblPedido;
     private javax.swing.JTable tblPedidosVentas;
     private javax.swing.JTable tblProducto;
     private javax.swing.JTable tblProductos_Pedido;
+    private javax.swing.JTable tblProveedor_Compra;
+    private javax.swing.JTable tblProveedores;
+    private javax.swing.JTable tblUsuarios;
     private javax.swing.JTable tblVenta;
     private javax.swing.JTable tblpruebapedidos;
     private javax.swing.JTextField txtAPMC;
@@ -4186,12 +6335,17 @@ private void llenarTablaDetallePedido(){
     private javax.swing.JTextField txtBuscarClientePedidos1;
     private javax.swing.JTextField txtBuscarClienteVenta;
     private javax.swing.JTextField txtBuscarCliente_Pedido;
+    private javax.swing.JTextField txtBuscarCodigoCompras;
     private javax.swing.JTextField txtBuscarCodigoPedidos;
     private javax.swing.JTextField txtBuscarCodigoPedidos1;
+    private javax.swing.JTextField txtBuscarCompras;
     private javax.swing.JTextField txtBuscarEmpleadoPedidos;
     private javax.swing.JTextField txtBuscarEmpleadoPedidos1;
     private javax.swing.JTextField txtBuscarP;
     private javax.swing.JTextField txtBuscarProducto_Pedido;
+    private javax.swing.JTextField txtBuscarProveedor;
+    private javax.swing.JTextField txtBuscarProveedorCompras;
+    private javax.swing.JTextField txtBuscasMateriaPrima_Compras;
     private javax.swing.JTextField txtCPC;
     private javax.swing.JSpinner txtCantidadMP;
     private javax.swing.JTextArea txtDescripcionMP;
@@ -4202,8 +6356,16 @@ private void llenarTablaDetallePedido(){
     private javax.swing.JTextField txtNomC;
     private javax.swing.JTextField txtNombreMP;
     private javax.swing.JTextField txtPrecioMateriaPrima;
+    private javax.swing.JTextField txtProveedorCP;
+    private javax.swing.JTextField txtProveedorDomicilio;
+    private javax.swing.JTextField txtProveedorNombre;
+    private javax.swing.JTextField txtProveedorTelefono;
     private javax.swing.JTextField txtTelC;
+    private javax.swing.JTextField txtTotalCompra;
     private javax.swing.JLabel txtTotalPedido;
+    private javax.swing.JTextField txtUsuariosContraseña;
+    private javax.swing.JTextField txtUsuariosNombre;
+    private javax.swing.JTextField txtUsuariosUsuario;
     private javax.swing.JTextArea txtdescP;
     private javax.swing.JTextField txtnomP;
     private javax.swing.JTextField txtprecioP;
