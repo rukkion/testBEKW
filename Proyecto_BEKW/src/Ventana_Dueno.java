@@ -1784,6 +1784,11 @@ public class Ventana_Dueno extends javax.swing.JFrame {
         jPanel8.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
 
         txtCantidadMP.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtCantidadMP.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                txtCantidadMPStateChanged(evt);
+            }
+        });
         jPanel8.add(txtCantidadMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 150, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -4626,7 +4631,7 @@ private boolean validarVacioP(){
     }//GEN-LAST:event_spncantidadMP_CompraStateChanged
 
     private void spncantidadProducto_PedidoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spncantidadProducto_PedidoStateChanged
-        spinnerNeg(spncantidadMP_Compra);
+        spinnerNeg(spncantidadProducto_Pedido);
     }//GEN-LAST:event_spncantidadProducto_PedidoStateChanged
     /**
      * Genera el pedido
@@ -5110,6 +5115,10 @@ generarCambio();
      
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelCKeyTyped
+
+    private void txtCantidadMPStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_txtCantidadMPStateChanged
+       spinnerNeg(txtCantidadMP);
+    }//GEN-LAST:event_txtCantidadMPStateChanged
     /**
      * Lllena el combo de las presentaciones de Materias Primas
      * @throws SQLException 
