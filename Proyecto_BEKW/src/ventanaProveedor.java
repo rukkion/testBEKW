@@ -59,6 +59,7 @@ public class ventanaProveedor extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Proveedores");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
@@ -88,6 +89,7 @@ public class ventanaProveedor extends javax.swing.JFrame {
         lblTelefonoProveedor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblTelefonoProveedor.setText("Teléfono:");
 
+        lblProveedorBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblProveedorBuscar.setText("Buscar:");
 
         txtProveedorTelefono.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -240,8 +242,8 @@ public class ventanaProveedor extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(panelProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelProveedorLayout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(lblProveedorBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)
+                                .addComponent(lblProveedorBuscar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtBuscarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelProveedorLayout.createSequentialGroup()
@@ -427,12 +429,12 @@ public class ventanaProveedor extends javax.swing.JFrame {
      * @param evt 
      */
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        try {
-            // TODO add your handling code here:
-            venD.LlenarTablaComprasProveedores();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ventanaProveedor.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            // TODO add your handling code here:
+//            venD.LlenarTablaComprasProveedores();
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(ventanaProveedor.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_formWindowClosing
 
     /**
@@ -677,7 +679,7 @@ public class ventanaProveedor extends javax.swing.JFrame {
             }
         });
     }
-    Ventana_Dueno venD;
+    //Ventana_Dueno venD;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarProveedor;
     private javax.swing.JButton btnCancelar1;

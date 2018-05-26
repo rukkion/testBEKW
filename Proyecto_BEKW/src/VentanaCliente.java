@@ -510,8 +510,8 @@ public class VentanaCliente extends javax.swing.JFrame {
      */
     void tablaClienteM(){
          try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=BEKW","sa","123");
+            //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Connection con = DriverManager.getConnection("jdbc:sqlite:BEKW.db");
             Statement stmt=con.createStatement();
             DefaultTableModel tbm=(DefaultTableModel)tablaCM.getModel();
             tbm.setRowCount(0);
@@ -525,8 +525,6 @@ public class VentanaCliente extends javax.swing.JFrame {
             stmt.close();
         }catch (SQLException ex) {
             showMessageDialog(null," Error en la conexion LLENAR TABLA CLIENTE. "); 
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(VentanaCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
